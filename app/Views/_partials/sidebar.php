@@ -2,7 +2,7 @@
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
        <!-- Sidebar - Brand -->
-       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('/'); ?>">
            <div class="sidebar-brand-icon ">
                <p style="color:red;"><b>HSRCC</b></p>
            </div>
@@ -18,38 +18,38 @@
 
        <!-- Nav Item - Dashboard -->
        <li class="nav-item active">
-           <a class="nav-link" href="index.html">
+           <a class="nav-link" href="<?php echo base_url('/'); ?>">
                <i class="fas fa-fw fa-tachometer-alt"></i>
                <span>Dashboard</span></a>
        </li>
 
        <li class="nav-item ">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link" href="<?php echo base_url('atk'); ?>">
                <i class="fas fa-fw fa-toolbox"></i>
                <span>Data ATK</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link" href="<?php echo base_url(''); ?>">
                <i class="fas fa-fw fa-car-side"></i>
                <span>Data Kendaraan</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link" href="<?php echo base_url(''); ?>">
                <i class="fas fa-fw fa-hand-holding-usd"></i>
                <span>Data Asset</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link" href="<?php echo base_url(''); ?>">
                <i class="fas fa-fw fa-broadcast-tower"></i>
                <span>Data Audio Visual</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link" href="<?php echo base_url(''); ?>">
                <i class="fas fa-fw fa-couch"></i>
                <span>Data Furniture</span></a>
        </li>
        <li class="nav-item">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link" href="<?php echo base_url(''); ?>">
                <i class="fas fa-fw fa-camera-retro"></i>
                <span>Data Multimedia</span></a>
        </li>
@@ -60,8 +60,8 @@
            </a>
            <div id="dataDocument" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                <div class="bg-white py-2 collapse-inner rounded">
-                   <a class="collapse-item" href="utilities-color.html"> <i class="fas fa-fw fa-book"></i> Data Masuk</a>
-                   <a class="collapse-item" href="utilities-border.html"> <i class="fas fa-fw fa-book"></i> Data Keluar</a>
+                   <a class="collapse-item" href="<?php echo base_url(''); ?>"> <i class="fas fa-fw fa-book"></i> Data Masuk</a>
+                   <a class="collapse-item" href="<?php echo base_url(''); ?>"> <i class="fas fa-fw fa-book"></i> Data Keluar</a>
                </div>
            </div>
        </li>
@@ -72,18 +72,18 @@
            </a>
            <div id="dataNota" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                <div class="bg-white py-2 collapse-inner rounded">
-                   <a class="collapse-item" href="utilities-color.html"> <i class="fas fa-fw fa-receipt"></i> Data Masuk</a>
-                   <a class="collapse-item" href="utilities-border.html"> <i class="fas fa-fw fa-receipt"></i> Data Keluar</a>
+                   <a class="collapse-item" href="<?php echo base_url(''); ?>"> <i class="fas fa-fw fa-receipt"></i> Data Masuk</a>
+                   <a class="collapse-item" href="<?php echo base_url(''); ?>"> <i class="fas fa-fw fa-receipt"></i> Data Keluar</a>
                </div>
            </div>
        </li>
        <li class="nav-item">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link" href="<?php echo base_url(''); ?>">
                <i class="fas fa-fw fa-user-friends"></i>
                <span>Data Karyawan</span></a>
        </li>
        <li class="nav-item">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link" href="<?php echo base_url(''); ?>">
                <i class="fas fa-fw fa-user-check"></i>
                <span>Data Users</span></a>
        </li>

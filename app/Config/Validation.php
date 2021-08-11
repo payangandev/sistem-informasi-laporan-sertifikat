@@ -305,4 +305,20 @@ class Validation
 			'required'		=> ' Level status_document Wajib Di isi'
 		]
 	];
+
+
+	// validasi untuk data asset
+
+	// validasi untuk data atk
+
+	// validasi untuk data audiovisual
+
+	// validasi untuk data elektronik
+
+	// validasi untuk data furniture
+
+	// validasi untuk data kendaraan
+
+	// validasi untuk data multimedia
+
 }
