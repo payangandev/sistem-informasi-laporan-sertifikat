@@ -19,21 +19,19 @@ class DataKaryawan extends Migration
 			],
 			'nama_karyawan'      	=> [
 				'type'           	=> 'VARCHAR',
-				'constraint'     	=> '255',
+				'constraint'     	=> '100',
 			],
 			'divisi'      		  	=> [
 				'type'           	=> 'VARCHAR',
-				'constraint'     	=> '255'
+				'constraint'     	=> '100'
 			],
 			'jabatan'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'Manager','Translator','Staff Engginer'",
-				'default'			=> 'Staff Engginer'
 			],
 			'status'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'AKTIF','OFF'",
-				'default'			=> 'AKTIF'
 			],
 			'tanggalmasuk'			=> [
 				'type'				=> 'DATE',

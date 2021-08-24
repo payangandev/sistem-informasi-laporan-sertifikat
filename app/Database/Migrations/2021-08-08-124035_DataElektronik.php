@@ -9,7 +9,7 @@ class DataElektronik extends Migration
 	public function up()
 	{
 		$this->forge->addField([
-			'elektronik_id'		=> [
+			'elektronik_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
@@ -19,25 +19,24 @@ class DataElektronik extends Migration
 				'type'				=> 'DATE',
 			],
 
-			'kode_inventaris'			=> [
+			'kode_inventaris'		=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
-			'nama_item'			=> [
+			'nama_item'				=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
-			'merk'			=> [
+			'merk'					=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
 			'satuan'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'UNIT','BOX'",
-				'default'			=> 'UNIT'
 			],
 
 			'harga'					=> [
@@ -53,10 +52,9 @@ class DataElektronik extends Migration
 				'null'				=> FALSE,
 				'default'			=> 0.00
 			],
-			'kondisi'			=> [
+			'kondisi'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BARU','BEKAS'",
-				'default'			=> 'BARU'
 			],
 			'keterangan'			=> [
 				'type'				=> 'VARCHAR',

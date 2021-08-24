@@ -17,31 +17,28 @@ class DaftarDocumentMasukSchema extends Migration
 			],
 			'kode_dokumen'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'document_type'			=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BRIDGE','ALIGNMENT','CULVERT','TUNNEL NO.3','SUBGRADE'",
-				'default'			=> 'BRIDGE'
 			],
 			'document_number'		=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255',
+				'constraint'		=> '100',
 
 			],
 			'judul_dokumen'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'vendor'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'KJB','HSRCC'",
-				'default'			=> 'KJB'
 			],
 			'bahasa'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'ENGLISH & CHINESE','ENGLISH','CHINESE'",
-				'default'			=> 'ENGLISH & CHINESE'
 			],
 
 			'status_document'		=> [

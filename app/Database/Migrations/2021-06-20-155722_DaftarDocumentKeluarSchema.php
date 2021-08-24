@@ -17,29 +17,28 @@ class DaftarDocumentKeluarSchema extends Migration
 			],
 			'kode_dokumen'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'document_type'			=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BRIDGE','ALIGNMENT','CULVERT','TUNNEL NO.3','SUBGRADE'",
-				'default'			=> 'BRIDGE'
 			],
 			'document_number'		=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255',
+				'constraint'		=> '100',
 
 			],
 			'judul_dokumen'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'nomer_box'				=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'isi_box'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'tanggal_keluar'		=> [
 				'type'				=> 'DATE',
@@ -47,12 +46,10 @@ class DaftarDocumentKeluarSchema extends Migration
 			'vendor'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'KCIC','CREC','CRDC','CDJO'",
-				'default'			=> 'KCIC'
 			],
 			'bahasa'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'ENGLISH & CHINESE','ENGLISH','CHINESE'",
-				'default'			=> 'ENGLISH & CHINESE'
 			],
 			'approved'				=> [
 				'type'				=> 'VARCHAR',
@@ -61,13 +58,11 @@ class DaftarDocumentKeluarSchema extends Migration
 			'jabatan'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'MANAGER','STAFF','TRANSLATOR'",
-				'default'			=> 'MANAGER'
 			],
 
 			'status_document'		=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'Masuk','Keluar'",
-				'default'			=> 'Masuk'
 			],
 			'karyawan_id'			 => [
 				'type'				=> 'INT',

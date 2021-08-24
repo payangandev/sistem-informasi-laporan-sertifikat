@@ -17,25 +17,23 @@ class DaftarNotaKeluarSchema extends Migration
 			],
 			'kode_nota'				=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'vendor'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'KJB','HSRCC'",
-				'default'			=> 'KJB'
 			],
 			'nama_barang'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'jumlah_barang'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'status_document'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'Masuk','Keluar'",
-				'default'			=> 'Masuk'
 			],
 			'tanggal_keluar'		=> [
 				'type'				=> 'DATE',

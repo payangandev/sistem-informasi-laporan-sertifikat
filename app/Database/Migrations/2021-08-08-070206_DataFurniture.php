@@ -15,11 +15,11 @@ class DataFurniture extends Migration
 				'unsigned'			=> TRUE,
 				'auto_increment'	=> TRUE
 			],
-			'nama'			=> [
+			'nama'					=> [
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '255'
 			],
-			'kode'			=> [
+			'kode'					=> [
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '255'
 			],
@@ -39,14 +39,13 @@ class DataFurniture extends Migration
 			'tanggal_beli'			=> [
 				'type'				=> 'DATE',
 			],
-			'kondisi'			=> [
+			'kondisi'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BARU','BEKAS'",
-				'default'			=> 'BARU'
 			],
 			'keterangan'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
 			'karyawan_id'			=> [

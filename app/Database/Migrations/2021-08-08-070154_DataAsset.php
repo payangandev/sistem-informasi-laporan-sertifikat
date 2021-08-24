@@ -17,14 +17,14 @@ class DataAsset extends Migration
 			],
 			'nama_kendaraan'		=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'tanggal_masuk'			=> [
 				'type'				=> 'DATE',
 			],
 			'unit'				    => [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 			'harga'					=> [
 				'type'				=> 'decimal',
@@ -40,14 +40,13 @@ class DataAsset extends Migration
 				'default'			=> 0.00
 			],
 
-			'kondisi'			=> [
+			'kondisi'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BARU','BEKAS'",
-				'default'			=> 'BARU'
 			],
 			'keterangan'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '250'
 			],
 
 

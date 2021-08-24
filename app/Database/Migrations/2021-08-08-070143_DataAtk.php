@@ -18,7 +18,7 @@ class DataAtk extends Migration
 
 			'kode_barang'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '50'
+				'constraint'		=> '100'
 			],
 
 
@@ -29,20 +29,20 @@ class DataAtk extends Migration
 
 			'stock_awal'			=> [
 				'type'				=> 'Int',
-				'constraint'		=> '50'
+				'constraint'		=> 100
 			],
 
 			'stock_masuk'			=> [
 				'type'				=> 'INT',
-				'constraint'		=> 50
+				'constraint'		=> 100
 			],
 			'stock_keluar'			=> [
 				'type'				=> 'INT',
-				'constraint'		=> 50
+				'constraint'		=> 100
 			],
 			'stock_akhir'			=> [
 				'type'				=> 'INT',
-				'constraint'		=> 50
+				'constraint'		=> 100
 			],
 			
 			'karyawan_id'			=> [

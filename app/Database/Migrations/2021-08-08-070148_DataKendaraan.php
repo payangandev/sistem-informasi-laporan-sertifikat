@@ -9,7 +9,7 @@ class DataKendaraan extends Migration
 	public function up()
 	{
 		$this->forge->addField([
-			'kendaraaan_id'		=> [
+			'kendaraaan_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
@@ -21,17 +21,17 @@ class DataKendaraan extends Migration
 
 			'kode_inventaris'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
-			'nama_item'			=> [
+			'nama_item'				=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
-			'merk'			=> [
+			'merk'					=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
 			'satuan'				=> [
@@ -54,15 +54,14 @@ class DataKendaraan extends Migration
 				'default'			=> 0.00
 			],
 
-			'kondisi'			=> [
+			'kondisi'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BARU','BEKAS'",
-				'default'			=> 'BARU'
 			],
 
 			'keterangan'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '250'
 			],
 
 			'karyawan_id'			=> [

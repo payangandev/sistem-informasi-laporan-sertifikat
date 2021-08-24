@@ -17,16 +17,16 @@ class DaftaUsersSchema extends Migration
 			],
 			'nama_user'              => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '255',
+				'constraint'     => '100',
 			],
 
 			'username'               => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '255',
+				'constraint'     => '100',
 			],
 			'password'               => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '255',
+				'constraint'     => '100',
 			],
 			'level'             => [
 				'type'          => 'INT',

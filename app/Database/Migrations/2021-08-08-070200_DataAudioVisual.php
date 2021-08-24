@@ -19,25 +19,24 @@ class DataAudioVisual extends Migration
 				'type'				=> 'DATE',
 			],
 
-			'kode_inventaris'			=> [
+			'kode_inventaris'		=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
-			'nama_item'			=> [
+			'nama_item'				=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
-			'merk'			=> [
+			'merk'					=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '100'
 			],
 
 			'satuan'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'UNIT','BOX'",
-				'default'			=> 'UNIT'
 			],
 
 			'harga'					=> [
@@ -54,15 +53,14 @@ class DataAudioVisual extends Migration
 				'default'			=> 0.00
 			],
 
-			'kondisi'			=> [
+			'kondisi'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BARU','BEKAS'",
-				'default'			=> 'BARU'
 			],
 
 			'keterangan'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '250'
 			],
 
 
