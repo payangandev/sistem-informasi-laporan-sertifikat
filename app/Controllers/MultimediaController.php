@@ -10,7 +10,7 @@ class MultimediaController extends BaseController
 	{
 		helper(['form']);
 		$this->karyawan_model = new KaryawanModel();
-		$this->notakeluar_model = new NotaKeluarModel();
+		$this->multimedia_model = new MultimediaModel();
 	}
 
 	public function index()
@@ -21,14 +21,14 @@ class MultimediaController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_notakeluar') ? $this->request->getVar('page_notakeluar') : 1;
+		$currentPage = $this->request->getVar('page_multimedia') ? $this->request->getVar('page_multimedia') : 1;
 
 		// paginate
 		$paginate = 1000000;
-		$data['notakeluar']   = $this->notakeluar_model->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')->paginate($paginate, 'notakeluar');
-		$data['pager']        = $this->notakeluar_model->pager;
+		$data['multimedia']   = $this->multimedia_model->join('karyawan', 'karyawan.karyawan_id = multimedia.karyawan_id')->paginate($paginate, 'multimedia');
+		$data['pager']        = $this->multimedia_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('notakeluar/index', $data);
+		echo view('multimedia/index', $data);
 	}
 
 	public function laporan()
@@ -39,17 +39,18 @@ class MultimediaController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_notakeluar') ? $this->request->getVar('page_notakeluar') : 1;
+		$currentPage = $this->request->getVar('page_multimedia') ? $this->request->getVar('page_multimedia') : 1;
 
 		// paginate
 		$paginate = 1000000;
-		$data['notakeluar']   = $this->notakeluar_model->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')->paginate($paginate, 'notakeluar');
-		$data['pager']        = $this->notakeluar_model->pager;
+		$data['multimedia']   = $this->multimedia_model->join('karyawan', 'karyawan.karyawan_id = multimedia.karyawan_id')->paginate($paginate, 'multimedia');
+		$data['pager']        = $this->multimedia_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('notakeluar/laporan', $data);
+		echo view('multimedia/laporan', $data);
 	}
 
 
+	// method untuk membuat sebuah penambahan data
 	public function create()
 	{
 		// proteksi halaman
@@ -59,9 +60,11 @@ class MultimediaController extends BaseController
 		}
 		$karyawan = $this->karyawan_model->findAll();
 		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		return view('notakeluar/create', $data);
+		return view('multimedia/create', $data);
 	}
 
+
+	// method untuk mengelola pemrosessan sebuah penambahan data
 	public function store()
 	{
 		// proteksi halaman
@@ -81,16 +84,16 @@ class MultimediaController extends BaseController
 
 		);
 
-		if ($validation->run($data, 'notakeluar') == FALSE) {
+		if ($validation->run($data, 'multimedia') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('notakeluar/create'));
+			return redirect()->to(base_url('multimedia/create'));
 		} else {
 			// insert
-			$simpan = $this->notakeluar_model->insertData($data);
+			$simpan = $this->multimedia_model->insertData($data);
 			if ($simpan) {
 				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
-				return redirect()->to(base_url('notakeluar'));
+				return redirect()->to(base_url('multimedia'));
 			}
 		}
 	}
@@ -105,8 +108,8 @@ class MultimediaController extends BaseController
 		}
 		$karyawan = $this->karyawan_model->findAll();
 		$data['karyawan'] = ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		$data['notakeluar'] = $this->notakeluar_model->getData($id);
-		echo view('notakeluar/edit', $data);
+		$data['multimedia'] = $this->multimedia_model->getData($id);
+		echo view('multimedia/edit', $data);
 	}
 
 	public function update()
@@ -116,7 +119,7 @@ class MultimediaController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$id = $this->request->getPost('notakeluar_id');
+		$id = $this->request->getPost('multimedia_id');
 
 		$validation =  \Config\Services::validation();
 
@@ -130,15 +133,15 @@ class MultimediaController extends BaseController
 			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
 
 		);
-		if ($validation->run($data, 'notakeluar') == FALSE) {
+		if ($validation->run($data, 'multimedia') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('notakeluar/edit/' . $id));
+			return redirect()->to(base_url('multimedia/edit/' . $id));
 		} else {
-			$ubah = $this->notakeluar_model->updateData($data, $id);
+			$ubah = $this->multimedia_model->updateData($data, $id);
 			if ($ubah) {
 				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
-				return redirect()->to(base_url('notakeluar'));
+				return redirect()->to(base_url('multimedia'));
 			}
 		}
 	}
@@ -149,10 +152,10 @@ class MultimediaController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$hapus = $this->notakeluar_model->deleteData($id);
+		$hapus = $this->multimedia_model->deleteData($id);
 		if ($hapus) {
 			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
-			return redirect()->to(base_url('notakeluar'));
+			return redirect()->to(base_url('multimedia'));
 		}
 	}
 }

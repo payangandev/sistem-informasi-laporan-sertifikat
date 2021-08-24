@@ -10,7 +10,7 @@ class ElektronikController extends BaseController
 	{
 		helper(['form']);
 		$this->karyawan_model = new KaryawanModel();
-		$this->notakeluar_model = new NotaKeluarModel();
+		$this->elektronik_model = new ElektronikModel();
 	}
 
 	public function index()
@@ -21,14 +21,14 @@ class ElektronikController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_notakeluar') ? $this->request->getVar('page_notakeluar') : 1;
+		$currentPage = $this->request->getVar('page_elektronik') ? $this->request->getVar('page_elektronik') : 1;
 
 		// paginate
 		$paginate = 1000000;
-		$data['notakeluar']   = $this->notakeluar_model->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')->paginate($paginate, 'notakeluar');
-		$data['pager']        = $this->notakeluar_model->pager;
+		$data['elektronik']   = $this->elektronik_model->join('karyawan', 'karyawan.karyawan_id = elektronik.karyawan_id')->paginate($paginate, 'elektronik');
+		$data['pager']        = $this->elektronik_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('notakeluar/index', $data);
+		echo view('elektronik/index', $data);
 	}
 
 	public function laporan()
@@ -39,14 +39,14 @@ class ElektronikController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_notakeluar') ? $this->request->getVar('page_notakeluar') : 1;
+		$currentPage = $this->request->getVar('page_elektronik') ? $this->request->getVar('page_elektronik') : 1;
 
 		// paginate
 		$paginate = 1000000;
-		$data['notakeluar']   = $this->notakeluar_model->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')->paginate($paginate, 'notakeluar');
-		$data['pager']        = $this->notakeluar_model->pager;
+		$data['elektronik']   = $this->elektronik_model->join('karyawan', 'karyawan.karyawan_id = elektronik.karyawan_id')->paginate($paginate, 'elektronik');
+		$data['pager']        = $this->elektronik_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('notakeluar/laporan', $data);
+		echo view('elektronik/laporan', $data);
 	}
 
 
@@ -59,7 +59,7 @@ class ElektronikController extends BaseController
 		}
 		$karyawan = $this->karyawan_model->findAll();
 		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		return view('notakeluar/create', $data);
+		return view('elektronik/create', $data);
 	}
 
 	public function store()
@@ -81,16 +81,16 @@ class ElektronikController extends BaseController
 
 		);
 
-		if ($validation->run($data, 'notakeluar') == FALSE) {
+		if ($validation->run($data, 'elektronik') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('notakeluar/create'));
+			return redirect()->to(base_url('elektronik/create'));
 		} else {
 			// insert
-			$simpan = $this->notakeluar_model->insertData($data);
+			$simpan = $this->elektronik_model->insertData($data);
 			if ($simpan) {
 				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
-				return redirect()->to(base_url('notakeluar'));
+				return redirect()->to(base_url('elektronik'));
 			}
 		}
 	}
@@ -105,8 +105,8 @@ class ElektronikController extends BaseController
 		}
 		$karyawan = $this->karyawan_model->findAll();
 		$data['karyawan'] = ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		$data['notakeluar'] = $this->notakeluar_model->getData($id);
-		echo view('notakeluar/edit', $data);
+		$data['elektronik'] = $this->elektronik_model->getData($id);
+		echo view('elektronik/edit', $data);
 	}
 
 	public function update()
@@ -116,7 +116,7 @@ class ElektronikController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$id = $this->request->getPost('notakeluar_id');
+		$id = $this->request->getPost('elektronik_id');
 
 		$validation =  \Config\Services::validation();
 
@@ -130,15 +130,15 @@ class ElektronikController extends BaseController
 			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
 
 		);
-		if ($validation->run($data, 'notakeluar') == FALSE) {
+		if ($validation->run($data, 'elektronik') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('notakeluar/edit/' . $id));
+			return redirect()->to(base_url('elektronik/edit/' . $id));
 		} else {
-			$ubah = $this->notakeluar_model->updateData($data, $id);
+			$ubah = $this->elektronik_model->updateData($data, $id);
 			if ($ubah) {
 				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
-				return redirect()->to(base_url('notakeluar'));
+				return redirect()->to(base_url('elektronik'));
 			}
 		}
 	}
@@ -149,10 +149,10 @@ class ElektronikController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$hapus = $this->notakeluar_model->deleteData($id);
+		$hapus = $this->elektronik_model->deleteData($id);
 		if ($hapus) {
 			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
-			return redirect()->to(base_url('notakeluar'));
+			return redirect()->to(base_url('elektronik'));
 		}
 	}
 }

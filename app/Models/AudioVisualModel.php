@@ -6,19 +6,19 @@ use CodeIgniter\Model;
 
 class AudioVisualModel extends Model
 {
-	protected $table = 'notakeluar';
+	protected $table = 'audiovisual';
 
 	public function getData($id = false)
 	{
 		if ($id === false) {
-			return $this->table('notakeluar')
-				->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')
+			return $this->table('audiovisual')
+				->join('karyawan', 'karyawan.karyawan_id = audiovisual.karyawan_id')
 				->get()
 				->getResultArray();
 		} else {
-			return $this->table('notakeluar')
-				->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')
-				->where('notakeluar.notakeluar_id', $id)
+			return $this->table('audiovisual')
+				->join('karyawan', 'karyawan.karyawan_id = audiovisual.karyawan_id')
+				->where('audiovisual.audiovisual_id', $id)
 				->get()
 				->getRowArray();
 		}
@@ -30,10 +30,10 @@ class AudioVisualModel extends Model
 
 	public function updateData($data, $id)
 	{
-		return $this->db->table($this->table)->update($data, ['notakeluar_id' => $id]);
+		return $this->db->table($this->table)->update($data, ['audiovisual_id' => $id]);
 	}
 	public function deleteData($id)
 	{
-		return $this->db->table($this->table)->delete(['notakeluar_id' => $id]);
+		return $this->db->table($this->table)->delete(['audiovisual_id' => $id]);
 	}
 }

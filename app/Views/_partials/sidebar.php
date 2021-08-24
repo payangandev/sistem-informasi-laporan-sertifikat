@@ -29,27 +29,27 @@
                <span>Data ATK</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url(''); ?>">
+           <a class="nav-link" href="<?php echo base_url('kendaraan'); ?>">
                <i class="fas fa-fw fa-car-side"></i>
                <span>Data Kendaraan</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url(''); ?>">
+           <a class="nav-link" href="<?php echo base_url('asset'); ?>">
                <i class="fas fa-fw fa-hand-holding-usd"></i>
                <span>Data Asset</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url(''); ?>">
+           <a class="nav-link" href="<?php echo base_url('audiovisual'); ?>">
                <i class="fas fa-fw fa-broadcast-tower"></i>
                <span>Data Audio Visual</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url(''); ?>">
+           <a class="nav-link" href="<?php echo base_url('furniture'); ?>">
                <i class="fas fa-fw fa-couch"></i>
                <span>Data Furniture</span></a>
        </li>
        <li class="nav-item">
-           <a class="nav-link" href="<?php echo base_url(''); ?>">
+           <a class="nav-link" href="<?php echo base_url('multimedia'); ?>">
                <i class="fas fa-fw fa-camera-retro"></i>
                <span>Data Multimedia</span></a>
        </li>
@@ -60,8 +60,8 @@
            </a>
            <div id="dataDocument" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                <div class="bg-white py-2 collapse-inner rounded">
-                   <a class="collapse-item" href="<?php echo base_url(''); ?>"> <i class="fas fa-fw fa-book"></i> Data Masuk</a>
-                   <a class="collapse-item" href="<?php echo base_url(''); ?>"> <i class="fas fa-fw fa-book"></i> Data Keluar</a>
+                   <a class="collapse-item" href="<?php echo base_url('documentmasuk'); ?>"> <i class="fas fa-fw fa-book"></i> Data Masuk</a>
+                   <a class="collapse-item" href="<?php echo base_url('documentkeluar'); ?>"> <i class="fas fa-fw fa-book"></i> Data Keluar</a>
                </div>
            </div>
        </li>
@@ -72,18 +72,18 @@
            </a>
            <div id="dataNota" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                <div class="bg-white py-2 collapse-inner rounded">
-                   <a class="collapse-item" href="<?php echo base_url(''); ?>"> <i class="fas fa-fw fa-receipt"></i> Data Masuk</a>
-                   <a class="collapse-item" href="<?php echo base_url(''); ?>"> <i class="fas fa-fw fa-receipt"></i> Data Keluar</a>
+                   <a class="collapse-item" href="<?php echo base_url('notamasuk'); ?>"> <i class="fas fa-fw fa-receipt"></i> Data Masuk</a>
+                   <a class="collapse-item" href="<?php echo base_url('notakeluar'); ?>"> <i class="fas fa-fw fa-receipt"></i> Data Keluar</a>
                </div>
            </div>
        </li>
        <li class="nav-item">
-           <a class="nav-link" href="<?php echo base_url(''); ?>">
+           <a class="nav-link" href="<?php echo base_url('karyawan'); ?>">
                <i class="fas fa-fw fa-user-friends"></i>
                <span>Data Karyawan</span></a>
        </li>
        <li class="nav-item">
-           <a class="nav-link" href="<?php echo base_url(''); ?>">
+           <a class="nav-link" href="<?php echo base_url('users'); ?>">
                <i class="fas fa-fw fa-user-check"></i>
                <span>Data Users</span></a>
        </li>
@@ -98,16 +98,18 @@
            <div id="dataLaporan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                <div class="bg-white py-2 collapse-inner rounded">
                    <h6 class="collapse-header" style="color:green;">Data Laporan Inventaris</h6>
-                   <a class="collapse-item" href="utilities-color.html"> <i class="fas fa-fw fa-print"></i> Data ATK</a>
-                   <a class="collapse-item" href="utilities-border.html"> <i class="fas fa-fw fa-print"></i> Data Kendaraan</a>
-                   <a class="collapse-item" href="utilities-animation.html"> <i class="fas fa-fw fa-print"></i> Data Asset</a>
-                   <a class="collapse-item" href="utilities-other.html"> <i class="fas fa-fw fa-print"></i> Data Audio Visual</a>
-                   <a class="collapse-item" href="utilities-animation.html"> <i class="fas fa-fw fa-print"></i> Data Furniture</a>
-                   <a class="collapse-item" href="utilities-animation.html"> <i class="fas fa-fw fa-print"></i> Data Multimedia</a>
-                   <a class="collapse-item" href="utilities-animation.html"> <i class="fas fa-fw fa-print"></i> Data Document</a>
-                   <a class="collapse-item" href="utilities-animation.html"> <i class="fas fa-fw fa-print"></i> Data Nota</a>
-                   <a class="collapse-item" href="utilities-animation.html"> <i class="fas fa-fw fa-print"></i> Data Karyawan</a>
-                   <a class="collapse-item" href="utilities-animation.html"> <i class="fas fa-fw fa-print"></i> Data User</a>
+                   <a class="collapse-item" href="<?php echo base_url('atk/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data ATK</a>
+                   <a class="collapse-item" href="<?php echo base_url('kendaraan/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Kendaraan</a>
+                   <a class="collapse-item" href="<?php echo base_url('asset/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Asset</a>
+                   <a class="collapse-item" href="<?php echo base_url('audiovisual/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Audio Visual</a>
+                   <a class="collapse-item" href="<?php echo base_url('furniture/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Furniture</a>
+                   <a class="collapse-item" href="<?php echo base_url('multimedia/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Multimedia</a>
+                   <a class="collapse-item" href="<?php echo base_url('documentmasuk/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Document Masuk</a>
+                   <a class="collapse-item" href="<?php echo base_url('documentkeluar/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Document Keluar</a>
+                   <a class="collapse-item" href="<?php echo base_url('user/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Nota Masuk</a>
+                    <a class="collapse-item" href="<?php echo base_url('notamasuk/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Nota Keluar</a>
+                   <a class="collapse-item" href="<?php echo base_url('notakeluar/laporan'); ?>"> <i class="fas fa-fw fa-print"></i> Data Karyawan</a>
+                   <a class="collapse-item" href="<?php echo base_url('users/laporan'); ?>"><i class="fas fa-fw fa-print"></i> Data User</a>
 
 
 

@@ -10,7 +10,7 @@ class KendaraanController extends BaseController
 	{
 		helper(['form']);
 		$this->karyawan_model = new KaryawanModel();
-		$this->notakeluar_model = new NotaKeluarModel();
+		$this->kendaraan_model = new KendaraanModel();
 	}
 
 	public function index()
@@ -21,14 +21,14 @@ class KendaraanController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_notakeluar') ? $this->request->getVar('page_notakeluar') : 1;
+		$currentPage = $this->request->getVar('page_kendaraan') ? $this->request->getVar('page_kendaraan') : 1;
 
 		// paginate
 		$paginate = 1000000;
-		$data['notakeluar']   = $this->notakeluar_model->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')->paginate($paginate, 'notakeluar');
-		$data['pager']        = $this->notakeluar_model->pager;
+		$data['kendaraan']   = $this->kendaraan_model->join('karyawan', 'karyawan.karyawan_id = kendaraan.karyawan_id')->paginate($paginate, 'kendaraan');
+		$data['pager']        = $this->kendaraan_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('notakeluar/index', $data);
+		echo view('kendaraan/index', $data);
 	}
 
 	public function laporan()
@@ -39,14 +39,14 @@ class KendaraanController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_notakeluar') ? $this->request->getVar('page_notakeluar') : 1;
+		$currentPage = $this->request->getVar('page_kendaraan') ? $this->request->getVar('page_kendaraan') : 1;
 
 		// paginate
 		$paginate = 1000000;
-		$data['notakeluar']   = $this->notakeluar_model->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')->paginate($paginate, 'notakeluar');
-		$data['pager']        = $this->notakeluar_model->pager;
+		$data['kendaraan']   = $this->kendaraan_model->join('karyawan', 'karyawan.karyawan_id = kendaraan.karyawan_id')->paginate($paginate, 'kendaraan');
+		$data['pager']        = $this->kendaraan_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('notakeluar/laporan', $data);
+		echo view('kendaraan/laporan', $data);
 	}
 
 
@@ -59,7 +59,7 @@ class KendaraanController extends BaseController
 		}
 		$karyawan = $this->karyawan_model->findAll();
 		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		return view('notakeluar/create', $data);
+		return view('kendaraan/create', $data);
 	}
 
 	public function store()
@@ -81,16 +81,16 @@ class KendaraanController extends BaseController
 
 		);
 
-		if ($validation->run($data, 'notakeluar') == FALSE) {
+		if ($validation->run($data, 'kendaraan') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('notakeluar/create'));
+			return redirect()->to(base_url('kendaraan/create'));
 		} else {
 			// insert
-			$simpan = $this->notakeluar_model->insertData($data);
+			$simpan = $this->kendaraan_model->insertData($data);
 			if ($simpan) {
 				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
-				return redirect()->to(base_url('notakeluar'));
+				return redirect()->to(base_url('kendaraan'));
 			}
 		}
 	}
@@ -105,8 +105,8 @@ class KendaraanController extends BaseController
 		}
 		$karyawan = $this->karyawan_model->findAll();
 		$data['karyawan'] = ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		$data['notakeluar'] = $this->notakeluar_model->getData($id);
-		echo view('notakeluar/edit', $data);
+		$data['kendaraan'] = $this->kendaraan_model->getData($id);
+		echo view('kendaraan/edit', $data);
 	}
 
 	public function update()
@@ -116,7 +116,7 @@ class KendaraanController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$id = $this->request->getPost('notakeluar_id');
+		$id = $this->request->getPost('kendaraan_id');
 
 		$validation =  \Config\Services::validation();
 
@@ -130,15 +130,15 @@ class KendaraanController extends BaseController
 			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
 
 		);
-		if ($validation->run($data, 'notakeluar') == FALSE) {
+		if ($validation->run($data, 'kendaraan') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('notakeluar/edit/' . $id));
+			return redirect()->to(base_url('kendaraan/edit/' . $id));
 		} else {
-			$ubah = $this->notakeluar_model->updateData($data, $id);
+			$ubah = $this->kendaraan_model->updateData($data, $id);
 			if ($ubah) {
 				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
-				return redirect()->to(base_url('notakeluar'));
+				return redirect()->to(base_url('kendaraan'));
 			}
 		}
 	}
@@ -149,10 +149,10 @@ class KendaraanController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$hapus = $this->notakeluar_model->deleteData($id);
+		$hapus = $this->kendaraan_model->deleteData($id);
 		if ($hapus) {
 			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
-			return redirect()->to(base_url('notakeluar'));
+			return redirect()->to(base_url('kendaraan'));
 		}
 	}
 }

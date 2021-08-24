@@ -10,7 +10,7 @@ public function __construct()
 	{
 		helper(['form']);
 		$this->karyawan_model = new KaryawanModel();
-		$this->notakeluar_model = new NotaKeluarModel();
+		$this->asset_model = new AssetModel();
 	}
 
 	public function index()
@@ -21,14 +21,14 @@ public function __construct()
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_notakeluar') ? $this->request->getVar('page_notakeluar') : 1;
+		$currentPage = $this->request->getVar('page_asset') ? $this->request->getVar('page_asset') : 1;
 
 		// paginate
 		$paginate = 1000000;
-		$data['notakeluar']   = $this->notakeluar_model->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')->paginate($paginate, 'notakeluar');
-		$data['pager']        = $this->notakeluar_model->pager;
+		$data['asset']   = $this->asset_model->join('karyawan', 'karyawan.karyawan_id = asset.karyawan_id')->paginate($paginate, 'asset');
+		$data['pager']        = $this->asset_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('notakeluar/index', $data);
+		echo view('asset/index', $data);
 	}
 
 	public function laporan()
@@ -39,14 +39,14 @@ public function __construct()
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_notakeluar') ? $this->request->getVar('page_notakeluar') : 1;
+		$currentPage = $this->request->getVar('page_asset') ? $this->request->getVar('page_asset') : 1;
 
 		// paginate
 		$paginate = 1000000;
-		$data['notakeluar']   = $this->notakeluar_model->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')->paginate($paginate, 'notakeluar');
-		$data['pager']        = $this->notakeluar_model->pager;
+		$data['asset']   = $this->asset_model->join('karyawan', 'karyawan.karyawan_id = asset.karyawan_id')->paginate($paginate, 'asset');
+		$data['pager']        = $this->asset_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('notakeluar/laporan', $data);
+		echo view('asset/laporan', $data);
 	}
 
 
@@ -59,7 +59,7 @@ public function __construct()
 		}
 		$karyawan = $this->karyawan_model->findAll();
 		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		return view('notakeluar/create', $data);
+		return view('asset/create', $data);
 	}
 
 	public function store()
@@ -81,16 +81,16 @@ public function __construct()
 
 		);
 
-		if ($validation->run($data, 'notakeluar') == FALSE) {
+		if ($validation->run($data, 'asset') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('notakeluar/create'));
+			return redirect()->to(base_url('asset/create'));
 		} else {
 			// insert
-			$simpan = $this->notakeluar_model->insertData($data);
+			$simpan = $this->asset_model->insertData($data);
 			if ($simpan) {
 				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
-				return redirect()->to(base_url('notakeluar'));
+				return redirect()->to(base_url('asset'));
 			}
 		}
 	}
@@ -105,8 +105,8 @@ public function __construct()
 		}
 		$karyawan = $this->karyawan_model->findAll();
 		$data['karyawan'] = ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		$data['notakeluar'] = $this->notakeluar_model->getData($id);
-		echo view('notakeluar/edit', $data);
+		$data['asset'] = $this->asset_model->getData($id);
+		echo view('asset/edit', $data);
 	}
 
 	public function update()
@@ -116,7 +116,7 @@ public function __construct()
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$id = $this->request->getPost('notakeluar_id');
+		$id = $this->request->getPost('asset_id');
 
 		$validation =  \Config\Services::validation();
 
@@ -130,15 +130,15 @@ public function __construct()
 			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
 
 		);
-		if ($validation->run($data, 'notakeluar') == FALSE) {
+		if ($validation->run($data, 'asset') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('notakeluar/edit/' . $id));
+			return redirect()->to(base_url('asset/edit/' . $id));
 		} else {
-			$ubah = $this->notakeluar_model->updateData($data, $id);
+			$ubah = $this->asset_model->updateData($data, $id);
 			if ($ubah) {
 				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
-				return redirect()->to(base_url('notakeluar'));
+				return redirect()->to(base_url('asset'));
 			}
 		}
 	}
@@ -149,10 +149,10 @@ public function __construct()
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$hapus = $this->notakeluar_model->deleteData($id);
+		$hapus = $this->asset_model->deleteData($id);
 		if ($hapus) {
 			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
-			return redirect()->to(base_url('notakeluar'));
+			return redirect()->to(base_url('asset'));
 		}
 	}
 }

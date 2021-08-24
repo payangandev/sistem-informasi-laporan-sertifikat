@@ -107,7 +107,7 @@ class DataManajemen extends Seeder
 
 		$nota = [
 			[
-				'nota_id'		=> 1,
+				'nota_id'			=> 1,
 				'kode_nota'			=> 'EC-1441',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
@@ -119,180 +119,180 @@ class DataManajemen extends Seeder
 
 			],
 			[
-				'nota_id'		=> 2,
+				'nota_id'			=> 2,
 				'kode_nota'			=> 'EC-1442',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-08',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 3,
+				'nota_id'			=> 3,
 				'kode_nota'			=> 'EC-1443',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-08',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 4,
+				'nota_id'			=> 4,
 				'kode_nota'			=> 'EC-1453',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-07',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 5,
+				'nota_id'			=> 5,
 				'kode_nota'			=> 'EC-1991',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-06',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 6,
+				'nota_id'			=> 6,
 				'kode_nota'			=> 'EC-1994',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-06',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 7,
+				'nota_id'			=> 7,
 				'kode_nota'			=> 'EC-1995',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-06',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 8,
+				'nota_id'			=> 8,
 				'kode_nota'			=> 'EC-1996',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-06',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 9,
+				'nota_id'			=> 9,
 				'kode_nota'			=> 'EC-1492',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-05',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 10,
+				'nota_id'			=> 10,
 				'kode_nota'			=> 'EC-3554',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-04',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 12,
+				'nota_id'			=> 12,
 				'kode_nota'			=> 'EC-1493',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-04',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 13,
+				'nota_id'			=> 13,
 				'kode_nota'			=> 'EC-2354',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-04',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 14,
+				'nota_id'			=> 14,
 				'kode_nota'			=> 'EC-1453',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-04',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 15,
+				'nota_id'			=> 15,
 				'kode_nota'			=> 'EC-1953',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-04',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 16,
+				'nota_id'			=> 16,
 				'kode_nota'			=> 'EC-1963',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-04',
 				'karyawan_id'		=> 5,
 
 
 			],
 			[
-				'nota_id'		=> 17,
+				'nota_id'			=> 17,
 				'kode_nota'			=> 'EC-1973',
 				'vendor'			=> 'KJB',
 				'nama_barang'		=> 'document',
 				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Masuk',
+				'status_document'	=> 'Masuk',
 				'tanggal_masuk'		=> '2021-06-03',
 				'karyawan_id'		=> 5,
 
@@ -1288,1041 +1288,6 @@ class DataManajemen extends Seeder
 		];
 		$this->db->table('kendaraan')->insertBatch($kendaraan);
 
-		// data asset 
 
-		$asset = [
-			[
-				'asset_id'			=> 1,
-				'tanggal_masuk'		=> '2017-11-17',
-				'nama_kendaraan'	=> 'Toyota Fortuner VRZ AT DIESEL LUX',
-				'unit'				=> '2',
-				'harga'				=> '519500000',
-				'total'				=> '519500000',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 2,
-				'kode_nota'			=> 'EC-1888',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 3,
-				'kode_nota'			=> 'EC-1889',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 4,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 5,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 6,
-				'kode_nota'			=> 'EC-1891',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 7,
-				'kode_nota'			=> 'EC-1892',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 8,
-				'kode_nota'			=> 'EC-1893',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 9,
-				'kode_nota'			=> 'EC-1894',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 10,
-				'kode_nota'			=> 'EC-1895',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 11,
-				'kode_nota'			=> 'EC-1896',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 12,
-				'kode_nota'			=> 'EC-1897',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 13,
-				'kode_nota'			=> 'EC-1898',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 14,
-				'kode_nota'			=> 'EC-1900',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 15,
-				'kode_nota'			=> 'EC-1991',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 16,
-				'kode_nota'			=> 'EC-1992',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 17,
-				'kode_nota'			=> 'EC-1993',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 18,
-				'kode_nota'			=> 'EC-1994',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 19,
-				'kode_nota'			=> 'EC-1995',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 20,
-				'kode_nota'			=> 'EC-1996',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-
-
-		];
-		$this->db->table('notakeluar')->insertBatch($notakeluar);
-		// data elektronik
-
-		$notakeluar = [
-			[
-				'notakeluar_id'		=> 1,
-				'kode_nota'			=> 'EC-1887',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 2,
-				'kode_nota'			=> 'EC-1888',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 3,
-				'kode_nota'			=> 'EC-1889',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 4,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 5,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 6,
-				'kode_nota'			=> 'EC-1891',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 7,
-				'kode_nota'			=> 'EC-1892',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 8,
-				'kode_nota'			=> 'EC-1893',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 9,
-				'kode_nota'			=> 'EC-1894',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 10,
-				'kode_nota'			=> 'EC-1895',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 11,
-				'kode_nota'			=> 'EC-1896',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 12,
-				'kode_nota'			=> 'EC-1897',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 13,
-				'kode_nota'			=> 'EC-1898',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 14,
-				'kode_nota'			=> 'EC-1900',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 15,
-				'kode_nota'			=> 'EC-1991',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 16,
-				'kode_nota'			=> 'EC-1992',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 17,
-				'kode_nota'			=> 'EC-1993',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 18,
-				'kode_nota'			=> 'EC-1994',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 19,
-				'kode_nota'			=> 'EC-1995',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 20,
-				'kode_nota'			=> 'EC-1996',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-
-
-		];
-		$this->db->table('notakeluar')->insertBatch($notakeluar);
-
-		// data audio visual
-
-
-		$notakeluar = [
-			[
-				'notakeluar_id'		=> 1,
-				'kode_nota'			=> 'EC-1887',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 2,
-				'kode_nota'			=> 'EC-1888',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 3,
-				'kode_nota'			=> 'EC-1889',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 4,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 5,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 6,
-				'kode_nota'			=> 'EC-1891',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 7,
-				'kode_nota'			=> 'EC-1892',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 8,
-				'kode_nota'			=> 'EC-1893',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 9,
-				'kode_nota'			=> 'EC-1894',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 10,
-				'kode_nota'			=> 'EC-1895',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 11,
-				'kode_nota'			=> 'EC-1896',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 12,
-				'kode_nota'			=> 'EC-1897',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 13,
-				'kode_nota'			=> 'EC-1898',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 14,
-				'kode_nota'			=> 'EC-1900',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 15,
-				'kode_nota'			=> 'EC-1991',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 16,
-				'kode_nota'			=> 'EC-1992',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 17,
-				'kode_nota'			=> 'EC-1993',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 18,
-				'kode_nota'			=> 'EC-1994',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 19,
-				'kode_nota'			=> 'EC-1995',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 20,
-				'kode_nota'			=> 'EC-1996',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-
-
-		];
-		$this->db->table('notakeluar')->insertBatch($notakeluar);
-		// data multimedia
-
-		$notakeluar = [
-			[
-				'notakeluar_id'		=> 1,
-				'kode_nota'			=> 'EC-1887',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 2,
-				'kode_nota'			=> 'EC-1888',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 3,
-				'kode_nota'			=> 'EC-1889',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 4,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 5,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 6,
-				'kode_nota'			=> 'EC-1891',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 7,
-				'kode_nota'			=> 'EC-1892',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 8,
-				'kode_nota'			=> 'EC-1893',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 9,
-				'kode_nota'			=> 'EC-1894',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 10,
-				'kode_nota'			=> 'EC-1895',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 11,
-				'kode_nota'			=> 'EC-1896',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 12,
-				'kode_nota'			=> 'EC-1897',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 13,
-				'kode_nota'			=> 'EC-1898',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 14,
-				'kode_nota'			=> 'EC-1900',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 15,
-				'kode_nota'			=> 'EC-1991',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 16,
-				'kode_nota'			=> 'EC-1992',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 17,
-				'kode_nota'			=> 'EC-1993',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 18,
-				'kode_nota'			=> 'EC-1994',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 19,
-				'kode_nota'			=> 'EC-1995',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 20,
-				'kode_nota'			=> 'EC-1996',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-
-
-		];
-		$this->db->table('notakeluar')->insertBatch($notakeluar);
-		// data furniture
-
-		$notakeluar = [
-			[
-				'notakeluar_id'		=> 1,
-				'kode_nota'			=> 'EC-1887',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 2,
-				'kode_nota'			=> 'EC-1888',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-02',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 3,
-				'kode_nota'			=> 'EC-1889',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 4,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 5,
-				'kode_nota'			=> 'EC-1890',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-06-01',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 6,
-				'kode_nota'			=> 'EC-1891',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 7,
-				'kode_nota'			=> 'EC-1892',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 8,
-				'kode_nota'			=> 'EC-1893',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-31',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 9,
-				'kode_nota'			=> 'EC-1894',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 10,
-				'kode_nota'			=> 'EC-1895',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 11,
-				'kode_nota'			=> 'EC-1896',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-30',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 12,
-				'kode_nota'			=> 'EC-1897',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 13,
-				'kode_nota'			=> 'EC-1898',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 14,
-				'kode_nota'			=> 'EC-1900',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-29',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 15,
-				'kode_nota'			=> 'EC-1991',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 16,
-				'kode_nota'			=> 'EC-1992',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 17,
-				'kode_nota'			=> 'EC-1993',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-28',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 18,
-				'kode_nota'			=> 'EC-1994',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '8',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 19,
-				'kode_nota'			=> 'EC-1995',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-			[
-				'notakeluar_id'		=> 20,
-				'kode_nota'			=> 'EC-1996',
-				'vendor'			=> 'HSRCC',
-				'nama_barang'		=> 'document',
-				'jumlah_barang'		=> '10',
-				'status_document'			=> 'Keluar',
-				'tanggal_keluar'	=> '2021-05-27',
-				'karyawan_id'		=> 4
-			],
-
-
-		];
-		$this->db->table('notakeluar')->insertBatch($notakeluar);
 	}
 }

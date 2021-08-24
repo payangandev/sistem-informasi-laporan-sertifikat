@@ -6,19 +6,19 @@ use CodeIgniter\Model;
 
 class ElektronikModel extends Model
 {
-	protected $table = 'notakeluar';
+	protected $table = 'elektronik';
 
 	public function getData($id = false)
 	{
 		if ($id === false) {
-			return $this->table('notakeluar')
-				->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')
+			return $this->table('elektronik')
+				->join('karyawan', 'karyawan.karyawan_id = elektronik.karyawan_id')
 				->get()
 				->getResultArray();
 		} else {
-			return $this->table('notakeluar')
-				->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')
-				->where('notakeluar.notakeluar_id', $id)
+			return $this->table('elektronik')
+				->join('karyawan', 'karyawan.karyawan_id = elektronik.karyawan_id')
+				->where('elektronik.elektronik_id', $id)
 				->get()
 				->getRowArray();
 		}
@@ -30,10 +30,10 @@ class ElektronikModel extends Model
 
 	public function updateData($data, $id)
 	{
-		return $this->db->table($this->table)->update($data, ['notakeluar_id' => $id]);
+		return $this->db->table($this->table)->update($data, ['elektronik_id' => $id]);
 	}
 	public function deleteData($id)
 	{
-		return $this->db->table($this->table)->delete(['notakeluar_id' => $id]);
+		return $this->db->table($this->table)->delete(['elektronik_id' => $id]);
 	}
 }

@@ -20,7 +20,7 @@ class DataAtk extends Migration
 				'type'				=> 'DATE',
 			],
 
-			'kode_inventaris'			=> [
+			'kode_inventaris'		=> [
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '255'
 			],
@@ -37,7 +37,7 @@ class DataAtk extends Migration
 
 			'satuan'				=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'UNIT','BOX'",
+				'constraint'		=> "'PC','UNIT','BOX'",
 				'default'			=> 'UNIT'
 			],
 

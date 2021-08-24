@@ -23,18 +23,20 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data ATK</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">DATA DOCUMENT MASUK</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-center">DATA ASSET </h6>
-                        <a href="<?php echo base_url('atk/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
-
+                            <h6 class="m-0 font-weight-bold text-primary text-center">LIST DATA </h6>
                         </div>
-                        <div class="card-body">
-                          <?php
+                        <div class="card-body shadow-md">
+                              <a href="<?php echo base_url('documentmasuk/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i> Data Document Masuk</a>
+                        </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <?php
                         if (!empty(session()->getFlashdata('success'))) { ?>
                             <div class="alert alert-success">
                                 <?php echo session()->getFlashdata('success'); ?>
@@ -54,40 +56,40 @@
                         <?php } ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Kode Dokumen</th>
+                                        <th>Drawing Type</th>
+                                        <th>Drawing Kode</th>
+                                        <th>Judul Dokumen</th>
+                                        <th>Vendor</th>
+                                        <th>Bahasa Dokumen</th>
+                                        <th>Status Dokumen</th>
                                         <th>Tanggal Masuk</th>
-                                        <th>Kode Inventaris</th>
-                                        <th>Nama Item</th>
-                                        <th>Merk</th>
-                                        <th>Satuan</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>Keterangan</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($atk as $key => $row) { ?>
+                                    <?php foreach ($documentmasuk as $key => $row) { ?>
                                         <tr>
                                             <td><?php echo $key + 1; ?></td>
+                                            <td><?php echo $row['kode_dokumen']; ?></td>
+                                            <td><?php echo $row['document_type']; ?></td>
+                                            <td><?php echo $row['document_number']; ?></td>
+                                            <td><?php echo $row['judul_dokumen']; ?></td>
+                                            <td><?php echo $row['vendor']; ?></td>
+                                            <td><?php echo $row['bahasa']; ?></td>
+                                            <td><?php echo $row['status_document']; ?></td>
                                             <td><?php echo $row['tanggal_masuk']; ?></td>
-                                            <td><?php echo $row['kode_inventaris']; ?></td>
-                                            <td><?php echo $row['nama_item']; ?></td>
-                                            <td><?php echo $row['merk']; ?></td>
-                                            <td><?php echo $row['satuan']; ?></td>
-                                            <td><?php echo $row['harga']; ?></td>
-                                            <td><?php echo $row['jumlah']; ?></td>
-                                            <td><?php echo $row['keterangan']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="<?php echo base_url('atk/edit/' . $row['atk_id']); ?>" class="btn btn-sm btn-success">
+                                                    <a href="<?php echo base_url('documentmasuk/edit/' . $row['documentmasuk_id']); ?>" class="btn btn-sm btn-success">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <a href="<?php echo base_url('atk/delete/' . $row['atk_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                    <a href="<?php echo base_url('documentmasuk/delete/' . $row['documentmasuk_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -98,14 +100,14 @@
                                 <tfoot>
                                     <tr>
                                         <th>No</th>
+                                        <th>Kode Dokumen</th>
+                                        <th>Drawing Type</th>
+                                        <th>Drawing Kode</th>
+                                        <th>Judul Dokumen</th>
+                                        <th>Vendor</th>
+                                        <th>Bahasa Dokumen</th>
+                                        <th>Status Dokumen</th>
                                         <th>Tanggal Masuk</th>
-                                        <th>Kode Inventaris</th>
-                                        <th>Nama Item</th>
-                                        <th>Merk</th>
-                                        <th>Satuan</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>Keterangan</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
@@ -122,13 +124,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
+           <?php echo view('_partials/footer'); ?>
             <!-- End of Footer -->
 
         </div>
@@ -144,7 +140,8 @@
 
     <?php echo view('_partials/logout'); ?>
 
-<?php echo view('_partials/script'); ?>
+<?php echo view('_partials/script') ?>
+
 </body>
 
 </html>

@@ -6,19 +6,19 @@ use CodeIgniter\Model;
 
 class AtkModel extends Model
 {
-	protected $table = 'notakeluar';
+	protected $table = 'atk';
 
 	public function getData($id = false)
 	{
 		if ($id === false) {
-			return $this->table('notakeluar')
-				->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')
+			return $this->table('atk')
+				->join('karyawan', 'karyawan.karyawan_id = atk.karyawan_id')
 				->get()
 				->getResultArray();
 		} else {
-			return $this->table('notakeluar')
-				->join('karyawan', 'karyawan.karyawan_id = notakeluar.karyawan_id')
-				->where('notakeluar.notakeluar_id', $id)
+			return $this->table('atk')
+				->join('karyawan', 'karyawan.karyawan_id = atk.karyawan_id')
+				->where('atk.atk_id', $id)
 				->get()
 				->getRowArray();
 		}
@@ -30,10 +30,10 @@ class AtkModel extends Model
 
 	public function updateData($data, $id)
 	{
-		return $this->db->table($this->table)->update($data, ['notakeluar_id' => $id]);
+		return $this->db->table($this->table)->update($data, ['atk_id' => $id]);
 	}
 	public function deleteData($id)
 	{
-		return $this->db->table($this->table)->delete(['notakeluar_id' => $id]);
+		return $this->db->table($this->table)->delete(['atk_id' => $id]);
 	}
 }
