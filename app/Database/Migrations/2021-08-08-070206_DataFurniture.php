@@ -49,7 +49,6 @@ class DataFurniture extends Migration
 				'constraint'		=> '255'
 			],
 
-
 			'karyawan_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,

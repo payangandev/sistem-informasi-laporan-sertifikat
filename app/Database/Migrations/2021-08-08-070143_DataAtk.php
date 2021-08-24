@@ -16,46 +16,35 @@ class DataAtk extends Migration
 				'auto_increment'	=> TRUE
 			],
 
-			'tanggal_masuk'			=> [
-				'type'				=> 'DATE',
-			],
-
-			'kode_inventaris'		=> [
+			'kode_barang'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '50'
 			],
 
-			'nama_item'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
-			],
 
-			'merk'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
-			],
-
-			'satuan'				=> [
+			'jenis_barang'			=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'PC','UNIT','BOX'",
-				'default'			=> 'UNIT'
+				'constraint'		=> "'Alat Tulis','Perekat','Kertas HVS','Ordner','Amplop','Stapler','Staples','Memo','Perekat','Glue Stick','Cutter','Box'",
 			],
 
-			'harga'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+			'stock_awal'			=> [
+				'type'				=> 'Int',
+				'constraint'		=> '50'
 			],
 
-			'jumlah'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+			'stock_masuk'			=> [
+				'type'				=> 'INT',
+				'constraint'		=> 50
 			],
-			'keterangan'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+			'stock_keluar'			=> [
+				'type'				=> 'INT',
+				'constraint'		=> 50
 			],
-
-
+			'stock_akhir'			=> [
+				'type'				=> 'INT',
+				'constraint'		=> 50
+			],
+			
 			'karyawan_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
