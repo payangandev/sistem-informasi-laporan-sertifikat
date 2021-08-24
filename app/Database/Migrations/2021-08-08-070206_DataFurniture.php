@@ -30,22 +30,27 @@ class DataFurniture extends Migration
 				'default'			=> 0.00
 			],
 
-			'jumlah'				=> [
+			'qty'					=> [
 				'type'				=> 'decimal',
 				'constraint'		=> '10,2',
 				'null'				=> FALSE,
 				'default'			=> 0.00
 			],
+
 			'tanggal_beli'			=> [
 				'type'				=> 'DATE',
 			],
+
+			'total'					=> [
+				'type'				=> 'decimal',
+				'constraint'		=> '10,2',
+				'null'				=> FALSE,
+				'default'			=> 0.00
+			],
+
 			'kondisi'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BARU','BEKAS'",
-			],
-			'keterangan'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
 			],
 
 			'karyawan_id'			=> [

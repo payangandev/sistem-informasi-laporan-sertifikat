@@ -20,11 +20,14 @@ class DataAtk extends Migration
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '100'
 			],
-
+			'nama_barang'			=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> '100'
+			],
 
 			'jenis_barang'			=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'Alat Tulis','Perekat','Kertas HVS','Ordner','Amplop','Stapler','Staples','Memo','Perekat','Glue Stick','Cutter','Box'",
+				'constraint'		=> "'Alat Tulis','Perekat','Kertas HVS','Ordner','Amplop','Stapler','Staples','Memo','Perekat','Cutter','Box'",
 			],
 
 			'stock_awal'			=> [

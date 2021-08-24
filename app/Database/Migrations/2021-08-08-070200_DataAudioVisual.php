@@ -38,7 +38,11 @@ class DataAudioVisual extends Migration
 				'type'				=> 'ENUM',
 				'constraint'		=> "'UNIT','BOX'",
 			],
-
+			'vol'					=>[
+				'type'				=> 'VARCHAR',
+				'constraint'		=> '100'
+			],
+			
 			'harga'					=> [
 				'type'				=> 'decimal',
 				'constraint'		=> '10,2',

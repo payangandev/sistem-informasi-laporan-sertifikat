@@ -49,7 +49,6 @@ class DataAsset extends Migration
 				'constraint'		=> '250'
 			],
 
-
 			'karyawan_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,

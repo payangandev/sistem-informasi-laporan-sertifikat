@@ -705,19 +705,19 @@ class DataManajemen extends Seeder
 				'karyawan_id'			=> 2,
 			],
 			[
-				'document_id'		=> 14,
+				'document_id'			=> 14,
 				'kode_dokumen'			=> 'DK65+432.12',
 				'document_type'			=> 'SUBGRADE',
 				'document_number'		=> 'JBHSR-1-RS-DR-14',
 				'judul_dokumen'			=> 'SUBGRADE CONSTRUCTION DRAWING DDK65+432.12-DK75+105.16',
 				'vendor'				=> 'KJB',
 				'bahasa'				=> 'ENGLISH & CHINESE',
-				'status_document'				=> 'Masuk',
+				'status_document'		=> 'Masuk',
 				'tanggal_masuk'			=> '2021-06-04',
 				'karyawan_id'			=> 2,
 			],
 			[
-				'document_id'		=> 15,
+				'document_id'			=> 15,
 				'kode_dokumen'			=> 'DK14+541.15',
 				'document_type'			=> 'SUBGRADE',
 				'document_number'		=> 'JBHSR-1-RS-DR-13',
@@ -729,19 +729,19 @@ class DataManajemen extends Seeder
 				'karyawan_id'			=> 4,
 			],
 			[
-				'document_id'		=> 16,
+				'document_id'			=> 16,
 				'kode_dokumen'			=> 'DK66+212.13',
 				'document_type'			=> 'SUBGRADE',
 				'document_number'		=> 'JBHSR-1-RS-DR-12',
 				'judul_dokumen'			=> 'SUBGRADE CONSTRUCTION DRAWING DK66+212.13+105.16',
 				'vendor'				=> 'KJB',
 				'bahasa'				=> 'ENGLISH & CHINESE',
-				'status_document'				=> 'Masuk',
+				'status_document'		=> 'Masuk',
 				'tanggal_masuk'			=> '2021-06-04',
 				'karyawan_id'			=> 4,
 			],
 			[
-				'document_id'		=> 17,
+				'document_id'			=> 17,
 				'kode_dokumen'			=> 'DK78+132.45',
 				'document_type'			=> 'BRIDGE',
 				'document_number'		=> 'JBHSR-1-RB-B-DR-004-13',
@@ -753,7 +753,7 @@ class DataManajemen extends Seeder
 				'karyawan_id'			=> 4,
 			],
 			[
-				'document_id'		=> 18,
+				'document_id'			=> 18,
 				'kode_dokumen'			=> 'DK154+312.44',
 				'document_type'			=> 'TUNNEL NO.3',
 				'document_number'		=> 'JBHSR-1-TR-DR-03-01~18',
@@ -1139,7 +1139,6 @@ class DataManajemen extends Seeder
 
 		// data kendaraan
 
-
 		$kendaraan = [
 			[
 				'kendaraan_id'		=> 1,
@@ -1288,6 +1287,665 @@ class DataManajemen extends Seeder
 		];
 		$this->db->table('kendaraan')->insertBatch($kendaraan);
 
+			// data atk
+		$atk = [
+			[
+				'atk_id'		=> 1,
+				'kode_barang'	=> 'ATK01',
+				'nama_barang'	=> 'Pulpen',
+				'jenis_barang'	=> 'Alat Tulis',
+				'stock_awal' 	=> 5,
+				'stock_masuk'	=> 15,
+				'stock_keluar'	=> 3,
+				'stock_akhir'	=> 17,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 2,
+				'kode_barang'	=> 'ATK02',
+				'nama_barang'	=> 'Pensil',
+				'jenis_barang'	=> 'Alat Tulis',				
+				'stock_awal' 	=> 10,
+				'stock_masuk'	=> 5,
+				'stock_keluar'	=> 2,
+				'stock_akhir'	=> 13,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 3,
+				'kode_barang'	=> 'ATK03',
+				'nama_barang'	=> 'Solasi',
+				'jenis_barang'	=> 'Perekat',				
+				'stock_awal' 	=> 3,
+				'stock_masuk'	=> 12,
+				'stock_keluar'	=> 5,
+				'stock_akhir'	=> 10,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 4,
+				'kode_barang'	=> 'ATK04',
+				'nama_barang'	=> 'Spidol Hitam',
+				'jenis_barang'	=> 'Alat Tulis',				
+				'stock_awal' 	=> 2,
+				'stock_masuk'	=> 10,
+				'stock_keluar'	=> 3,
+				'stock_akhir'	=> 9,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 5,
+				'kode_barang'	=> 'ATK05',
+				'nama_barang'	=> 'Kertas A4',
+				'jenis_barang'	=> 'Kertas HVS',				
+				'stock_awal' 	=> 4,
+				'stock_masuk'	=> 9,
+				'stock_keluar'	=> 2,
+				'stock_akhir'	=> 11,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 6,
+				'kode_barang'	=> 'ATK06',
+				'nama_barang'	=> 'Kertas A3',
+				'jenis_barang'	=> 'Kertas HVS',				
+				'stock_awal' 	=> 3,
+				'stock_masuk'	=> 9,
+				'stock_keluar'	=> 1,
+				'stock_akhir'	=> 11,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 7,
+				'kode_barang'	=> 'ATK07',
+				'nama_barang'	=> 'Kertas F4',
+				'jenis_barang'	=> 'Kertas HVS',				
+				'stock_awal' 	=> 5,
+				'stock_masuk'	=> 5,
+				'stock_keluar'	=> 1,
+				'stock_akhir'	=> 9,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 8,
+				'kode_barang'	=> 'ATK08',
+				'nama_barang'	=> 'Bantex Ordner',
+				'jenis_barang'	=> 'Ordner',				
+				'stock_awal' 	=> 10,
+				'stock_masuk'	=> 15,
+				'stock_keluar'	=> 7,
+				'stock_akhir'	=> 18,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 9,
+				'kode_barang'	=> 'ATK09',
+				'nama_barang'	=> 'Amplop Coklat',
+				'jenis_barang'	=> 'Amplop',				
+				'stock_awal' 	=> 5,
+				'stock_masuk'	=> 10,
+				'stock_keluar'	=> 2,
+				'stock_akhir'	=> 13,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 10,
+				'kode_barang'	=> 'ATK10',
+				'nama_barang'	=> 'Stapler',
+				'jenis_barang'	=> 'Stapler',				
+				'stock_awal' 	=> 3,
+				'stock_masuk'	=> 5,
+				'stock_keluar'	=> 3,
+				'stock_akhir'	=> 5,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 11,
+				'kode_barang'	=> 'ATK11',
+				'nama_barang'	=> 'Staples',
+				'jenis_barang'	=> 'Staples',				
+				'stock_awal' 	=> 2,
+				'stock_masuk'	=> 15,
+				'stock_keluar'	=> 2,
+				'stock_akhir'	=> 15,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 12,
+				'kode_barang'	=> 'ATK12',
+				'nama_barang'	=> 'Memo',
+				'jenis_barang'	=> 'Memo',				
+				'stock_awal' 	=> 5,
+				'stock_masuk'	=> 20,
+				'stock_keluar'	=> 15,
+				'stock_akhir'	=> 10,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 13,
+				'kode_barang'	=> 'ATK13',
+				'nama_barang'	=> 'Glue Stick',
+				'jenis_barang'	=> 'Perekat',				
+				'stock_awal' 	=> 4,
+				'stock_masuk'	=> 10,
+				'stock_keluar'	=> 7,
+				'stock_akhir'	=> 7,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 14,
+				'kode_barang'	=> 'ATK14',
+				'nama_barang'	=> 'Cutter',
+				'jenis_barang'	=> 'Cutter',				
+				'stock_awal' 	=> 4,
+				'stock_masuk'	=> 5,
+				'stock_keluar'	=> 1,
+				'stock_akhir'	=> 8,
+				'karyawan_id'	=> 5
+			],
+			[
+				'atk_id'		=> 15,
+				'kode_barang'	=> 'ATK15',
+				'nama_barang'	=> 'Box File',
+				'jenis_barang'	=> 'Box',				
+				'stock_awal' 	=> 2,
+				'stock_masuk'	=> 10,
+				'stock_keluar'	=> 4,
+				'stock_akhir'	=> 8,
+				'karyawan_id'	=> 5
+			],
+			
+		];
+		$this->db->table('atk')->insertBatch($atk);
+			
+		// data multimedia
+		$multimedia = [
+			[
+				'multimedia_id'		=> 1,
+				'tanggal_masuk'		=> '2017-11-17',
+				'kode_inventaris'	=> 'HSRCC-04.01 BEN 01.001.17',
+				'nama_item' 		=> 'Projector',
+				'merk'     			=> 'BENQ MS 527',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 3850000,
+				'jumlah' 			=> 3850000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'Meeting Room 2',
+				'karyawan_id' 		=> 3
+			],
 
-	}
+			[
+				'multimedia_id'		=> 2,
+				'tanggal_masuk'		=> '2017-11-17',
+				'kode_inventaris'	=> 'HSRCC-04.01 EPS 01.002.17',
+				'nama_item' 		=> 'Projector',
+				'merk'     			=> 'EPSON EB-X450',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 6000000,
+				'jumlah' 			=> 6000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'Ground Floor',
+				'karyawan_id' 		=> 3
+			],
+			
+			[
+				'multimedia_id'		=> 3,
+				'tanggal_masuk'		=> '2018-04-18',
+				'kode_inventaris'	=> 'HSRCC-04.01 INF 01.003.18',
+				'nama_item' 		=> 'Projector',
+				'merk'     			=> 'INFOCUS IN 112X',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 4000000,
+				'jumlah' 			=> 4000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'Meeting Room 4',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'multimedia_id'		=> 4,
+				'tanggal_masuk'		=> '2019-12-02',
+				'kode_inventaris'	=> 'HSRCC-04.01 EPS 01.004.19',
+				'nama_item' 		=> 'Projector',
+				'merk'     			=> 'EPSON EB - U42',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 11350000,
+				'jumlah' 			=> 11350000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'Meeting Room 1',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'multimedia_id'		=> 5,
+				'tanggal_masuk'		=> '2018-12-07',
+				'kode_inventaris'	=> 'HSRCC-04.02 LET 01.001.18',
+				'nama_item' 		=> 'Screen',
+				'merk'     			=> 'Letaec',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 325000,
+				'jumlah' 			=> 325000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'Meeting Room 2',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'multimedia_id'		=> 6,
+				'tanggal_masuk'		=> '2018-12-07',
+				'kode_inventaris'	=> 'HSRCC-04.02 LET 01.002.18',
+				'nama_item' 		=> 'Screen',
+				'merk'     			=> 'HQ',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 10500000,
+				'jumlah' 			=> 10500000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'Meeting Room 1',
+				'karyawan_id' 		=> 3
+			],
+			
+			[
+				'multimedia_id'		=> 7,
+				'tanggal_masuk'		=> '2019-01-03',
+				'kode_inventaris'	=> 'HSRCC-04.03 CAN 01.001.19',
+				'nama_item' 		=> 'Kamera DSLR',
+				'merk'     			=> 'CANON 4000D',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 6900000,
+				'jumlah' 			=> 6900000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'Mr. Zhang Shibin',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'multimedia_id'		=> 8,
+				'tanggal_masuk'		=> '2019-01-03',
+				'kode_inventaris'	=> 'HSRCC-04.03 CAN 01.001.19',
+				'nama_item' 		=> 'Kamera Digital',
+				'merk'     			=> 'FUJI FILM X-A10',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 69500000,
+				'jumlah' 			=> 69500000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'QSHE',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'multimedia_id'		=> 9,
+				'tanggal_masuk'		=> '2019-01-03',
+				'kode_inventaris'	=> 'HSRCC-04.03 DJI 01.003.20',
+				'nama_item' 		=> 'Drone',
+				'merk'     			=> 'DJI Mavic 2 Pro',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> 1,
+				'harga' 			=> 22500000,
+				'jumlah' 			=> 22500000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HC and GA',
+				'karyawan_id' 		=> 3
+			],
+
+		];
+		$this->db->table('multimedia')->insertBatch($multimedia);
+			
+		// data audiovisual
+		$audiovisual = [
+			[
+					'audiovisual_id'    => 1,
+					'tanggal_masuk'		=> '2019-01-03',
+					'kode_inventaris'	=> 'HSRCC-03.01 01 01.001.17',
+					'nama_item' 		=> 'Micropone',
+					'merk'     			=> 'Shure SM57',
+					'satuan' 			=> 'UNIT',
+					'vol'				=> 1,
+					'harga' 			=> 1440000,
+					'jumlah' 			=> 1440000,
+					'kondisi' 			=> 'BARU',
+					'keterangan' 		=> 'Meeting Room 1',
+					'karyawan_id' 		=> 3
+			],
+			
+			[
+					'audiovisual_id'    => 2,
+					'tanggal_masuk'		=> '2019-01-03',
+					'kode_inventaris'	=> 'HSRCC-03.02 01 01.002.17',
+					'nama_item' 		=> 'Speaker',
+					'merk'     			=> 'Harman Kardon',
+					'satuan' 			=> 'UNIT',
+					'vol'				=> 1,
+					'harga' 			=> 2399000,
+					'jumlah' 			=> 2399000,
+					'kondisi' 			=> 'BARU',
+					'keterangan' 		=> 'Meeting Room 1',
+					'karyawan_id' 		=> 3
+			],
+		];
+		$this->db->table('audiovisual')->insertBatch($audiovisual);
+			
+		// data furniture 
+		$furniture = [
+			[
+				'furniture_id' 		=> 1,
+				'nama_item' 		=> 'Meja Direktur',
+				'kode'     			=> 'HSRCC-03.02 01 01.001.17',
+				'harga' 			=> 5000000,
+				'qty'     			=> 2,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 10000000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+
+			[
+				'furniture_id' 		=> 2,
+				'nama_item' 		=> 'Meja Junior Direktur',
+				'kode'     			=> 'HSRCC-03.02 01 01.002.17',
+				'harga' 			=> 3000000,
+				'qty'     			=> 1,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 3000000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+
+			[
+				'furniture_id' 		=> 3,
+				'nama_item' 		=> 'Meja General Manager Direktur',
+				'kode'     			=> 'HSRCC-03.02 01 01.003.17',
+				'harga' 			=> 2500000,
+				'qty'     			=> 6,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 15000000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+
+			[
+				'furniture_id' 		=> 4,
+				'nama_item' 		=> 'Meja Manajer',
+				'kode'     			=> 'HSRCC-03.02 01 01.004.17',
+				'harga' 			=> 5000000,
+				'qty'     			=> 2,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 19000000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+
+			[
+				'furniture_id' 		=> 5,
+				'nama_item' 		=> 'Meja Staff',
+				'kode'     			=> 'HSRCC-03.02 01 01.005.17',
+				'harga' 			=> 750000,
+				'qty'     			=> 41,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 30750000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+						[
+				'furniture_id' 		=> 6,
+				'nama_item' 		=> 'Kursi Direktur',
+				'kode'     			=> 'HSRCC-03.02 01 01.006.17',
+				'harga' 			=> 2200000,
+				'qty'     			=> 4,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 4400000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+						[
+				'furniture_id' 		=> 7,
+				'nama_item' 		=> 'Kursi Junior Direktur',
+				'kode'     			=> 'HSRCC-03.02 01 01.007.17',
+				'harga' 			=> 1800000,
+				'qty'     			=> 2,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 1800000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+						[
+				'furniture_id' 		=> 8,
+				'nama_item' 		=> 'Kursi General Manager',
+				'kode'     			=> 'HSRCC-03.02 01 01.008.17',
+				'harga' 			=> 1500000,
+				'qty'     			=> 6,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 9000000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+						[
+				'furniture_id' 		=> 9,
+				'nama_item' 		=> 'Kursi Staff',
+				'kode'     			=> 'HSRCC-03.02 01 01.009.17',
+				'harga' 			=> 850000,
+				'qty'     			=> 151,
+				'tanggal_beli'     	=> "2017-02-03",
+				'total'				=> 128350000,
+				'kondisi' 			=> 'BARU',
+				'karyawan_id' 		=> 3,
+			],
+		];
+		$this->db->table('furniture')->insertBatch($furniture);
+			
+		// data asset
+		$asset = [
+			[
+				'asset_id' 			=> 1,
+				'nama_kendaraan'    => 'Toyota Fortuner VRZ AT DIESEL LUX',
+				'tanggal_masuk' 	=> '2017-11-24',
+				'unit' 				=> 2,
+				'harga' 			=> 519500000,
+				'jumlah' 			=> 1039000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			],
+						
+			[
+				'asset_id' 			=> 2,
+				'nama_kendaraan'    => 'Toyota Innova V AT BENSIN LUX',
+				'tanggal_masuk' 	=> '2017-11-24',
+				'unit' 				=> 1,
+				'harga' 			=> 370200000,
+				'jumlah' 			=> 370200000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			], 
+						
+			[
+				'asset_id' 			=> 3,
+				'nama_kendaraan'    => 'Toyota Innova V MT BENSIN LUX',
+				'tanggal_masuk' 	=> '2017-11-24',
+				'unit' 				=> 2,
+				'harga' 			=> 350400000,
+				'jumlah' 			=> 700800000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			], 
+						
+			[
+				'asset_id' 			=> 4,
+				'nama_kendaraan'    => 'Toyota Innova G MT BENSIN LUX',
+				'tanggal_masuk' 	=> '2017-11-24',
+				'unit' 				=> 1,
+				'harga' 			=> 303100000,
+				'jumlah' 			=> 303100000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			],
+						
+			[
+				'asset_id' 			=> 5,
+				'nama_kendaraan'    => 'Isuzu ELF NKR 55LWB',
+				'tanggal_masuk' 	=> '2017-11-29',
+				'unit' 				=> 1,
+				'harga' 			=> 350000000,
+				'jumlah' 			=> 350000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			], 
+						
+			[
+				'asset_id' 			=> 6,
+				'nama_kendaraan'    => 'Isuzu ELF',
+				'tanggal_masuk' 	=> '2018-05-01',
+				'unit' 				=> 1,
+				'harga' 			=> 386300000,
+				'jumlah' 			=> 386300000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			], 
+				
+			[
+				'asset_id' 			=> 7,
+				'nama_kendaraan'    => 'Toyota Innova G MT BENSIN LUX',
+				'tanggal_masuk' 	=> '2018-08-31',
+				'unit' 				=> 2,
+				'harga' 			=> 305150000,
+				'jumlah' 			=> 610300000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			], 
+			
+			[
+				'asset_id' 			=> 8,
+				'nama_kendaraan'    => 'Honda Vario 125 cc AT',
+				'tanggal_masuk' 	=> '2019-04-15',
+				'unit' 				=> 1,
+				'harga' 			=> 18000000,
+				'jumlah' 			=> 18000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			], 
+						
+			[
+				'asset_id' 			=> 9,
+				'nama_kendaraan'    => 'Honda Beat 110 cc AT',
+				'tanggal_masuk' 	=> '2019-04-15',
+				'unit' 				=> 1,
+				'harga' 			=> 15000000,
+				'jumlah' 			=> 15000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			], 
+			
+		];
+		$this->db->table('asset')->insertBatch($asset);
+			
+		// data elektronik 
+		$elektronik = [
+			[
+				'elektronik_id' 	=> 1,
+				'tanggal_masuk' 	=> '2018-04-15',
+				'kode_inventaris'	=> 'HSRCC-02.01 01 01.006.18',
+				'nama_item'    		=> 'Personal Computer',
+				'merk' 				=> 'CPU core i3',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> '20',
+				'harga' 			=> 6800000,
+				'jumlah' 			=> 136000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'elektronik_id' 	=> 2,
+				'tanggal_masuk' 	=> '2018-04-16',
+				'kode_inventaris'	=> 'HSRCC-02.01 02 01.001.18',
+				'nama_item'    		=> 'Laptop',
+				'merk' 				=> 'Dell Inspiron (Core i5)',
+				'satuan' 			=> 'UNIT',
+				"vol"				=> '20',
+				'harga' 			=> 12450000,
+				'jumlah' 			=> 249000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'elektronik_id' 	=> 3,
+				'tanggal_masuk' 	=> '2018-04-17',
+				'kode_inventaris'	=> 'HSRCC-02.01 03 01.007.18',
+				'nama_item'    		=> 'Printer',
+				'merk' 				=> 'Epson L120',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> '10',
+				'harga' 			=> 1600000,
+				'jumlah' 			=> 16000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'elektronik_id' 	=> 4,
+				'tanggal_masuk' 	=> '2018-04-18',
+				'kode_inventaris'	=> 'HSRCC-02.01 04 01.010.18',
+				'nama_item'    		=> 'Monitor',
+				'merk' 				=> 'Dell',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> '20',
+				'harga' 			=> 1200000,
+				'jumlah' 			=> 24000000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'elektronik_id' 	=> 5,
+				'tanggal_masuk' 	=> '2018-04-25',
+				'kode_inventaris'	=> 'HSRCC-02.02 01 01.010.18',
+				'nama_item'    		=> 'AC',
+				'merk' 				=> 'LG',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> '5',
+				'harga' 			=> 3500000,
+				'jumlah' 			=> 17500000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			],
+
+			[
+				'elektronik_id' 	=> 6,
+				'tanggal_masuk' 	=> '2019-08-04',
+				'kode_inventaris'	=> 'HSRCC-02.02 01 01.010.19',
+				'nama_item'    		=> 'TV',
+				'merk' 				=> 'Samsung Smart TV 32"',
+				'satuan' 			=> 'UNIT',
+				'vol'				=> '3',
+				'harga' 			=> 2500000,
+				'jumlah' 			=> 7500000,
+				'kondisi' 			=> 'BARU',
+				'keterangan' 		=> 'HSRCC',
+				'karyawan_id' 		=> 3
+			],
+		];
+
+		$this->db->table('elektronik')->insertBatch($elektronik);
+		}
 }

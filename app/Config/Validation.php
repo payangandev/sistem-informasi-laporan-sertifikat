@@ -352,6 +352,7 @@ class Validation
 	public $atk = [
 		'karyawan_id'			=> 'required',
 		'kode_barang'			=> 'required',
+		'nama_barang'			=> 'required',
 		'jenis_barang'     		=> 'required',
 		'stok_awal'     		=> 'required',
 		'stok_masuk'     		=> 'required',
@@ -366,6 +367,9 @@ class Validation
 		],
 		'kode_barang'     	=> [
 			'required'		=> ' Kode Barang Wajib Di isi'
+		],
+		'nama_barang'     	=> [
+			'required'		=> ' Nama Barang Wajib Di isi'
 		],
 		'jenis_barang'     	=> [
 			'required'		=> ' Jenis Barang Wajib Di isi'
@@ -387,6 +391,7 @@ class Validation
 	// validasi untuk data audiovisual
 	public $audiovisual = [
 		'karyawan_id'     	=> 'required',
+		'vol'     			=> 'required',
 		'nama_item'			=> 'required',
 		'tanggal_masuk'		=> 'required',
 		'kode_inventaris'   => 'required',
@@ -405,6 +410,9 @@ class Validation
 		],
 		'nama_item'   		=> [
 			'required'		=> ' Nama Item Wajib Di isi'
+		],
+		'vol'   			=> [
+			'required'		=> ' Vol Wajib Di isi'
 		],
 		'tanggal_masuk'     => [
 			'required'		=> ' Tanggal Masuk  Wajib Di isi'
@@ -435,6 +443,7 @@ class Validation
 	// validasi untuk data elektronik
 	public $elektronik = [
 		'karyawan_id'     	=> 'required',
+		'vol'     			=> 'required',
 		'nama_item'			=> 'required',
 		'tanggal_masuk'		=> 'required',
 		'kode_inventaris'   => 'required',
@@ -453,6 +462,9 @@ class Validation
 		],
 		'nama_item'   		=> [
 			'required'		=> ' Nama Item Wajib Di isi'
+		],
+		'vol'   			=> [
+			'required'		=> ' vol Item Wajib Di isi'
 		],
 		'tanggal_masuk'     => [
 			'required'		=> ' Tanggal Masuk  Wajib Di isi'
@@ -487,10 +499,10 @@ class Validation
 		'nama'				=> 'required',
 		'kode'				=> 'required',
 		'harga'   			=> 'required',
-		'jumlah'     		=> 'required',
+		'qty'     			=> 'required',
 		'tanggal_beli'     	=> 'required',
+		'total'     		=> 'required',
 		'kondisi'     		=> 'required',
-		'keterangan'     	=> 'required',
 
 	];
 
@@ -507,8 +519,8 @@ class Validation
 		'harga'  			=> [
 			'required'		=> ' Harga Furniture Wajib Di isi'
 		],
-		'jumlah'   			=> [
-			'required'		=> ' Jumlah Furniture Wajib Di isi'
+		'qty'   			=> [
+			'required'		=> ' Qty Furniture Wajib Di isi'
 		],
 		'tanggal_beli'   	=> [
 			'required'		=> ' Tanggal Beli Furniture Wajib Di isi'
@@ -516,8 +528,8 @@ class Validation
 		'kondisi'   		=> [
 			'required'		=> ' Kondisi Furniture  Wajib Di isi'
 		],
-		'keterangan'   		=> [
-			'required'		=> ' Keterangan Furniture  Wajib Di isi'
+		'total'   		=> [
+			'required'		=> ' Total Furniture  Wajib Di isi'
 		],
 	];
 
@@ -572,6 +584,7 @@ class Validation
 	// validasi untuk data multimedia
 		public $multimedia = [
 		'karyawan_id'     	=> 'required',
+		'vol'     			=> 'required',
 		'nama_item'			=> 'required',
 		'tanggal_masuk'		=> 'required',
 		'kode_inventaris'   => 'required',
@@ -599,6 +612,9 @@ class Validation
 		],
 		'merk'   			=> [
 			'required'		=> ' Merk Wajib Di isi'
+		],
+		'vol'   			=> [
+			'required'		=> ' Vol Wajib Di isi'
 		],
 		'satuan'   			=> [
 			'required'		=> ' Satuan Wajib Di isi'

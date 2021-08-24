@@ -39,6 +39,11 @@ class DataMultimedia extends Migration
 				'constraint'		=> "'UNIT','BOX'",
 			],
 
+			'vol'					=> [
+				'type'				=> 'INT',
+				'constraint'		=> 50
+			],
+
 			'harga'					=> [
 				'type'				=> 'decimal',
 				'constraint'		=> '10,2',
