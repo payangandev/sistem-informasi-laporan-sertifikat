@@ -73,13 +73,14 @@ public function __construct()
 		}
 		$validation =  \Config\Services::validation();
 		$data = array(
-			'kode_nota'        		=> $this->request->getPost('kode_nota'),
-			'vendor'    			=> $this->request->getPost('vendor'),
-			'nama_barang'         	=> $this->request->getPost('nama_barang'),
-			'jumlah_barang'         => $this->request->getPost('jumlah_barang'),
-			'status_document'       => $this->request->getPost('status_document'),
-			'tanggal_keluar'        => $this->request->getPost('tanggal_keluar'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
+			'kode_barang'        		=> $this->request->getPost('kode_barang'),
+			'nama_barang'    			=> $this->request->getPost('nama_barang'),
+			'jenis_barang'         		=> $this->request->getPost('jenis_barang'),
+			'stock_awal'         		=> $this->request->getPost('stock_awal'),
+			'stock_masuk'       		=> $this->request->getPost('stock_masuk'),
+			'stock_keluar'        		=> $this->request->getPost('stock_keluar'),
+			'stock_akhir'        		=> $this->request->getPost('stock_akhir'),
+			'karyawan_id'        		=> $this->request->getPost('karyawan_id'),
 
 		);
 
@@ -123,13 +124,14 @@ public function __construct()
 		$validation =  \Config\Services::validation();
 
 		$data = array(
-			'kode_nota'        		=> $this->request->getPost('kode_nota'),
-			'vendor'    			=> $this->request->getPost('vendor'),
-			'nama_barang'         	=> $this->request->getPost('nama_barang'),
-			'jumlah_barang'         => $this->request->getPost('jumlah_barang'),
-			'status_document'       => $this->request->getPost('status_document'),
-			'tanggal_keluar'        => $this->request->getPost('tanggal_keluar'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
+			'kode_barang'        		=> $this->request->getPost('kode_barang'),
+			'nama_barang'    			=> $this->request->getPost('nama_barang'),
+			'jenis_barang'         		=> $this->request->getPost('jenis_barang'),
+			'stock_awal'         		=> $this->request->getPost('stock_awal'),
+			'stock_masuk'       		=> $this->request->getPost('stock_masuk'),
+			'stock_keluar'        		=> $this->request->getPost('stock_keluar'),
+			'stock_akhir'        		=> $this->request->getPost('stock_akhir'),
+			'karyawan_id'        		=> $this->request->getPost('karyawan_id'),
 
 		);
 		if ($validation->run($data, 'atk') == FALSE) {

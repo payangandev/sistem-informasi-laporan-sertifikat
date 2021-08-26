@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\KaryawanModel;
+use App\Models\KendaraanModel;
 
 class KendaraanController extends BaseController
 {
@@ -71,12 +73,15 @@ class KendaraanController extends BaseController
 		}
 		$validation =  \Config\Services::validation();
 		$data = array(
-			'kode_nota'        		=> $this->request->getPost('kode_nota'),
-			'vendor'    			=> $this->request->getPost('vendor'),
-			'nama_barang'         	=> $this->request->getPost('nama_barang'),
-			'jumlah_barang'         => $this->request->getPost('jumlah_barang'),
-			'status_document'       => $this->request->getPost('status_document'),
-			'tanggal_keluar'        => $this->request->getPost('tanggal_keluar'),
+			'tanggal_masuk'        	=> $this->request->getPost('tanggal_masuk'),
+			'kode_inventaris'    	=> $this->request->getPost('kode_inventaris'),
+			'nama_item'         	=> $this->request->getPost('nama_item'),
+			'merek'         		=> $this->request->getPost('merek'),
+			'satuan'       			=> $this->request->getPost('satuan'),
+			'harga'        			=> $this->request->getPost('harga'),
+			'jumlah'        		=> $this->request->getPost('jumlah'),
+			'kondisi'        		=> $this->request->getPost('kondisi'),
+			'keterangan'        	=> $this->request->getPost('keterangan'),
 			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
 
 		);
@@ -121,12 +126,15 @@ class KendaraanController extends BaseController
 		$validation =  \Config\Services::validation();
 
 		$data = array(
-			'kode_nota'        		=> $this->request->getPost('kode_nota'),
-			'vendor'    			=> $this->request->getPost('vendor'),
-			'nama_barang'         	=> $this->request->getPost('nama_barang'),
-			'jumlah_barang'         => $this->request->getPost('jumlah_barang'),
-			'status_document'       => $this->request->getPost('status_document'),
-			'tanggal_keluar'        => $this->request->getPost('tanggal_keluar'),
+			'tanggal_masuk'        	=> $this->request->getPost('tanggal_masuk'),
+			'kode_inventaris'    	=> $this->request->getPost('kode_inventaris'),
+			'nama_item'         	=> $this->request->getPost('nama_item'),
+			'merek'         		=> $this->request->getPost('merek'),
+			'satuan'       			=> $this->request->getPost('satuan'),
+			'harga'        			=> $this->request->getPost('harga'),
+			'jumlah'        		=> $this->request->getPost('jumlah'),
+			'kondisi'        		=> $this->request->getPost('kondisi'),
+			'keterangan'        	=> $this->request->getPost('keterangan'),
 			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
 
 		);

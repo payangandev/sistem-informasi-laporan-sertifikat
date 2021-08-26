@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\KaryawanModel;
+use App\Models\FurnitureModel;
 
 class FurnitureController extends BaseController
 {
@@ -71,13 +73,14 @@ public function __construct()
 		}
 		$validation =  \Config\Services::validation();
 		$data = array(
-			'kode_nota'        		=> $this->request->getPost('kode_nota'),
-			'vendor'    			=> $this->request->getPost('vendor'),
-			'nama_barang'         	=> $this->request->getPost('nama_barang'),
-			'jumlah_barang'         => $this->request->getPost('jumlah_barang'),
-			'status_document'       => $this->request->getPost('status_document'),
-			'tanggal_keluar'        => $this->request->getPost('tanggal_keluar'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
+			'nama_item'        	=> $this->request->getPost('nama_item'),
+			'kode'    			=> $this->request->getPost('kode'),
+			'harga'         	=> $this->request->getPost('harga'),
+			'qty'        		=> $this->request->getPost('qty'),
+			'tanggal_beli'      => $this->request->getPost('tanggal_beli'),
+			'total'        		=> $this->request->getPost('total'),
+			'kondisi'        	=> $this->request->getPost('kondisi'),
+			'karyawan_id'       => $this->request->getPost('karyawan_id'),
 
 		);
 
@@ -121,13 +124,14 @@ public function __construct()
 		$validation =  \Config\Services::validation();
 
 		$data = array(
-			'kode_nota'        		=> $this->request->getPost('kode_nota'),
-			'vendor'    			=> $this->request->getPost('vendor'),
-			'nama_barang'         	=> $this->request->getPost('nama_barang'),
-			'jumlah_barang'         => $this->request->getPost('jumlah_barang'),
-			'status_document'       => $this->request->getPost('status_document'),
-			'tanggal_keluar'        => $this->request->getPost('tanggal_keluar'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
+			'nama_item'        	=> $this->request->getPost('nama_item'),
+			'kode'    			=> $this->request->getPost('kode'),
+			'harga'         	=> $this->request->getPost('harga'),
+			'qty'        		=> $this->request->getPost('qty'),
+			'tanggal_beli'      => $this->request->getPost('tanggal_beli'),
+			'total'        		=> $this->request->getPost('total'),
+			'kondisi'        	=> $this->request->getPost('kondisi'),
+			'karyawan_id'       => $this->request->getPost('karyawan_id'),
 
 		);
 		if ($validation->run($data, 'furniture') == FALSE) {

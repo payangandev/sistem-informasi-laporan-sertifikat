@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\KaryawanModel;
+use App\Models\AssetModel;
 
 class AssetController extends BaseController
 {
@@ -25,9 +27,9 @@ public function __construct()
 
 		// paginate
 		$paginate = 1000000;
-		$data['asset']   = $this->asset_model->join('karyawan', 'karyawan.karyawan_id = asset.karyawan_id')->paginate($paginate, 'asset');
-		$data['pager']        = $this->asset_model->pager;
-		$data['currentPage']  = $currentPage;
+		$data['asset']   		= $this->asset_model->join('karyawan', 'karyawan.karyawan_id = asset.karyawan_id')->paginate($paginate, 'asset');
+		$data['pager']        	= $this->asset_model->pager;
+		$data['currentPage']  	= $currentPage;
 		echo view('asset/index', $data);
 	}
 
@@ -71,13 +73,14 @@ public function __construct()
 		}
 		$validation =  \Config\Services::validation();
 		$data = array(
-			'kode_nota'        		=> $this->request->getPost('kode_nota'),
-			'vendor'    			=> $this->request->getPost('vendor'),
-			'nama_barang'         	=> $this->request->getPost('nama_barang'),
-			'jumlah_barang'         => $this->request->getPost('jumlah_barang'),
-			'status_document'       => $this->request->getPost('status_document'),
-			'tanggal_keluar'        => $this->request->getPost('tanggal_keluar'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
+			'nama_kendaraan'        	=> $this->request->getPost('nama_kendaraan'),
+			'tanggal_masuk'    			=> $this->request->getPost('tanggal_masuk'),
+			'unit'         				=> $this->request->getPost('unit'),
+			'harga'         			=> $this->request->getPost('harga'),
+			'jumlah'       				=> $this->request->getPost('jumlah'),
+			'kondisi'       		 	=> $this->request->getPost('kondisi'),
+			'keterangan'        		=> $this->request->getPost('keterangan'),
+			'karyawan_id'        		=> $this->request->getPost('karyawan_id'),
 
 		);
 
@@ -121,14 +124,14 @@ public function __construct()
 		$validation =  \Config\Services::validation();
 
 		$data = array(
-			'kode_nota'        		=> $this->request->getPost('kode_nota'),
-			'vendor'    			=> $this->request->getPost('vendor'),
-			'nama_barang'         	=> $this->request->getPost('nama_barang'),
-			'jumlah_barang'         => $this->request->getPost('jumlah_barang'),
-			'status_document'       => $this->request->getPost('status_document'),
-			'tanggal_keluar'        => $this->request->getPost('tanggal_keluar'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
-
+			'nama_kendaraan'        	=> $this->request->getPost('nama_kendaraan'),
+			'tanggal_masuk'    			=> $this->request->getPost('tanggal_masuk'),
+			'unit'         				=> $this->request->getPost('unit'),
+			'harga'         			=> $this->request->getPost('harga'),
+			'jumlah'       				=> $this->request->getPost('jumlah'),
+			'kondisi'       		 	=> $this->request->getPost('kondisi'),
+			'keterangan'        		=> $this->request->getPost('keterangan'),
+			'karyawan_id'        		=> $this->request->getPost('karyawan_id'),
 		);
 		if ($validation->run($data, 'asset') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
