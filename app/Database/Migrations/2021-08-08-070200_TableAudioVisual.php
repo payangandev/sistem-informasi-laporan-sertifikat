@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DataAudioVisual extends Migration
+class TableAudioVisual extends Migration
 {
 	public function up()
 	{

@@ -4,28 +4,46 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DataAsset extends Migration
+class TableMultimedia extends Migration
 {
 	public function up()
 	{
 		$this->forge->addField([
-			'asset_id'		=> [
+			'multimedia_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
 				'auto_increment'	=> TRUE
 			],
-			'nama_kendaraan'		=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
-			],
 			'tanggal_masuk'			=> [
 				'type'				=> 'DATE',
 			],
-			'unit'				    => [
+
+			'kode_inventaris'		=> [
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '100'
 			],
+
+			'nama_item'				=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> '100'
+			],
+
+			'merk'					=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> '100'
+			],
+
+			'satuan'				=> [
+				'type'				=> 'ENUM',
+				'constraint'		=> "'UNIT','BOX'",
+			],
+
+			'vol'					=> [
+				'type'				=> 'INT',
+				'constraint'		=> 50
+			],
+
 			'harga'					=> [
 				'type'				=> 'decimal',
 				'constraint'		=> '10,2',
@@ -39,14 +57,13 @@ class DataAsset extends Migration
 				'null'				=> FALSE,
 				'default'			=> 0.00
 			],
-
 			'kondisi'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BARU','BEKAS'",
 			],
 			'keterangan'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '250'
+				'constraint'		=> '255'
 			],
 
 			'karyawan_id'			=> [
@@ -58,13 +75,13 @@ class DataAsset extends Migration
 		]);
 
 
-		$this->forge->addKey('asset_id', true);
+		$this->forge->addKey('multimedia_id', true);
 		$this->forge->addForeignKey('karyawan_id', 'karyawan', 'karyawan_id', 'cascade', 'cascade');
-		$this->forge->createTable('asset', true);
+		$this->forge->createTable('multimedia', true);
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('asset', true);
+		$this->forge->dropTable('multimedia', true);
 	}
 }

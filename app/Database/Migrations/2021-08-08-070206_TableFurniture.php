@@ -4,42 +4,25 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DataKendaraan extends Migration
+class TableFurniture extends Migration
 {
 	public function up()
 	{
 		$this->forge->addField([
-			'kendaraaan_id'			=> [
+			'furniture_id'		=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
 				'auto_increment'	=> TRUE
 			],
-			'tanggal_masuk'			=> [
-				'type'				=> 'DATE',
-			],
-
-			'kode_inventaris'			=> [
+			'nama_item'					=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
+				'constraint'		=> '255'
 			],
-
-			'nama_item'				=> [
+			'kode'					=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
+				'constraint'		=> '255'
 			],
-
-			'merk'					=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
-			],
-
-			'satuan'				=> [
-				'type'				=> 'ENUM',
-				'constraint'		=> "'UNIT','BOX'",
-				'default'			=> 'UNIT'
-			],
-
 			'harga'					=> [
 				'type'				=> 'decimal',
 				'constraint'		=> '10,2',
@@ -47,7 +30,18 @@ class DataKendaraan extends Migration
 				'default'			=> 0.00
 			],
 
-			'jumlah'				=> [
+			'qty'					=> [
+				'type'				=> 'decimal',
+				'constraint'		=> '10,2',
+				'null'				=> FALSE,
+				'default'			=> 0.00
+			],
+
+			'tanggal_beli'			=> [
+				'type'				=> 'DATE',
+			],
+
+			'total'					=> [
 				'type'				=> 'decimal',
 				'constraint'		=> '10,2',
 				'null'				=> FALSE,
@@ -59,11 +53,6 @@ class DataKendaraan extends Migration
 				'constraint'		=> "'BARU','BEKAS'",
 			],
 
-			'keterangan'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '250'
-			],
-
 			'karyawan_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
@@ -73,13 +62,13 @@ class DataKendaraan extends Migration
 		]);
 
 
-		$this->forge->addKey('kendaraaan_id', true);
+		$this->forge->addKey('furniture_id', true);
 		$this->forge->addForeignKey('karyawan_id', 'karyawan', 'karyawan_id', 'cascade', 'cascade');
-		$this->forge->createTable('kendaraan', true);
+		$this->forge->createTable('furniture', true);
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('kendaraan', true);
+		$this->forge->dropTable('furniture', true);
 	}
 }

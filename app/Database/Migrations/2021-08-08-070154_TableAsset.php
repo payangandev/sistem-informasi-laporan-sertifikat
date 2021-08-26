@@ -4,45 +4,28 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DataElektronik extends Migration
+class TableAsset extends Migration
 {
 	public function up()
 	{
 		$this->forge->addField([
-			'elektronik_id'			=> [
+			'asset_id'		=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
 				'auto_increment'	=> TRUE
 			],
+			'nama_kendaraan'		=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> '100'
+			],
 			'tanggal_masuk'			=> [
 				'type'				=> 'DATE',
 			],
-
-			'kode_inventaris'		=> [
+			'unit'				    => [
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '100'
 			],
-
-			'nama_item'				=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
-			],
-
-			'merk'					=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
-			],
-
-			'satuan'				=> [
-				'type'				=> 'ENUM',
-				'constraint'		=> "'UNIT','BOX'",
-			],
-			'vol'					=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
-			],
-
 			'harga'					=> [
 				'type'				=> 'decimal',
 				'constraint'		=> '10,2',
@@ -56,14 +39,16 @@ class DataElektronik extends Migration
 				'null'				=> FALSE,
 				'default'			=> 0.00
 			],
+
 			'kondisi'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'BARU','BEKAS'",
 			],
 			'keterangan'			=> [
 				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
+				'constraint'		=> '250'
 			],
+
 			'karyawan_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
@@ -73,13 +58,13 @@ class DataElektronik extends Migration
 		]);
 
 
-		$this->forge->addKey('elektronik_id', true);
+		$this->forge->addKey('asset_id', true);
 		$this->forge->addForeignKey('karyawan_id', 'karyawan', 'karyawan_id', 'cascade', 'cascade');
-		$this->forge->createTable('elektronik', true);
+		$this->forge->createTable('asset', true);
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('elektronik', true);
+		$this->forge->dropTable('asset', true);
 	}
 }

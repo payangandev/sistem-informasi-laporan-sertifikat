@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DaftarNotaKeluarSchema extends Migration
+class TableNotaMasukSchema extends Migration
 {
 	public function up()
 	{
 		$this->forge->addField([
-			'notakeluar_id'		=> [
+			'notamasuk_id'		=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
@@ -31,11 +31,12 @@ class DaftarNotaKeluarSchema extends Migration
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '100'
 			],
-			'status_document'				=> [
+			'status_document'		=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'Masuk','Keluar'",
+				'default'			=> 'Masuk'
 			],
-			'tanggal_keluar'		=> [
+			'tanggal_masuk'			=> [
 				'type'				=> 'DATE',
 			],
 			'karyawan_id'			=> [
@@ -47,13 +48,13 @@ class DaftarNotaKeluarSchema extends Migration
 
 		]);
 
-		$this->forge->addKey('notakeluar_id', true);
+		$this->forge->addKey('notamasuk_id', true);
 		$this->forge->addForeignKey('karyawan_id', 'karyawan', 'karyawan_id', 'cascade', 'cascade');
-		$this->forge->createTable('notakeluar', true);
+		$this->forge->createTable('notamasuk', true);
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('notakeluar', true);
+		$this->forge->dropTable('notamasuk', true);
 	}
 }

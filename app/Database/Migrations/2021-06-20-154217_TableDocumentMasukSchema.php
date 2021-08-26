@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DaftarDocumentKeluarSchema extends Migration
+class TableDocumentMasukSchema extends Migration
 {
 	public function up()
 	{
 		$this->forge->addField([
-			'document_keluar_id'	=> [
+			'documentmasuk_id'		=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
@@ -32,39 +32,24 @@ class DaftarDocumentKeluarSchema extends Migration
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '100'
 			],
-			'nomer_box'				=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
-			],
-			'isi_box'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '100'
-			],
-			'tanggal_keluar'		=> [
-				'type'				=> 'DATE',
-			],
 			'vendor'				=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'KCIC','CREC','CRDC','CDJO'",
+				'constraint'		=> "'KJB','HSRCC'",
 			],
 			'bahasa'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'ENGLISH & CHINESE','ENGLISH','CHINESE'",
 			],
-			'approved'				=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '255'
-			],
-			'jabatan'				=> [
-				'type'				=> 'ENUM',
-				'constraint'		=> "'MANAGER','STAFF','TRANSLATOR'",
-			],
 
 			'status_document'		=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'Masuk','Keluar'",
+				'default'			=> 'Masuk'
 			],
-			'karyawan_id'			 => [
+			'tanggal_masuk'			=> [
+				'type'				=> 'DATE',
+			],
+			'karyawan_id'			=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
@@ -73,13 +58,13 @@ class DaftarDocumentKeluarSchema extends Migration
 		]);
 
 
-		$this->forge->addKey('document_keluar_id', true);
+		$this->forge->addKey('documentmasuk_id', true);
 		$this->forge->addForeignKey('karyawan_id', 'karyawan', 'karyawan_id', 'cascade', 'cascade');
-		$this->forge->createTable('documentkeluar', true);
+		$this->forge->createTable('documentmasuk', true);
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('documentkeluar', true);
+		$this->forge->dropTable('documentmasuk', true);
 	}
 }

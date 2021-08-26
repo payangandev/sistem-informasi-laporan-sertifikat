@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DataAtk extends Migration
+class TableAtk extends Migration
 {
 	public function up()
 	{

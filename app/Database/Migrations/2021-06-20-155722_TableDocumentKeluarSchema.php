@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DaftarDocumentMasukSchema extends Migration
+class TableDocumentKeluarSchema extends Migration
 {
 	public function up()
 	{
 		$this->forge->addField([
-			'documentmasuk_id'		=> [
+			'document_keluar_id'	=> [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
@@ -32,24 +32,39 @@ class DaftarDocumentMasukSchema extends Migration
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '100'
 			],
+			'nomer_box'				=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> '100'
+			],
+			'isi_box'			=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> '100'
+			],
+			'tanggal_keluar'		=> [
+				'type'				=> 'DATE',
+			],
 			'vendor'				=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'KJB','HSRCC'",
+				'constraint'		=> "'KCIC','CREC','CRDC','CDJO'",
 			],
 			'bahasa'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'ENGLISH & CHINESE','ENGLISH','CHINESE'",
 			],
+			'approved'				=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> '255'
+			],
+			'jabatan'				=> [
+				'type'				=> 'ENUM',
+				'constraint'		=> "'MANAGER','STAFF','TRANSLATOR'",
+			],
 
 			'status_document'		=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'Masuk','Keluar'",
-				'default'			=> 'Masuk'
 			],
-			'tanggal_masuk'			=> [
-				'type'				=> 'DATE',
-			],
-			'karyawan_id'			=> [
+			'karyawan_id'			 => [
 				'type'				=> 'INT',
 				'constraint'		=> 36,
 				'unsigned'			=> TRUE,
@@ -58,13 +73,13 @@ class DaftarDocumentMasukSchema extends Migration
 		]);
 
 
-		$this->forge->addKey('documentmasuk_id', true);
+		$this->forge->addKey('document_keluar_id', true);
 		$this->forge->addForeignKey('karyawan_id', 'karyawan', 'karyawan_id', 'cascade', 'cascade');
-		$this->forge->createTable('documentmasuk', true);
+		$this->forge->createTable('documentkeluar', true);
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('documentmasuk', true);
+		$this->forge->dropTable('documentkeluar', true);
 	}
 }

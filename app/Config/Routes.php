@@ -36,7 +36,6 @@ $routes->get('login', 'LoginController::index');
 
 
 // ROUTING DATA document masuk
-
 $routes->get('documentmasuk', 'DocumentMasukController::index');
 $routes->get('documentmasuk/laporan', 'DocumentMasukController::laporan');
 $routes->get('documentmasuk/create', 'DocumentMasukController::create');
@@ -47,7 +46,6 @@ $routes->get('documentmasuk/delete/(:alphanum)', 'DocumentMasukController::delet
 
 
 // ROUTING DATA document keluar
-
 $routes->get('documentkeluar', 'DocumentKeluarController::index');
 $routes->get('documentkeluar/laporan', 'DocumentKeluarController::laporan');
 $routes->get('documentkeluar/create', 'DocumentKeluarController::create');
@@ -58,7 +56,6 @@ $routes->get('documentkeluar/delete/(:alphanum)', 'DocumentKeluarController::del
 
 
 // ROUTING DATA karyawan
-
 $routes->get('karyawan', 'KaryawanController::index');
 $routes->get('karyawan/laporan', 'KaryawanController::laporan');
 $routes->get('karyawan/htmlToPdf', 'KaryawanController::htmlToPdf');
@@ -71,7 +68,6 @@ $routes->get('karyawan/delete/(:alphanum)', 'KaryawanController::delete/$1');
 
 
 // ROUTING DATA nota masuk
-
 $routes->get('notamasuk', 'NotaMasukController::index');
 $routes->get('notamasuk/laporan', 'NotaMasukController::laporan');
 $routes->get('notamasuk/create', 'NotaMasukController::create');
@@ -82,7 +78,6 @@ $routes->get('notamasuk/delete/(:alphanum)', 'NotaMasukController::delete/$1');
 
 
 // ROUTING DATA  nota keluar
-
 $routes->get('notakeluar', 'NotaKeluarController::index');
 $routes->get('notakeluar/laporan', 'NotaKeluarController::laporan');
 $routes->get('notakeluar/create', 'NotaKeluarController::create');
@@ -93,7 +88,6 @@ $routes->get('notakeluar/delete/(:alphanum)', 'NotaKeluarController::delete/$1')
 
 
 // ROUTING DATA  users
-
 $routes->get('users', 'UsersController::index');
 $routes->get('users/laporan', 'UsersController::laporan');
 $routes->get('users/create', 'UsersController::create');
@@ -104,7 +98,6 @@ $routes->get('users/delete/(:alphanum)', 'UsersController::delete/$1');
 
 
 // ROUTING DATA Atk
-
 $routes->get('atk', 'AtkController::index');
 $routes->get('atk/laporan', 'AtkController::laporan');
 $routes->get('atk/create', 'AtkController::create');
@@ -115,21 +108,18 @@ $routes->get('atk/delete/(:alphanum)', 'AtkController::delete/$1');
 
 
 
-
 // ROUTING DATA Asset
-
-$routes->get('asset', 'AssetController::index');
-$routes->get('asset/laporan', 'AssetController::laporan');
-$routes->get('asset/create', 'AssetController::create');
+$routes->get ('asset', 'AssetController::index');
+$routes->get ('asset/laporan', 'AssetController::laporan');
+$routes->get ('asset/create', 'AssetController::create');
 $routes->post('asset/store', 'AssetController::store');
-$routes->get('asset/edit/(:alphanum)', 'AssetController::edit/$1');
+$routes->get ('asset/edit/(:alphanum)', 'AssetController::edit/$1');
 $routes->post('asset/update/(:num)', 'AssetController::update/$1');
-$routes->get('asset/delete/(:alphanum)', 'AssetController::delete/$1');
+$routes->get ('asset/delete/(:alphanum)', 'AssetController::delete/$1');
 
 
 
 // ROUTING DATA  Audio Visual
-
 $routes->get('audiovisual', 'AudioVisualController::index');
 $routes->get('audiovisual/laporan', 'AudioVisualController::laporan');
 $routes->get('audiovisual/create', 'AudioVisualController::create');
@@ -139,9 +129,7 @@ $routes->post('audiovisual/update/(:num)', 'AudioVisualController::update/$1');
 $routes->get('audiovisual/delete/(:alphanum)', 'AudioVisualController::delete/$1');
 
 
-
 // ROUTING DATA  Elektronik
-
 $routes->get('elektronik', 'ElektronikController::index');
 $routes->get('elektronik/laporan', 'ElektronikController::laporan');
 $routes->get('elektronik/create', 'ElektronikController::create');
@@ -153,7 +141,6 @@ $routes->get('elektronik/delete/(:alphanum)', 'ElektronikController::delete/$1')
 
 
 // ROUTING DATA  furniture
-
 $routes->get('furniture', 'FurnitureController::index');
 $routes->get('furniture/laporan', 'FurnitureController::laporan');
 $routes->get('furniture/create', 'FurnitureController::create');
@@ -165,7 +152,6 @@ $routes->get('furniture/delete/(:alphanum)', 'FurnitureController::delete/$1');
 
 
 // ROUTING DATA  kendaraan
-
 $routes->get('kendaraan', 'KendaraanController::index');
 $routes->get('kendaraan/laporan', 'KendaraanController::laporan');
 $routes->get('kendaraan/create', 'KendaraanController::create');
@@ -177,7 +163,6 @@ $routes->get('kendaraan/delete/(:alphanum)', 'KendaraanController::delete/$1');
 
 
 // ROUTING DATA  multimedia
-
 $routes->get('multimedia', 'MultimediaController::index');
 $routes->get('multimedia/laporan', 'MultimediaController::laporan');
 $routes->get('multimedia/create', 'MultimediaController::create');
@@ -185,7 +170,6 @@ $routes->post('multimedia/store', 'MultimediaController::store');
 $routes->get('multimedia/edit/(:alphanum)', 'MultimediaController::edit/$1');
 $routes->post('multimedia/update/(:num)', 'MultimediaController::update/$1');
 $routes->get('multimedia/delete/(:alphanum)', 'MultimediaController::delete/$1');
-
 
 
 
