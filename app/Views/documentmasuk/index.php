@@ -23,20 +23,18 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">DATA DOCUMENT MASUK</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Document Masuk</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-center">LIST DATA </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Document Masuk </h6>
+                        <a href="<?php echo base_url('documentmasuk/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+
                         </div>
-                        <div class="card-body shadow-md">
-                              <a href="<?php echo base_url('documentmasuk/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i> Data Document Masuk</a>
-                        </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <?php
+                        <div class="card-body">
+                          <?php
                         if (!empty(session()->getFlashdata('success'))) { ?>
                             <div class="alert alert-success">
                                 <?php echo session()->getFlashdata('success'); ?>
@@ -56,16 +54,16 @@
                         <?php } ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                 <thead>
+                                    <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode Dokumen</th>
-                                        <th>Drawing Type</th>
-                                        <th>Drawing Kode</th>
-                                        <th>Judul Dokumen</th>
+                                        <th>Kode</th>
+                                        <th>Type</th>
+                                        <th>Number</th>
+                                        <th>Judul</th>
                                         <th>Vendor</th>
-                                        <th>Bahasa Dokumen</th>
-                                        <th>Status Dokumen</th>
+                                        <th>Bahasa</th>
+                                        <th>Status</th>
                                         <th>Tanggal Masuk</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
@@ -100,13 +98,13 @@
                                 <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode Dokumen</th>
-                                        <th>Drawing Type</th>
-                                        <th>Drawing Kode</th>
-                                        <th>Judul Dokumen</th>
+                                        <th>Kode</th>
+                                        <th>Type</th>
+                                        <th>Number</th>
+                                        <th>Judul</th>
                                         <th>Vendor</th>
-                                        <th>Bahasa Dokumen</th>
-                                        <th>Status Dokumen</th>
+                                        <th>Bahasa</th>
+                                        <th>Status</th>
                                         <th>Tanggal Masuk</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
@@ -124,7 +122,13 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-           <?php echo view('_partials/footer'); ?>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
             <!-- End of Footer -->
 
         </div>
@@ -140,8 +144,7 @@
 
     <?php echo view('_partials/logout'); ?>
 
-<?php echo view('_partials/script') ?>
-
+<?php echo view('_partials/script'); ?>
 </body>
 
 </html>

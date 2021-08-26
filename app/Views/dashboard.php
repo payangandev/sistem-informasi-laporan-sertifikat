@@ -36,7 +36,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Data ATK</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_atk ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-toolbox fa-2x text-blue-300"></i>
@@ -54,7 +54,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Data Kendaraan</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_kendaraan ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-car-side fa-2x text-blue-300"></i>
@@ -72,7 +72,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Data Asset</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $total_asset ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-hand-holding-usd fa-2x text-blue-300"></i>
@@ -90,7 +90,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Data Audio Visual</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_audiovisual ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-broadcast-tower fa-2x text-blue-300"></i>
@@ -108,7 +108,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Data Furniture</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_furniture?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-couch fa-2x text-blue-300"></i>
@@ -126,7 +126,24 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Data Multimedia</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_multimedia ?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-camera-retro fa-2x text-blue-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Data Elektronik -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Data Elektronik</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_elektronik ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-camera-retro fa-2x text-blue-300"></i>

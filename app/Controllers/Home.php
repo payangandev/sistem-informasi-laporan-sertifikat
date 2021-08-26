@@ -26,6 +26,14 @@ class Home extends BaseController
 		$data['total_notamasuk']        = $this->dashboard_model->getCountNotaMasuk();
 		$data['total_notakeluar']       = $this->dashboard_model->getCountNotaKeluar();
 		$data['total_karyawan']         = $this->dashboard_model->getCountKaryawan();
+		$data['total_atk']				= $this->dashboard_model->getCountAtk();
+		$data['total_kendaraan']		= $this->dashboard_model->getCountKendaraan();
+		$data['total_asset']			= $this->dashboard_model->getCountAsset();
+		$data['total_audiovisual']		= $this->dashboard_model->getCountAudiovisual();
+		$data['total_furniture']		= $this->dashboard_model->getCountFurniture();
+		$data['total_multimedia'] 		= $this->dashboard_model->getCountMultimedia();
+		$data['total_elektronik']		= $this->dashboard_model->getCountElektronik();
+
 
 
 

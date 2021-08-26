@@ -23,13 +23,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data ATK</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Nota Keluar</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-center">DATA ASSET </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Nota Keluar </h6>
                         <a href="<?php echo base_url('atk/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
@@ -57,37 +57,33 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Kode Nota</th>
+                                        <th>Vendor</th>
+                                        <th>Jumlah Barang</th>
+                                        <th>Status Barang</th>
+                                        <th>Vendor</th>
                                         <th>Tanggal Masuk</th>
-                                        <th>Kode Inventaris</th>
-                                        <th>Nama Item</th>
-                                        <th>Merk</th>
-                                        <th>Satuan</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>Keterangan</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($atk as $key => $row) { ?>
+                                    <?php foreach ($notakeluar as $key => $row) { ?>
                                         <tr>
                                             <td><?php echo $key + 1; ?></td>
-                                            <td><?php echo $row['tanggal_masuk']; ?></td>
-                                            <td><?php echo $row['kode_inventaris']; ?></td>
-                                            <td><?php echo $row['nama_item']; ?></td>
-                                            <td><?php echo $row['merk']; ?></td>
-                                            <td><?php echo $row['satuan']; ?></td>
-                                            <td><?php echo $row['harga']; ?></td>
-                                            <td><?php echo $row['jumlah']; ?></td>
-                                            <td><?php echo $row['keterangan']; ?></td>
+                                            <td><?php echo $row['kode_nota']; ?></td>
+                                            <td><?php echo $row['vendor']; ?></td>
+                                            <td><?php echo $row['nama_barang']; ?></td>
+                                            <td><?php echo $row['jumlah_barang']; ?></td>
+                                            <td><?php echo $row['status_document']; ?></td>
+                                            <td><?php echo $row['tanggal_keluar']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="<?php echo base_url('atk/edit/' . $row['atk_id']); ?>" class="btn btn-sm btn-success">
+                                                    <a href="<?php echo base_url('notakeluar/edit/' . $row['notakeluar_id']); ?>" class="btn btn-sm btn-success">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <a href="<?php echo base_url('atk/delete/' . $row['atk_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                    <a href="<?php echo base_url('notakeluar/delete/' . $row['notakeluar_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -98,14 +94,12 @@
                                 <tfoot>
                                     <tr>
                                         <th>No</th>
+                                        <th>Kode Nota</th>
+                                        <th>Vendor</th>
+                                        <th>Jumlah Barang</th>
+                                        <th>Status Barang</th>
+                                        <th>Vendor</th>
                                         <th>Tanggal Masuk</th>
-                                        <th>Kode Inventaris</th>
-                                        <th>Nama Item</th>
-                                        <th>Merk</th>
-                                        <th>Satuan</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>Keterangan</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
