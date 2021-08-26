@@ -94,7 +94,7 @@ class ElektronikController extends BaseController
 			// insert
 			$simpan = $this->elektronik_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('elektronik'));
 			}
 		}
@@ -145,7 +145,7 @@ class ElektronikController extends BaseController
 		} else {
 			$ubah = $this->elektronik_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('elektronik'));
 			}
 		}
@@ -159,7 +159,7 @@ class ElektronikController extends BaseController
 		}
 		$hapus = $this->elektronik_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
+			session()->setFlashdata('warning', 'Delete Data Berhasil');
 			return redirect()->to(base_url('elektronik'));
 		}
 	}

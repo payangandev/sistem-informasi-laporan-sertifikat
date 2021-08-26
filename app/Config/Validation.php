@@ -354,10 +354,10 @@ class Validation
 		'kode_barang'			=> 'required',
 		'nama_barang'			=> 'required',
 		'jenis_barang'     		=> 'required',
-		'stok_awal'     		=> 'required',
-		'stok_masuk'     		=> 'required',
-		'stok_keluar'     		=> 'required',
-		'stok_akhir'     		=> 'required',
+		'stock_awal'     		=> 'required',
+		'stock_masuk'     		=> 'required',
+		'stock_keluar'     		=> 'required',
+		'stock_akhir'     		=> 'required',
 
 	];
 
@@ -374,16 +374,16 @@ class Validation
 		'jenis_barang'     	=> [
 			'required'		=> ' Jenis Barang Wajib Di isi'
 		],
-		'stok_awal'   		=> [
+		'stock_awal'   		=> [
 			'required'		=> ' Stock Awal Wajib Di isi'
 		],
-		'stok_masuk'   		=> [
+		'stock_masuk'   		=> [
 			'required'		=> ' Stock Masuk Wajib Di isi'
 		],
-		'stok_keluar'   	=> [
+		'stock_keluar'   	=> [
 			'required'		=> ' Stock Keluar  Wajib Di isi'
 		],
-		'stok_akhir'   		=> [
+		'stock_akhir'   		=> [
 			'required'		=> ' Stock Akhir  Wajib Di isi'
 		]
 	];

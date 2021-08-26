@@ -92,7 +92,7 @@ public function __construct()
 			// insert
 			$simpan = $this->asset_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('asset'));
 			}
 		}
@@ -140,7 +140,7 @@ public function __construct()
 		} else {
 			$ubah = $this->asset_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('asset'));
 			}
 		}
@@ -154,7 +154,7 @@ public function __construct()
 		}
 		$hapus = $this->asset_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
+			session()->setFlashdata('warning', 'Delete Data Berhasil');
 			return redirect()->to(base_url('asset'));
 		}
 	}

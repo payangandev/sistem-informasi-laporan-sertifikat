@@ -86,7 +86,7 @@ class karyawanController extends BaseController
 
             $simpan = $this->karyawan_model->insertData($data);
             if ($simpan) {
-                session()->setFlashdata('success', 'Tambah Data Karyawan Berhasil');
+                session()->setFlashdata('success', 'Tambah Data Berhasil');
                 return redirect()->to(base_url('karyawan'));
             }
         }
@@ -131,7 +131,7 @@ class karyawanController extends BaseController
 
             $ubah = $this->karyawan_model->updateData($data, $id);
             if ($ubah) {
-                session()->setFlashdata('info', 'Update Data Karyawan Berhasil');
+                session()->setFlashdata('info', 'Update Data Berhasil');
                 return redirect()->to(base_url('karyawan'));
             }
         }
@@ -146,7 +146,7 @@ class karyawanController extends BaseController
         }
         $hapus = $this->karyawan_model->deleteData($id);
         if ($hapus) {
-            session()->setFlashdata('warning', 'Delete Data Karyawan Berhasil');
+            session()->setFlashdata('warning', 'Delete Data Berhasil');
             return redirect()->to(base_url('karyawan'));
         }
     }

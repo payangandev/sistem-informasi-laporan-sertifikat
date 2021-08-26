@@ -94,7 +94,7 @@ class KendaraanController extends BaseController
 			// insert
 			$simpan = $this->kendaraan_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('kendaraan'));
 			}
 		}
@@ -145,7 +145,7 @@ class KendaraanController extends BaseController
 		} else {
 			$ubah = $this->kendaraan_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('kendaraan'));
 			}
 		}
@@ -159,7 +159,7 @@ class KendaraanController extends BaseController
 		}
 		$hapus = $this->kendaraan_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
+			session()->setFlashdata('warning', 'Delete Data Berhasil');
 			return redirect()->to(base_url('kendaraan'));
 		}
 	}

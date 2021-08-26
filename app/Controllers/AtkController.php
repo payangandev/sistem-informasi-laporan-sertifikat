@@ -92,7 +92,7 @@ public function __construct()
 			// insert
 			$simpan = $this->atk_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('atk'));
 			}
 		}
@@ -141,7 +141,7 @@ public function __construct()
 		} else {
 			$ubah = $this->atk_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('atk'));
 			}
 		}
@@ -155,7 +155,7 @@ public function __construct()
 		}
 		$hapus = $this->atk_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
+			session()->setFlashdata('warning', 'Delete Data  Berhasil');
 			return redirect()->to(base_url('atk'));
 		}
 	}

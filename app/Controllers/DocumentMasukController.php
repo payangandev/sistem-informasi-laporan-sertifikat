@@ -92,7 +92,7 @@ class DocumentMasukController extends BaseController
 			// insert
 			$simpan = $this->documentmasuk_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Document Masuk Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('documentmasuk'));
 			}
 		}
@@ -144,7 +144,7 @@ class DocumentMasukController extends BaseController
 		} else {
 			$ubah = $this->documentmasuk_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Document Masuk Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('documentmasuk'));
 			}
 		}
@@ -158,7 +158,7 @@ class DocumentMasukController extends BaseController
 		}
 		$hapus = $this->documentmasuk_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Document Masuk Berhasil');
+			session()->setFlashdata('warning', 'Delete Data Berhasil');
 			return redirect()->to(base_url('documentmasuk'));
 		}
 	}

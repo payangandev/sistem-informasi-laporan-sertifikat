@@ -98,7 +98,7 @@ class DocumentKeluarController extends BaseController
 			// insert
 			$simpan = $this->documentkeluar_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Document Keluar Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('documentkeluar'));
 			}
 		}
@@ -156,7 +156,7 @@ class DocumentKeluarController extends BaseController
 		} else {
 			$ubah = $this->documentkeluar_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Document Keluar Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('documentkeluar'));
 			}
 		}
@@ -170,7 +170,7 @@ class DocumentKeluarController extends BaseController
 		}
 		$hapus = $this->documentkeluar_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Document Keluar Berhasil');
+			session()->setFlashdata('warning', 'Delete Data Berhasil');
 			return redirect()->to(base_url('documentkeluar'));
 		}
 	}

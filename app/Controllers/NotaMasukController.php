@@ -92,7 +92,7 @@ class NotaMasukController extends BaseController
 			// insert
 			$simpan = $this->notamasuk_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Nota Masuk Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('notamasuk'));
 			}
 		}
@@ -137,7 +137,7 @@ class NotaMasukController extends BaseController
 		} else {
 			$ubah = $this->notamasuk_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Nota Masuk Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('notamasuk'));
 			}
 		}
@@ -151,7 +151,7 @@ class NotaMasukController extends BaseController
 		}
 		$hapus = $this->notamasuk_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Nota Masuk Berhasil');
+			session()->setFlashdata('warning', 'Delete Data Berhasil');
 			return redirect()->to(base_url('notamasuk'));
 		}
 	}

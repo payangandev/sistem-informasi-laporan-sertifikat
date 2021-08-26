@@ -27,7 +27,7 @@ class TableAtk extends Migration
 
 			'jenis_barang'			=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'Alat Tulis','Perekat','Kertas HVS','Ordner','Amplop','Stapler','Staples','Memo','Perekat','Cutter','Box'",
+				'constraint'		=> "'Alat Tulis','Perekat','Kertas HVS','Ordner','Amplop','Stapler','Staples','Memo','Cutter','Box'",
 			],
 
 			'stock_awal'			=> [

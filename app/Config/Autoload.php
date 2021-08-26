@@ -4,6 +4,7 @@ namespace Config;
 
 use CodeIgniter\Config\AutoloadConfig;
 
+
 /**
  * -------------------------------------------------------------------
  * AUTOLOADER CONFIGURATION
@@ -62,7 +63,11 @@ class Autoload extends AutoloadConfig
 	 *```
 	 * @var array<string, string>
 	 */
-	public $classmap = [];
+	public $classmap = [
+		'Phpexcel'	=> __DIR__ . '/vendor/autoload.php', // library untuk excel data
+		'Mpdf' 		=> __DIR__ . '/vendor/autoload.php', //library untuk pdf data
+
+	];
 
 	/**
 	 * -------------------------------------------------------------------

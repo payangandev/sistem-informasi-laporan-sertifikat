@@ -95,7 +95,7 @@ class AudioVisualController extends BaseController
 			// insert
 			$simpan = $this->audiovisual_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('audiovisual'));
 			}
 		}
@@ -149,7 +149,7 @@ class AudioVisualController extends BaseController
 		} else {
 			$ubah = $this->audiovisual_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('audiovisual'));
 			}
 		}
@@ -163,7 +163,7 @@ class AudioVisualController extends BaseController
 		}
 		$hapus = $this->audiovisual_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
+			session()->setFlashdata('warning', 'Delete Data Berhasil');
 			return redirect()->to(base_url('audiovisual'));
 		}
 	}

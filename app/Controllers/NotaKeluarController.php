@@ -91,7 +91,7 @@ class NotaKeluarController extends BaseController
 			// insert
 			$simpan = $this->notakeluar_model->insertData($data);
 			if ($simpan) {
-				session()->setFlashdata('success', 'Tambah Data Nota Keluar Berhasil');
+				session()->setFlashdata('success', 'Tambah Data Berhasil');
 				return redirect()->to(base_url('notakeluar'));
 			}
 		}
@@ -139,7 +139,7 @@ class NotaKeluarController extends BaseController
 		} else {
 			$ubah = $this->notakeluar_model->updateData($data, $id);
 			if ($ubah) {
-				session()->setFlashdata('info', 'Update Data Nota Keluar Berhasil');
+				session()->setFlashdata('info', 'Update Data Berhasil');
 				return redirect()->to(base_url('notakeluar'));
 			}
 		}
@@ -153,7 +153,7 @@ class NotaKeluarController extends BaseController
 		}
 		$hapus = $this->notakeluar_model->deleteData($id);
 		if ($hapus) {
-			session()->setFlashdata('warning', 'Delete Data Nota Keluar Berhasil');
+			session()->setFlashdata('warning', 'Delete Data Berhasil');
 			return redirect()->to(base_url('notakeluar'));
 		}
 	}
