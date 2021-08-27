@@ -75,7 +75,7 @@
                                             <td><?php echo $row['nama_kendaraan']; ?></td>
                                             <td><?php echo $row['tanggal_masuk']; ?></td>
                                             <td><?php echo $row['unit']; ?></td>
-                                            <td><?php echo $row['harga']; ?></td>
+                                            <td><?php echo $row[('harga')]; ?></td>
                                             <td><?php echo $row['jumlah']; ?></td>
                                             <td><?php echo $row['kondisi']; ?></td>
                                             <td><?php echo $row['keterangan']; ?></td>

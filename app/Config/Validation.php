@@ -496,7 +496,7 @@ class Validation
 	// validasi untuk data furniture
 	public $furniture = [
 		'karyawan_id'     	=> 'required',
-		'nama'				=> 'required',
+		'nama_item'			=> 'required',
 		'kode'				=> 'required',
 		'harga'   			=> 'required',
 		'qty'     			=> 'required',
@@ -510,7 +510,7 @@ class Validation
 		'karyawan_id'     	=> [
 			'required'		=> ' Karyawan Wajib Di isi'
 		],
-		'nama'   			=> [
+		'nama_item'   		=> [
 			'required'		=> ' Nama Furniture Wajib Di isi'
 		],
 		'kode'     			=> [
@@ -539,7 +539,7 @@ class Validation
 		'nama_item'			=> 'required',
 		'tanggal_masuk'		=> 'required',
 		'kode_inventaris'   => 'required',
-		'merk'     			=> 'required',
+		'merek'     		=> 'required',
 		'satuan'     		=> 'required',
 		'harga'     		=> 'required',
 		'jumlah'     		=> 'required',
@@ -561,8 +561,8 @@ class Validation
 		'kode_inventaris'  	=> [
 			'required'		=> ' Kode Inventaris Wajib Di isi'
 		],
-		'merk'   			=> [
-			'required'		=> ' Merk Wajib Di isi'
+		'merek'   			=> [
+			'required'		=> ' Merek Wajib Di isi'
 		],
 		'satuan'   			=> [
 			'required'		=> ' Satuan Wajib Di isi'

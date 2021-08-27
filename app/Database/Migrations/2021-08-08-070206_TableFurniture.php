@@ -15,7 +15,7 @@ class TableFurniture extends Migration
 				'unsigned'			=> TRUE,
 				'auto_increment'	=> TRUE
 			],
-			'nama_item'					=> [
+			'nama_item'				=> [
 				'type'				=> 'VARCHAR',
 				'constraint'		=> '255'
 			],

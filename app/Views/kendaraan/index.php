@@ -30,7 +30,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Kendaraan </h6>
-                        <a href="<?php echo base_url('furniture/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                        <a href="<?php echo base_url('kendaraan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -65,7 +65,7 @@
                                         <th>Harga</th>
                                         <th>Jumlah</th>
                                         <th>Kondisi</th>
-                                        <!-- <th>Keterangan</th> -->
+                                        <th>Keterangan</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
@@ -82,7 +82,7 @@
                                             <td><?php echo $row['harga']; ?></td>
                                             <td><?php echo $row['jumlah']; ?></td>
                                             <td><?php echo $row['kondisi']; ?></td>
-                                            <!-- <td><?php echo $row['keterangan']; ?></td> -->
+                                            <td><?php echo $row['keterangan']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
                                             <td>
                                                 <div class="btn-group">
@@ -108,7 +108,7 @@
                                         <th>Harga</th>
                                         <th>Jumlah</th>
                                         <th>Kondisi</th>
-                                        <!-- <th>Keterangan</th> -->
+                                        <th>Keterangan</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>

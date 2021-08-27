@@ -36,7 +36,11 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = ['url']; // untuk melakukan routing otomatis
+	protected $helpers = [
+	'url',
+	'helper'
+
+	]; // untuk melakukan routing otomatis
 
 	/**
 	 * Constructor.
