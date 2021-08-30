@@ -75,7 +75,7 @@ class DocumentKeluarController extends BaseController
 		$validation =  \Config\Services::validation();
 		$data = array(
 			'kode_dokumen'        	=> $this->request->getPost('kode_dokumen'),
-			'document_type'        	=> $this->request->getPost('vendor_id'),
+			'document_type'        	=> $this->request->getPost('document_type'),
 			'document_number'       => $this->request->getPost('document_number'),
 			'judul_dokumen'        	=> $this->request->getPost('judul_dokumen'),
 			'nomer_box'        		=> $this->request->getPost('nomer_box'),
@@ -103,8 +103,6 @@ class DocumentKeluarController extends BaseController
 			}
 		}
 	}
-
-
 
 	public function edit($id)
 	{

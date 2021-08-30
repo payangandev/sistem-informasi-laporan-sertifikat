@@ -99,7 +99,7 @@ class Validation
 			'required'		=> 'Data Jabatan Wajib Di isi'
 		],
 
-		'status_document'   			=>  [
+		'status_document'   =>  [
 			'required'		=> 'Data status_document  Document Wajib Di isi'
 		],
 		'karyawan_id'   	=>  [
@@ -113,7 +113,7 @@ class Validation
 
 
 	// validasi untuk  setiap field yang ada di Database 
-	public $document = [
+	public $documentmasuk = [
 		'kode_dokumen'     			=> 'required',
 		'document_type'     		=> 'required',
 		'document_number'   		=> 'required',
@@ -126,7 +126,7 @@ class Validation
 
 	];
 
-	public $document_errors = [
+	public $documentmasuk_errors = [
 
 		'kode_dokumen'     	=> [
 			'required'		=> 'Kode Dokumen Wajib Di isi'
@@ -164,7 +164,7 @@ class Validation
 
 
 	// validasi untuk  setiap field yang ada di Database 
-	public $nota = [
+	public $notamasuk = [
 		'karyawan_id'		=> 'required',
 		'kode_nota'     	=> 'required',
 		'vendor'     		=> 'required',
@@ -176,7 +176,7 @@ class Validation
 
 	];
 
-	public $nota_errors = [
+	public $notamasuk_errors = [
 
 		'kode_nota'     	=> [
 			'required'		=> 'Kode Nota Wajib Di isi'

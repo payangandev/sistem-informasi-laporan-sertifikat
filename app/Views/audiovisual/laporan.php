@@ -60,6 +60,7 @@
                                         <th>Tanggal Masuk</th>
                                         <th>Kode Inventaris</th>
                                         <th>Nama Item</th>
+                                         <th>Vol</th>
                                         <th>Merk</th>
                                         <th>Satuan</th>
                                         <th>Harga</th>
@@ -76,6 +77,7 @@
                                             <td><?php echo $row['tanggal_masuk']; ?></td>
                                             <td><?php echo $row['kode_inventaris']; ?></td>
                                             <td><?php echo $row['nama_item']; ?></td>
+                                            <td><?php echo $row['vol']; ?></td>
                                             <td><?php echo $row['merk']; ?></td>
                                             <td><?php echo $row['satuan']; ?></td>
                                             <td><?php echo $row['harga']; ?></td>

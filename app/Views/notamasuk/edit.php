@@ -23,13 +23,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data ATK</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data Nota Masuk</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data ATK </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Nota Masuk </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -50,88 +50,48 @@
                                         </div>
                                       <?php } ?>
                                       <div class="card">
-                                        <?php echo form_open_multipart('atk/update/' . $atk['atk_id']); ?>
+                                        <?php echo form_open_multipart('notamasuk/update/' . $notamasuk['notamasuk_id']); ?>
                                         <div class="card-body">
-                                          <?php echo form_hidden('atk_id', $atk['atk_id']); ?>
+                                          <?php echo form_hidden('notamasuk_id', $notamasuk['notamasuk_id']); ?>
                                           <div class="row">
                                             <div class="col-md-6">
 
                                               <div class="form-group">
                                                 <?php echo form_label('Kode Nota', 'kode_nota'); ?>
-                                                <?php echo form_input('kode_barang', $atk['kode_barang'],
-
-                                                 ['class' => 'form-control', 'placeholder' => 'atk Document']
-                                                 
-                                                 ); ?>
+                                                <?php echo form_input('kode_nota', $notamasuk['kode_nota'], ['class' => 'form-control', 'placeholder' => 'notamasuk Document']); ?>
                                               </div>
                                               <div class="form-group">
                                                 <?php echo form_label('Nama Barang', 'nama_barang'); ?>
-                                                <?php echo form_input('nama_barang', $atk['nama_barang'], 
-
-                                                ['class' => 'form-control', 'placeholder' => 'atk kode']);
-
-                                                 ?>
+                                                <?php echo form_input('nama_barang', $notamasuk['nama_barang'], ['class' => 'form-control', 'placeholder' => 'notamasuk kode']); ?>
                                               </div>
                                               <div class="form-group">
-                                                <?php
-                                                echo form_label('Jenis Barang', 'jenis_barang');
-                                                echo form_dropdown('jenis_barang', [
-                                                    
-                                                    ''          => 'Pilih', 
-                                                    'Alat Tulis'  => 'Alat Tulis', 
-                                                    'Perekat'     => 'Perekat',
-                                                    'Kertas HVS'  => 'Kertas HVS',
-                                                    'Ordner'      => 'Ordner',
-                                                    'Amplop'      => 'Amplop',
-                                                    'Stapler'     => 'Stapler',
-                                                    'Staples'     => 'Staples',
-                                                    'Memo'        => 'Memo',
-                                                    'Cutter'      => 'Cutter',
-                                                    'Box'         => 'Box'
-
-                                                ], $inputs['jenis_barang'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-                                              <div class="form-group">
-                                                <?php echo form_label('Stock Awal', 'stock_awal'); ?>
-                                                <?php echo form_input('stock_awal', $atk['stock_awal'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
+                                                <?php echo form_label('Jumlah Barang', 'jumlah_barang'); ?>
+                                                <?php echo form_input('jumlah_barang', $notamasuk['jumlah_barang'], ['class' => 'form-control', 'placeholder' => 'notamasuk kode']); ?>
                                               </div>
                                             </div>
                                             <div class="col-md-6">
                                               <div class="form-group">
-                                                <?php echo form_label('Stock Masuk', 'stock_masuk'); ?>
-                                                <?php echo form_input('stock_masuk', $atk['stock_masuk'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
+                                                <?php echo form_label('Tanggal Terdata', 'tanggal_masuk'); ?>
+                                                <?php echo form_input('tanggal_masuk', $notamasuk['tanggal_masuk'], ['class' => 'form-control', 'placeholder' => 'Tanggal Terdata', 'type' => 'DATE']); ?>
                                               </div>
-
-                                               <div class="form-group">
-                                                <?php echo form_label('Stock Keluar', 'stock_keluar'); ?>
-                                                <?php echo form_input('stock_keluar', $atk['stock_keluar'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
+                                              <div class="form-group">
+                                                <?php
+                                                echo form_label('Status Nota', 'status_document');
+                                                echo form_dropdown('status_document', ['' => 'Pilih', 'Masuk' => 'Masuk', 'Keluar' => 'Keluar'], $inputs['status_document'], ['class' => 'form-control']);
+                                                ?>
                                               </div>
-                                               <div class="form-group">
-                                                <?php echo form_label('Stock Akhir', 'stock_akhir'); ?>
-                                                <?php echo form_input('stock_akhir', $atk['stock_akhir'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
+                                              <div class="form-group">
+                                                <?php
+                                                echo form_label('Vendor Sender', 'vendor');
+                                                echo form_dropdown('vendor', ['' => 'Pilih', 'KJB' => 'KJB', 'HSRCC' => 'HSRCC'], $inputs['vendor'], ['class' => 'form-control']);
+                                                ?>
                                               </div>
-                                               <div class="form-group">
-                                                 <?php echo form_label('Staff Verified', 'karyawan'); ?>
-                                                 <?php echo form_dropdown('karyawan_id', $karyawan, $atk['karyawan_id'], ['class' => 'form-control']); ?>
-                                                </div>
-
+                                            </div>
+                                            <div class="col-md-12">
+                                              <div class="form-group">
+                                                <?php echo form_label('Staff Verified', 'karyawan'); ?>
+                                                <?php echo form_dropdown('karyawan_id', $karyawan, $notamasuk['karyawan_id'], ['class' => 'form-control']); ?>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>

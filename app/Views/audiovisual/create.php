@@ -49,130 +49,161 @@
                                           </ul>
                                         </div>
                                       <?php } ?>
-                                      <?php echo form_open_multipart('atk/store'); ?>
+                                      <?php echo form_open_multipart('audiovisual/store'); ?>
                                       <div class="card">
                                         <div class="card-body">
                                           <div class="row">
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Kode Barang');
-                                                $kodebarang = [
-                                                  'type'  => 'text',
-                                                  'name'  => 'kode_barang',
-                                                  'id'    => 'kode_barang',
-                                                  'value' => $inputs['kode_barang'],
+                                                echo form_label('Tanggal Masuk');
+                                                $tanggalmasuk = [
+                                                  'type'  => 'date',
+                                                  'name'  => 'tanggal_masuk',
+                                                  'id'    => 'tanggal_masuk',
+                                                  'value' => $inputs['tanggal_masuk'],
                                                   'class' => 'form-control',
-                                                  'placeholder' => 'Masukan Kode Barang'
                                                 ];
-                                                echo form_input($kodebarang);
+                                                echo form_input($tanggalmasuk);
                                                 ?>
                                               </div>
 
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('nama barang');
-                                                $namabarang = [
-                                                  'type'  => 'text',
-                                                  'name'  => 'nama_barang',
-                                                  'id'    => 'nama_barang',
-                                                  'value' => $inputs['nama_barang'],
-                                                  'class' => 'form-control',
-                                                  'placeholder' => 'Masukan Nama barang'
+                                                echo form_label('Kode Inventaris');
+                                                $kodeinventaris = [
+                                                  'type'        => 'text',
+                                                  'name'        => 'kode_inventaris',
+                                                  'id'          => 'kode_inventaris',
+                                                  'value'       => $inputs['kode_inventaris'],
+                                                  'class'       => 'form-control',
+                                                  'placeholder' => 'Masukan Kode Inventaris'
                                                 ];
-                                                echo form_input($namabarang);
+                                                echo form_input($kodeinventaris);
+                                                ?>
+                                              </div>
+                                               <div class="form-group">
+                                                <?php
+                                                echo form_label('Nama Audio');
+                                                $kodeinventaris = [
+                                                  'type'        => 'text',
+                                                  'name'        => 'nama_item',
+                                                  'id'          => 'nama_item',
+                                                  'value'       => $inputs['nama_item'],
+                                                  'class'       => 'form-control',
+                                                  'placeholder' => 'Masukan Nama '
+                                                ];
+                                                echo form_input($kodeinventaris);
+                                                ?>
+                                              </div>
+                                               <div class="form-group">
+                                                <?php
+                                                echo form_label('Vol');
+                                                $kodeinventaris = [
+                                                  'type'        => 'text',
+                                                  'name'        => 'vol',
+                                                  'id'          => 'vol',
+                                                  'value'       => $inputs['vol'],
+                                                  'class'       => 'form-control',
+                                                  'placeholder' => 'Masukan vol '
+                                                ];
+                                                echo form_input($kodeinventaris);
                                                 ?>
                                               </div>
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Jenis Barang', 'jenis_barang');
-                                                echo form_dropdown('jenis_barang', ['' => 'Pilih',
-                                                  'Alat Tulis'  => 'Alat Tulis', 
-                                                  'Perekat'     => 'Perekat',
-                                                  'Kertas HVS'  => 'Kertas HVS',
-                                                  'Ordner'      => 'Ordner',
-                                                  'Amplop'      => 'Amplop',
-                                                  'Stapler'     => 'Stapler',
-                                                  'Staples'     => 'Staples',
-                                                  'Memo'        => 'Memo',
-                                                  'Cutter'      => 'Cutter',
-                                                  'Box'         => 'Box'
-
-                                                
-                                                  ],
-                                                  $inputs['jenis_barang'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Stock Awal');
-                                                $stock_awal = [
-                                                  'type'  => 'number',
-                                                  'name'  => 'stock_awal',
-                                                  'id'    => 'stock_awal',
-                                                  'value' => $inputs['stock_awal'],
-                                                  'class' => 'form-control',
-                                                  'placeholder' => 'Stock Awal Barang'
+                                                echo form_label('Merek Audio');
+                                                $kodeinventaris = [
+                                                  'type'        => 'text',
+                                                  'name'        => 'merk',
+                                                  'id'          => 'merk',
+                                                  'value'       => $inputs['merk'],
+                                                  'class'       => 'form-control',
+                                                  'placeholder' => 'Masukan Merk '
                                                 ];
-                                                echo form_input($stock_awal);
+                                                echo form_input($kodeinventaris);
                                                 ?>
                                               </div>
                                             </div>
                                             <div class="col-md-6">
+
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Stock Masuk');
+                                                echo form_label('Harga Audio');
                                                 $stock_masuk = [
                                                   'type'  => 'number',
-                                                  'name'  => 'stock_masuk',
-                                                  'id'    => 'stock_masuk',
-                                                  'value' => $inputs['stock_masuk'],
+                                                  'name'  => 'harga',
+                                                  'id'    => 'harga',
+                                                  'value' => $inputs['harga'],
                                                   'class' => 'form-control',
-                                                  'placeholder' => 'Stock Masuk Barang'
+                                                  'placeholder' => 'Masukan Harga '
                                                 ];
                                                 echo form_input($stock_masuk);
                                                 ?>
                                               </div>
+
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Stock Keluar');
+                                                echo form_label('Jumlah');
                                                 $stock_keluar = [
                                                   'type'  => 'number',
-                                                  'name'  => 'stock_keluar',
-                                                  'id'    => 'stock_keluar',
-                                                  'value' => $inputs['stock_keluar'],
+                                                  'name'  => 'jumlah',
+                                                  'id'    => 'jumlah',
+                                                  'value' => $inputs['jumlah'],
                                                   'class' => 'form-control',
-                                                  'placeholder' => 'Stock Keluar Barang'
+                                                  'placeholder' => 'Masukan Jumlah Audio'
                                                 ];
                                                 echo form_input($stock_keluar);
                                                 ?>
                                               </div>
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Stock Akhir');
+                                                echo form_label('Kondisi Audio', 'kondisi');
+                                                echo form_dropdown('kondisi', ['' => 'Pilih',
+                                                  'BARU'          => 'BARU', 
+                                                  'BEKAS'         => 'BEKAS'
+                                                  ],
+                                                  $inputs['kondisi'], ['class' => 'form-control']);
+                                                ?>
+                                              </div>
+                                              <div class="form-group">
+                                                <?php
+                                                echo form_label('Keterangan');
                                                 $stock_akhir = [
-                                                  'type'  => 'number',
-                                                  'name'  => 'stock_akhir',
-                                                  'id'    => 'stock_akhir',
-                                                  'value' => $inputs['stock_akhir'],
+                                                  'type'  => 'text',
+                                                  'name'  => 'keterangan',
+                                                  'id'    => 'keterangan',
+                                                  'value' => $inputs['keterangan'],
                                                   'class' => 'form-control',
-                                                  'placeholder' => 'Stock Akhir Barang'
+                                                  'placeholder' => 'Keterangan Audio'
                                                 ];
                                                 echo form_input($stock_akhir);
                                                 ?>
                                               </div>
-                                              <div class="form-group ">
+                                              <div class="form-group">
+                                                <?php
+                                                echo form_label('Satuan Audio', 'satuan');
+                                                echo form_dropdown('satuan', ['' => 'Pilih',
+                                                  'UNIT'        => 'UNIT', 
+                                                  'BOX'         => 'BOX'
+                                                  ],
+                                                  $inputs['satuan'], ['class' => 'form-control']);
+                                                ?>
+                                              </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                               <div class="form-group ">
                                                 <?php
                                                 echo form_label('Penanggung Jawab Data', 'staff');
                                                 echo form_dropdown('karyawan_id', $karyawan, $inputs['karyawan_id'], ['class' => 'form-control']);
                                                 ?>
                                               </div>
-                                            </div>
+                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="card-footer">
-                                        <a href="<?php echo base_url('atk'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                                        <a href="<?php echo base_url('audiovisual'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
                                         <button type="submit" class="btn btn-primary float-right"><i class="nav-icon fas fa-save"></i> Simpan</button>
                                       </div>
                                     </div>

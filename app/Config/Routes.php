@@ -98,8 +98,9 @@ $routes->get('users/delete/(:alphanum)', 'UsersController::delete/$1');
 
 
 // ROUTING DATA Atk
+$routes->get('atk/pdf', 'AtkController::pdf');
+$routes->get('atk/excel', 'AtkController::excel');
 $routes->get('atk', 'AtkController::index');
-$routes->get('atk/laporan', 'AtkController::laporan');
 $routes->get('atk/create', 'AtkController::create');
 $routes->post('atk/store', 'AtkController::store');
 $routes->get('atk/edit/(:alphanum)', 'AtkController::edit/$1');

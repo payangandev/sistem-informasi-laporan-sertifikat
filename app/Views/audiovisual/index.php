@@ -30,7 +30,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Audio Visual  </h6>
-                        <a href="<?php echo base_url('atk/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                        <a href="<?php echo base_url('audiovisual/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -61,6 +61,7 @@
                                         <th>Kode Inventaris</th>
                                         <th>Nama Item</th>
                                         <th>Merk</th>
+                                        <th>Vol</th>
                                         <th>Satuan</th>
                                         <th>Harga</th>
                                         <th>Jumlah</th>
@@ -78,6 +79,7 @@
                                             <td><?php echo $row['kode_inventaris']; ?></td>
                                             <td><?php echo $row['nama_item']; ?></td>
                                             <td><?php echo $row['merk']; ?></td>
+                                            <td><?php echo $row['vol']; ?></td>
                                             <td><?php echo $row['satuan']; ?></td>
                                             <td><?php echo $row['harga']; ?></td>
                                             <td><?php echo $row['jumlah']; ?></td>
@@ -104,6 +106,7 @@
                                         <th>Kode Inventaris</th>
                                         <th>Nama Item</th>
                                         <th>Merk</th>
+                                        <th>Vol</th>
                                         <th>Satuan</th>
                                         <th>Harga</th>
                                         <th>Jumlah</th>

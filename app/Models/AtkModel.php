@@ -23,6 +23,22 @@ class AtkModel extends Model
 				->getRowArray();
 		}
 	}
+	
+	public function getAllData($id = false)
+	{
+		if ($id === false) {
+			return $this->table('atk')
+				->join('karyawan', 'karyawan.karyawan_id = atk.karyawan_id')
+				->get()
+				->getResultArray();
+		} else {
+			return $this->table('atk')
+				->join('karyawan', 'karyawan.karyawan_id = atk.karyawan_id')
+				->where('atk.atk_id', $id)
+				->get()
+				->getRowArray();
+		}
+	}
 	public function insertData($data)
 	{
 		return $this->db->table($this->table)->insert($data);
@@ -36,4 +52,6 @@ class AtkModel extends Model
 	{
 		return $this->db->table($this->table)->delete(['atk_id' => $id]);
 	}
-}
+
+
+}	

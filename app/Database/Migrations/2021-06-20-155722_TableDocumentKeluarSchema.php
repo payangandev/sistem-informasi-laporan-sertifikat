@@ -59,7 +59,6 @@ class TableDocumentKeluarSchema extends Migration
 				'type'				=> 'ENUM',
 				'constraint'		=> "'MANAGER','STAFF','TRANSLATOR'",
 			],
-
 			'status_document'		=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'Masuk','Keluar'",
