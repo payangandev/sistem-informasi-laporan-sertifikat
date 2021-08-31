@@ -27,17 +27,13 @@ class TableAsset extends Migration
 				'constraint'		=> '100'
 			],
 			'harga'					=> [
-				'type'				=> 'decimal',
-				'constraint'		=> '10,2',
-				'null'				=> FALSE,
-				'default'			=> 0.00
+				'type'				=> 'INT',
+				'constraint'		=> 250
 			],
 
 			'jumlah'				=> [
-				'type'				=> 'decimal',
-				'constraint'		=> '10,2',
-				'null'				=> FALSE,
-				'default'			=> 0.00
+				'type'				=> 'INT',
+				'constraint'		=> 250
 			],
 
 			'kondisi'				=> [

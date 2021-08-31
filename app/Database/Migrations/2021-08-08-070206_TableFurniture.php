@@ -24,17 +24,13 @@ class TableFurniture extends Migration
 				'constraint'		=> '255'
 			],
 			'harga'					=> [
-				'type'				=> 'decimal',
-				'constraint'		=> '10,2',
-				'null'				=> FALSE,
-				'default'			=> 0.00
+				'type'				=> 'INT',
+				'constraint'		=> 250
 			],
 
 			'qty'					=> [
-				'type'				=> 'decimal',
-				'constraint'		=> '10,2',
-				'null'				=> FALSE,
-				'default'			=> 0.00
+				'type'				=> 'INT',
+				'constraint'		=> 250
 			],
 
 			'tanggal_beli'			=> [
@@ -42,10 +38,8 @@ class TableFurniture extends Migration
 			],
 
 			'total'					=> [
-				'type'				=> 'decimal',
-				'constraint'		=> '10,2',
-				'null'				=> FALSE,
-				'default'			=> 0.00
+				'type'				=> 'INT',
+				'constraint'		=> 250
 			],
 
 			'kondisi'				=> [

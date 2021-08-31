@@ -36,12 +36,15 @@ public function __construct()
 	}
 
 	public function excel(){
+		// proteksi halaman
+		if (session()->get('username') == '') {
+			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
+			return redirect()->to(base_url('login'));
+		}
 
-		// $data = array(
-		// 	'atk'	=> $this->atk_model->getAllData(),	
-		// );
+
 	 $atk = new AtkModel();
-    $dataAtk = $atk->getAllData();
+     $dataAtk = $atk->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
@@ -89,8 +92,14 @@ public function __construct()
 	}
 
 	public function pdf(){
+		// proteksi halaman
+		if (session()->get('username') == '') {
+			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
+			return redirect()->to(base_url('login'));
+		}
+		
 		$data = array(
-			'atk'	=> $this->atk_model->getAllData(),	
+			'atk'	=> $this->atk_model->getData(),	
 		);
 		$html =  view('atk/pdf', $data);
 

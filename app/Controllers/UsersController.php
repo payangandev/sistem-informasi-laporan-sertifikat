@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\DaftarUsersModel;
+use TCPDF;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class UsersController extends BaseController
 {
@@ -31,22 +34,95 @@ class UsersController extends BaseController
 		$data['currentPage']  = $currentPage;
 		echo view('users/index', $data);
 	}
-
-	public function laporan()
-	{
+	
+	public function excel(){
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_users') ? $this->request->getVar('page_users') : 1;
-		// paginate
-		$paginate = 100000;
-		$data['users']   = $this->users_model->paginate($paginate, 'users');
-		$data['pager']        = $this->users_model->pager;
-		$data['currentPage']  = $currentPage;
-		echo view('users/laporan', $data);
+
+
+	 $atk = new AtkModel();
+     $dataAtk = $atk->getData();
+	
+		$spreadsheet = new Spreadsheet();
+
+
+ // tulis header/nama kolom 
+    $spreadsheet->setActiveSheetIndex(0)
+                ->setCellValue('B1', 'Kode Barang')
+                ->setCellValue('C1', 'Nama')
+                ->setCellValue('D1', 'Jenis')
+                ->setCellValue('E1', 'Stock Awal')
+				->setCellValue('F1', 'Stock Masuk')
+                ->setCellValue('G1', 'Stock Keluar')
+                ->setCellValue('H1', 'Stock Akhir')
+                ->setCellValue('I1', 'Staff');
+
+    
+    $column = 2;
+    // tulis data mobil ke cell
+    foreach($dataAtk as $data) {
+        $spreadsheet->setActiveSheetIndex(0)
+                    ->setCellValue('B' . $column, $data['kode_barang'])
+                    ->setCellValue('C' . $column, $data['nama_barang'])
+                    ->setCellValue('D' . $column, $data['jenis_barang'])
+                    ->setCellValue('E' . $column, $data['stock_awal'])
+                    ->setCellValue('F' . $column, $data['stock_masuk'])
+					->setCellValue('G' . $column, $data['stock_keluar'])
+					->setCellValue('H' . $column, $data['stock_akhir'])
+                    ->setCellValue('I' . $column, $data['nama_karyawan']);
+
+        $column++;
+    }
+
+
+	// tulis dalam format .xlsx
+    $writer = new Xlsx($spreadsheet);
+    $fileName = 'Data ATK';
+
+    // Redirect hasil generate xlsx ke web client
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename='.$fileName.'.xlsx');
+    header('Cache-Control: max-age=0');
+	$this->response->setContentType('application/excel');
+
+    $writer->save('php://output');
+	}
+
+	public function pdf(){
+		// proteksi halaman
+		if (session()->get('username') == '') {
+			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
+			return redirect()->to(base_url('login'));
+		}
+		
+		$data = array(
+			'atk'	=> $this->atk_model->getData(),	
+		);
+		$html =  view('atk/pdf', $data);
+
+		// test pdf
+
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+		// set font tulisan
+		$pdf->SetFont('dejavusans', '', 10);
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+
+		// $pdf->SetCreator(PDF_CREATOR);
+		$pdf->SetAuthor('Utari Pratiwi');
+		$pdf->SetTitle('Data ATK HSRCC');
+		$pdf->SetSubject('Data ATK');
+		// add a page
+		$pdf->AddPage();
+		// write html
+		$pdf->writeHTML($html);
+		$this->response->setContentType('application/pdf');
+		// ouput pdf
+		$pdf->Output('data_atk.pdf', 'I');
+
+
 	}
 
 

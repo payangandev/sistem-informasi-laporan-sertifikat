@@ -44,17 +44,13 @@ class TableElektronik extends Migration
 			],
 
 			'harga'					=> [
-				'type'				=> 'decimal',
-				'constraint'		=> '10,2',
-				'null'				=> FALSE,
-				'default'			=> 0.00
+				'type'				=> 'INT',
+				'constraint'		=> 250
 			],
 
 			'jumlah'				=> [
-				'type'				=> 'decimal',
-				'constraint'		=> '10,2',
-				'null'				=> FALSE,
-				'default'			=> 0.00
+				'type'				=> 'INT',
+				'constraint'		=> 250
 			],
 			'kondisi'				=> [
 				'type'				=> 'ENUM',

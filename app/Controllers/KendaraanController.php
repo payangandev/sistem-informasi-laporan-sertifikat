@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\KaryawanModel;
 use App\Models\KendaraanModel;
+use TCPDF;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class KendaraanController extends BaseController
 {
@@ -33,22 +36,99 @@ class KendaraanController extends BaseController
 		echo view('kendaraan/index', $data);
 	}
 
-	public function laporan()
-	{
+	public function excel(){
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_kendaraan') ? $this->request->getVar('page_kendaraan') : 1;
 
-		// paginate
-		$paginate = 1000000;
-		$data['kendaraan']   = $this->kendaraan_model->join('karyawan', 'karyawan.karyawan_id = kendaraan.karyawan_id')->paginate($paginate, 'kendaraan');
-		$data['pager']        = $this->kendaraan_model->pager;
-		$data['currentPage']  = $currentPage;
-		echo view('kendaraan/laporan', $data);
+
+	 $kendraan = new KendaraanModel();
+     $dataKendaraan = $kendraan->getData();
+	
+		$spreadsheet = new Spreadsheet();
+
+
+ // tulis header/nama kolom 
+    $spreadsheet->setActiveSheetIndex(0)
+                ->setCellValue('B1', 'Tanggal Masuk')
+                ->setCellValue('C1', 'Kode Inventaris')
+                ->setCellValue('D1', 'Nama Item')
+                ->setCellValue('E1', 'Merk')
+				->setCellValue('F1', 'Satuan')
+                ->setCellValue('G1', 'Harga')
+                ->setCellValue('H1', 'Jumlah')
+                ->setCellValue('I1', 'Kondisi')
+				->setCellValue('J1', 'Keterangan')
+				->setCellValue('K1', 'Staff');
+
+    
+    $column = 2;
+    // tulis data mobil ke cell
+    foreach($dataKendaraan as $data) {
+        $spreadsheet->setActiveSheetIndex(0)
+                    ->setCellValue('B' . $column, $data['tanggal_masuk'])
+                    ->setCellValue('C' . $column, $data['kode_inventaris'])
+                    ->setCellValue('D' . $column, $data['nama_item'])
+                    ->setCellValue('E' . $column, $data['merek'])
+                    ->setCellValue('F' . $column, $data['satuan'])
+					->setCellValue('G' . $column, $data['harga'])
+					->setCellValue('H' . $column, $data['jumlah'])
+                    ->setCellValue('I' . $column, $data['kondisi'])
+					->setCellValue('J' . $column, $data['keterangan'])
+                    ->setCellValue('K' . $column, $data['nama_karyawan']);
+
+
+        $column++;
+    }
+
+
+	// tulis dalam format .xlsx
+    $writer = new Xlsx($spreadsheet);
+    $fileName = 'Data Kendaraan';
+
+    // Redirect hasil generate xlsx ke web client
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename='.$fileName.'.xlsx');
+    header('Cache-Control: max-age=0');
+	$this->response->setContentType('application/excel');
+
+    $writer->save('php://output');
+	}
+
+	public function pdf(){
+		// proteksi halaman
+		if (session()->get('username') == '') {
+			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
+			return redirect()->to(base_url('login'));
+		}
+		
+		$data = array(
+			'kendaraan'	=> $this->kendaraan_model->getData(),	
+		);
+		$html =  view('kendaraan/pdf', $data);
+
+		// test pdf
+
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+		// set font tulisan
+		$pdf->SetFont('dejavusans', '', 10);
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+
+		// $pdf->SetCreator(PDF_CREATOR);
+		$pdf->SetAuthor('Utari Pratiwi');
+		$pdf->SetTitle('Data Kendaraan HSRCC');
+		$pdf->SetSubject('Data Kendaraan');
+		// add a page
+		$pdf->AddPage();
+		// write html
+		$pdf->writeHTML($html);
+		$this->response->setContentType('application/pdf');
+		// ouput pdf
+		$pdf->Output('data_kendaraan.pdf', 'I');
+
+
 	}
 
 
