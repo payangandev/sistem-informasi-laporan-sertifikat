@@ -1,7 +1,7 @@
 <html>
 <body>
  <div>
-    <table cellspacing="3" cellpadding="4" >
+    <table cellspacing="2" cellpadding="4" >
        <thead>
         <tr>
             <th>No</th>
@@ -15,7 +15,6 @@
             <th>Kondisi</th>
             <th>Keterangan</th>
             <th>Staff</th>
-            <hr>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +26,7 @@
                 <td><?php echo $row['nama_item']; ?></td>
                 <td><?php echo $row['merek']; ?></td>
                 <td><?php echo $row['satuan']; ?></td>
-                <td><?php echo number_format($row['harga'], 2,  ",", "."); ?></td>
+                <td>Rp.<?php echo number_format($row['harga'], 2,  ",", "."); ?></td>
                 <td><?php echo $row['jumlah']; ?></td>
                 <td><?php echo $row['kondisi']; ?></td>
                 <td><?php echo $row['keterangan']; ?></td>

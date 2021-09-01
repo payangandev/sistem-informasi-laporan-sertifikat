@@ -43,35 +43,35 @@ public function __construct()
 		}
 
 
-	 $atk = new AtkModel();
-     $dataAtk = $atk->getData();
+	 $furniture = new FurnitureModel();
+     $dataFurniture = $furniture->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Kode Barang')
-                ->setCellValue('C1', 'Nama')
-                ->setCellValue('D1', 'Jenis')
-                ->setCellValue('E1', 'Stock Awal')
-				->setCellValue('F1', 'Stock Masuk')
-                ->setCellValue('G1', 'Stock Keluar')
-                ->setCellValue('H1', 'Stock Akhir')
+                ->setCellValue('B1', 'Nama Barang')
+                ->setCellValue('C1', 'Kode Inventaris')
+                ->setCellValue('D1', 'Harga')
+                ->setCellValue('E1', 'Jumlah')
+				->setCellValue('F1', 'Tanggal Beli')
+                ->setCellValue('G1', 'Total')
+                ->setCellValue('H1', 'Kondisi')
                 ->setCellValue('I1', 'Staff');
 
     
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataAtk as $data) {
+    foreach($dataFurniture as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['kode_barang'])
-                    ->setCellValue('C' . $column, $data['nama_barang'])
-                    ->setCellValue('D' . $column, $data['jenis_barang'])
-                    ->setCellValue('E' . $column, $data['stock_awal'])
-                    ->setCellValue('F' . $column, $data['stock_masuk'])
-					->setCellValue('G' . $column, $data['stock_keluar'])
-					->setCellValue('H' . $column, $data['stock_akhir'])
+                    ->setCellValue('B' . $column, $data['nama_item'])
+                    ->setCellValue('C' . $column, $data['kode'])
+                    ->setCellValue('D' . $column, $data['harga'])
+                    ->setCellValue('E' . $column, $data['qty'])
+                    ->setCellValue('F' . $column, $data['tanggal_beli'])
+					->setCellValue('G' . $column, $data['total'])
+					->setCellValue('H' . $column, $data['kondisi'])
                     ->setCellValue('I' . $column, $data['nama_karyawan']);
 
         $column++;
@@ -80,7 +80,7 @@ public function __construct()
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ATK';
+    $fileName = 'Data Furniture';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -99,28 +99,28 @@ public function __construct()
 		}
 		
 		$data = array(
-			'atk'	=> $this->atk_model->getData(),	
+			'furniture'	=> $this->furniture_model->getData(),	
 		);
-		$html =  view('atk/pdf', $data);
+		$html =  view('furniture/pdf', $data);
 
 		// test pdf
 
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A3', true, 'UTF-8', false);
 		// set font tulisan
 		$pdf->SetFont('dejavusans', '', 10);
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
 		// $pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Utari Pratiwi');
-		$pdf->SetTitle('Data ATK HSRCC');
-		$pdf->SetSubject('Data ATK');
+		$pdf->SetTitle('Data Furniture HSRCC');
+		$pdf->SetSubject('Data Furniture');
 		// add a page
 		$pdf->AddPage();
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_atk.pdf', 'I');
+		$pdf->Output('data_furniture.pdf', 'I');
 
 
 	}

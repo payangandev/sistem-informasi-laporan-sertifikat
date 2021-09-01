@@ -48,36 +48,29 @@ class karyawanController extends BaseController
 		}
 
 
-	 $atk = new AtkModel();
-     $dataAtk = $atk->getData();
+	 $karyawan = new KaryawanModel();
+     $dataKaryawan = $karyawan->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Kode Barang')
-                ->setCellValue('C1', 'Nama')
-                ->setCellValue('D1', 'Jenis')
-                ->setCellValue('E1', 'Stock Awal')
-				->setCellValue('F1', 'Stock Masuk')
-                ->setCellValue('G1', 'Stock Keluar')
-                ->setCellValue('H1', 'Stock Akhir')
-                ->setCellValue('I1', 'Staff');
-
+                ->setCellValue('B1', 'Nama Karyawan')
+                ->setCellValue('C1', 'Divisi')
+                ->setCellValue('D1', 'Jabatan')
+                ->setCellValue('E1', 'Status')
+				->setCellValue('F1', 'Tanggal Masuk');
     
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataAtk as $data) {
+    foreach($dataKaryawan as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['kode_barang'])
-                    ->setCellValue('C' . $column, $data['nama_barang'])
-                    ->setCellValue('D' . $column, $data['jenis_barang'])
-                    ->setCellValue('E' . $column, $data['stock_awal'])
-                    ->setCellValue('F' . $column, $data['stock_masuk'])
-					->setCellValue('G' . $column, $data['stock_keluar'])
-					->setCellValue('H' . $column, $data['stock_akhir'])
-                    ->setCellValue('I' . $column, $data['nama_karyawan']);
+                    ->setCellValue('B' . $column, $data['nama_karyawan'])
+                    ->setCellValue('C' . $column, $data['divisi'])
+                    ->setCellValue('D' . $column, $data['jabatan'])
+                    ->setCellValue('E' . $column, $data['status'])
+                    ->setCellValue('F' . $column, $data['tanggalmasuk']);
 
         $column++;
     }
@@ -85,7 +78,7 @@ class karyawanController extends BaseController
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ATK';
+    $fileName = 'Data Karyawan';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -104,9 +97,9 @@ class karyawanController extends BaseController
 		}
 		
 		$data = array(
-			'atk'	=> $this->atk_model->getData(),	
+			'karyawan'	=> $this->karyawan_model->getData(),	
 		);
-		$html =  view('atk/pdf', $data);
+		$html =  view('karyawan/pdf', $data);
 
 		// test pdf
 
@@ -117,15 +110,15 @@ class karyawanController extends BaseController
 
 		// $pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Utari Pratiwi');
-		$pdf->SetTitle('Data ATK HSRCC');
-		$pdf->SetSubject('Data ATK');
+		$pdf->SetTitle('Data Karyawan HSRCC');
+		$pdf->SetSubject('Data Karyawan');
 		// add a page
 		$pdf->AddPage();
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_atk.pdf', 'I');
+		$pdf->Output('data_karyawan.pdf', 'I');
 
 
 	}

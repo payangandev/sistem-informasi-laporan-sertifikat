@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\DaftarVendorModel;
 use App\Models\KaryawanModel;
 use App\Models\NotaMasukModel;
 use TCPDF;
@@ -47,36 +46,34 @@ class NotaMasukController extends BaseController
 		}
 
 
-	 $atk = new AtkModel();
-     $dataAtk = $atk->getData();
+	 $notamasuk = new NotaMasukModel();
+     $dataNotaMasuk = $notamasuk->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Kode Barang')
-                ->setCellValue('C1', 'Nama')
-                ->setCellValue('D1', 'Jenis')
-                ->setCellValue('E1', 'Stock Awal')
-				->setCellValue('F1', 'Stock Masuk')
-                ->setCellValue('G1', 'Stock Keluar')
-                ->setCellValue('H1', 'Stock Akhir')
-                ->setCellValue('I1', 'Staff');
+                ->setCellValue('B1', 'Kode Nota')
+                ->setCellValue('C1', 'Vendor Receiver')
+                ->setCellValue('D1', 'Nama Barang')
+                ->setCellValue('E1', 'Jumlah Barang')
+				->setCellValue('F1', 'Status Barang')
+                ->setCellValue('G1', 'Tanggal Masuk')
+                ->setCellValue('H1', 'Staff');
 
     
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataAtk as $data) {
+    foreach($dataNotaMasuk as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['kode_barang'])
-                    ->setCellValue('C' . $column, $data['nama_barang'])
-                    ->setCellValue('D' . $column, $data['jenis_barang'])
-                    ->setCellValue('E' . $column, $data['stock_awal'])
-                    ->setCellValue('F' . $column, $data['stock_masuk'])
-					->setCellValue('G' . $column, $data['stock_keluar'])
-					->setCellValue('H' . $column, $data['stock_akhir'])
-                    ->setCellValue('I' . $column, $data['nama_karyawan']);
+                    ->setCellValue('B' . $column, $data['kode_nota'])
+                    ->setCellValue('C' . $column, $data['vendor'])
+                    ->setCellValue('D' . $column, $data['nama_barang'])
+                    ->setCellValue('E' . $column, $data['jumlah_barang'])
+                    ->setCellValue('F' . $column, $data['status_document'])
+					->setCellValue('G' . $column, $data['tanggal_masuk'])
+                    ->setCellValue('H' . $column, $data['nama_karyawan']);
 
         $column++;
     }
@@ -84,7 +81,7 @@ class NotaMasukController extends BaseController
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ATK';
+    $fileName = 'Data Nota Masuk';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -103,9 +100,9 @@ class NotaMasukController extends BaseController
 		}
 		
 		$data = array(
-			'atk'	=> $this->atk_model->getData(),	
+			'notamasuk'	=> $this->notamasuk_model->getData(),	
 		);
-		$html =  view('atk/pdf', $data);
+		$html =  view('notamasuk/pdf', $data);
 
 		// test pdf
 
@@ -116,15 +113,15 @@ class NotaMasukController extends BaseController
 
 		// $pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Utari Pratiwi');
-		$pdf->SetTitle('Data ATK HSRCC');
-		$pdf->SetSubject('Data ATK');
+		$pdf->SetTitle('Data Nota Masuk HSRCC');
+		$pdf->SetSubject('Data Nota Masuk');
 		// add a page
 		$pdf->AddPage();
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_atk.pdf', 'I');
+		$pdf->Output('data_nota_masuk.pdf', 'I');
 
 
 	}

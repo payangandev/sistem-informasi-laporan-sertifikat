@@ -30,7 +30,8 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Kendaraan </h6> <br>
-                        <a href="<?php echo base_url('kendaraan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+
+                            <a href="<?php echo base_url('kendaraan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
                         <a href="<?php echo base_url('kendaraan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
@@ -85,7 +86,7 @@
                                             <td><?php echo $row['nama_item']; ?></td>
                                             <td><?php echo $row['merek']; ?></td>
                                             <td><?php echo $row['satuan']; ?></td>
-                                            <td><?php echo number_format($row['harga'], 2,  ",", "."); ?></td>
+                                            <td>Rp.<?php echo number_format($row['harga'], 2,  ",", "."); ?></td>
                                             <td><?php echo $row['jumlah']; ?></td>
                                             <td><?php echo $row['kondisi']; ?></td>
                                             <td><?php echo $row['keterangan']; ?></td>

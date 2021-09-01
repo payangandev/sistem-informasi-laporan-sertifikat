@@ -43,36 +43,27 @@ class UsersController extends BaseController
 		}
 
 
-	 $atk = new AtkModel();
-     $dataAtk = $atk->getData();
+	 $users = new DaftarUsersModel();
+     $dataUsers = $users->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Kode Barang')
-                ->setCellValue('C1', 'Nama')
-                ->setCellValue('D1', 'Jenis')
-                ->setCellValue('E1', 'Stock Awal')
-				->setCellValue('F1', 'Stock Masuk')
-                ->setCellValue('G1', 'Stock Keluar')
-                ->setCellValue('H1', 'Stock Akhir')
-                ->setCellValue('I1', 'Staff');
-
+                ->setCellValue('B1', 'Nama Users')
+                ->setCellValue('C1', 'Username')
+                ->setCellValue('D1', 'Password')
+                ->setCellValue('E1', 'Level');
     
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataAtk as $data) {
+    foreach($dataUsers as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['kode_barang'])
-                    ->setCellValue('C' . $column, $data['nama_barang'])
-                    ->setCellValue('D' . $column, $data['jenis_barang'])
-                    ->setCellValue('E' . $column, $data['stock_awal'])
-                    ->setCellValue('F' . $column, $data['stock_masuk'])
-					->setCellValue('G' . $column, $data['stock_keluar'])
-					->setCellValue('H' . $column, $data['stock_akhir'])
-                    ->setCellValue('I' . $column, $data['nama_karyawan']);
+                    ->setCellValue('B' . $column, $data['nama_user'])
+                    ->setCellValue('C' . $column, $data['username'])
+                    ->setCellValue('D' . $column, $data['password'])
+                    ->setCellValue('E' . $column, $data['level']);
 
         $column++;
     }
@@ -80,7 +71,7 @@ class UsersController extends BaseController
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ATK';
+    $fileName = 'Data Users';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -99,9 +90,9 @@ class UsersController extends BaseController
 		}
 		
 		$data = array(
-			'atk'	=> $this->atk_model->getData(),	
+			'users'	=> $this->users_model->getData(),	
 		);
-		$html =  view('atk/pdf', $data);
+		$html =  view('users/pdf', $data);
 
 		// test pdf
 
@@ -112,15 +103,15 @@ class UsersController extends BaseController
 
 		// $pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Utari Pratiwi');
-		$pdf->SetTitle('Data ATK HSRCC');
-		$pdf->SetSubject('Data ATK');
+		$pdf->SetTitle('Data Users HSRCC');
+		$pdf->SetSubject('Data Users');
 		// add a page
 		$pdf->AddPage();
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_atk.pdf', 'I');
+		$pdf->Output('data_users.pdf', 'I');
 
 
 	}

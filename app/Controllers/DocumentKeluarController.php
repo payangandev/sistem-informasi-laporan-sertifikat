@@ -44,44 +44,52 @@ class DocumentKeluarController extends BaseController
 		}
 
 
-	 $atk = new AtkModel();
-     $dataAtk = $atk->getData();
+	 $documentkeluar = new DocumentKeluarModel();
+     $dataDocumentKeluar = $documentkeluar->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Kode Barang')
-                ->setCellValue('C1', 'Nama')
-                ->setCellValue('D1', 'Jenis')
-                ->setCellValue('E1', 'Stock Awal')
-				->setCellValue('F1', 'Stock Masuk')
-                ->setCellValue('G1', 'Stock Keluar')
-                ->setCellValue('H1', 'Stock Akhir')
-                ->setCellValue('I1', 'Staff');
+                ->setCellValue('B1', 'Kode')
+                ->setCellValue('C1', 'Type')
+                ->setCellValue('D1', 'Number')
+                ->setCellValue('E1', 'Judul')
+				->setCellValue('F1', 'Nomer Box')
+                ->setCellValue('G1', 'Isi Box')
+                ->setCellValue('H1', 'Tanggal Keluar')
+                ->setCellValue('I1', 'Vendor')
+				->setCellValue('J1', 'Bahasa')
+                ->setCellValue('K1', 'Approved')
+                ->setCellValue('L1', 'Jabatan')
+                ->setCellValue('M1', 'Status')
+                ->setCellValue('N1', 'Staff');
 
-    
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataAtk as $data) {
+    foreach($dataDocumentKeluar as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['kode_barang'])
-                    ->setCellValue('C' . $column, $data['nama_barang'])
-                    ->setCellValue('D' . $column, $data['jenis_barang'])
-                    ->setCellValue('E' . $column, $data['stock_awal'])
-                    ->setCellValue('F' . $column, $data['stock_masuk'])
-					->setCellValue('G' . $column, $data['stock_keluar'])
-					->setCellValue('H' . $column, $data['stock_akhir'])
-                    ->setCellValue('I' . $column, $data['nama_karyawan']);
-
+                    ->setCellValue('B' . $column, $data['kode_dokumen'])
+                    ->setCellValue('C' . $column, $data['document_type'])
+                    ->setCellValue('D' . $column, $data['document_number'])
+                    ->setCellValue('E' . $column, $data['judul_dokumen'])
+                    ->setCellValue('F' . $column, $data['nomer_box'])
+					->setCellValue('G' . $column, $data['isi_box'])
+					->setCellValue('H' . $column, $data['tanggal_keluar'])
+                    ->setCellValue('I' . $column, $data['vendor'])
+					->setCellValue('J' . $column, $data['bahasa'])
+					->setCellValue('K' . $column, $data['approved'])
+					->setCellValue('L' . $column, $data['jabatan'])
+					->setCellValue('M' . $column, $data['status_document'])
+					->setCellValue('N' . $column, $data['nama_karyawan']);
         $column++;
     }
 
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ATK';
+    $fileName = 'Data Document Keluar';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -100,29 +108,28 @@ class DocumentKeluarController extends BaseController
 		}
 		
 		$data = array(
-			'atk'	=> $this->atk_model->getData(),	
+			'documentkeluar'	=> $this->documentkeluar_model->getData(),	
 		);
-		$html =  view('atk/pdf', $data);
+		$html =  view('documentkeluar/pdf', $data);
 
 		// test pdf
 
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A2', true, 'UTF-8', false);
 		// set font tulisan
 		$pdf->SetFont('dejavusans', '', 10);
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
 		// $pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Utari Pratiwi');
-		$pdf->SetTitle('Data ATK HSRCC');
-		$pdf->SetSubject('Data ATK');
+		$pdf->SetTitle('Data Document Keluar HSRCC');
+		$pdf->SetSubject('Data Document Keluar');
 		// add a page
 		$pdf->AddPage();
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_atk.pdf', 'I');
-
+		$pdf->Output('data_document_keluar.pdf', 'I');
 
 	}
 

@@ -29,11 +29,11 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Document Masuk </h6>
-                        <a href="<?php echo base_url('atk/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Document Masuk </h6>                         <br>
+                        <a href="<?php echo base_url('documentmasuk/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('atk/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('documentmasuk/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
                             <a href="<?php echo base_url('documentmasuk/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>

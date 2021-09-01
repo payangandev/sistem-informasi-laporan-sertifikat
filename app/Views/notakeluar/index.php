@@ -30,13 +30,14 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Nota Keluar </h6>
-                        <a href="<?php echo base_url('atk/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                        <br>
+                            <a href="<?php echo base_url('notakeluar/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('atk/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('notakeluar/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
-                            <a href="<?php echo base_url('notakeluar/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                            <a href="<?php echo base_url('notakeluar/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -65,10 +66,10 @@
                                         <th>No</th>
                                         <th>Kode Nota</th>
                                         <th>Vendor</th>
-                                        <th>Jumlah Barang</th>
                                         <th>Status Barang</th>
-                                        <th>Vendor</th>
-                                        <th>Tanggal Masuk</th>
+                                        <th>Jumlah Barang</th>
+                                        <th>Tanggal Keluar</th>
+                                        <th>Nama Barang</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
@@ -79,10 +80,10 @@
                                             <td><?php echo $key + 1; ?></td>
                                             <td><?php echo $row['kode_nota']; ?></td>
                                             <td><?php echo $row['vendor']; ?></td>
-                                            <td><?php echo $row['nama_barang']; ?></td>
-                                            <td><?php echo $row['jumlah_barang']; ?></td>
                                             <td><?php echo $row['status_document']; ?></td>
+                                            <td><?php echo $row['jumlah_barang']; ?></td>
                                             <td><?php echo $row['tanggal_keluar']; ?></td>
+                                            <td><?php echo $row['nama_barang']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
                                             <td>
                                                 <div class="btn-group">

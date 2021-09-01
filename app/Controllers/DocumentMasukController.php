@@ -44,44 +44,46 @@ class DocumentMasukController extends BaseController
 		}
 
 
-	 $atk = new AtkModel();
-     $dataAtk = $atk->getData();
+	 $documentmasuk = new DocumentMasukModel();
+     $dataDocumentMasuk = $documentmasuk->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Kode Barang')
-                ->setCellValue('C1', 'Nama')
-                ->setCellValue('D1', 'Jenis')
-                ->setCellValue('E1', 'Stock Awal')
-				->setCellValue('F1', 'Stock Masuk')
-                ->setCellValue('G1', 'Stock Keluar')
-                ->setCellValue('H1', 'Stock Akhir')
-                ->setCellValue('I1', 'Staff');
+                ->setCellValue('B1', 'Kode')
+                ->setCellValue('C1', 'Type')
+                ->setCellValue('D1', 'Number')
+                ->setCellValue('E1', 'Judul')
+				->setCellValue('F1', 'Vendor')
+                ->setCellValue('G1', 'Bahasa')
+                ->setCellValue('H1', 'Status')
+                ->setCellValue('I1', 'Tanggal Masuk')
+				->setCellValue('J1', 'Staff');
+
 
     
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataAtk as $data) {
+    foreach($dataDocumentMasuk as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['kode_barang'])
-                    ->setCellValue('C' . $column, $data['nama_barang'])
-                    ->setCellValue('D' . $column, $data['jenis_barang'])
-                    ->setCellValue('E' . $column, $data['stock_awal'])
-                    ->setCellValue('F' . $column, $data['stock_masuk'])
-					->setCellValue('G' . $column, $data['stock_keluar'])
-					->setCellValue('H' . $column, $data['stock_akhir'])
-                    ->setCellValue('I' . $column, $data['nama_karyawan']);
-
+                    ->setCellValue('B' . $column, $data['kode_dokumen'])
+                    ->setCellValue('C' . $column, $data['document_type'])
+                    ->setCellValue('D' . $column, $data['document_number'])
+                    ->setCellValue('E' . $column, $data['judul_dokumen'])
+                    ->setCellValue('F' . $column, $data['vendor'])
+					->setCellValue('G' . $column, $data['bahasa'])
+					->setCellValue('H' . $column, $data['status_document'])
+                    ->setCellValue('I' . $column, $data['tanggal_masuk'])
+					->setCellValue('J' . $column, $data['nama_karyawan']);
         $column++;
     }
 
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ATK';
+    $fileName = 'Data Document Masuk';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -100,28 +102,28 @@ class DocumentMasukController extends BaseController
 		}
 		
 		$data = array(
-			'atk'	=> $this->atk_model->getData(),	
+			'documentmasuk'	=> $this->documentmasuk_model->getData(),	
 		);
-		$html =  view('atk/pdf', $data);
+		$html =  view('documentmasuk/pdf', $data);
 
 		// test pdf
 
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A2', true, 'UTF-8', false);
 		// set font tulisan
 		$pdf->SetFont('dejavusans', '', 10);
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
 		// $pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Utari Pratiwi');
-		$pdf->SetTitle('Data ATK HSRCC');
-		$pdf->SetSubject('Data ATK');
+		$pdf->SetTitle('Data Document Masuk HSRCC');
+		$pdf->SetSubject('Data Document Masuk');
 		// add a page
 		$pdf->AddPage();
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_atk.pdf', 'I');
+		$pdf->Output('data_document_masuk.pdf', 'I');
 
 
 	}

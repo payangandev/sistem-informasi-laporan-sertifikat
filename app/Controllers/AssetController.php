@@ -45,35 +45,35 @@ public function __construct()
 		}
 
 
-	 $atk = new AtkModel();
-     $dataAtk = $atk->getData();
+	 $asset = new AssetModel();
+     $dataAsset = $asset->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Kode Barang')
-                ->setCellValue('C1', 'Nama')
-                ->setCellValue('D1', 'Jenis')
-                ->setCellValue('E1', 'Stock Awal')
-				->setCellValue('F1', 'Stock Masuk')
-                ->setCellValue('G1', 'Stock Keluar')
-                ->setCellValue('H1', 'Stock Akhir')
+                ->setCellValue('B1', 'Nama Kendaraan')
+                ->setCellValue('C1', 'Tanggal Masuk')
+                ->setCellValue('D1', 'Unit')
+                ->setCellValue('E1', 'Harga')
+				->setCellValue('F1', 'Jumlah')
+                ->setCellValue('G1', 'Kondisi')
+                ->setCellValue('H1', 'Keterangan')
                 ->setCellValue('I1', 'Staff');
 
     
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataAtk as $data) {
+    foreach($dataAsset as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['kode_barang'])
-                    ->setCellValue('C' . $column, $data['nama_barang'])
-                    ->setCellValue('D' . $column, $data['jenis_barang'])
-                    ->setCellValue('E' . $column, $data['stock_awal'])
-                    ->setCellValue('F' . $column, $data['stock_masuk'])
-					->setCellValue('G' . $column, $data['stock_keluar'])
-					->setCellValue('H' . $column, $data['stock_akhir'])
+                    ->setCellValue('B' . $column, $data['nama_kendaraan'])
+                    ->setCellValue('C' . $column, $data['tanggal_masuk'])
+                    ->setCellValue('D' . $column, $data['unit'])
+                    ->setCellValue('E' . $column, $data['harga'])
+                    ->setCellValue('F' . $column, $data['jumlah'])
+					->setCellValue('G' . $column, $data['kondisi'])
+					->setCellValue('H' . $column, $data['keterangan'])
                     ->setCellValue('I' . $column, $data['nama_karyawan']);
 
         $column++;
@@ -82,7 +82,7 @@ public function __construct()
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ATK';
+    $fileName = 'Data Asset';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -101,28 +101,29 @@ public function __construct()
 		}
 		
 		$data = array(
-			'atk'	=> $this->atk_model->getData(),	
+			'asset'	=> $this->asset_model->getData(),	
 		);
-		$html =  view('atk/pdf', $data);
+		$html =  view('asset/pdf', $data);
 
 		// test pdf
 
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4 POTRAIT', true, 'UTF-8', false);
 		// set font tulisan
 		$pdf->SetFont('dejavusans', '', 10);
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
 		// $pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Utari Pratiwi');
-		$pdf->SetTitle('Data ATK HSRCC');
-		$pdf->SetSubject('Data ATK');
+		$pdf->SetTitle('Data Asset HSRCC');
+		$pdf->SetSubject('Data Asset');
 		// add a page
 		$pdf->AddPage();
+		
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_atk.pdf', 'I');
+		$pdf->Output('data_asset.pdf', 'I');
 
 
 	}

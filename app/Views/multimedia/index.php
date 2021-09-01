@@ -29,11 +29,11 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Multimedia </h6>
-                        <a href="<?php echo base_url('atk/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Multimedia </h6><br>
+                            <a href="<?php echo base_url('multimedia/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('atk/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('multimedia/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
                             <a href="<?php echo base_url('multimedia/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
@@ -87,8 +87,8 @@
                                             <td><?php echo $row['merk']; ?></td>
                                             <td><?php echo $row['satuan']; ?></td>
                                             <td><?php echo $row['vol']; ?></td>
-                                            <td><?php echo $row['harga']; ?></td>
-                                            <td><?php echo $row['jumlah']; ?></td>
+                                            <td>Rp.<?php echo number_format($row['harga'], 2,  ",", ".");?> </td>
+                                            <td>Rp.<?php echo number_format($row['jumlah'], 2,  ",", ".");?> </td>
                                             <td><?php echo $row['kondisi']; ?></td>
                                             <td><?php echo $row['keterangan']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>

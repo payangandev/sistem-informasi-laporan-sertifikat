@@ -29,16 +29,16 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Asset</h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Asset</h6> <br>
                         
-                        <a href="<?php echo base_url('atk/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                        <a href="<?php echo base_url('asset/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('atk/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('asset/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
                         
-                            <a href="<?php echo base_url('asset/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                            <a href="<?php echo base_url('asset/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -83,8 +83,8 @@
                                             <td><?php echo $row['nama_kendaraan']; ?></td>
                                             <td><?php echo $row['tanggal_masuk']; ?></td>
                                             <td><?php echo $row['unit']; ?></td>
-                                            <td><?php echo number_format($row['harga'], 0,  ",", ".");?> </td>
-                                            <td><?php echo number_format($row['jumlah'], 0,  ",", ".");?> </td>
+                                            <td>Rp.<?php echo number_format($row['harga'], 2,  ",", ".");?> </td>
+                                            <td>Rp.<?php echo number_format($row['jumlah'], 2,  ",", ".");?> </td>
                                             <td><?php echo $row['kondisi']; ?></td>
                                             <td><?php echo $row['keterangan']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
