@@ -109,8 +109,8 @@ class karyawanController extends BaseController
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
 		// $pdf->SetCreator(PDF_CREATOR);
-		$pdf->SetAuthor('Utari Pratiwi');
-		$pdf->SetTitle('Data Karyawan HSRCC');
+		$pdf->SetAuthor('Dita');
+		$pdf->SetTitle('Data Karyawan');
 		$pdf->SetSubject('Data Karyawan');
 		// add a page
 		$pdf->AddPage();

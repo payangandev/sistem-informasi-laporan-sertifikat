@@ -13,42 +13,29 @@ class DashboardModel extends Model
 		return $this->db->table("users")->countAll();
 	}
 
-	public function getCountKaryawan()
+	public function getCountKtiga()
 	{
-		return $this->db->table("karyawan")->countAll();
+		return $this->db->table("ktiga")->countAll();
 	}
 
-	public function getCountDocumentMasuk()
+	public function getCountSka()
 	{
-		return $this->db->table("documentmasuk")->countAll();
+		return $this->db->table("ska")->countAll();
 	}
 
-	public function getCounDocumentKeluar()
+	public function  getCountSkt()
 	{
-		return $this->db->table("documentkeluar")->countAll();
+		return $this->db->table("skt")->countAll();
 	}
 
-	public function getCountNotaMasuk()
+	public function getCountIso()
 	{
-		return $this->db->table("notamasuk")->countAll();
+		return $this->db->table("iso")->countAll();
 	}
 
-	public function getCountNotaKeluar()
+	public function getCountPerusahaan()
 	{
-		return $this->db->table("notakeluar")->countAll();
+		return $this->db->table("perusahaan")->countAll();
 	}
 
-	public function getCountAtk() { return $this->db->table("atk")->countAll(); }
-
-	public function getCountKendaraan(){return $this->db->table("kendaraan")->countAll();}
-
-	public function getCountAsset(){return $this->db->table("asset")->countAll();}
-
-	public function getCountAudioVisual() {return $this->db->table("audiovisual")->countAll();}
-
-	public function getCountFurniture() {return $this->db->table("furniture")->countAll();}
-
-	public function getCountMultimedia() {return $this->db->table("multimedia")->countAll();}
-
-	public function getCountElektronik() {return $this->db->table("elektronik")->countAll();}
 }

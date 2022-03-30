@@ -3,19 +3,19 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\UserModel;
+use App\Models\KaryawanModel;
+use App\Models\SkaModel;
 use TCPDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-class UsersController extends BaseController
+class SkaController extends BaseController
 {
-	protected $helpers = [];
-
-	public function __construct()
+public function __construct()
 	{
 		helper(['form']);
-		$this->users_model = new UserModel();
+		$this->karyawan_model = new KaryawanModel();
+		$this->ska_model = new SkaModel();
 	}
 
 	public function index()
@@ -26,15 +26,17 @@ class UsersController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_users') ? $this->request->getVar('page_users') : 1;
+		$currentPage = $this->request->getVar('page_ska') ? $this->request->getVar('page_ska') : 1;
+
 		// paginate
-		$paginate = 100000;
-		$data['users']   = $this->users_model->paginate($paginate, 'users');
-		$data['pager']        = $this->users_model->pager;
-		$data['currentPage']  = $currentPage;
-		echo view('users/index', $data);
+		$paginate = 1000000;
+		$data['ska']   		= $this->ska_model->join('karyawan', 'karyawan.karyawan_id = ska.karyawan_id')->paginate($paginate, 'ska');
+		$data['pager']        	= $this->ska_model->pager;
+		$data['currentPage']  	= $currentPage;
+		echo view('ska/index', $data);
 	}
-	
+
+
 	public function excel(){
 		// proteksi halaman
 		if (session()->get('username') == '') {
@@ -43,27 +45,28 @@ class UsersController extends BaseController
 		}
 
 
-	 $users = new UserModel();
-     $dataUsers = $users->getData();
+	 $ska = new SkaModel();
+     $dataska = $ska->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Nama Users')
-                ->setCellValue('C1', 'Username')
-                ->setCellValue('D1', 'Password')
-                ->setCellValue('E1', 'Level');
+	->setCellValue('B1', 'Nama')
+	->setCellValue('C1', 'Kode')
+	->setCellValue('D1', 'Tanggal Input')
+	->setCellValue('E1', 'Karyawan');
+
     
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataUsers as $data) {
+    foreach($dataska as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['nama_user'])
-                    ->setCellValue('C' . $column, $data['username'])
-                    ->setCellValue('D' . $column, $data['password'])
-                    ->setCellValue('E' . $column, $data['level']);
+		->setCellValue('B' . $column, $data['nama'])
+		->setCellValue('C' . $column, $data['kode'])
+		->setCellValue('D' . $column, $data['tanggal_input'])
+		->setCellValue('E' . $column, $data['nama_karyawan']);
 
         $column++;
     }
@@ -71,7 +74,7 @@ class UsersController extends BaseController
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data Users';
+    $fileName = 'Data ska';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -90,28 +93,29 @@ class UsersController extends BaseController
 		}
 		
 		$data = array(
-			'users'	=> $this->users_model->getData(),	
+			'ska'	=> $this->ska_model->getData(),	
 		);
-		$html =  view('users/pdf', $data);
+		$html =  view('ska/pdf', $data);
 
 		// test pdf
 
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4 POTRAIT', true, 'UTF-8', false);
 		// set font tulisan
 		$pdf->SetFont('dejavusans', '', 10);
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
 		// $pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Dita');
-		$pdf->SetTitle('Data Users');
-		$pdf->SetSubject('Data Users');
+		$pdf->SetTitle('Data Sertikasi SKA');
+		$pdf->SetSubject('Data ska');
 		// add a page
 		$pdf->AddPage();
+		
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_users.pdf', 'I');
+		$pdf->Output('sertifikasi_ska.pdf', 'I');
 
 
 	}
@@ -119,7 +123,14 @@ class UsersController extends BaseController
 
 	public function create()
 	{
-		return view('users/create');
+		// proteksi halaman
+		if (session()->get('username') == '') {
+			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
+			return redirect()->to(base_url('login'));
+		}
+		$karyawan = $this->karyawan_model->findAll();
+		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
+		return view('ska/create', $data);
 	}
 
 	public function store()
@@ -130,26 +141,24 @@ class UsersController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		$validation =  \Config\Services::validation();
-
-
 		$data = array(
-			'nama_user'             => $this->request->getPost('nama_user'),
-			'username'              => $this->request->getPost('username'),
-			'password'              => $this->request->getPost('password'),
-			'level'                 => $this->request->getPost('level'),
+			'nama'        			=> $this->request->getPost('nama'),
+			'kode'        			=> $this->request->getPost('kode'),
+			'tanggal_input'       	=> $this->request->getPost('tanggal_input'),
+			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
 
 		);
 
-		if ($validation->run($data, 'users') == FALSE) {
+		if ($validation->run($data, 'ska') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('users/create'));
+			return redirect()->to(base_url('ska/create'));
 		} else {
-
-			$simpan = $this->users_model->insertData($data);
+			// insert
+			$simpan = $this->ska_model->insertData($data);
 			if ($simpan) {
 				session()->setFlashdata('success', 'Tambah Data Berhasil');
-				return redirect()->to(base_url('users'));
+				return redirect()->to(base_url('ska'));
 			}
 		}
 	}
@@ -162,8 +171,10 @@ class UsersController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$data['users'] = $this->users_model->getData($id);
-		echo view('users/edit', $data);
+		$karyawan = $this->karyawan_model->findAll();
+		$data['karyawan'] = ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
+		$data['ska'] = $this->ska_model->getData($id);
+		echo view('ska/edit', $data);
 	}
 
 	public function update()
@@ -173,33 +184,28 @@ class UsersController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$id = $this->request->getPost('id');
+		$id = $this->request->getPost('ska_id');
 
 		$validation =  \Config\Services::validation();
 
-
 		$data = array(
-			'nama_user'             => $this->request->getPost('nama_user'),
-			'username'              => $this->request->getPost('username'),
-			'password'              => $this->request->getPost('password'),
-			'level'                 => $this->request->getPost('level'),
-
+			'nama'        			=> $this->request->getPost('nama'),
+			'kode'        			=> $this->request->getPost('kode'),
+			'tanggal_input'       	=> $this->request->getPost('tanggal_input'),
+			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
 		);
-
-		if ($validation->run($data, 'users') == FALSE) {
+		if ($validation->run($data, 'ska') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('users/edit/' . $id));
+			return redirect()->to(base_url('ska/edit/' . $id));
 		} else {
-
-			$ubah = $this->users_model->updateData($data, $id);
+			$ubah = $this->ska_model->updateData($data, $id);
 			if ($ubah) {
 				session()->setFlashdata('info', 'Update Data Berhasil');
-				return redirect()->to(base_url('users'));
+				return redirect()->to(base_url('ska'));
 			}
 		}
 	}
-
 	public function delete($id)
 	{
 		// proteksi halaman
@@ -207,10 +213,10 @@ class UsersController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$hapus = $this->users_model->deleteData($id);
+		$hapus = $this->ska_model->deleteData($id);
 		if ($hapus) {
 			session()->setFlashdata('warning', 'Delete Data Berhasil');
-			return redirect()->to(base_url('users'));
+			return redirect()->to(base_url('ska'));
 		}
 	}
 }

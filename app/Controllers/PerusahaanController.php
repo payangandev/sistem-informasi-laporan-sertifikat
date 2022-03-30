@@ -3,19 +3,19 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\UserModel;
+use App\Models\PerusahaanModel;
 use TCPDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-class UsersController extends BaseController
+class PerusahaanController extends BaseController
 {
 	protected $helpers = [];
 
 	public function __construct()
 	{
 		helper(['form']);
-		$this->users_model = new UserModel();
+		$this->perusahaan_model = new PerusahaanModel();
 	}
 
 	public function index()
@@ -26,13 +26,13 @@ class UsersController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_users') ? $this->request->getVar('page_users') : 1;
+		$currentPage = $this->request->getVar('page_perusahaan') ? $this->request->getVar('page_perusahaan') : 1;
 		// paginate
 		$paginate = 100000;
-		$data['users']   = $this->users_model->paginate($paginate, 'users');
-		$data['pager']        = $this->users_model->pager;
+		$data['perusahaan']   = $this->perusahaan_model->paginate($paginate, 'perusahaan');
+		$data['pager']        = $this->perusahaan_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('users/index', $data);
+		echo view('perusahaan/index', $data);
 	}
 	
 	public function excel(){
@@ -43,27 +43,22 @@ class UsersController extends BaseController
 		}
 
 
-	 $users = new UserModel();
-     $dataUsers = $users->getData();
+	 $perusahaan = new PerusahaanModel();
+     $dataperusahaan = $perusahaan->getData();
 	
 		$spreadsheet = new Spreadsheet();
 
 
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Nama Users')
-                ->setCellValue('C1', 'Username')
-                ->setCellValue('D1', 'Password')
-                ->setCellValue('E1', 'Level');
-    
+                ->setCellValue('B1', 'Nama perusahaan')
+                ->setCellValue('C1', 'Tanggal Input');    
     $column = 2;
     // tulis data mobil ke cell
-    foreach($dataUsers as $data) {
+    foreach($dataperusahaan as $data) {
         $spreadsheet->setActiveSheetIndex(0)
                     ->setCellValue('B' . $column, $data['nama_user'])
-                    ->setCellValue('C' . $column, $data['username'])
-                    ->setCellValue('D' . $column, $data['password'])
-                    ->setCellValue('E' . $column, $data['level']);
+                    ->setCellValue('C' . $column, $data['tanggal_input']);
 
         $column++;
     }
@@ -71,7 +66,7 @@ class UsersController extends BaseController
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data Users';
+    $fileName = 'Data perusahaan';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -90,9 +85,9 @@ class UsersController extends BaseController
 		}
 		
 		$data = array(
-			'users'	=> $this->users_model->getData(),	
+			'perusahaan'	=> $this->perusahaan_model->getData(),	
 		);
-		$html =  view('users/pdf', $data);
+		$html =  view('perusahaan/pdf', $data);
 
 		// test pdf
 
@@ -102,16 +97,16 @@ class UsersController extends BaseController
 		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
 		// $pdf->SetCreator(PDF_CREATOR);
-		$pdf->SetAuthor('Dita');
-		$pdf->SetTitle('Data Users');
-		$pdf->SetSubject('Data Users');
+		$pdf->SetAuthor('Deni');
+		$pdf->SetTitle('Data Perusahaan');
+		$pdf->SetSubject('Data Perusahaan');
 		// add a page
 		$pdf->AddPage();
 		// write html
 		$pdf->writeHTML($html);
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_users.pdf', 'I');
+		$pdf->Output('data_perusahaan.pdf', 'I');
 
 
 	}
@@ -119,7 +114,7 @@ class UsersController extends BaseController
 
 	public function create()
 	{
-		return view('users/create');
+		return view('perusahaan/create');
 	}
 
 	public function store()
@@ -133,23 +128,21 @@ class UsersController extends BaseController
 
 
 		$data = array(
-			'nama_user'             => $this->request->getPost('nama_user'),
-			'username'              => $this->request->getPost('username'),
-			'password'              => $this->request->getPost('password'),
-			'level'                 => $this->request->getPost('level'),
+			'nama_perusahaan'             => $this->request->getPost('nama_perusahaan'),
+			'tanggal_input'               => $this->request->getPost('tanggal_input'),
 
 		);
 
-		if ($validation->run($data, 'users') == FALSE) {
+		if ($validation->run($data, 'perusahaan') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('users/create'));
+			return redirect()->to(base_url('perusahaan/create'));
 		} else {
 
-			$simpan = $this->users_model->insertData($data);
+			$simpan = $this->perusahaan_model->insertData($data);
 			if ($simpan) {
 				session()->setFlashdata('success', 'Tambah Data Berhasil');
-				return redirect()->to(base_url('users'));
+				return redirect()->to(base_url('perusahaan'));
 			}
 		}
 	}
@@ -162,8 +155,8 @@ class UsersController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$data['users'] = $this->users_model->getData($id);
-		echo view('users/edit', $data);
+		$data['perusahaan'] = $this->perusahaan_model->getData($id);
+		echo view('perusahaan/edit', $data);
 	}
 
 	public function update()
@@ -179,23 +172,21 @@ class UsersController extends BaseController
 
 
 		$data = array(
-			'nama_user'             => $this->request->getPost('nama_user'),
-			'username'              => $this->request->getPost('username'),
-			'password'              => $this->request->getPost('password'),
-			'level'                 => $this->request->getPost('level'),
+			'nama_perusahaan'             => $this->request->getPost('nama_perusahaan'),
+			'tanggal_input'               => $this->request->getPost('tanggal_input'),
 
 		);
 
-		if ($validation->run($data, 'users') == FALSE) {
+		if ($validation->run($data, 'perusahaan') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('users/edit/' . $id));
+			return redirect()->to(base_url('perusahaan/edit/' . $id));
 		} else {
 
-			$ubah = $this->users_model->updateData($data, $id);
+			$ubah = $this->perusahaan_model->updateData($data, $id);
 			if ($ubah) {
 				session()->setFlashdata('info', 'Update Data Berhasil');
-				return redirect()->to(base_url('users'));
+				return redirect()->to(base_url('perusahaan'));
 			}
 		}
 	}
@@ -207,10 +198,10 @@ class UsersController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$hapus = $this->users_model->deleteData($id);
+		$hapus = $this->perusahaan_model->deleteData($id);
 		if ($hapus) {
 			session()->setFlashdata('warning', 'Delete Data Berhasil');
-			return redirect()->to(base_url('users'));
+			return redirect()->to(base_url('perusahaan'));
 		}
 	}
 }
