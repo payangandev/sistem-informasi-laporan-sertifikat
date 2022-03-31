@@ -2,13 +2,9 @@
 
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <?php echo view('_partials/sidebar'); ?>
-
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -103,64 +99,57 @@
                                               <div class="form-group">
                                                 <?php
                                                 echo form_label('Survailance 2');
-                                                $tanggal_terbit = [
+                                                $survailance_two = [
                                                   'type'  => 'date',
-                                                  'name'  => 'tanggal_terbit',
-                                                  'id'    => 'tanggal_terbit',
-                                                  'value' => $inputs['tanggal_terbit'],
+                                                  'name'  => 'survailance_two',
+                                                  'id'    => 'survailance_two',
+                                                  'value' => $inputs['survailance_two'],
                                                   'class' => 'form-control',
                                                 ];
-                                                echo form_input($tanggal_terbit);
+                                                echo form_input($survailance_two);
                                                 ?>
                                               </div>
                                             
-
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Jumlah');
-                                                $stock_keluar = [
-                                                  'type'  => 'number',
-                                                  'name'  => 'jumlah',
-                                                  'id'    => 'jumlah',
-                                                  'value' => $inputs['jumlah'],
-                                                  'class' => 'form-control',
-                                                  'placeholder' => 'Masukan Jumlah Audio'
-                                                ];
-                                                echo form_input($stock_keluar);
-                                                ?>
-                                              </div>
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Kondisi Audio', 'kondisi');
-                                                echo form_dropdown('kondisi', ['' => 'Pilih',
-                                                  'BARU'          => 'BARU', 
-                                                  'BEKAS'         => 'BEKAS'
-                                                  ],
-                                                  $inputs['kondisi'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Keterangan');
+                                                echo form_label('No Resi');
                                                 $stock_akhir = [
                                                   'type'  => 'text',
-                                                  'name'  => 'keterangan',
-                                                  'id'    => 'keterangan',
-                                                  'value' => $inputs['keterangan'],
+                                                  'name'  => 'no_resi',
+                                                  'id'    => 'no_resi',
+                                                  'value' => $inputs['no_resi'],
                                                   'class' => 'form-control',
-                                                  'placeholder' => 'Keterangan Audio'
+                                                  'placeholder' => 'No Resi'
                                                 ];
                                                 echo form_input($stock_akhir);
                                                 ?>
                                               </div>
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Satuan Audio', 'satuan');
-                                                echo form_dropdown('satuan', ['' => 'Pilih',
-                                                  'UNIT'        => 'UNIT', 
-                                                  'BOX'         => 'BOX'
-                                                  ],
-                                                  $inputs['satuan'], ['class' => 'form-control']);
+                                                echo form_label('Marketing');
+                                                $stock_akhir = [
+                                                  'type'  => 'text',
+                                                  'name'  => 'marketing',
+                                                  'id'    => 'marketing',
+                                                  'value' => $inputs['marketing'],
+                                                  'class' => 'form-control',
+                                                  'placeholder' => 'Marketing'
+                                                ];
+                                                echo form_input($stock_akhir);
+                                                ?>
+                                              </div>
+                                              <div class="form-group">
+                                                <?php
+                                                echo form_label('Harga Jual');
+                                                $harga_jual = [
+                                                  'type'  => 'number',
+                                                  'name'  => 'harga_jual',
+                                                  'id'    => 'harga_jual',
+                                                  'value' => $inputs['harga_jual'],
+                                                  'class' => 'form-control',
+                                                  'placeholder' => 'Harga Jual Sertifikat'
+                                                ];
+                                                echo form_input($harga_jual);
                                                 ?>
                                               </div>
                                             </div>

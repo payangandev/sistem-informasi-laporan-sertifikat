@@ -10,7 +10,7 @@
     
     <meta name="author" content="">
 
-    <title>HSRCC - System Login</title>
+    <title>FBB - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,11 +39,9 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <p class="h4 text-danger"><b>High Speed Railway Contractor Consortium</b></p> <br>
-
+                                        <h3 class="text-center"><b>LOGIN  <b></h3> </br>
                                         <img src="hsrcc.png" class="rounded  mx-auto d-block" alt="Cinque Terre"><br>
-                                        <h3 class="text-center"><b>Login System<b></h3>
-                                        <p class="login-box-msg ">Information Management System</p>
+                                        <p class="login-box-msg ">Rekapitulasi Reports System</p>
                                         <hr>
                                         <?php
                                         if (!empty(session()->getFlashdata('sukses'))) { ?>
