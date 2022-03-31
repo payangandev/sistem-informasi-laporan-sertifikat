@@ -85,10 +85,10 @@
                                                 echo form_label('Jabatan Karyawan', 'jabatan');
                                                 echo form_dropdown('jabatan', [
                                                     
-                                                    ''                => 'Pilih', 
-                                                    'Manager'         => 'Manager', 
-                                                    'Translator'      => 'Translator',
-                                                    'Staff Engginer'  => 'Staff Engginer'
+                                                    ''                      => 'Pilih',
+                                                    'Manager'               => 'Manager', 
+                                                    'Admin'                 => 'Admin',
+                                                    'Super Admin'           => 'Super Admin',
 
                                                 ], $inputs['jabatan'], ['class' => 'form-control']);
                                                 ?>

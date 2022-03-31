@@ -88,9 +88,9 @@
                                                 echo form_label('Survailance 1');
                                                 $survailance_one = [
                                                   'type'  => 'date',
-                                                  'name'  => 'tanggal_terbit',
-                                                  'id'    => 'tanggal_terbit',
-                                                  'value' => $inputs['tanggal_terbit'],
+                                                  'name'  => 'survailance_one',
+                                                  'id'    => 'survailance_one',
+                                                  'value' => $inputs['survailance_one'],
                                                   'class' => 'form-control',
                                                 ];
                                                 echo form_input($survailance_one);

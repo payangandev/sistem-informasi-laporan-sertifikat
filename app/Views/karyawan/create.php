@@ -90,8 +90,8 @@
 
                                                   ''                      => 'Pilih',
                                                   'Manager'               => 'Manager', 
-                                                  'Translator'            => 'Translator',
-                                                  'Staff Engginer'        => 'Staff Engginer',
+                                                  'Admin'                 => 'Admin',
+                                                  'Super Admin'           => 'Super Admin',
                                                   
                                                   ],
                                                   $inputs['status'], ['class' => 'form-control']);

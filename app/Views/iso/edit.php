@@ -23,13 +23,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data Audio Visual</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data Iso</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Audio Visual </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Iso </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -50,111 +50,77 @@
                                         </div>
                                       <?php } ?>
                                       <div class="card">
-                                        <?php echo form_open_multipart('audiovisual/update/' . $audiovisual['audiovisual_id']); ?>
+                                        <?php echo form_open_multipart('iso/update/' . $iso['iso_id']); ?>
                                         <div class="card-body">
-                                          <?php echo form_hidden('audiovisual_id', $audiovisual['audiovisual_id']); ?>
+                                          <?php echo form_hidden('iso_id', $iso['iso_id']); ?>
                                           <div class="row">
                                             <div class="col-md-6">
-
+                                              <div div class="form-group">
+                                                 <?php echo form_label('Perusahaan', 'perusahaan'); ?>
+                                                 <?php echo form_dropdown('perusahaan_id', $perusahaan, $iso['perusahaan_id'], ['class' => 'form-control']); ?>
+                                              </div>
                                               <div class="form-group">
-                                                <?php echo form_label('Tanggal Masuk', 'tanggal_masuk'); ?>
-                                                <?php echo form_input('tanggal_masuk', $audiovisual['tanggal_masuk'],
+                                                <?php echo form_label('Kode Iso', 'kode_iso'); ?>
+                                                <?php echo form_input('kode_iso', $iso['kode_iso'], 
+
+                                                ['class' => 'form-control']);
+
+                                                 ?>
+                                              </div>
+                                              <div class="form-group">
+                                                <?php echo form_label('Tanggal Terbit', 'tanggal_terbit'); ?>
+                                                <?php echo form_input('tanggal_terbit', $iso['tanggal_terbit'],
 
                                                  ['class' => 'form-control']
                                                  
                                                  ); ?>
                                               </div>
                                               <div class="form-group">
-                                                <?php echo form_label('Kode Inventaris', 'kode_inventaris'); ?>
-                                                <?php echo form_input('kode_inventaris', $audiovisual['kode_inventaris'], 
+                                                <?php echo form_label('Survailance 1', 'survailance_one'); ?>
+                                                <?php echo form_input('survailance_one', $iso['survailance_one'],
 
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-                                               <div class="form-group">
-                                                <?php echo form_label('Nama Audio', 'nama_item'); ?>
-                                                <?php echo form_input('nama_item', $audiovisual['nama_item'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-                                               <div class="form-group">
-                                                <?php echo form_label('merek Audio', 'merk'); ?>
-                                                <?php echo form_input('merk', $audiovisual['merk'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
+                                                 ['class' => 'form-control']
+                                                 
+                                                 ); ?>
                                               </div>
                                               <div class="form-group">
-                                                <?php
-                                                echo form_label('Satuan Audio', 'satuan');
-                                                echo form_dropdown('satuan', [
-                                                    ''          => 'Pilih', 
-                                                    'UNIT'      => 'UNIT', 
-                                                    'BOX'       => 'BOX'
+                                                <?php echo form_label('Survailance 2 ', 'survailance_two'); ?>
+                                                <?php echo form_input('survailance_two', $iso['survailance_two'],
 
-                                                ], $inputs['satuan'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-                                            </div>
-                                            <div class="col-md-6">
-
-                                              <div class="form-group">
-                                                <?php echo form_label('Harga Audio', 'harga'); ?>
-                                                <?php echo form_input('harga', $audiovisual['harga'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-
-                                               <div class="form-group">
-                                                <?php echo form_label('Jumlah Audio', 'jumlah'); ?>
-                                                <?php echo form_input('jumlah', $audiovisual['jumlah'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-                                               <div class="form-group">
-                                                <?php echo form_label('Kondisi Audio', 'kondisi'); ?>
-                                                <?php echo form_input('kondisi', $audiovisual['kondisi'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-                                               <div class="form-group">
-                                                <?php echo form_label('keterangan Audio', 'keterangan'); ?>
-                                                <?php echo form_input('keterangan', $audiovisual['keterangan'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
+                                                 ['class' => 'form-control']
+                                                 
+                                                 ); ?>
                                               </div>
                                               <div class="form-group">
-                                                <?php echo form_label('Vol', 'vol'); ?>
-                                                <?php echo form_input('vol', $audiovisual['vol'], 
+                                                <?php echo form_label('No Resi', 'no_resi'); ?>
+                                                <?php echo form_input('no_resi', $iso['no_resi'],
 
-                                                ['class' => 'form-control']);
-
-                                                 ?>
+                                                 ['class' => 'form-control']
+                                                 
+                                                 ); ?>
                                               </div>
-                                          </div>
-                                          <div class="col-md-12">
                                               <div class="form-group">
-                                                 <?php echo form_label('Staff Verified', 'karyawan'); ?>
-                                                 <?php echo form_dropdown('karyawan_id', $karyawan, $audiovisual['karyawan_id'], ['class' => 'form-control']); ?>
+                                                <?php echo form_label('Marketing', 'marketing'); ?>
+                                                <?php echo form_input('marketing', $iso['marketing'],
+
+                                                 ['class' => 'form-control']
+                                                 
+                                                 ); ?>
+                                              </div>
+                                              <div class="form-group">
+                                                <?php echo form_label('Harga Jual ', 'harga_jual'); ?>
+                                                <?php echo form_input('harga_jual', $iso['harga_jual'],
+
+                                                 ['class' => 'form-control']
+                                                 
+                                                 ); ?>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="card-footer">
-                                        <a href="<?php echo base_url('audiovisual'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                                        <a href="<?php echo base_url('iso'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
                                         <button type="submit" class="btn btn-primary float-right"> <i class="nav-icon fas fa-save"></i> Update Data</button>
                                       </div>
                                       <?php echo form_close(); ?>
