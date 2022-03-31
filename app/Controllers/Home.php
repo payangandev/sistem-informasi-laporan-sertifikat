@@ -19,23 +19,13 @@ class Home extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 
-
-		$data['total_user']       		= $this->dashboard_model->getCountUser();
-		$data['total_documentmasuk']    = $this->dashboard_model->getCountDocumentMasuk();
-		$data['total_documentkeluar']   = $this->dashboard_model->getCounDocumentKeluar();
-		$data['total_notamasuk']        = $this->dashboard_model->getCountNotaMasuk();
-		$data['total_notakeluar']       = $this->dashboard_model->getCountNotaKeluar();
-		$data['total_karyawan']         = $this->dashboard_model->getCountKaryawan();
-		$data['total_atk']				= $this->dashboard_model->getCountAtk();
-		$data['total_kendaraan']		= $this->dashboard_model->getCountKendaraan();
-		$data['total_asset']			= $this->dashboard_model->getCountAsset();
-		$data['total_audiovisual']		= $this->dashboard_model->getCountAudiovisual();
-		$data['total_furniture']		= $this->dashboard_model->getCountFurniture();
-		$data['total_multimedia'] 		= $this->dashboard_model->getCountMultimedia();
-		$data['total_elektronik']		= $this->dashboard_model->getCountElektronik();
-
-
-
+		$data['data_user']       	= $this->dashboard_model->getCountUser();
+		$data['data_ktiga']    		= $this->dashboard_model->getCountKtiga();
+		$data['data_iso']   		= $this->dashboard_model->getCountIso();
+		$data['data_perusahaan']    = $this->dashboard_model->getCountPerusahaan();
+		$data['data_ska']       	= $this->dashboard_model->getCountSka();
+		$data['data_karyawan']     = $this->dashboard_model->getCountKaryawan();
+		$data['data_skt']			= $this->dashboard_model->getCountSkt();
 
 		return view('dashboard',  $data);
 	}

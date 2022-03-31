@@ -28,15 +28,15 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                        <!-- Data Atk -->
+                        <!-- Data K3 -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data ATK</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_atk ?></div>
+                                                Data Sertifikasi K3</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_ktiga ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-toolbox fa-2x text-blue-300"></i>
@@ -46,15 +46,15 @@
                             </div>
                         </div>
 
-                        <!-- Data Kendaraan -->
+                        <!-- Data ISO -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Kendaraan</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_kendaraan ?></div>
+                                                Data Sertifikasi ISO</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_iso ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-car-side fa-2x text-blue-300"></i>
@@ -64,15 +64,15 @@
                             </div>
                         </div>
 
-                        <!-- Data Assets -->
+                        <!-- Data Perusahaan -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Asset</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $total_asset ?></div>
+                                                Data Perusahaan</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $data_perusahaan ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-hand-holding-usd fa-2x text-blue-300"></i>
@@ -89,8 +89,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Audio Visual</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_audiovisual ?></div>
+                                                Data Sertifikasi SKA</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_ska ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-broadcast-tower fa-2x text-blue-300"></i>
@@ -100,121 +100,18 @@
                             </div>
                         </div>
 
-                        <!-- Data Furniture -->
+                        <!-- Data SKT -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Furniture</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_furniture?></div>
+                                                Data Sertikasi SKT</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_skt?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-couch fa-2x text-blue-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Data Multimedia -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Multimedia</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_multimedia ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-camera-retro fa-2x text-blue-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Data Elektronik -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Elektronik</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_elektronik ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-camera-retro fa-2x text-blue-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Data Dokumen -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Dokumen</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_documentmasuk ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-book fa-2x text-blue-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Data Dokumen -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Dokumen Keluar</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_documentkeluar ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-book fa-2x text-blue-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Data Nota -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Nota</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_notamasuk ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-receipt fa-2x text-blue-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Data Nota -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Nota Keluar</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_notakeluar ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-receipt fa-2x text-blue-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -228,7 +125,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Data Karyawan</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_karyawan ?></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_karyawan ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user-friends fa-2x text-blue-300"></i>
@@ -245,7 +142,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Data User</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_user ?></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_user ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user-check fa-2x text-blue-300"></i>

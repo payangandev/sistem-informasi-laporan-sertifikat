@@ -23,13 +23,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data ATK</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data SKT</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data ATK </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data SKT </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -49,7 +49,7 @@
                                           </ul>
                                         </div>
                                       <?php } ?>
-                                      <?php echo form_open_multipart('atk/store'); ?>
+                                      <?php echo form_open_multipart('skt/store'); ?>
                                       <div class="card">
                                         <div class="card-body">
                                           <div class="row">
@@ -172,7 +172,7 @@
                                         </div>
                                       </div>
                                       <div class="card-footer">
-                                        <a href="<?php echo base_url('atk'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                                        <a href="<?php echo base_url('skt'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
                                         <button type="submit" class="btn btn-primary float-right"><i class="nav-icon fas fa-save"></i> Simpan</button>
                                       </div>
                                     </div>

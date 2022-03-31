@@ -20,11 +20,11 @@
                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= session()->get('nama_user'); ?> | <?php if (session()->get('level') == 1) {
                                                                                                                         echo 'Manager';
                                                                                                                     } elseif (session()->get('level') == 2) {
-                                                                                                                        echo 'Ast. Manager';
+                                                                                                                        echo 'Admins';
                                                                                                                     } elseif (session()->get('level') == 3) {
-                                                                                                                        echo "General Affair";
+                                                                                                                        echo "Super Admins";
                                                                                                                     } else {
-                                                                                                                        echo 'GA';
+                                                                                                                        echo 'Guest';
                                                                                                                     } ?></span>
                    <img class="img-profile rounded-circle" src="<?php echo base_url('circle.png');?>">
                </a>

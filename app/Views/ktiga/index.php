@@ -23,22 +23,22 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Asset</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Data K3</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Asset</h6> <br>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data K3</h6> <br>
                         
-                        <a href="<?php echo base_url('asset/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                        <a href="<?php echo base_url('ktiga/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('asset/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('ktiga/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
                         
-                            <a href="<?php echo base_url('asset/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                            <a href="<?php echo base_url('ktiga/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -65,35 +65,39 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Kendaraan</th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Unit</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>Kondisi</th>
-                                        <th>Keterangan</th>
-                                        <th>Staff</th>
+                                        <th>Nama Personil</th>
+                                        <th>Sub Bidang</th>
+                                        <th>Perusahaan</th>
+                                        <th>Harga Setor</th>
+                                        <th>Order Lencana</th>
+                                        <th>Harga Jual</th>
+                                        <th>Tanggal Proses</th>
+                                        <th>Marketing</th>
+                                        <th>Tanggal Selesai</th>
+                                        <th>No Resi</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($asset as $key => $row) { ?>
+                                    <?php foreach ($ktiga as $key => $row) { ?>
                                         <tr>
                                             <td><?php echo $key + 1; ?></td>
-                                            <td><?php echo $row['nama_kendaraan']; ?></td>
-                                            <td><?php echo $row['tanggal_masuk']; ?></td>
-                                            <td><?php echo $row['unit']; ?></td>
-                                            <td>Rp.<?php echo number_format($row['harga'], 2,  ",", ".");?> </td>
-                                            <td>Rp.<?php echo number_format($row['jumlah'], 2,  ",", ".");?> </td>
-                                            <td><?php echo $row['kondisi']; ?></td>
-                                            <td><?php echo $row['keterangan']; ?></td>
-                                            <td><?php echo $row['nama_karyawan']; ?></td>
+                                            <td><?php echo $row['nama_personil']; ?></td>
+                                            <td><?php echo $row['sub_bidang']; ?></td>
+                                            <td><?php echo $row['nama_perusahaan']; ?></td>
+                                            <td>Rp.<?php echo number_format($row['harga_setor'], 2,  ",", ".");?> </td>
+                                            <td><?php echo $row['order_lencana']; ?></td>
+                                            <td>Rp.<?php echo number_format($row['harga_jual'], 2,  ",", ".");?> </td>
+                                            <td><?php echo $row['tanggal_proses']; ?></td>
+                                            <td><?php echo $row['marketing']; ?></td>
+                                            <td><?php echo $row['tanggal_selesai']; ?></td>
+                                            <td><?php echo $row['no_resi']; ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="<?php echo base_url('asset/edit/' . $row['asset_id']); ?>" class="btn btn-sm btn-success">
+                                                    <a href="<?php echo base_url('ktiga/edit/' . $row['ktiga_id']); ?>" class="btn btn-sm btn-success">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <a href="<?php echo base_url('asset/delete/' . $row['asset_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                    <a href="<?php echo base_url('ktiga/delete/' . $row['ktiga_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -104,14 +108,16 @@
                                 <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Unit</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>Kondisi</th>
-                                        <th>Keterangan</th>
-                                        <th>Staff</th>
+                                        <th>Nama Personil</th>
+                                        <th>Sub Bidang</th>
+                                        <th>Perusahaan</th>
+                                        <th>Harga Setor</th>
+                                        <th>Order Lencana</th>
+                                        <th>Harga Jual</th>
+                                        <th>Tanggal Proses</th>
+                                        <th>Marketing</th>
+                                        <th>Tanggal Selesai</th>
+                                        <th>No Resi</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>

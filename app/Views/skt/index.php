@@ -23,22 +23,22 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data ATK</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Data SKT</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                         
-                        <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data ATK </h6> <br>
+                        <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data SKT </h6> <br>
                         
-                        <a href="<?php echo base_url('atk/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                        <a href="<?php echo base_url('skt/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('atk/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('skt/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
-                        <a href="<?php echo base_url('atk/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                        <a href="<?php echo base_url('skt/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -65,35 +65,27 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode Barang</th>
                                         <th>Nama</th>
-                                        <th>Jenis</th>
-                                        <th>Stock Awal</th>
-                                        <th>Stock Masuk</th>
-                                        <th>Stock Keluar</th>
-                                        <th>Stock Akhir</th>
+                                        <th>Kode</th>
+                                        <th>Tanggal Input</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($atk as $key => $row) { ?>
+                                    <?php foreach ($skt as $key => $row) { ?>
                                         <tr>
                                             <td><?php echo $key + 1; ?></td>
-                                            <td><?php echo $row['kode_barang']; ?></td>
-                                            <td><?php echo $row['nama_barang']; ?></td>
-                                            <td><?php echo $row['jenis_barang']; ?></td>
-                                            <td><?php echo $row['stock_awal']; ?></td>
-                                            <td><?php echo $row['stock_masuk']; ?></td>
-                                            <td><?php echo $row['stock_keluar']; ?></td>
-                                            <td><?php echo $row['stock_akhir']; ?></td>
+                                            <td><?php echo $row['nama']; ?></td>
+                                            <td><?php echo $row['kode']; ?></td>
+                                            <td><?php echo $row['tanggal_input']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="<?php echo base_url('atk/edit/' . $row['atk_id']); ?>" class="btn btn-sm btn-success">
+                                                    <a href="<?php echo base_url('skt/edit/' . $row['skt_id']); ?>" class="btn btn-sm btn-success">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <a href="<?php echo base_url('atk/delete/' . $row['atk_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                    <a href="<?php echo base_url('skt/delete/' . $row['skt_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -102,15 +94,11 @@
                                     <?php } ?>
                                 </tbody>
                                 <tfoot>
-                                    <tr>
+                                <tr>
                                         <th>No</th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Kode Inventaris</th>
-                                        <th>Nama Item</th>
-                                        <th>Merk</th>
-                                        <th>Satuan</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
+                                        <th>Nama</th>
+                                        <th>Kode</th>
+                                        <th>Tanggal Input</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>

@@ -42,211 +42,183 @@ class Validation
 	//--------------------------------------------------------------------
 
 
-	// validasi untuk  setiap field yang ada di Database 
-	public $documentkeluar = [
-		'kode_dokumen'     			=> 'required',
-		'document_type'     		=> 'required',
-		'document_number'   		=> 'required',
-		'judul_dokumen'   			=> 'required',
-		'nomer_box'   				=> 'required',
-		'isi_box'   				=> 'required',
-		'tanggal_keluar'   			=> 'required',
-		'vendor'   					=> 'required',
-		'bahasa'   					=> 'required',
-		'approved'   				=> 'required',
-		'jabatan'   				=> 'required',
-		'status_document'   		=> 'required',
-		'karyawan_id'   			=> 'required',
+	// validasi untuk  setiap field yang ada di base 
+	public $iso = [
+		'perusahaan_id'     	=> 'required',
+		'kode_iso'     			=> 'required',
+		'tanggal_terbit'   		=> 'required',
+		'survailance_one'   	=> 'required',
+		'survailance_two'   	=> 'required',
+		'tanggal_berakhir'   	=> 'required',
+		'tanggal_proses'   		=> 'required',
+		'tanggal_selesai'   	=> 'required',
+		'no_resi'   			=> 'required',
+		'marketing'   			=> 'required',
+		'harga_jual'   			=> 'required',
+	];
+
+	public $iso_errors = [
+
+		'perusahaan_id'     	=> [
+			'required'			=> 'Nama Perusahaan Required'
+		],
+
+		'kode_iso'    			=> [
+			'required'			=> 'Kode Iso Required'
+		],
+
+		'tanggal_terbit'   		=> [
+			'required'			=> 'Tanggal Terbit Required'
+		],
+		'survailance_one'   	=>  [
+			'required'			=> 'Survailance 1 Required'
+		],
+		'survailance_two'   	=>  [
+			'required'			=> 'Survailance 2 Required'
+		],
+		'tanggal_berakhir'   	=>  [
+			'required'			=> 'Tanggal Berakhir Required'
+		],
+		'tanggal_proses'   		=>  [
+			'required'			=> 'Tanggal Proses Required'
+		],
+		'tanggal_selesai'   	=>  [
+			'required'			=> 'Tanggal Selesai Required'
+		],
+		'no_resi'   			=>  [
+			'required'			=> 'No Resi Required'
+		],
+		'marketing'   			=>  [
+			'required'			=> 'Marketing Required'
+		],
+		'harga_jual'   			=>  [
+			'required'			=> 'Harga Jual Required'
+		],
+	];
+
+
+	// validasi untuk  setiap field yang ada di base 
+	public $ktiga = [
+		'nama_personil'     	=> 'required',
+		'sub_bidang'     		=> 'required',
+		'perusahaan_id'   		=> 'required',
+		'harga_setor'   		=> 'required',
+		'order_lencana'   		=> 'required',
+		'harga_jual'   			=> 'required',
+		'tanggal_proses'   		=> 'required',
+		'marketing'   			=> 'required',
+		'tanggal_selesai'   	=> 'required',
+		'no_resi'   			=> 'required',
 
 
 	];
 
-	public $documentkeluar_errors = [
+	public $ktiga_errors = [
 
-		'kode_dokumen'     	=> [
-			'required'		=> 'Kode Dokumen Wajib Di isi'
-		],
-
-		'document_type'    	=> [
-			'required'		=> 'Data dokumen Type Wajib Di isi'
+		'nama_personil'     => [
+			'required'		=> 'Nama Personil Required'
 		],
 
-		'document_number'   => [
-			'required'		=> 'Data dokumen Kode Wajib Di isi'
-		],
-		'judul_dokumen'   	=>  [
-			'required'		=> 'Data judul dokumen Wajib Di isi'
-		],
-		'nomer_box'   		=>  [
-			'required'		=> 'Data Nomer Box Wajib Di isi'
-		],
-		'isi_box'   		=>  [
-			'required'		=> 'Data isi Box Wajib Di isi'
-		],
-		'tanggal_keluar'   	=>  [
-			'required'		=> 'Data Tanggal Keluar Document Wajib Di isi'
-		],
-		'vendor'   			=>  [
-			'required'		=> 'Data Vendor Wajib Di isi'
-		],
-		'bahasa'   			=>  [
-			'required'		=> 'Data Bahasa Wajib Di isi'
-		],
-		'approved'   		=>  [
-			'required'		=> 'Data Approved Wajib Di isi'
-		],
-		'jabatan'   		=>  [
-			'required'		=> 'Data Jabatan Wajib Di isi'
+		'sub_bidang'    	=> [
+			'required'		=> 'Bidang Required'
 		],
 
-		'status_document'   =>  [
-			'required'		=> 'Data status_document  Document Wajib Di isi'
+		'perusahaan_id'   	=> [
+			'required'		=> 'Perusahaan Required'
 		],
-		'karyawan_id'   	=>  [
-			'required'		=> 'Data Penanggung Jawab Document Wajib Di isi'
-		]
-
-	];
-
-
-
-
-
-	// validasi untuk  setiap field yang ada di Database 
-	public $documentmasuk = [
-		'kode_dokumen'     			=> 'required',
-		'document_type'     		=> 'required',
-		'document_number'   		=> 'required',
-		'judul_dokumen'   			=> 'required',
-		'vendor'   					=> 'required',
-		'bahasa'   					=> 'required',
-		'status_document'   		=> 'required',
-		'tanggal_masuk'   			=> 'required',
-		'karyawan_id'   			=> 'required',
-
-	];
-
-	public $documentmasuk_errors = [
-
-		'kode_dokumen'     	=> [
-			'required'		=> 'Kode Dokumen Wajib Di isi'
+		'harga_setor'   	=>  [
+			'required'		=> 'Harga Setor Required'
 		],
-
-		'document_type'    => [
-			'required'		=> 'Data document Type Wajib Di isi'
+		'order_lencana'   	=>  [
+			'required'		=> 'Order Lencana Required'
 		],
-
-		'document_number'   	=> [
-			'required'		=> 'Data document Kode Wajib Di isi'
+		'harga_jual'   		=>  [
+			'required'		=> 'Harga Jual Required'
 		],
-		'judul_dokumen'   	=>  [
-			'required'		=> 'Data Judul Dokumen Wajib Di isi'
+		'tanggal_proses'   	=>  [
+			'required'		=> 'Tanggal Proses Required'
 		],
-		'vendor'   		=>  [
-			'required'		=> 'Data Vendor Wajib Di isi'
+		'marketing'   		=>  [
+			'required'		=> 'Marketing  Required'
 		],
-		'bahasa'   		=>  [
-			'required'		=> 'Data Bahasa Wajib Di isi'
+		'tanggal_selesai'   =>  [
+			'required'		=> 'Tanggal Selesai Required'
 		],
-		'tanggal_masuk'   	=>  [
-			'required'		=> 'Data Tanggal Masuk Document Wajib Di isi'
-		],
-		'status_document'   	=>  [
-			'required'		=> 'Data status_document  Document Wajib Di isi'
-		],
-		'karyawan_id'   	=>  [
-			'required'		=> 'Data Penanggung Jawab Document Wajib Di isi'
+		'no_resi'   		=>  [
+			'required'		=> 'No Resi Required'
 		],
 
 	];
 
 
+	// validasi untuk  setiap field yang ada di base 
+	public $perusahaan = [
+		'nama_perusahaan'		=> 'required',
+		'tanggal_input'     	=> 'required',
+	];
+
+	public $perusahaan_errors = [
+
+		'nama_perusahaan'   => [
+			'required'		=> 'Nama Perusahaan Required'
+		],
+		'tanggal_input'   	=> [
+			'required'		=> 'Tanggal Input Required'
+		],
+	];
 
 
-	// validasi untuk  setiap field yang ada di Database 
-	public $notamasuk = [
+	// validasi untuk  setiap field yang ada di base 
+	public $skt = [
 		'karyawan_id'		=> 'required',
-		'kode_nota'     	=> 'required',
-		'vendor'     		=> 'required',
-		'nama_barang'   	=> 'required',
-		'jumlah_barang'   	=> 'required',
-		'status_document'   => 'required',
-		'tanggal_masuk'   	=> 'required',
-
-
+		'nama'     			=> 'required',
+		'kode'     			=> 'required',
+		'tanggal_input'   	=> 'required',
 	];
 
-	public $notamasuk_errors = [
+	public $skt_errors = [
 
-		'kode_nota'     	=> [
-			'required'		=> 'Kode Nota Wajib Di isi'
+		'nama'     			=> [
+			'required'		=> 'Nama Required'
 		],
-
-		'nama_barang'    => [
-			'required'		=> 'Nama Barang Wajib Di isi'
+		'kode'    			=> [
+			'required'		=> 'Kode Required'
 		],
-
-		'jumlah_barang'   	=> [
-			'required'		=> 'Jumlah Barang Wajib Di isi'
-		],
-		'vendor'   		=>  [
-			'required'		=> 'Data Vendor Wajib Di isi'
-		],
-		'tanggal_keluar'   	=>  [
-			'required'		=> 'Data Tanggal keluar nota Wajib Di isi'
-		],
-		'status_document'   	=>  [
-			'required'		=> 'Data status_document nota Wajib Di isi'
+		'tanggal_input'   	=> [
+			'required'		=> 'Tanggal Input Required'
 		],
 		'karyawan_id'   	=>  [
-			'required'		=> 'Data Penanggung Jawab nota Wajib Di isi'
+			'required'		=> 'Staff Required'
 		]
 	];
 
 
 
-
-	// validasi untuk  setiap field yang ada di Database 
-	public $notakeluar = [
+	// validasi untuk  setiap field yang ada di base 
+	public $ska = [
 		'karyawan_id'		=> 'required',
-		'kode_nota'     	=> 'required',
-		'vendor'     		=> 'required',
-		'nama_barang'   	=> 'required',
-		'jumlah_barang'   	=> 'required',
-		'status_document'   => 'required',
-		'tanggal_keluar'   	=> 'required',
-
-
+		'nama'     			=> 'required',
+		'kode'     			=> 'required',
+		'tanggal_input'   	=> 'required',
 	];
 
-	public $notakeluar_errors = [
+	public $ska_errors = [
 
-		'kode_nota'     	=> [
-			'required'		=> 'Kode Nota Wajib Di isi'
+		'nama'     			=> [
+			'required'		=> 'Nama Required'
 		],
-
-		'nama_barang'    => [
-			'required'		=> 'Nama Barang Wajib Di isi'
+		'kode'    			=> [
+			'required'		=> 'Kode Required'
 		],
-
-		'jumlah_barang'   	=> [
-			'required'		=> 'Jumlah Barang Wajib Di isi'
-		],
-		'vendor'   		=>  [
-			'required'		=> 'Data Vendor Wajib Di isi'
-		],
-		'tanggal_keluar'   	=>  [
-			'required'		=> 'Data Tanggal keluar nota Wajib Di isi'
-		],
-		'status_document'   	=>  [
-			'required'		=> 'Data status_document nota Wajib Di isi'
+		'tanggal_input'   	=> [
+			'required'		=> 'Tanggal Input Required'
 		],
 		'karyawan_id'   	=>  [
-			'required'		=> 'Data Penanggung Jawab nota Wajib Di isi'
+			'required'		=> 'Staff Required'
 		]
 	];
 
-// validasi untuk data karyawan
+// validasi untuk  karyawan
 
 	public $karyawan = [
 		'nama_karyawan'     	=> 'required',
@@ -262,26 +234,26 @@ class Validation
 	public $karyawan_errors = [
 
 		'nama_karyawan'    	=> [
-			'required'		=> 'Nama Barang Wajib Di isi'
+			'required'		=> 'Nama Karyawan Required'
 		],
 
 		'divisi'   			=> [
-			'required'		=> 'Jumlah Barang Wajib Di isi'
+			'required'		=> 'Divisi Required'
 		],
 		'jabatan'   		=>  [
-			'required'		=> 'Data Vendor Wajib Di isi'
+			'required'		=> 'Vendor Required'
 		],
 		'status'   			=>  [
-			'required'		=> 'Data status_document nota Wajib Di isi'
+			'required'		=> 'Status  Required'
 		],
 		'tanggalmasuk'   	=>  [
-			'required'		=> 'Data Penanggung Jawab nota Wajib Di isi'
+			'required'		=> 'Tanggal Join Required'
 		]
 	];
 
 
 
-	// validasi untuk  setiap field yang ada di Database 
+	// validasi untuk  setiap field yang ada di base 
 	public $users = [
 		'nama_user'			=> 'required',
 		'username'     		=> 'required',
@@ -293,16 +265,16 @@ class Validation
 	public $users_errors = [
 
 		'nama_user'     	=> [
-			'required'		=> 'Nama Users Wajib Di isi'
+			'required'		=> 'Nama Users Required'
 		],
 		'username'     			=> [
-			'required'		=> 'Username Wajib Di isi'
+			'required'		=> 'Username Required'
 		],
 		'password'   		=> [
-			'required'		=> 'Password Wajib Di isi'
+			'required'		=> 'Password Required'
 		],
 		'level'   			=>  [
-			'required'		=> ' Level status_document Wajib Di isi'
+			'required'		=> 'Level Users Required'
 		]
 	];
 }

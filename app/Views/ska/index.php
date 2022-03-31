@@ -23,22 +23,22 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Document Keluar</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Data SKA</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Document Keluar </h6>                         <br>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data SKA </h6>                         <br>
                         
-                        <a href="<?php echo base_url('documentkeluar/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                        <a href="<?php echo base_url('ska/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('documentkeluar/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('ska/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
                         
-                            <a href="<?php echo base_url('documentkeluar/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                            <a href="<?php echo base_url('ska/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -65,45 +65,27 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Nama</th>
                                         <th>Kode</th>
-                                        <th>Type</th>
-                                        <th>Number</th>
-                                        <th>Judul</th>
-                                        <th>Nomer Box</th>
-                                        <th>Isi Box</th>
-                                        <th>Tanggal Keluar</th>
-                                        <th>Vendor</th>
-                                        <th>Bahasa</th>
-                                        <th>Approved</th>
-                                        <th>Jabatan</th>
-                                        <th>Status</th>
+                                        <th>Tanggal Input</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($documentkeluar as $key => $row) { ?>
+                                    <?php foreach ($ska as $key => $row) { ?>
                                         <tr>
                                             <td><?php echo $key + 1; ?></td>
-                                            <td><?php echo $row['kode_dokumen']; ?></td>
-                                            <td><?php echo $row['document_type']; ?></td>
-                                            <td><?php echo $row['document_number']; ?></td>
-                                            <td><?php echo $row['judul_dokumen']; ?></td>
-                                            <td><?php echo $row['nomer_box']; ?></td>
-                                            <td><?php echo $row['isi_box']; ?></td>
-                                            <td><?php echo $row['tanggal_keluar'];?></td>
-                                            <td><?php echo $row['vendor']; ?></td>
-                                            <td><?php echo $row['bahasa']; ?></td>
-                                            <td><?php echo $row['approved']; ?></td>
-                                            <td><?php echo $row['jabatan']; ?></td>
-                                            <td><?php echo $row['status_document']; ?></td>
+                                            <td><?php echo $row['nama']; ?></td>
+                                            <td><?php echo $row['kode']; ?></td>
+                                            <td><?php echo $row['tanggal_input']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="<?php echo base_url('documentkeluar/edit/' . $row['document_keluar_id']); ?>" class="btn btn-sm btn-success">
+                                                    <a href="<?php echo base_url('ska/edit/' . $row['ska_id']); ?>" class="btn btn-sm btn-success">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <a href="<?php echo base_url('documentkeluar/delete/' . $row['document_keluar_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                    <a href="<?php echo base_url('ska/delete/' . $row['ska_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -112,20 +94,11 @@
                                     <?php } ?>
                                 </tbody>
                                 <tfoot>
-                                    <tr>
+                                <tr>
                                         <th>No</th>
+                                        <th>Nama</th>
                                         <th>Kode</th>
-                                        <th>Type</th>
-                                        <th>Number</th>
-                                        <th>Judul</th>
-                                        <th>Nomer Box</th>
-                                        <th>Isi Box</th>
-                                        <th>Tanggal Keluar</th>
-                                        <th>Vendor</th>
-                                        <th>Bahasa</th>
-                                        <th>Approved</th>
-                                        <th>Jabatan</th>
-                                        <th>Status</th>
+                                        <th>Tanggal Input</th>
                                         <th>Staff</th>
                                         <th>Actions</th>
                                     </tr>
