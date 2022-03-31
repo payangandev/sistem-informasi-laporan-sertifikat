@@ -95,12 +95,12 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Kode</th>
-                                        <th>Tanggal Input</th>
-                                        <th>Staff</th>
-                                        <th>Actions</th>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Kode</th>
+                                    <th>Tanggal Input</th>
+                                    <th>Staff</th>
+                                    <th>Actions</th>
                                     </tr>
                                 </tfoot>
                                 </table>

@@ -50,148 +50,41 @@
                                         </div>
                                       <?php } ?>
                                       <div class="card">
-                                        <?php echo form_open_multipart('documentkeluar/update/' . $documentkeluar['document_keluar_id']); ?>
+                                        <?php echo form_open_multipart('ska/update/' . $ska['ska_id']); ?>
                                         <div class="card-body">
-                                          <?php echo form_hidden('document_keluar_id', $documentkeluar['document_keluar_id']); ?>
+                                          <?php echo form_hidden('ska_id', $ska['ska_id']); ?>
                                           <div class="row">
-                                            <div class="col-md-6">
-                                              
+                                            <div class="col-md-12">
                                               <div class="form-group">
-                                                <?php echo form_label('Kode Dokumen', 'kode_dokumen'); ?>
-                                                <?php echo form_input('kode_dokumen', $documentkeluar['kode_dokumen'], 
+                                                <?php echo form_label('Nama', 'nama'); ?>
+                                                <?php echo form_input('nama', $ska['nama'], 
                                                 ['class' => 'form-control']);
                                                  ?>
                                               </div>
-
                                               <div class="form-group">
-                                                <?php
-                                                echo form_label('Tipe Dokumen', 'document_type');
-                                                echo form_dropdown('document_type', [
-                                                    ''             => 'Pilih', 
-                                                    'BRIDGE'       => 'BRIDGE', 
-                                                    'ALIGNMENT'    => 'ALIGNMENT',
-                                                    'CULVERT'      => 'CULVERT',
-                                                    'TUNNEL NO.3'  => 'TUNNEL NO.3',
-                                                    'SUBGRADE'     => 'SUBGRADE'
-
-                                                ], $inputs['document_type'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-
-                                              <div class="form-group">
-                                                <?php echo form_label('Tanggal Keluar', 'tanggal_keluar'); ?>
-                                                <?php echo form_input('tanggal_keluar', $documentkeluar['tanggal_keluar'],
-
-                                                 ['class' => 'form-control']
-                                                 
+                                                <?php echo form_label('Kode', 'kode'); ?>
+                                                <?php echo form_input('kode', $ska['kode'],
+                                                 ['class' => 'form-control']                
                                                  ); ?>
                                               </div>
                                               <div class="form-group">
-                                                <?php echo form_label('Dokumen Number', 'document_number'); ?>
-                                                <?php echo form_input('document_number', $documentkeluar['document_number'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-                                               <div class="form-group">
-                                                <?php echo form_label('Judul Dokumen', 'judul_dokumen'); ?>
-                                                <?php echo form_input('judul_dokumen', $documentkeluar['judul_dokumen'], 
+                                                <?php echo form_label('Tanggal Input', 'tanggal_input'); ?>
+                                                <?php echo form_input('tanggal_input', $ska['tanggal_input'], 
 
                                                 ['class' => 'form-control']);
 
                                                  ?>
                                               </div>
                                               <div class="form-group">
-                                                <?php echo form_label('Nomer Box', 'nomer_box'); ?>
-                                                <?php echo form_input('nomer_box', $documentkeluar['nomer_box'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
+                                                 <?php echo form_label('Staff ', 'karyawan'); ?>
+                                                 <?php echo form_dropdown('karyawan_id', $karyawan, $ska['karyawan_id'], ['class' => 'form-control']); ?>
                                               </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                            
-                                            <div class="form-group">
-                                                <?php echo form_label('Isi Dalam Box', 'isi_box'); ?>
-                                                <?php echo form_input('isi_box', $documentkeluar['isi_box'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Bahasa Document', 'bahasa');
-                                                echo form_dropdown('bahasa', [
-                                                    ''          => 'Pilih', 
-                                                    'ENGLISH & CHINESE'      => 'ENGLISH & CHINESE', 
-                                                    'ENGLISH'                => 'ENGLISH',
-                                                    'CHINESE'                => 'CHINESE'
-
-                                                ], $inputs['bahasa'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Vendor', 'vendor');
-                                                echo form_dropdown('vendor', [
-                                                    ''          => 'Pilih', 
-                                                    'KCIC'      => 'KCIC', 
-                                                    'CREC'      => 'CREC',
-                                                    'CRDC'      => 'CRDC',
-                                                    'CDJO'      => 'CDJO'
-
-                                                ], $inputs['vendor'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-
-                                              <div class="form-group">
-                                                <?php echo form_label('Approved', 'approved'); ?>
-                                                <?php echo form_input('approved', $documentkeluar['approved'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Jabatan', 'jabatan');
-                                                echo form_dropdown('jabatan', [
-                                                    ''                    => 'Pilih', 
-                                                    'MANAGER'             => 'MANAGER', 
-                                                    'STAFF'               => 'STAFF',
-                                                    'TRANSLATOR'          => 'TRANSLATOR'
-                                                ], $inputs['jabatan'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Status Document', 'status_document');
-                                                echo form_dropdown('status_document', [
-                                                    ''           => 'Pilih', 
-                                                    'Masuk'      => 'Masuk', 
-                                                    'Keluar'     => 'Keluar'
-                                                ], $inputs['status_document'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-                                            
-                                         </div>
-                                         <div class="col-md-12">
-                                            <div class="form-group">
-                                                 <?php echo form_label('Staff Verified', 'karyawan'); ?>
-                                                 <?php echo form_dropdown('karyawan_id', $karyawan, $documentkeluar['karyawan_id'], ['class' => 'form-control']); ?>
                                             </div>
                                          </div>
                                         </div>
-                                       </div>
                                       </div>
                                       <div class="card-footer">
-                                        <a href="<?php echo base_url('documentkeluar'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                                        <a href="<?php echo base_url('ska'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
                                         <button type="submit" class="btn btn-primary float-right"> <i class="nav-icon fas fa-save"></i> Update Data</button>
                                       </div>
                                       <?php echo form_close(); ?>
