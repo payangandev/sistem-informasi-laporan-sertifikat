@@ -23,7 +23,7 @@ class Ktiga extends Migration
 			'sub_bidang'			=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'AHLI K3 UMUM','AHLI MADYA K3 KONTRUKSI','AHLI K3 BIDANG LISTRIK','SKP AHLI K3 LIFT & EKSKALATOR','TENAGA KERJA PADA KETINGGIAN TINGKAT 1 '",
-				'default'			=> 'UNIT'
+				'default'			=> 'AHLI K3 UMUM'
 			],
 
 			'perusahaan_id'				=> [

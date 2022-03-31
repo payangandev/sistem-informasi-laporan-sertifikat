@@ -23,13 +23,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data Audio Visual</h1>
-                    <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data Iso</h1>
+                    <p class="mb-4 text-center">Menu Pendaftaran Untuk Sertifikasi ISO</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Audio Visual </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Iso </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -49,98 +49,71 @@
                                           </ul>
                                         </div>
                                       <?php } ?>
-                                      <?php echo form_open_multipart('audiovisual/store'); ?>
+                                      <?php echo form_open_multipart('iso/store'); ?>
                                       <div class="card">
                                         <div class="card-body">
                                           <div class="row">
                                             <div class="col-md-6">
+                                              <div class="form-group ">
+                                                <?php
+                                                echo form_label('Perusahaan', 'perusahaan');
+                                                echo form_dropdown('perusahaan_id', $perusahaan, $inputs['perusahaan_id'], ['class' => 'form-control']);
+                                                ?>
+                                              </div>
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Tanggal Masuk');
-                                                $tanggalmasuk = [
+                                                echo form_label('Kode ISO');
+                                                $kodeiso = [
+                                                  'type'        => 'text',
+                                                  'name'        => 'kode_iso',
+                                                  'id'          => 'kode_iso',
+                                                  'value'       => $inputs['kode_iso'],
+                                                  'class'       => 'form-control',
+                                                  'placeholder' => 'Masukan Kode Iso'
+                                                ];
+                                                echo form_input($kodeiso);
+                                                ?>
+                                              </div>
+                                              <div class="form-group">
+                                                <?php
+                                                echo form_label('Tanggal Terbit');
+                                                $tanggal_terbit = [
                                                   'type'  => 'date',
-                                                  'name'  => 'tanggal_masuk',
-                                                  'id'    => 'tanggal_masuk',
-                                                  'value' => $inputs['tanggal_masuk'],
+                                                  'name'  => 'tanggal_terbit',
+                                                  'id'    => 'tanggal_terbit',
+                                                  'value' => $inputs['tanggal_terbit'],
                                                   'class' => 'form-control',
                                                 ];
-                                                echo form_input($tanggalmasuk);
-                                                ?>
-                                              </div>
-
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Kode Inventaris');
-                                                $kodeinventaris = [
-                                                  'type'        => 'text',
-                                                  'name'        => 'kode_inventaris',
-                                                  'id'          => 'kode_inventaris',
-                                                  'value'       => $inputs['kode_inventaris'],
-                                                  'class'       => 'form-control',
-                                                  'placeholder' => 'Masukan Kode Inventaris'
-                                                ];
-                                                echo form_input($kodeinventaris);
-                                                ?>
-                                              </div>
-                                               <div class="form-group">
-                                                <?php
-                                                echo form_label('Nama Audio');
-                                                $kodeinventaris = [
-                                                  'type'        => 'text',
-                                                  'name'        => 'nama_item',
-                                                  'id'          => 'nama_item',
-                                                  'value'       => $inputs['nama_item'],
-                                                  'class'       => 'form-control',
-                                                  'placeholder' => 'Masukan Nama '
-                                                ];
-                                                echo form_input($kodeinventaris);
-                                                ?>
-                                              </div>
-                                               <div class="form-group">
-                                                <?php
-                                                echo form_label('Vol');
-                                                $kodeinventaris = [
-                                                  'type'        => 'text',
-                                                  'name'        => 'vol',
-                                                  'id'          => 'vol',
-                                                  'value'       => $inputs['vol'],
-                                                  'class'       => 'form-control',
-                                                  'placeholder' => 'Masukan vol '
-                                                ];
-                                                echo form_input($kodeinventaris);
+                                                echo form_input($tanggal_terbit);
                                                 ?>
                                               </div>
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Merek Audio');
-                                                $kodeinventaris = [
-                                                  'type'        => 'text',
-                                                  'name'        => 'merk',
-                                                  'id'          => 'merk',
-                                                  'value'       => $inputs['merk'],
-                                                  'class'       => 'form-control',
-                                                  'placeholder' => 'Masukan Merk '
-                                                ];
-                                                echo form_input($kodeinventaris);
-                                                ?>
-                                              </div>
-                                            </div>
-                                            <div class="col-md-6">
-
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Harga Audio');
-                                                $stock_masuk = [
-                                                  'type'  => 'number',
-                                                  'name'  => 'harga',
-                                                  'id'    => 'harga',
-                                                  'value' => $inputs['harga'],
+                                                echo form_label('Survailance 1');
+                                                $survailance_one = [
+                                                  'type'  => 'date',
+                                                  'name'  => 'tanggal_terbit',
+                                                  'id'    => 'tanggal_terbit',
+                                                  'value' => $inputs['tanggal_terbit'],
                                                   'class' => 'form-control',
-                                                  'placeholder' => 'Masukan Harga '
                                                 ];
-                                                echo form_input($stock_masuk);
+                                                echo form_input($survailance_one);
                                                 ?>
                                               </div>
+                                              <div class="form-group">
+                                                <?php
+                                                echo form_label('Survailance 2');
+                                                $tanggal_terbit = [
+                                                  'type'  => 'date',
+                                                  'name'  => 'tanggal_terbit',
+                                                  'id'    => 'tanggal_terbit',
+                                                  'value' => $inputs['tanggal_terbit'],
+                                                  'class' => 'form-control',
+                                                ];
+                                                echo form_input($tanggal_terbit);
+                                                ?>
+                                              </div>
+                                            
 
                                               <div class="form-group">
                                                 <?php
@@ -191,19 +164,11 @@
                                                 ?>
                                               </div>
                                             </div>
-                                            <div class="col-sm-12">
-                                               <div class="form-group ">
-                                                <?php
-                                                echo form_label('Penanggung Jawab Data', 'staff');
-                                                echo form_dropdown('karyawan_id', $karyawan, $inputs['karyawan_id'], ['class' => 'form-control']);
-                                                ?>
-                                              </div>
-                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="card-footer">
-                                        <a href="<?php echo base_url('audiovisual'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                                        <a href="<?php echo base_url('iso'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
                                         <button type="submit" class="btn btn-primary float-right"><i class="nav-icon fas fa-save"></i> Simpan</button>
                                       </div>
                                     </div>

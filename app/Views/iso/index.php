@@ -23,22 +23,22 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Audio Visual</h1>
-                    <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Data ISO</h1>
+                    <p class="mb-4 text-center">Data Sertifikasi ISO </p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Audio Visual  </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Data List Sertifikasi ISO  </h6>
                         <br>
-                        <a href="<?php echo base_url('audiovisual/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                        <a href="<?php echo base_url('iso/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('audiovisual/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('iso/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
                         
-                            <a href="<?php echo base_url('audiovisual/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                            <a href="<?php echo base_url('iso/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -65,41 +65,41 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Kode Inventaris</th>
-                                        <th>Nama Item</th>
-                                        <th>Merk</th>
-                                        <th>Vol</th>
-                                        <th>Satuan</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>kondisi</th>
-                                        <th>Keterangan</th>
-                                        <th>Staff</th>
+                                        <th>Perusahaan</th>
+                                        <th>Kode Iso</th>
+                                        <th>Tanggal Terbit</th>
+                                        <th>Survailance 1</th>
+                                        <th>Survailance 2</th>
+                                        <th>Tanggal Berakhir</th>
+                                        <th>Tanggal Proses</th>
+                                        <th>Tanggal Selesai</th>
+                                        <th>No Resi</th>
+                                        <th>Marketing</th>
+                                        <th>Harga Jual</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($audiovisual as $key => $row) { ?>
+                                    <?php foreach ($iso as $key => $row) { ?>
                                         <tr>
                                             <td><?php echo $key + 1; ?></td>
-                                            <td><?php echo $row['tanggal_masuk']; ?></td>
-                                            <td><?php echo $row['kode_inventaris']; ?></td>
-                                            <td><?php echo $row['nama_item']; ?></td>
-                                            <td><?php echo $row['merk']; ?></td>
-                                            <td><?php echo $row['vol']; ?></td>
-                                            <td><?php echo $row['satuan']; ?></td>
-                                            <td>Rp.<?php echo number_format($row['harga'], 2,  ",", ".");?> </td>
-                                            <td>Rp.<?php echo number_format($row['jumlah'], 2,  ",", ".");?> </td>
-                                            <td><?php echo $row['kondisi']; ?></td>
-                                            <td><?php echo $row['keterangan']; ?></td>
-                                            <td><?php echo $row['nama_karyawan']; ?></td>
+                                            <td><?php echo $row['nama_perusahaan']; ?></td>
+                                            <td><?php echo $row['kode_iso']; ?></td>
+                                            <td><?php echo $row['tanggal_terbit']; ?></td>
+                                            <td><?php echo $row['survailance_one']; ?></td>
+                                            <td><?php echo $row['survailance_two']; ?></td>
+                                            <td><?php echo $row['tanggal_berakhir']; ?></td>
+                                            <td><?php echo $row['tanggal_proses']; ?></td>
+                                            <td><?php echo $row['tanggal_selesai']; ?></td>
+                                            <td><?php echo $row['no_resi']; ?></td>
+                                            <td><?php echo $row['marketing']; ?></td>
+                                            <td>Rp.<?php echo number_format($row['harga_jual'], 2,  ",", ".");?> </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="<?php echo base_url('audiovisual/edit/' . $row['audiovisual_id']); ?>" class="btn btn-sm btn-success">
+                                                    <a href="<?php echo base_url('iso/edit/' . $row['iso_id']); ?>" class="btn btn-sm btn-success">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <a href="<?php echo base_url('audiovisual/delete/' . $row['audiovisual_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                    <a href="<?php echo base_url('iso/delete/' . $row['iso_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -110,17 +110,17 @@
                                 <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Kode Inventaris</th>
-                                        <th>Nama Item</th>
-                                        <th>Merk</th>
-                                        <th>Vol</th>
-                                        <th>Satuan</th>
-                                        <th>Harga</th>
-                                        <th>Jumlah</th>
-                                        <th>kondisi</th>
-                                        <th>Keterangan</th>
-                                        <th>Staff</th>
+                                        <th>Perusahaan</th>
+                                        <th>Kode Iso</th>
+                                        <th>Tanggal Terbit</th>
+                                        <th>Survailance 1</th>
+                                        <th>Survailance 2</th>
+                                        <th>Tanggal Berakhir</th>
+                                        <th>Tanggal Proses</th>
+                                        <th>Tanggal Selesai</th>
+                                        <th>No Resi</th>
+                                        <th>Marketing</th>
+                                        <th>Harga Jual</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
