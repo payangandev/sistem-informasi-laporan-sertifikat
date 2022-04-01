@@ -23,20 +23,20 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Document Masuk</h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Perusahaan</h1>
                     <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Document Masuk </h6>                         <br>
-                        <a href="<?php echo base_url('documentmasuk/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Perusahaan </h6>                         <br>
+                        <a href="<?php echo base_url('perusahaan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                          
-                        <a href="<?php echo base_url('documentmasuk/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <a href="<?php echo base_url('perusahaan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
 
-                            <a href="<?php echo base_url('documentmasuk/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                            <a href="<?php echo base_url('perusahaan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -63,37 +63,23 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode</th>
-                                        <th>Type</th>
-                                        <th>Number</th>
-                                        <th>Judul</th>
-                                        <th>Vendor</th>
-                                        <th>Bahasa</th>
-                                        <th>Status</th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Staff</th>
+                                        <th>Nama Perusahaan</th>
+                                        <th>Tanggal Input</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($documentmasuk as $key => $row) { ?>
+                                    <?php foreach ($perusahaan as $key => $row) { ?>
                                         <tr>
                                             <td><?php echo $key + 1; ?></td>
-                                            <td><?php echo $row['kode_dokumen']; ?></td>
-                                            <td><?php echo $row['document_type']; ?></td>
-                                            <td><?php echo $row['document_number']; ?></td>
-                                            <td><?php echo $row['judul_dokumen']; ?></td>
-                                            <td><?php echo $row['vendor']; ?></td>
-                                            <td><?php echo $row['bahasa']; ?></td>
-                                            <td><?php echo $row['status_document']; ?></td>
-                                            <td><?php echo $row['tanggal_masuk']; ?></td>
-                                            <td><?php echo $row['nama_karyawan']; ?></td>
+                                            <td><?php echo $row['nama_perusahaan']; ?></td>
+                                            <td><?php echo $row['tanggal_input']; ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="<?php echo base_url('documentmasuk/edit/' . $row['documentmasuk_id']); ?>" class="btn btn-sm btn-success">
+                                                    <a href="<?php echo base_url('perusahaan/edit/' . $row['perusahaan_id']); ?>" class="btn btn-sm btn-success">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <a href="<?php echo base_url('documentmasuk/delete/' . $row['documentmasuk_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                    <a href="<?php echo base_url('perusahaan/delete/' . $row['perusahaan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -101,21 +87,6 @@
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Kode</th>
-                                        <th>Type</th>
-                                        <th>Number</th>
-                                        <th>Judul</th>
-                                        <th>Vendor</th>
-                                        <th>Bahasa</th>
-                                        <th>Status</th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Staff</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
                                 </table>
                             </div>
                         </div>

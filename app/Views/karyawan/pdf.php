@@ -6,7 +6,6 @@
             <tr>
                 <th>No</th>
                 <th>Nama Karyawan</th>
-                <th>Divisi </th>
                 <th>Jabatan </th>
                 <th>Status </th>
                 <th>Tanggal Masuk</th>
@@ -17,7 +16,6 @@
                     <tr>
                         <td><?php echo $key + 1; ?></td>
                         <td><?php echo $row['nama_karyawan']; ?></td>
-                        <td><?php echo $row['divisi']; ?></td>
                         <td><?php echo $row['jabatan']; ?></td>
                         <td><?php echo $row['status']; ?></td>
                         <td><?php echo $row['tanggalmasuk']; ?></td>

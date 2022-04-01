@@ -4,10 +4,10 @@
        <!-- Sidebar - Brand -->
        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('/'); ?>">
            <div class="sidebar-brand-icon ">
-               <p style="color:red;"><b>SRR</b></p>
+               <p style="color:red;"><b>FBB</b></p>
            </div>
            <div class="sidebar-brand-text mx-2">
-               <img src="<?php echo base_url('hsrcc.png'); ?>" alt="HSRCC Logo" class="brand-image elevation-3">
+               <img src="<?php echo base_url('hsrcc.png'); ?>" alt="FBB Logo" class="brand-image elevation-3">
 
            </div>
        </a>
@@ -22,27 +22,27 @@
        </li>
 
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url('atk'); ?>">
+           <a class="nav-link" href="<?php echo base_url('iso'); ?>">
                <i class="fas fa-fw fa-toolbox"></i>
                <span>Data ISO</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url('kendaraan'); ?>">
+           <a class="nav-link" href="<?php echo base_url('ktiga'); ?>">
                <i class="fas fa-fw fa-car-side"></i>
                <span>Data K3</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url('asset'); ?>">
+           <a class="nav-link" href="<?php echo base_url('ska'); ?>">
                <i class="fas fa-fw fa-hand-holding-usd"></i>
                <span>Data SKA</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url('audiovisual'); ?>">
+           <a class="nav-link" href="<?php echo base_url('skt'); ?>">
                <i class="fas fa-fw fa-broadcast-tower"></i>
                <span>Data SKT</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url('furniture'); ?>">
+           <a class="nav-link" href="<?php echo base_url('perusahaan'); ?>">
                <i class="fas fa-fw fa-couch"></i>
                <span>Data Perusahaan</span></a>
        </li>

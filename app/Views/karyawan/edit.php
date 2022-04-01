@@ -73,14 +73,6 @@
                                                  ?>
                                               </div>
                                               <div class="form-group">
-                                                <?php echo form_label('Divisi Karyawan', 'divisi'); ?>
-                                                <?php echo form_input('divisi', $karyawan['divisi'], 
-
-                                                ['class' => 'form-control']);
-
-                                                 ?>
-                                              </div>
-                                              <div class="form-group">
                                                 <?php
                                                 echo form_label('Jabatan Karyawan', 'jabatan');
                                                 echo form_dropdown('jabatan', [

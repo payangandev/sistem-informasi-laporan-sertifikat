@@ -68,21 +68,6 @@
                                                 echo form_input($nama_karyawan);
                                                 ?>
                                               </div>
-
-                                              <div class="form-group">
-                                                <?php
-                                                echo form_label('Divisi Karyawan');
-                                                $namabarang = [
-                                                  'type'        => 'text',
-                                                  'name'        => 'divisi',
-                                                  'id'          => 'divisi',
-                                                  'value'       => $inputs['divisi'],
-                                                  'class'       => 'form-control',
-                                                  'placeholder' => 'Masukan Divisi Karyawan'
-                                                ];
-                                                echo form_input($namabarang);
-                                                ?>
-                                              </div>
                                               <div class="form-group">
                                                 <?php
                                                 echo form_label('Jabatan karyawan', 'jabatan');

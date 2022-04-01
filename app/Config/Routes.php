@@ -54,7 +54,6 @@ $routes->get('karyawan/edit/(:alphanum)', 'KaryawanController::edit/$1');
 $routes->post('karyawan/update/(:num)', 'KaryawanController::update/$1');
 $routes->get('karyawan/delete/(:alphanum)', 'KaryawanController::delete/$1');
 
-
 // Routing for Iso
 $routes->get('iso/pdf', 'IsoController::pdf');
 $routes->get('iso/excel', 'IsoController::excel');
@@ -65,7 +64,6 @@ $routes->get('iso/edit/(:alphanum)', 'IsoController::edit/$1');
 $routes->post('iso/update/(:num)', 'IsoController::update/$1');
 $routes->get('iso/delete/(:alphanum)', 'IsoController::delete/$1');
 
-
 // Routing for  Ska
 $routes->get('ska/pdf', 'SkaController::pdf');
 $routes->get('ska/excel', 'SkaController::excel');
@@ -75,7 +73,6 @@ $routes->post('ska/store', 'SkaController::store');
 $routes->get('ska/edit/(:alphanum)', 'SkaController::edit/$1');
 $routes->post('ska/update/(:num)', 'SkaController::update/$1');
 $routes->get('ska/delete/(:alphanum)', 'SkaController::delete/$1');
-
 
 // Routing for  Skt
 $routes->get('skt/pdf', 'SktController::pdf');

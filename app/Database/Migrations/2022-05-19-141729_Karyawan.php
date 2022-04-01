@@ -8,25 +8,19 @@ class Karyawan extends Migration
 {
 	public function up()
 	{
+
+		//list field
 		$this->forge->addField([
 			'karyawan_id'          	=> [
 				'type'           	=> 'INT',
-				'constraint'     	=> 11,
+				'constraint'     	=> 36,
 				'unsigned'       	=> TRUE,
 				'auto_increment' 	=> TRUE
 			],
-			'nama'      	=> [
+			'nama_karyawan'      	=> [
 				'type'           	=> 'VARCHAR',
 				'constraint'     	=> '50',
 			],
-			'address'      		  	=> [
-				'type'           	=> 'VARCHAR',
-				'constraint'     	=> '50'
-			],
-            'telephone'             => [
-                'type'              => 'VARCHAR',
-                'constraint'        => '50'
-            ],
 			'jabatan'				=> [
 				'type'				=> 'ENUM',
 				'constraint'		=> "'Manager','Admin','Super Admin'",
@@ -35,7 +29,7 @@ class Karyawan extends Migration
 				'type'				=> 'ENUM',
 				'constraint'		=> "'AKTIF','OFF'",
 			],
-			'createdDate'			=> [
+			'tanggalmasuk'			=> [
 				'type'				=> 'DATE',
 			],
 

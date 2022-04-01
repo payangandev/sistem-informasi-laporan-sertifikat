@@ -65,10 +65,10 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Karyawan</th>
-                                        <th>Divisi </th>
                                         <th>Jabatan </th>
                                         <th>Status </th>
                                         <th>Tanggal Masuk</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,17 +76,16 @@
                                         <tr>
                                             <td><?php echo $key + 1; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
-                                            <td><?php echo $row['divisi']; ?></td>
                                             <td><?php echo $row['jabatan']; ?></td>
                                             <td><?php echo $row['status']; ?></td>
                                             <td><?php echo $row['tanggalmasuk']; ?></td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="<?php echo base_url('karyawan/edit/' . $row['karyawan_id']); ?>" class="btn btn-sm btn-success">
-                                                        <i class="fa fa-edit"></i>
+                                                        <i class="fa fa-edit">EDIT</i>
                                                     </a>
                                                     <a href="<?php echo base_url('karyawan/delete/' . $row['karyawan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
-                                                        <i class="fa fa-trash-alt"></i>
+                                                        <i class="fa fa-trash-alt">DELETE</i>
                                                     </a>
                                                 </div>
                                             </td>
@@ -97,7 +96,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Karyawan</th>
-                                        <th>Divisi </th>
                                         <th>Jabatan </th>
                                         <th>Status </th>
                                         <th>Tanggal Masuk</th>

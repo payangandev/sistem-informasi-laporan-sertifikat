@@ -20,9 +20,9 @@
                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= session()->get('nama_user'); ?> | <?php if (session()->get('level') == 1) {
                                                                                                                         echo 'Manager';
                                                                                                                     } elseif (session()->get('level') == 2) {
-                                                                                                                        echo 'Admins';
+                                                                                                                        echo 'Super Admin';
                                                                                                                     } elseif (session()->get('level') == 3) {
-                                                                                                                        echo "Super Admins";
+                                                                                                                        echo "Admin";
                                                                                                                     } else {
                                                                                                                         echo 'Guest';
                                                                                                                     } ?></span>
