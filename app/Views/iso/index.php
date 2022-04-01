@@ -23,13 +23,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data ISO</h1>
-                    <p class="mb-4 text-center">Data Sertifikasi ISO </p>
-
+                    <div class="card shadow mb-4">
+                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA BERKAH BERSAMA </h1>
+                    </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Data List Sertifikasi ISO  </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left"> List Sertifikasi ISO  </h6>
                         <br>
                         <a href="<?php echo base_url('iso/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
@@ -107,23 +107,6 @@
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Perusahaan</th>
-                                        <th>Kode Iso</th>
-                                        <th>Tanggal Terbit</th>
-                                        <th>Survailance 1</th>
-                                        <th>Survailance 2</th>
-                                        <th>Tanggal Berakhir</th>
-                                        <th>Tanggal Proses</th>
-                                        <th>Tanggal Selesai</th>
-                                        <th>No Resi</th>
-                                        <th>Marketing</th>
-                                        <th>Harga Jual</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
                                 </table>
                             </div>
                         </div>

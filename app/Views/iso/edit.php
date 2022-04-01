@@ -23,9 +23,9 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data Iso</h1>
-                    <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
-
+                    <div class="card shadow mb-4">
+                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA BERKAH BERSAMA </h1>
+                    </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -91,6 +91,32 @@
                                                  
                                                  ); ?>
                                               </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <?php echo form_label('Tanggal Berakhir ', 'tanggal_berakhir'); ?>
+                                                <?php echo form_input('tanggal_berakhir', $iso['tanggal_berakhir'],
+
+                                                 ['class' => 'form-control']
+                                                 
+                                                 ); ?>
+                                              </div>
+                                              <div class="form-group">
+                                                <?php echo form_label('Tanggal Proses ', 'tanggal_proses'); ?>
+                                                <?php echo form_input('tanggal_proses', $iso['tanggal_proses'],
+
+                                                 ['class' => 'form-control']
+                                                 
+                                                 ); ?>
+                                              </div>
+                                              <div class="form-group">
+                                                <?php echo form_label('Tanggal Selesai ', 'tanggal_selesai'); ?>
+                                                <?php echo form_input('tanggal_selesai', $iso['tanggal_selesai'],
+
+                                                 ['class' => 'form-control']
+                                                 
+                                                 ); ?>
+                                              </div>
                                               <div class="form-group">
                                                 <?php echo form_label('No Resi', 'no_resi'); ?>
                                                 <?php echo form_input('no_resi', $iso['no_resi'],
@@ -107,6 +133,8 @@
                                                  
                                                  ); ?>
                                               </div>
+                                             </div>
+                                            <div class="col-md-12">
                                               <div class="form-group">
                                                 <?php echo form_label('Harga Jual ', 'harga_jual'); ?>
                                                 <?php echo form_input('harga_jual', $iso['harga_jual'],

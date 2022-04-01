@@ -30,10 +30,10 @@ class IsoModel extends Model
 
 	public function updateData($data, $id)
 	{
-		return $this->db->table($this->table)->update($data, ['document_keluar_id' => $id]);
+		return $this->db->table($this->table)->update($data, ['iso_id' => $id]);
 	}
 	public function deleteData($id)
 	{
-		return $this->db->table($this->table)->delete(['document_keluar_id' => $id]);
+		return $this->db->table($this->table)->delete(['iso_id' => $id]);
 	}
 }

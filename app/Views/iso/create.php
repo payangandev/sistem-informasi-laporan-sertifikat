@@ -19,9 +19,9 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Form Data Iso</h1>
-                    <p class="mb-4 text-center">Menu Pendaftaran Untuk Sertifikasi ISO</p>
-
+                    <div class="card shadow mb-4">
+                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA BERKAH BERSAMA </h1>
+                    </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -98,6 +98,21 @@
                                               </div>
                                               <div class="form-group">
                                                 <?php
+                                                echo form_label('Tanggal Selesai');
+                                                $tanggal_selesai = [
+                                                  'type'  => 'date',
+                                                  'name'  => 'tanggal_selesai',
+                                                  'id'    => 'tanggal_selesai',
+                                                  'value' => $inputs['tanggal_selesai'],
+                                                  'class' => 'form-control',
+                                                ];
+                                                echo form_input($tanggal_selesai);
+                                                ?>
+                                              </div>
+                                             </div>
+                                            <div class="col-md-6">
+                                             <div class="form-group">
+                                                <?php
                                                 echo form_label('Survailance 2');
                                                 $survailance_two = [
                                                   'type'  => 'date',
@@ -109,8 +124,33 @@
                                                 echo form_input($survailance_two);
                                                 ?>
                                               </div>
-                                            
                                               <div class="form-group">
+                                                <?php
+                                                echo form_label('Tanggal Berakhir');
+                                                $tanggal_berakhir = [
+                                                  'type'  => 'date',
+                                                  'name'  => 'tanggal_berakhir',
+                                                  'id'    => 'tanggal_berakhir',
+                                                  'value' => $inputs['tanggal_berakhir'],
+                                                  'class' => 'form-control',
+                                                ];
+                                                echo form_input($tanggal_berakhir);
+                                                ?>
+                                              </div>
+                                              <div class="form-group">
+                                                <?php
+                                                echo form_label('Tanggal Proses');
+                                                $tanggal_proses = [
+                                                  'type'  => 'date',
+                                                  'name'  => 'tanggal_proses',
+                                                  'id'    => 'tanggal_proses',
+                                                  'value' => $inputs['tanggal_proses'],
+                                                  'class' => 'form-control',
+                                                ];
+                                                echo form_input($tanggal_proses);
+                                                ?>
+                                              </div>
+                                               <div class="form-group">
                                                 <?php
                                                 echo form_label('No Resi');
                                                 $stock_akhir = [
@@ -123,8 +163,8 @@
                                                 ];
                                                 echo form_input($stock_akhir);
                                                 ?>
-                                              </div>
-                                              <div class="form-group">
+                                               </div>
+                                               <div class="form-group">
                                                 <?php
                                                 echo form_label('Marketing');
                                                 $stock_akhir = [
@@ -137,8 +177,10 @@
                                                 ];
                                                 echo form_input($stock_akhir);
                                                 ?>
+                                               </div>
                                               </div>
-                                              <div class="form-group">
+                                              <div class="col-md-12">
+                                               <div class="form-group">
                                                 <?php
                                                 echo form_label('Harga Jual');
                                                 $harga_jual = [
@@ -151,7 +193,7 @@
                                                 ];
                                                 echo form_input($harga_jual);
                                                 ?>
-                                              </div>
+                                               </div>
                                             </div>
                                           </div>
                                         </div>

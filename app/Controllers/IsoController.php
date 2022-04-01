@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\KaryawanModel;
+use App\Models\PerusahaanModel;
 use App\Models\IsoModel;
 use TCPDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -14,7 +14,7 @@ class IsoController extends BaseController
 	public function __construct()
 	{
 		helper(['form']);
-		$this->karyawan_model = new KaryawanModel();
+		$this->perusahaan_model = new PerusahaanModel();
 		$this->iso_model = new IsoModel();
 	}
 
@@ -30,7 +30,7 @@ class IsoController extends BaseController
 
 		// paginate
 		$paginate = 1000000;
-		$data['iso']   = $this->iso_model->join('karyawan', 'karyawan.karyawan_id = iso.karyawan_id')->paginate($paginate, 'iso');
+		$data['iso']   = $this->iso_model->join('perusahaan', 'perusahaan.perusahaan_id = iso.perusahaan_id')->paginate($paginate, 'iso');
 		$data['pager']        = $this->iso_model->pager;
 		$data['currentPage']  = $currentPage;
 		echo view('iso/index', $data);
@@ -87,7 +87,7 @@ class IsoController extends BaseController
 
 	// tulis dalam format .xlsx
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data Audio Visual';
+    $fileName = 'Data Iso';
 
     // Redirect hasil generate xlsx ke web client
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -142,8 +142,8 @@ class IsoController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$karyawan = $this->karyawan_model->findAll();
-		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
+		$perusahaan = $this->perusahaan_model->findAll();
+		$data['perusahaan'] = ['' => 'perusahaan'] + array_column($perusahaan, 'nama_perusahaan', 'perusahaan_id');
 		return view('iso/create', $data);
 	}
 
@@ -192,8 +192,8 @@ class IsoController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$karyawan = $this->karyawan_model->findAll();
-		$data['karyawan'] = ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
+		$perusahaan = $this->perusahaan_model->findAll();
+		$data['perusahaan'] = ['' => 'Pilih perusahaan'] + array_column($perusahaan, 'nama_perusahaan', 'perusahaan_id');
 		$data['iso'] = $this->iso_model->getData($id);
 		echo view('iso/edit', $data);
 	}
