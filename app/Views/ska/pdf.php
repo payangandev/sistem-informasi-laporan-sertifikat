@@ -9,7 +9,6 @@
                 <th>Kode</th>
                 <th>Tanggal Input</th>
                 <th>Staff</th>
-                <th>Actions</th>
         </tr>
         </thead>
         <tbody>
