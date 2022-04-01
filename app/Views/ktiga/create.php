@@ -68,8 +68,8 @@
                                               </div>
                                               <div class="form-group">
                                                 <?php
-                                                echo form_label('Bidang', 'bidang');
-                                                echo form_dropdown('bidang', [
+                                                echo form_label('Bidang', 'sub_bidang');
+                                                echo form_dropdown('sub_bidang', [
                                                   '' => 'Pilih Bidang',
                                                   'AHLI K3 UMUM'                            => 'AHLI K3 UMUM', 
                                                   'AHLI MADYA K3 KONTRUKSI'                 => 'AHLI MADYA K3 KONTRUKSI',
@@ -77,7 +77,7 @@
                                                   'SKP AHLI K3 LIFT & EKSKALATOR'           => 'SKP AHLI K3 LIFT & EKSKALATOR',
                                                   'TENAGA KERJA PADA KETINGGIAN TINGKAT 1 ' => 'TENAGA KERJA PADA KETINGGIAN TINGKAT 1',
                                                   ],
-                                                  $inputs['bidang'], ['class' => 'form-control']);
+                                                  $inputs['sub_bidang'], ['class' => 'form-control']);
                                                 ?>
                                               </div>
                                               <div class="form-group ">

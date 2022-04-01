@@ -23,13 +23,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data K3</h1>
-                    <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
-
+                    <div class="card shadow mb-4">
+                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA BERKAH BERSAMA </h1>
+                    </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data K3</h6> <br>
+                            <h6 class="m-0 font-weight-bold text-primary text-left"> List Data K3</h6> <br>
                         
                         <a href="<?php echo base_url('ktiga/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
@@ -105,23 +105,7 @@
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Personil</th>
-                                        <th>Sub Bidang</th>
-                                        <th>Perusahaan</th>
-                                        <th>Harga Setor</th>
-                                        <th>Order Lencana</th>
-                                        <th>Harga Jual</th>
-                                        <th>Tanggal Proses</th>
-                                        <th>Marketing</th>
-                                        <th>Tanggal Selesai</th>
-                                        <th>No Resi</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
-                                </table>
+                              </table>
                             </div>
                         </div>
                     </div>

@@ -69,7 +69,7 @@
                                                   'AHLI K3 BIDANG LISTRIK'                  => 'AHLI K3 BIDANG LISTRIK',
                                                   'SKP AHLI K3 LIFT & EKSKALATOR'           => 'SKP AHLI K3 LIFT & EKSKALATOR',
                                                   'TENAGA KERJA PADA KETINGGIAN TINGKAT 1 ' => 'TENAGA KERJA PADA KETINGGIAN TINGKAT 1'
-                                                ], $inputs['jenis_barang'], ['class' => 'form-control']);
+                                                ], $inputs['sub_bidang'], ['class' => 'form-control']);
                                                 ?>
                                               </div>
                                               <div class="form-group">
@@ -129,8 +129,8 @@
                                                  ?>
                                               </div>
                                               <div class="form-group">
-                                                <?php echo form_label('No Resi', 'tanggal_selesai'); ?>
-                                                <?php echo form_input('tanggal_selesai', $ktiga['tanggal_selesai'], 
+                                                <?php echo form_label('No Resi', 'no_resi'); ?>
+                                                <?php echo form_input('no_resi', $ktiga['no_resi'], 
 
                                                 ['class' => 'form-control']);
 

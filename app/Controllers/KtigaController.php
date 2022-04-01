@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use App\Controllers\BaseController;
-use App\Models\KaryawanModel;
+use App\Models\perusahaanModel;
 use App\Models\KtigaModel;
 use TCPDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -13,7 +13,7 @@ class ktigaController extends BaseController
 public function __construct()
 	{
 		helper(['form']);
-		$this->karyawan_model = new KaryawanModel();
+		$this->perusahaan_model = new PerusahaanModel(); //
 		$this->ktiga_model = new KtigaModel();
 	}
 
@@ -29,7 +29,7 @@ public function __construct()
 
 		// paginate
 		$paginate = 1000000;
-		$data['ktiga']   = $this->ktiga_model->join('karyawan', 'karyawan.karyawan_id = ktiga.karyawan_id')->paginate($paginate, 'ktiga');
+		$data['ktiga']   = $this->ktiga_model->join('perusahaan', 'perusahaan.perusahaan_id = ktiga.perusahaan_id')->paginate($paginate, 'ktiga');
 		$data['pager']        = $this->ktiga_model->pager;
 		$data['currentPage']  = $currentPage;
 		echo view('ktiga/index', $data);
@@ -137,8 +137,8 @@ public function __construct()
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$karyawan = $this->karyawan_model->findAll();
-		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
+		$perusahaan = $this->perusahaan_model->findAll();
+		$data['perusahaan'] = ['' => 'perusahaan'] + array_column($perusahaan, 'nama_perusahaan', 'perusahaan_id');
 		return view('ktiga/create', $data);
 	}
 
@@ -185,8 +185,8 @@ public function __construct()
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$karyawan = $this->karyawan_model->findAll();
-		$data['karyawan'] = ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
+		$perusahaan = $this->perusahaan_model->findAll();
+		$data['perusahaan'] = ['' => 'Pilih perusahaan'] + array_column($perusahaan, 'nama_perusahaan', 'perusahaan_id');
 		$data['ktiga'] = $this->ktiga_model->getData($id);
 		echo view('ktiga/edit', $data);
 	}
