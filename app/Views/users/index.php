@@ -23,15 +23,19 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Users</h1>
-                    <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
-
+                    <div class="card shadow mb-4">
+                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA BERKAH BERSAMA </h1>
+                    </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Users </h6>                         <br>
-                        <a href="<?php echo base_url('users/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">PDF</a>
-                    
+                            <h6 class="m-0 font-weight-bold text-primary text-left"> List Data User </h6>                         <br>
+                        <a href="<?php echo base_url('users/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                        <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
+                         
+                        <a href="<?php echo base_url('users/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
+
                             <a href="<?php echo base_url('users/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
@@ -58,45 +62,35 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Nama Users</th>
-                                        <th>username</th>
-                                        <th>password</th>
-                                        <th>level</th>
-                                        <th>Actions</th>
+                                        <th style="text-align: center">No</th>
+                                        <th style="text-align: center">Nama Users</th>
+                                        <th style="text-align: center">username</th>
+                                        <th style="text-align: center">password</th>
+                                        <th style="text-align: center">level</th>
+                                        <th style="text-align: center">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($users as $key => $row) { ?>
                                         <tr>
-                                            <td><?php echo $key + 1; ?></td>
-                                            <td><?php echo $row['nama_user']; ?></td>
-                                            <td><?php echo $row['username']; ?></td>
-                                            <td><?php echo $row['password']; ?></td>
-                                            <td><?php echo $row['level']; ?></td>
+                                            <td style="text-align: center"><?php echo $key + 1; ?></td>
+                                            <td style="text-align: justify"><?php echo $row['nama_user']; ?></td>
+                                            <td style="text-align: justify"><?php echo $row['username']; ?></td>
+                                            <td style="text-align: justify"><?php echo $row['password']; ?></td>
+                                            <td style="text-align: center"><?php echo $row['level']; ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="<?php echo base_url('users/edit/' . $row['id']); ?>" class="btn btn-sm btn-success">
-                                                        <i class="fa fa-edit">EDIT</i>
+                                                    <a href="<?php echo base_url('users/edit/' . $row['id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
+                                                        <i class="fa fa-edit"></i>
                                                     </a>
                                                     <a href="<?php echo base_url('users/delete/' . $row['id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
-                                                        <i class="fa fa-trash-alt">DELETE</i>
+                                                        <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
                                             </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                       <th>Nama Users</th>
-                                        <th>username</th>
-                                        <th>password</th>
-                                        <th>level</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
                                 </table>
                             </div>
                         </div>

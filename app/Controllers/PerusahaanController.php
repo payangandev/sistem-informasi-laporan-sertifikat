@@ -166,7 +166,7 @@ class PerusahaanController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$id = $this->request->getPost('id');
+		$id = $this->request->getPost('perusahaan_id');
 
 		$validation =  \Config\Services::validation();
 

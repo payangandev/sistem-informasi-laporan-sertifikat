@@ -22,18 +22,21 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 text-center">Data Karyawan</h1>
-                    <p class="mb-4 text-center">Pengecekan data secara rutin akan terciptanya konsistensi data yang baik</p>
-
+                    <div class="card shadow mb-4">
+                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA BERKAH BERSAMA </h1>
+                    </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Karyawan </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Karyawan </h6>
                         <br>
                         <a href="<?php echo base_url('karyawan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
-                         PDF</a>
-                        <a href="<?php echo base_url('karyawan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                        <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
+                         
+                        <a href="<?php echo base_url('karyawan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                        <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
+
+                            <a href="<?php echo base_url('karyawan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -78,26 +81,16 @@
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="<?php echo base_url('karyawan/edit/' . $row['karyawan_id']); ?>" class="btn btn-sm btn-success">
-                                                        <i class="fa fa-edit">EDIT</i>
+                                                        <i class="fa fa-edit"></i>
                                                     </a>
                                                     <a href="<?php echo base_url('karyawan/delete/' . $row['karyawan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
-                                                        <i class="fa fa-trash-alt">DELETE</i>
+                                                        <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
                                             </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Karyawan</th>
-                                        <th>Jabatan </th>
-                                        <th>Status </th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
                                 </table>
                             </div>
                         </div>

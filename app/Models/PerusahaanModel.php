@@ -16,7 +16,7 @@ class PerusahaanModel extends Model
 				->getResultArray();
 		} else {
 			return $this->table('perusahaan')
-				->where('perusahaan.id', $id)
+				->where('perusahaan.perusahaan_id', $id)
 				->get()
 				->getRowArray();
 		}
@@ -30,12 +30,12 @@ class PerusahaanModel extends Model
 
 	public function updateData($data, $id)
 	{
-		return $this->db->table($this->table)->update($data, ['id' => $id]);
+		return $this->db->table($this->table)->update($data, ['perusahaan_id' => $id]);
 	}
 
 
 	public function deleteData($id)
 	{
-		return $this->db->table($this->table)->delete(['id' => $id]);
+		return $this->db->table($this->table)->delete(['perusahaan_id' => $id]);
 	}
 }
