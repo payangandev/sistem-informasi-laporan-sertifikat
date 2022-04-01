@@ -222,7 +222,6 @@ class Validation
 
 	public $karyawan = [
 		'nama_karyawan'     	=> 'required',
-		'divisi'   				=> 'required',
 		'jabatan'   			=> 'required',
 		'status'   				=> 'required',
 		'tanggalmasuk'   		=> 'required',
@@ -236,12 +235,8 @@ class Validation
 		'nama_karyawan'    	=> [
 			'required'		=> 'Nama Karyawan Required'
 		],
-
-		'divisi'   			=> [
-			'required'		=> 'Divisi Required'
-		],
 		'jabatan'   		=>  [
-			'required'		=> 'Vendor Required'
+			'required'		=> 'Jabatan Required'
 		],
 		'status'   			=>  [
 			'required'		=> 'Status  Required'

@@ -30,12 +30,8 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Users </h6>                         <br>
-                        <a href="<?php echo base_url('users/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
-                        <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
-                         
-                        <a href="<?php echo base_url('users/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
-                        <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
-
+                        <a href="<?php echo base_url('users/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">PDF</a>
+                    
                             <a href="<?php echo base_url('users/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
@@ -81,10 +77,10 @@
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="<?php echo base_url('users/edit/' . $row['id']); ?>" class="btn btn-sm btn-success">
-                                                        <i class="fa fa-edit"></i>
+                                                        <i class="fa fa-edit">EDIT</i>
                                                     </a>
                                                     <a href="<?php echo base_url('users/delete/' . $row['id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
-                                                        <i class="fa fa-trash-alt"></i>
+                                                        <i class="fa fa-trash-alt">DELETE</i>
                                                     </a>
                                                 </div>
                                             </td>

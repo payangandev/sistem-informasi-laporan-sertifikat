@@ -57,20 +57,18 @@ class karyawanController extends BaseController
  // tulis header/nama kolom 
     $spreadsheet->setActiveSheetIndex(0)
                 ->setCellValue('B1', 'Nama Karyawan')
-                ->setCellValue('C1', 'Divisi')
-                ->setCellValue('D1', 'Jabatan')
-                ->setCellValue('E1', 'Status')
-				->setCellValue('F1', 'Tanggal Masuk');
+                ->setCellValue('C1', 'Jabatan')
+                ->setCellValue('D1', 'Status')
+				->setCellValue('E1', 'Tanggal Masuk');
     
     $column = 2;
     // tulis data mobil ke cell
     foreach($dataKaryawan as $data) {
         $spreadsheet->setActiveSheetIndex(0)
                     ->setCellValue('B' . $column, $data['nama_karyawan'])
-                    ->setCellValue('C' . $column, $data['divisi'])
-                    ->setCellValue('D' . $column, $data['jabatan'])
-                    ->setCellValue('E' . $column, $data['status'])
-                    ->setCellValue('F' . $column, $data['tanggalmasuk']);
+                    ->setCellValue('C' . $column, $data['jabatan'])
+                    ->setCellValue('D' . $column, $data['status'])
+                    ->setCellValue('E' . $column, $data['tanggalmasuk']);
 
         $column++;
     }
@@ -141,7 +139,6 @@ class karyawanController extends BaseController
 
         $data = array(
             'nama_karyawan'             => $this->request->getPost('nama_karyawan'),
-            'divisi'                    => $this->request->getPost('divisi'),
             'jabatan'                   => $this->request->getPost('jabatan'),
             'status'                    => $this->request->getPost('status'),
             'tanggalmasuk'              => $this->request->getPost('tanggalmasuk')
@@ -185,7 +182,6 @@ class karyawanController extends BaseController
 
         $data = array(
             'nama_karyawan'             => $this->request->getPost('nama_karyawan'),
-            'divisi'                    => $this->request->getPost('divisi'),
             'jabatan'                   => $this->request->getPost('jabatan'),
             'status'                    => $this->request->getPost('status'),
             'tanggalmasuk'              => $this->request->getPost('tanggalmasuk'),

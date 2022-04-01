@@ -32,12 +32,8 @@
                             <h6 class="m-0 font-weight-bold text-primary text-left">Form List Data Karyawan </h6>
                         <br>
                         <a href="<?php echo base_url('karyawan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
-                        <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
-                         
-                        <a href="<?php echo base_url('karyawan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
-                        <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
-
-                            <a href="<?php echo base_url('karyawan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                         PDF</a>
+                        <a href="<?php echo base_url('karyawan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
                         <div class="card-body">
