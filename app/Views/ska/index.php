@@ -33,10 +33,10 @@
                         
                         <a href="<?php echo base_url('ska/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
-                         
+                        <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                         <a href="<?php echo base_url('ska/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
-
+                        <?php  } ?>
                         
                             <a href="<?php echo base_url('ska/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
@@ -69,7 +69,9 @@
                                         <th>Kode</th>
                                         <th>Tanggal Input</th>
                                         <th>Staff</th>
+                                        <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                         <th>Actions</th>
+                                        <?php } ?>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -80,6 +82,7 @@
                                             <td><?php echo $row['kode']; ?></td>
                                             <td><?php echo $row['tanggal_input']; ?></td>
                                             <td><?php echo $row['nama_karyawan']; ?></td>
+                                            <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="<?php echo base_url('ska/edit/' . $row['ska_id']); ?>" class="btn btn-sm btn-success">
@@ -90,19 +93,10 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <?php } ?>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Kode</th>
-                                    <th>Tanggal Input</th>
-                                    <th>Staff</th>
-                                    <th>Actions</th>
-                                    </tr>
-                                </tfoot>
                                 </table>
                             </div>
                         </div>

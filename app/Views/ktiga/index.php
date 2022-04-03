@@ -33,10 +33,10 @@
                         
                         <a href="<?php echo base_url('ktiga/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
-                         
+                        <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                         <a href="<?php echo base_url('ktiga/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
-
+                        <?php } ?>
                         
                             <a href="<?php echo base_url('ktiga/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
@@ -75,7 +75,9 @@
                                         <th>Marketing</th>
                                         <th>Tanggal Selesai</th>
                                         <th>No Resi</th>
+                                        <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                         <th>Actions</th>
+                                        <?php } ?>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -92,6 +94,7 @@
                                             <td><?php echo $row['marketing']; ?></td>
                                             <td><?php echo $row['tanggal_selesai']; ?></td>
                                             <td><?php echo $row['no_resi']; ?></td>
+                                            <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="<?php echo base_url('ktiga/edit/' . $row['ktiga_id']); ?>" class="btn btn-sm btn-success">
@@ -102,6 +105,7 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <?php } ?>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

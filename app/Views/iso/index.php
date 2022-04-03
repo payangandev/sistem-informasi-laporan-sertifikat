@@ -33,10 +33,10 @@
                         <br>
                         <a href="<?php echo base_url('iso/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
-                         
+                        <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                         <a href="<?php echo base_url('iso/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
-
+                        <?php } ?>
                         
                             <a href="<?php echo base_url('iso/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
@@ -76,7 +76,10 @@
                                         <th>No Resi</th>
                                         <th>Marketing</th>
                                         <th>Harga Jual</th>
+                                        <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                         <th>Actions</th>
+                                        <?php } ?>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -94,6 +97,7 @@
                                             <td><?php echo $row['no_resi']; ?></td>
                                             <td><?php echo $row['marketing']; ?></td>
                                             <td>Rp.<?php echo number_format($row['harga_jual'], 2,  ",", ".");?> </td>
+                                            <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="<?php echo base_url('iso/edit/' . $row['iso_id']); ?>" class="btn btn-sm btn-success">
@@ -104,6 +108,7 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <?php } ?>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

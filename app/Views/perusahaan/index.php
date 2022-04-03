@@ -32,10 +32,11 @@
                             <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Perusahaan </h6>                         <br>
                         <a href="<?php echo base_url('perusahaan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                         <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
-                        
+                        <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
+
                         <a href="<?php echo base_url('perusahaan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                         <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
-
+                        <?php } ?>
                             <a href="<?php echo base_url('perusahaan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
 
                         </div>
@@ -65,7 +66,9 @@
                                         <th>No</th>
                                         <th>Nama Perusahaan</th>
                                         <th>Tanggal Terdaftar</th>
+                                        <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                         <th>Actions</th>
+                                        <?php } ?>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,6 +77,7 @@
                                             <td><?php echo $key + 1; ?></td>
                                             <td><?php echo $row['nama_perusahaan']; ?></td>
                                             <td><?php echo $row['tanggal_input']; ?></td>
+                                            <?php if(session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="<?php echo base_url('perusahaan/edit/' . $row['perusahaan_id']); ?>" class="btn btn-sm btn-success">
@@ -84,6 +88,7 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                            <?php } ?>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

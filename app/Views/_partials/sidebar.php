@@ -4,7 +4,7 @@
        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('/'); ?>">
            <div class="sidebar-brand-icon ">
                <p style="color:white;"><b>PT FORTUNA</b></p>
-           </div>
+           </div>   
        </a>
        <!-- Divider -->
        <hr class="sidebar-divider">
@@ -15,7 +15,7 @@
                <i class="fas fa-fw fa-tachometer-alt"></i>
                <span>Dashboard</span></a>
        </li>
-
+       <?php if(session()->get('level') == 1 || session()->get('level') == 3) { ?>
        <li class="nav-item ">
            <a class="nav-link" href="<?php echo base_url('iso'); ?>">
                <i class="fas fa-fw fa-toolbox"></i>
@@ -41,6 +41,8 @@
                <i class="fas fa-fw fa-couch"></i>
                <span>Data Perusahaan</span></a>
        </li>
+       <?php } ?>
+       <?php if(session()->get('level') == 2) { ?>
        <li class="nav-item">
            <a class="nav-link" href="<?php echo base_url('karyawan'); ?>">
                <i class="fas fa-fw fa-user-friends"></i>
@@ -51,7 +53,7 @@
                <i class="fas fa-fw fa-user-check"></i>
                <span>Data Users</span></a>
        </li>
-
+        <?php } ?>
        <hr class="sidebar-divider d-none d-md-block">
 
        <!-- Sidebar Toggler (Sidebar) -->

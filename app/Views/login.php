@@ -41,7 +41,7 @@
                                     <div class="text-center">
                                         <h3 class="text-center"><b>LOGIN  <b></h3> </br>
                                         <img src="hsrcc.png" class="rounded  mx-auto d-block" alt="Cinque Terre"><br>
-                                        <p class="login-box-msg ">Rekapitulasi Reports System</p>
+                                        <p class="login-box-msg ">Fortuna Managemen Certification </p>
                                         <hr>
                                         <?php
                                         if (!empty(session()->getFlashdata('sukses'))) { ?>
