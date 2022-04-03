@@ -1,27 +1,27 @@
 <html>
 <body>
  <div>
-    <table cellpadding="4" >
+    <table class="table table-bordered" >
         <thead>
          <tr>
-         <th>No</th>
-         <th>Perusahaan</th>
-         <th>Kode Iso</th>
-         <th>Tanggal Terbit</th>
-         <th>Survailance 1</th>
-         <th>Survailance 2</th>
-         <th>Tanggal Berakhir</th>
-         <th>Tanggal Proses</th>
-         <th>Tanggal Selesai</th>
-         <th>No Resi</th>
-         <th>Marketing</th>
-         <th>Harga Jual</th>
+         <th scope="col">No</th>
+         <th scope="col">Perusahaan</th>
+         <th scope="col">Kode Iso</th>
+         <th scope="col">Tanggal Terbit</th>
+         <th scope="col">Survailance 1</th>
+         <th scope="col">Survailance 2</th>
+         <th scope="col">Tanggal Berakhir</th>
+         <th scope="col">Tanggal Proses</th>
+         <th scope="col">Tanggal Selesai</th>
+         <th scope="col">No Resi</th>
+         <th scope="col">Marketing</th>
+         <th scope="col">Harga Jual</th>
          </tr>
          </thead>
          <tbody>
             <?php foreach ($iso as $key => $row) { ?>
                 <tr>
-                    <td><?php echo $key + 1; ?></td>
+                    <td scope="row"><?php echo $key + 1; ?></td>
                     <td><?php echo $row['nama_perusahaan']; ?></td>
                     <td><?php echo $row['kode_iso']; ?></td>
                     <td><?php echo $row['tanggal_terbit']; ?></td>

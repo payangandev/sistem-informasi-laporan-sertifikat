@@ -10,7 +10,7 @@
               </tr>
           </thead>
           <tbody>
-              <?php foreach ($documentmasuk as $key => $row) { ?>
+              <?php foreach ($perusahaan as $key => $row) { ?>
                   <tr>
                       <td><?php echo $key + 1; ?></td>
                       <td><?php echo $row['nama_perusahaan']; ?></td>

@@ -3,11 +3,7 @@
        <!-- Sidebar - Brand -->
        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('/'); ?>">
            <div class="sidebar-brand-icon ">
-               <p style="color:red;"><b>FBB</b></p>
-           </div>
-           <div class="sidebar-brand-text mx-2">
-               <img src="<?php echo base_url('hsrcc.png'); ?>" alt="FBB Logo" class="brand-image elevation-3">
-
+               <p style="color:white;"><b>PT FORTUNA</b></p>
            </div>
        </a>
        <!-- Divider -->

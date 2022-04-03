@@ -57,7 +57,7 @@ class PerusahaanController extends BaseController
     // tulis data mobil ke cell
     foreach($dataperusahaan as $data) {
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['nama_user'])
+                    ->setCellValue('B' . $column, $data['nama_perusahaan'])
                     ->setCellValue('C' . $column, $data['tanggal_input']);
 
         $column++;
@@ -93,20 +93,36 @@ class PerusahaanController extends BaseController
 
 		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 		// set font tulisan
-		$pdf->SetFont('dejavusans', '', 10);
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+		// set document information
+		$pdf->SetCreator(PDF_CREATOR);
+		$pdf->SetAuthor('Dita Apriliyani');
+		$pdf->SetTitle('Report Data PERUSAHAAN');
+		$pdf->SetSubject('DATA PERUSAHAAN');
 
-		// $pdf->SetCreator(PDF_CREATOR);
-		$pdf->SetAuthor('Deni');
-		$pdf->SetTitle('Data Perusahaan');
-		$pdf->SetSubject('Data Perusahaan');
-		// add a page
+		// set default header data
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA PERUSAHAAN','Reports PDF PERUSAHAAN','');
+
+		// set header and footer fonts
+		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+		// set default monospaced font
+		$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+		// set margins
+		$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+		$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+		$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+		// set auto page breaks
+		$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+		$pdf->SetFont('dejavusans', '', 10);
 		$pdf->AddPage();
 		// write html
-		$pdf->writeHTML($html);
+		$pdf->writeHTML($html, true, false, true, false, '');
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_perusahaan.pdf', 'I');
+		$pdf->Output('data_sertifikasi_perusahaan.pdf', 'I');
 
 
 	}
