@@ -27,6 +27,7 @@
 
                     <!-- Content Row -->
                     <div class="row">
+                    <?php if(session()->get('level') == 1 || session()->get('level') == 3) { ?>
 
                         <!-- Data K3 -->
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -117,6 +118,8 @@
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
+                        <?php if(session()->get('level') == 2) { ?>
                         <!-- Data Karyawan -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
@@ -152,15 +155,15 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
-
-            <?php echo view('_partials/footer'); ?>
         </div>
         <!-- End of Content Wrapper -->
+        <?php echo view('_partials/footer'); ?>
 
     </div>
     <!-- End of Page Wrapper -->
