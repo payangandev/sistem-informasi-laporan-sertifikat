@@ -112,7 +112,7 @@ class karyawanController extends BaseController
 			$pdf->SetSubject('DATA Karyawan');
 	
 			// set default header data
-			$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA KARYAWAN','Reports PDF Karyawan','');
+			$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA KARYAWAN','');
 	
 			// set header and footer fonts
 			$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
