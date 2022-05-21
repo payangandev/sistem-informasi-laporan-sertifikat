@@ -41,7 +41,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-toolbox fa-2x text-blue-300"></i>
-                                        </div>
+                                        </div>z
                                     </div>
                                 </div>
                             </div>
@@ -163,34 +163,14 @@
             <!-- End of Main Content -->
         </div>
         <!-- End of Content Wrapper -->
+        <?php echo view('_partials/logout'); ?>
         <?php echo view('_partials/footer'); ?>
 
     </div>
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <?php echo view('_partials/logout'); ?>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-
+    <?php echo view('_partials/script'); ?>
 </body>
 
 </html>

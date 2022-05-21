@@ -3,12 +3,12 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thanks for good working today!</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Hai Terimakasih Sudah Berkontribusi!  </h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Keep Health! Thankyou </div>
+                <div class="modal-body">Tetap Jaga Kesehatan dan tetap semangat, terimakasih </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="<?php echo base_url('LoginController/logout'); ?>">Logout</a>
