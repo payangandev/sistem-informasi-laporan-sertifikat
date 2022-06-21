@@ -5,7 +5,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-    <?php echo view('_partials/sidebar'); ?>
+        <?php echo view('_partials/sidebar'); ?>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -27,133 +27,133 @@
 
                     <!-- Content Row -->
                     <div class="row">
-                     <?php if(session()->get('level') == 1 || session()->get('level') == 3) { ?>
+                        <?php if (session()->get('level') == 1 || session()->get('level') == 3) { ?>
 
-                        <!-- Data K3 -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Sertifikasi K3</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_ktiga ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-toolbox fa-2x text-blue-300"></i>
-                                        </div>z
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Data ISO -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Sertifikasi ISO</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_iso ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-car-side fa-2x text-blue-300"></i>
+                            <!-- Data K3 -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Data Sertifikasi K3</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_ktiga ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-toolbox fa-2x text-blue-300"></i>
+                                            </div>z
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Data Perusahaan -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Perusahaan</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $data_perusahaan ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-hand-holding-usd fa-2x text-blue-300"></i>
+                            <!-- Data ISO -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Data Sertifikasi ISO</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_iso ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-car-side fa-2x text-blue-300"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Data Audio Visual -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Sertifikasi SKA</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_ska ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-broadcast-tower fa-2x text-blue-300"></i>
+                            <!-- Data Perusahaan -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Data Klien</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $data_perusahaan ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-hand-holding-usd fa-2x text-blue-300"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Data SKT -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Sertikasi SKT</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_skt?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-couch fa-2x text-blue-300"></i>
+                            <!-- Data Audio Visual -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Data Sertifikasi SKA</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_ska ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-broadcast-tower fa-2x text-blue-300"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <!-- Data SKT -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Data Sertikasi SKT</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_skt ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-couch fa-2x text-blue-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         <?php } ?>
-                        <?php if(session()->get('level') == 2) { ?>
-                        <!-- Data Karyawan -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data Karyawan</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_karyawan ?></div>
+                        <?php if (session()->get('level') == 1) { ?>
+                            <!-- Data Karyawan -->
+                            <!-- <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Data Karyawan</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_karyawan ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-user-friends fa-2x text-blue-300"></i>
+                                            </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-user-friends fa-2x text-blue-300"></i>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- Data User -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-success shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Data User</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_user ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-user-check fa-2x text-blue-300"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Data User -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Data User</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $data_user ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-user-check fa-2x text-blue-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <?php } ?>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
         <!-- End of Content Wrapper -->
 
     </div>
- <!-- End of Page Wrapper -->
+    <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

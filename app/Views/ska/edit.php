@@ -24,7 +24,7 @@
 
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
-                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA BERKAH BERSAMA </h1>
+                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA MANAGEMENT CERTIFICATION</h1>
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">

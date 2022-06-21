@@ -23,74 +23,74 @@
                 <div class="container-fluid">
 
                     <div class="card shadow mb-4">
-                    <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA BERKAH BERSAMA </h1>
+                        <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA MANAGEMENT CERTIFICATION</h1>
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Karyawan </h6>
-                        <br>
-                        <a href="<?php echo base_url('karyawan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
-                        <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
-                         
-                        <a href="<?php echo base_url('karyawan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
-                        <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
+                            <br>
+                            <a href="<?php echo base_url('karyawan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                                <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
 
-                            <a href="<?php echo base_url('karyawan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i>  Tambah Data</a>
+                            <a href="<?php echo base_url('karyawan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                                <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
+
+                            <a href="<?php echo base_url('karyawan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i> Tambah Data</a>
 
                         </div>
                         <div class="card-body">
-                          <?php
-                        if (!empty(session()->getFlashdata('success'))) { ?>
-                            <div class="alert alert-success">
-                                <?php echo session()->getFlashdata('success'); ?>
-                            </div>
-                        <?php } ?>
+                            <?php
+                            if (!empty(session()->getFlashdata('success'))) { ?>
+                                <div class="alert alert-success">
+                                    <?php echo session()->getFlashdata('success'); ?>
+                                </div>
+                            <?php } ?>
 
-                        <?php if (!empty(session()->getFlashdata('info'))) { ?>
-                            <div class="alert alert-info">
-                                <?php echo session()->getFlashdata('info'); ?>
-                            </div>
-                        <?php } ?>
+                            <?php if (!empty(session()->getFlashdata('info'))) { ?>
+                                <div class="alert alert-info">
+                                    <?php echo session()->getFlashdata('info'); ?>
+                                </div>
+                            <?php } ?>
 
-                        <?php if (!empty(session()->getFlashdata('warning'))) { ?>
-                            <div class="alert alert-warning">
-                                <?php echo session()->getFlashdata('warning'); ?>
-                            </div>
-                        <?php } ?>
+                            <?php if (!empty(session()->getFlashdata('warning'))) { ?>
+                                <div class="alert alert-warning">
+                                    <?php echo session()->getFlashdata('warning'); ?>
+                                </div>
+                            <?php } ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Karyawan</th>
-                                        <th>Jabatan </th>
-                                        <th>Status </th>
-                                        <th>Tanggal Masuk</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($karyawan as $key => $row) { ?>
                                         <tr>
-                                            <td><?php echo $key + 1; ?></td>
-                                            <td><?php echo $row['nama_karyawan']; ?></td>
-                                            <td><?php echo $row['jabatan']; ?></td>
-                                            <td><?php echo $row['status']; ?></td>
-                                            <td><?php echo $row['tanggalmasuk']; ?></td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="<?php echo base_url('karyawan/edit/' . $row['karyawan_id']); ?>" class="btn btn-sm btn-success">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
-                                                    <a href="<?php echo base_url('karyawan/delete/' . $row['karyawan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
-                                                        <i class="fa fa-trash-alt"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
+                                            <th>No</th>
+                                            <th>Nama Karyawan</th>
+                                            <th>Jabatan </th>
+                                            <th>Status </th>
+                                            <th>Tanggal Masuk</th>
+                                            <th>Actions</th>
                                         </tr>
-                                    <?php } ?>
-                                </tbody>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($karyawan as $key => $row) { ?>
+                                            <tr>
+                                                <td><?php echo $key + 1; ?></td>
+                                                <td><?php echo $row['nama_karyawan']; ?></td>
+                                                <td><?php echo $row['jabatan']; ?></td>
+                                                <td><?php echo $row['status']; ?></td>
+                                                <td><?php echo $row['tanggalmasuk']; ?></td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="<?php echo base_url('karyawan/edit/' . $row['karyawan_id']); ?>" class="btn btn-sm btn-success">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+                                                        <a href="<?php echo base_url('karyawan/delete/' . $row['karyawan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                            <i class="fa fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <?php echo view('_partials/footer')?>
+            <?php echo view('_partials/footer') ?>
 
             <!-- End of Footer -->
 
@@ -120,7 +120,7 @@
 
     <?php echo view('_partials/logout'); ?>
 
-<?php echo view('_partials/script'); ?>
+    <?php echo view('_partials/script'); ?>
 </body>
 
 </html>

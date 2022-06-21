@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    
+
     <meta name="author" content="">
 
-    <title>FBB - Login</title>
+    <title>FMC - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,9 +39,9 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h3 class="text-center"><b>LOGIN  <b></h3> </br>
+                                        <h3 class="text-center"><b>LOGIN <b></h3> </br>
                                         <img src="hsrcc.png" class="rounded  mx-auto d-block" alt="Cinque Terre"><br>
-                                        <p class="login-box-msg ">Fortuna Managemen Certification </p>
+                                        <p class="login-box-msg ">PT Fortuna Management Certification </p>
                                         <hr>
                                         <?php
                                         if (!empty(session()->getFlashdata('sukses'))) { ?>
@@ -88,15 +88,15 @@
                                     </form>
                                     <?php echo form_close(); ?>
                                 </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </div>
+
+    </div>
 
     </div>
 

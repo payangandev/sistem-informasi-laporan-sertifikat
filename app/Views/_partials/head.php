@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PBB - SRR</title>
+    <title>FMC - SRR</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url('vendor/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
