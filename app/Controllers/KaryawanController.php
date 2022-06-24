@@ -20,8 +20,6 @@ class karyawanController extends BaseController
         $this->db = \Config\Database::connect();
     }
 
-
-
     public function index()
     {
         // proteksi halaman
@@ -40,104 +38,100 @@ class karyawanController extends BaseController
         echo view('karyawan/index', $data);
     }
 
-  	public function excel(){
-		// proteksi halaman
-		if (session()->get('username') == '') {
-			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
-			return redirect()->to(base_url('login'));
-		}
+    public function excel()
+    {
+        // proteksi halaman
+        if (session()->get('username') == '') {
+            session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
+            return redirect()->to(base_url('login'));
+        }
 
 
-	 $karyawan = new KaryawanModel();
-     $dataKaryawan = $karyawan->getData();
-	
-		$spreadsheet = new Spreadsheet();
+        $karyawan = new KaryawanModel();
+        $dataKaryawan = $karyawan->getData();
+
+        $spreadsheet = new Spreadsheet();
 
 
- // tulis header/nama kolom 
-    $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Nama Karyawan')
-                ->setCellValue('C1', 'Jabatan')
-                ->setCellValue('D1', 'Status')
-				->setCellValue('E1', 'Tanggal Masuk');
-    
-    $column = 2;
-    // tulis data mobil ke cell
-    foreach($dataKaryawan as $data) {
+        // tulis header/nama kolom 
         $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['nama_karyawan'])
-                    ->setCellValue('C' . $column, $data['jabatan'])
-                    ->setCellValue('D' . $column, $data['status'])
-                    ->setCellValue('E' . $column, $data['tanggalmasuk']);
+            ->setCellValue('B1', 'Nama Karyawan')
+            ->setCellValue('C1', 'Jabatan')
+            ->setCellValue('D1', 'Status')
+            ->setCellValue('E1', 'Tanggal Masuk');
 
-        $column++;
+        $column = 2;
+        // tulis data mobil ke cell
+        foreach ($dataKaryawan as $data) {
+            $spreadsheet->setActiveSheetIndex(0)
+                ->setCellValue('B' . $column, $data['nama_karyawan'])
+                ->setCellValue('C' . $column, $data['jabatan'])
+                ->setCellValue('D' . $column, $data['status'])
+                ->setCellValue('E' . $column, $data['tanggalmasuk']);
+
+            $column++;
+        }
+
+
+        // tulis dalam format .xlsx
+        $writer = new Xlsx($spreadsheet);
+        $fileName = 'Data Karyawan';
+
+        // Redirect hasil generate xlsx ke web client
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+        header('Cache-Control: max-age=0');
+        $this->response->setContentType('application/excel');
+
+        $writer->save('php://output');
     }
 
+    public function pdf()
+    {
+        // proteksi halaman
+        if (session()->get('username') == '') {
+            session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
+            return redirect()->to(base_url('login'));
+        }
 
-	// tulis dalam format .xlsx
-    $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data Karyawan';
+        $data = array(
+            'karyawan'    => $this->karyawan_model->getData(),
+        );
+        $html =  view('karyawan/pdf', $data);
 
-    // Redirect hasil generate xlsx ke web client
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename='.$fileName.'.xlsx');
-    header('Cache-Control: max-age=0');
-	$this->response->setContentType('application/excel');
+        $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+        // set font tulisan
+        // set document information
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('Dita Apriliyani');
+        $pdf->SetTitle('Report Data Karyawan ');
+        $pdf->SetSubject('DATA Karyawan');
 
-    $writer->save('php://output');
-	}
+        // set default header data
+        $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA KARYAWAN', '');
 
-	public function pdf(){
-		// proteksi halaman
-		if (session()->get('username') == '') {
-			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
-			return redirect()->to(base_url('login'));
-		}
-		
-		$data = array(
-			'karyawan'	=> $this->karyawan_model->getData(),	
-		);
-		$html =  view('karyawan/pdf', $data);
+        // set header and footer fonts
+        $pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
-		// test pdf
+        // set default monospaced font
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        // set margins
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+        $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
-			// test pdf
+        // set auto page breaks
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
-			$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
-			// set font tulisan
-			// set document information
-			$pdf->SetCreator(PDF_CREATOR);
-			$pdf->SetAuthor('Dita Apriliyani');
-			$pdf->SetTitle('Report Data Karyawan ');
-			$pdf->SetSubject('DATA Karyawan');
-	
-			// set default header data
-			$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA KARYAWAN','');
-	
-			// set header and footer fonts
-			$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-			$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-	
-			// set default monospaced font
-			$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-			// set margins
-			$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-			$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-			$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-	
-			// set auto page breaks
-			$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-	
-			$pdf->SetFont('dejavusans', '', 10);
-			$pdf->AddPage();
-			// write html
-			$pdf->writeHTML($html, true, false, true, false, '');
-			$this->response->setContentType('application/pdf');
-			// ouput pdf
-			$pdf->Output('data_karyawan.pdf', 'I');
-	
-
-	}
+        $pdf->SetFont('dejavusans', '', 10);
+        $pdf->AddPage();
+        // write html
+        $pdf->writeHTML($html, true, false, true, false, '');
+        $this->response->setContentType('application/pdf');
+        // ouput pdf
+        $pdf->Output('data_karyawan.pdf', 'I');
+    }
 
 
     public function create()

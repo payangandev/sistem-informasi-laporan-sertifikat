@@ -15,57 +15,19 @@ class Ktiga extends Migration
 				'unsigned'			=> TRUE,
 				'auto_increment'	=> TRUE
 			],
-			'nama_personil'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '50',
-			],
 
 			'sub_bidang'			=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'AHLI K3 UMUM','AHLI MADYA K3 KONTRUKSI','AHLI K3 BIDANG LISTRIK','SKP AHLI K3 LIFT & EKSKALATOR','TENAGA KERJA PADA KETINGGIAN TINGKAT 1 '",
-				'default'			=> 'AHLI K3 UMUM'
+				'constraint'		=> "'Ahli Teknik Bangunan Gedung','Ahli Teknik Jalan','Ahli Teknik Jembatan'",
+				'default'			=> 'Ahli Teknik Bangunan Gedung'
 			],
-
-			'perusahaan_id'				=> [
-				'type'				=> 'INT',
-				'constraint'		=> 36,
-				'unsigned'			=> TRUE,
-				'null'				=> TRUE
+			'kode'           => [
+				'type'       => 'VARCHAR',
+				'constraint' => 50,
 			],
-
-			'harga_setor'			=> [
-				'type'				=> 'INT',
-				'constraint'		=> 100,
-			],
-
-			'order_lencana'			=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> 50,
-			],
-
-			'harga_jual'			=> [
-				'type'				=> 'INT',
-				'constraint'		=> 100,
-			],
-
-			'tanggal_proses'		=> [
-				'type'				=> 'date'
-			],
-
-			'marketing'				=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '50'
-			],
-
-			'tanggal_selesai'		=> [
-				'type'				=> 'date'
-			],
-
-			'no_resi'				=> [
-				'type'				=> 'VARCHAR',
-				'constraint'		=> '50'
-			],
-
+			'tanggal_terbit'		=> [
+				'type'				=> 'date',
+			]
 
 		]);
 

@@ -59,10 +59,6 @@
                                 <?php echo form_label('Nama Perusahaan', 'nama_perusahaan'); ?>
                                 <?php echo form_input('nama_perusahaan', $perusahaan['nama_perusahaan'], ['class' => 'form-control', 'placeholder' => 'perusahaan Document']); ?>
                               </div>
-                              <div class="form-group">
-                                <?php echo form_label('Tanggal Terdaftar', 'tanggal_input'); ?>
-                                <?php echo form_input('tanggal_input', $perusahaan['tanggal_input'], ['class' => 'form-control', 'placeholder' => 'Tanggal Terdata', 'type' => 'DATE']); ?>
-                              </div>
                             </div>
                           </div>
                         </div>

@@ -36,7 +36,8 @@ class SktController extends BaseController
 		echo view('skt/index', $data);
 	}
 
-	public function excel(){
+	public function excel()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
@@ -44,54 +45,53 @@ class SktController extends BaseController
 		}
 
 
-	 $skt = new SktModel();
-     $dataskt = $skt->getData();
-	
+		$skt = new SktModel();
+		$dataskt = $skt->getData();
+
 		$spreadsheet = new Spreadsheet();
 
 
- // tulis header/nama kolom 
-    $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Nama')
-                ->setCellValue('C1', 'Kode')
-                ->setCellValue('D1', 'Tanggal Input')
-                ->setCellValue('E1', 'Karyawan');
-
-    
-    $column = 2;
-    // tulis data mobil ke cell
-    foreach($dataskt as $data) {
-        $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['nama'])
-                    ->setCellValue('C' . $column, $data['kode'])
-                    ->setCellValue('D' . $column, $data['tanggal_input'])
-                    ->setCellValue('E' . $column, $data['nama_karyawan']);
-        $column++;
-    }
+		// tulis header/nama kolom 
+		$spreadsheet->setActiveSheetIndex(0)
+			->setCellValue('B1', 'Nama')
+			->setCellValue('C1', 'Kode')
+			->setCellValue('D1', 'Tanggal Terbit');
 
 
-	// tulis dalam format .xlsx
-    $writer = new Xlsx($spreadsheet);
-    $fileName = 'skt';
+		$column = 2;
+		// tulis data mobil ke cell
+		foreach ($dataskt as $data) {
+			$spreadsheet->setActiveSheetIndex(0)
+				->setCellValue('B' . $column, $data['nama'])
+				->setCellValue('C' . $column, $data['kode'])
+				->setCellValue('D' . $column, $data['tanggal_terbit']);
+			$column++;
+		}
 
-    // Redirect hasil generate xlsx ke web client
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename='.$fileName.'.xlsx');
-    header('Cache-Control: max-age=0');
-	$this->response->setContentType('application/excel');
 
-    $writer->save('php://output');
+		// tulis dalam format .xlsx
+		$writer = new Xlsx($spreadsheet);
+		$fileName = 'skt';
+
+		// Redirect hasil generate xlsx ke web client
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+		header('Cache-Control: max-age=0');
+		$this->response->setContentType('application/excel');
+
+		$writer->save('php://output');
 	}
 
-	public function pdf(){
+	public function pdf()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		
+
 		$data = array(
-			'skt'	=> $this->skt_model->getData(),	
+			'skt'	=> $this->skt_model->getData(),
 		);
 		$html =  view('skt/pdf', $data);
 
@@ -106,11 +106,11 @@ class SktController extends BaseController
 		$pdf->SetSubject('DATA SKT');
 
 		// set default header data
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA SERITIFIKASI SKT','');
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA SERITIFIKASI SKT', '');
 
 		// set header and footer fonts
-		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+		$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 		// set default monospaced font
 		$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -129,7 +129,6 @@ class SktController extends BaseController
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
 		$pdf->Output('data_sertifikasi_SKT.pdf', 'I');
-
 	}
 
 	public function create()
@@ -155,8 +154,7 @@ class SktController extends BaseController
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
 			'kode'        			=> $this->request->getPost('kode'),
-			'tanggal_input'       	=> $this->request->getPost('tanggal_input'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
+			'tanggal_terbit'       	=> $this->request->getPost('tanggal_terbit'),
 		);
 
 		if ($validation->run($data, 'skt') == FALSE) {
@@ -203,8 +201,7 @@ class SktController extends BaseController
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
 			'kode'        			=> $this->request->getPost('kode'),
-			'tanggal_input'       	=> $this->request->getPost('tanggal_input'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
+			'tanggal_terbit'       	=> $this->request->getPost('tanggal_terbit'),
 
 		);
 		if ($validation->run($data, 'skt') == FALSE) {

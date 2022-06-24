@@ -68,19 +68,6 @@
                                 echo form_input($nama_perusahaan);
                                 ?>
                               </div>
-                              <div class="form-group">
-                                <?php
-                                echo form_label('Tanggal Masuk Document');
-                                $tanggal_terdaftar = [
-                                  'type'  => 'date',
-                                  'name'  => 'tanggal_input',
-                                  'id'    => 'tanggal_input',
-                                  'value' => $inputs['tanggal_input'],
-                                  'class' => 'form-control',
-                                ];
-                                echo form_input($tanggal_terdaftar);
-                                ?>
-                              </div>
                             </div>
                           </div>
                         </div>

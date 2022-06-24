@@ -12,12 +12,10 @@ class SkaModel extends Model
 	{
 		if ($id === false) {
 			return $this->table('ska')
-				->join('karyawan', 'karyawan.karyawan_id = ska.karyawan_id')
 				->get()
 				->getResultArray();
 		} else {
 			return $this->table('ska')
-				->join('karyawan', 'karyawan.karyawan_id = ska.karyawan_id')
 				->where('ska.ska_id', $id)
 				->get()
 				->getRowArray();

@@ -23,15 +23,8 @@ class DataKaryawan extends Seeder
 				'status'		=> 'AKTIF',
 				'tanggalmasuk'	=> '2021-05-12'
 			],
-			[
-				'karyawan_id' 	=> 3,
-				'nama_karyawan'	=> 'Lili',
-				'jabatan'		=> 'Super Admin',
-				'status'		=> 'AKTIF',
-				'tanggalmasuk'	=> '2019-03-09'
-			]
+
 		];
 		$this->db->table('karyawan')->insertBatch($karyawan);
-
 	}
 }

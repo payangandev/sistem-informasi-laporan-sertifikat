@@ -12,12 +12,10 @@ class IsoModel extends Model
 	{
 		if ($id === false) {
 			return $this->table('iso')
-				->join('perusahaan', 'perusahaan.perusahaan_id = iso.perusahaan_id')
 				->get()
 				->getResultArray();
 		} else {
 			return $this->table('iso')
-				->join('perusahaan', 'perusahaan.perusahaan_id = iso.perusahaan_id')
 				->where('iso.iso_id', $id)
 				->get()
 				->getRowArray();

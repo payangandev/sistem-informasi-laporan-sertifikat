@@ -34,8 +34,9 @@ class PerusahaanController extends BaseController
 		$data['currentPage']  = $currentPage;
 		echo view('perusahaan/index', $data);
 	}
-	
-	public function excel(){
+
+	public function excel()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
@@ -43,49 +44,47 @@ class PerusahaanController extends BaseController
 		}
 
 
-	 $perusahaan = new PerusahaanModel();
-     $dataperusahaan = $perusahaan->getData();
-	
+		$perusahaan = new PerusahaanModel();
+		$dataperusahaan = $perusahaan->getData();
+
 		$spreadsheet = new Spreadsheet();
 
 
- // tulis header/nama kolom 
-    $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Nama perusahaan')
-                ->setCellValue('C1', 'Tanggal Input');    
-    $column = 2;
-    // tulis data mobil ke cell
-    foreach($dataperusahaan as $data) {
-        $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['nama_perusahaan'])
-                    ->setCellValue('C' . $column, $data['tanggal_input']);
-
-        $column++;
-    }
+		// tulis header/nama kolom 
+		$spreadsheet->setActiveSheetIndex(0)
+			->setCellValue('B1', 'Nama perusahaan');
+		$column = 2;
+		// tulis data mobil ke cell
+		foreach ($dataperusahaan as $data) {
+			$spreadsheet->setActiveSheetIndex(0)
+				->setCellValue('B' . $column, $data['nama_perusahaan']);
+			$column++;
+		}
 
 
-	// tulis dalam format .xlsx
-    $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data perusahaan';
+		// tulis dalam format .xlsx
+		$writer = new Xlsx($spreadsheet);
+		$fileName = 'Data perusahaan';
 
-    // Redirect hasil generate xlsx ke web client
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename='.$fileName.'.xlsx');
-    header('Cache-Control: max-age=0');
-	$this->response->setContentType('application/excel');
+		// Redirect hasil generate xlsx ke web client
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+		header('Cache-Control: max-age=0');
+		$this->response->setContentType('application/excel');
 
-    $writer->save('php://output');
+		$writer->save('php://output');
 	}
 
-	public function pdf(){
+	public function pdf()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		
+
 		$data = array(
-			'perusahaan'	=> $this->perusahaan_model->getData(),	
+			'perusahaan'	=> $this->perusahaan_model->getData(),
 		);
 		$html =  view('perusahaan/pdf', $data);
 
@@ -100,11 +99,11 @@ class PerusahaanController extends BaseController
 		$pdf->SetSubject('DATA PERUSAHAAN');
 
 		// set default header data
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA PERUSAHAAN','');
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA PERUSAHAAN', '');
 
 		// set header and footer fonts
-		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+		$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 		// set default monospaced font
 		$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -123,8 +122,6 @@ class PerusahaanController extends BaseController
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
 		$pdf->Output('data_sertifikasi_perusahaan.pdf', 'I');
-
-
 	}
 
 
@@ -145,7 +142,6 @@ class PerusahaanController extends BaseController
 
 		$data = array(
 			'nama_perusahaan'             => $this->request->getPost('nama_perusahaan'),
-			'tanggal_input'               => $this->request->getPost('tanggal_input'),
 
 		);
 
@@ -189,7 +185,6 @@ class PerusahaanController extends BaseController
 
 		$data = array(
 			'nama_perusahaan'             => $this->request->getPost('nama_perusahaan'),
-			'tanggal_input'               => $this->request->getPost('tanggal_input'),
 
 		);
 

@@ -12,12 +12,10 @@ class KtigaModel extends Model
 	{
 		if ($id === false) {
 			return $this->table('ktiga')
-				->join('perusahaan', 'perusahaan.perusahaan_id = ktiga.perusahaan_id')
 				->get()
 				->getResultArray();
 		} else {
 			return $this->table('ktiga')
-				->join('perusahaan', 'perusahaan.perusahaan_id = ktiga.perusahaan_id')
 				->where('ktiga.ktiga_id', $id)
 				->get()
 				->getRowArray();

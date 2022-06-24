@@ -105,8 +105,6 @@ $routes->post('ktiga/update/(:num)', 'KtigaController::update/$1');
 $routes->get('ktiga/delete/(:alphanum)', 'KtigaController::delete/$1');
 
 
-
-
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

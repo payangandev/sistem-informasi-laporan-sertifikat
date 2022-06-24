@@ -21,12 +21,10 @@
                                                                                                                         echo 'Manager';
                                                                                                                     } elseif (session()->get('level') == 2) {
                                                                                                                         echo 'Super Admin';
-                                                                                                                    } elseif (session()->get('level') == 3) {
-                                                                                                                        echo "Admin";
                                                                                                                     } else {
                                                                                                                         echo 'Guest';
                                                                                                                     } ?></span>
-                   <img class="img-profile rounded-circle" src="<?php echo base_url('circle.png');?>">
+                   <img class="img-profile rounded-circle" src="<?php echo base_url('circle.png'); ?>">
                </a>
                <!-- Dropdown - User Information -->
                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown1">

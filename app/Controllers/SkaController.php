@@ -11,7 +11,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class SkaController extends BaseController
 {
-public function __construct()
+	public function __construct()
 	{
 		helper(['form']);
 		$this->karyawan_model = new KaryawanModel();
@@ -37,7 +37,8 @@ public function __construct()
 	}
 
 
-	public function excel(){
+	public function excel()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
@@ -45,94 +46,90 @@ public function __construct()
 		}
 
 
-	 $ska = new SkaModel();
-     $dataska = $ska->getData();
-	
+		$ska = new SkaModel();
+		$dataska = $ska->getData();
+
 		$spreadsheet = new Spreadsheet();
 
 
- // tulis header/nama kolom 
-    $spreadsheet->setActiveSheetIndex(0)
-	->setCellValue('B1', 'Nama')
-	->setCellValue('C1', 'Kode')
-	->setCellValue('D1', 'Tanggal Input')
-	->setCellValue('E1', 'Karyawan');
-
-    
-    $column = 2;
-    // tulis data mobil ke cell
-    foreach($dataska as $data) {
-        $spreadsheet->setActiveSheetIndex(0)
-		->setCellValue('B' . $column, $data['nama'])
-		->setCellValue('C' . $column, $data['kode'])
-		->setCellValue('D' . $column, $data['tanggal_input'])
-		->setCellValue('E' . $column, $data['nama_karyawan']);
-
-        $column++;
-    }
+		// tulis header/nama kolom 
+		$spreadsheet->setActiveSheetIndex(0)
+			->setCellValue('B1', 'Nama')
+			->setCellValue('C1', 'Kode')
+			->setCellValue('D1', 'Tanggal Terbit');
 
 
-	// tulis dalam format .xlsx
-    $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ska';
+		$column = 2;
+		// tulis data mobil ke cell
+		foreach ($dataska as $data) {
+			$spreadsheet->setActiveSheetIndex(0)
+				->setCellValue('B' . $column, $data['nama'])
+				->setCellValue('C' . $column, $data['kode'])
+				->setCellValue('D' . $column, $data['tanggal_terbit']);
+			$column++;
+		}
 
-    // Redirect hasil generate xlsx ke web client
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename='.$fileName.'.xlsx');
-    header('Cache-Control: max-age=0');
-	$this->response->setContentType('application/excel');
 
-    $writer->save('php://output');
+		// tulis dalam format .xlsx
+		$writer = new Xlsx($spreadsheet);
+		$fileName = 'Data ska';
+
+		// Redirect hasil generate xlsx ke web client
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+		header('Cache-Control: max-age=0');
+		$this->response->setContentType('application/excel');
+
+		$writer->save('php://output');
 	}
 
-	public function pdf(){
+	public function pdf()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		
+
 		$data = array(
-			'ska'	=> $this->ska_model->getData(),	
+			'ska'	=> $this->ska_model->getData(),
 		);
 		$html =  view('ska/pdf', $data);
 
-			// test pdf
+		// test pdf
 
-			$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
-			// set font tulisan
-			// set document information
-			$pdf->SetCreator(PDF_CREATOR);
-			$pdf->SetAuthor('Dita Apriliyani');
-			$pdf->SetTitle('Report Data Sertifikasi SKA');
-			$pdf->SetSubject('DATA SKA');
-	
-			// set default header data
-			$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA SERTIFIKASI SKA','');
-	
-			// set header and footer fonts
-			$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-			$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-	
-			// set default monospaced font
-			$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-			// set margins
-			$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-			$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-			$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-	
-			// set auto page breaks
-			$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-	
-			$pdf->SetFont('dejavusans', '', 10);
-			$pdf->AddPage();
-			// write html
-			$pdf->writeHTML($html, true, false, true, false, '');
-			$this->response->setContentType('application/pdf');
-			// ouput pdf
-			$pdf->Output('data_sertifikasi_SKA.pdf', 'I');
-	
-	
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
+		// set font tulisan
+		// set document information
+		$pdf->SetCreator(PDF_CREATOR);
+		$pdf->SetAuthor('Dita Apriliyani');
+		$pdf->SetTitle('Report Data Sertifikasi SKA');
+		$pdf->SetSubject('DATA SKA');
+
+		// set default header data
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA SERTIFIKASI SKA', '');
+
+		// set header and footer fonts
+		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+		$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+		// set default monospaced font
+		$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+		// set margins
+		$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+		$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+		$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+		// set auto page breaks
+		$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+		$pdf->SetFont('dejavusans', '', 10);
+		$pdf->AddPage();
+		// write html
+		$pdf->writeHTML($html, true, false, true, false, '');
+		$this->response->setContentType('application/pdf');
+		// ouput pdf
+		$pdf->Output('data_sertifikasi_SKA.pdf', 'I');
 	}
 
 
@@ -159,9 +156,7 @@ public function __construct()
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
 			'kode'        			=> $this->request->getPost('kode'),
-			'tanggal_input'       	=> $this->request->getPost('tanggal_input'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
-
+			'tanggal_input'       	=> $this->request->getPost('tanggal_terbit'),
 		);
 
 		if ($validation->run($data, 'ska') == FALSE) {
@@ -206,8 +201,7 @@ public function __construct()
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
 			'kode'        			=> $this->request->getPost('kode'),
-			'tanggal_input'       	=> $this->request->getPost('tanggal_input'),
-			'karyawan_id'        	=> $this->request->getPost('karyawan_id'),
+			'tanggal_input'       	=> $this->request->getPost('tanggal_terbit'),
 		);
 		if ($validation->run($data, 'ska') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());

@@ -23,16 +23,9 @@ class Skt extends Migration
 				'type'       		=> 'VARCHAR',
 				'constraint' 		=> 50,
 			],
-			'tanggal_input'   		=> [
-				'type' 		 		=> 'date',
-			],
-			'karyawan_id'			=> [
-				'type'				=> 'INT',
-				'constraint'		=> 36,
-				'unsigned'			=> TRUE,
-				'null'				=> TRUE
+			'tanggal_terbit'		=> [
+				'type'				=> 'date',
 			]
-
 		]);
 
 		$this->forge->addKey('skt_id', true);

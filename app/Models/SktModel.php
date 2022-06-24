@@ -12,12 +12,10 @@ class SktModel extends Model
 	{
 		if ($id === false) {
 			return $this->table('skt')
-				->join('karyawan', 'karyawan.karyawan_id = skt.karyawan_id')
 				->get()
 				->getResultArray();
 		} else {
 			return $this->table('skt')
-				->join('karyawan', 'karyawan.karyawan_id = skt.karyawan_id')
 				->where('skt.skt_id', $id)
 				->get()
 				->getRowArray();

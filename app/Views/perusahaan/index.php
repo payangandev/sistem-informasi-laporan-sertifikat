@@ -76,7 +76,6 @@
                                             <tr>
                                                 <td><?php echo $key + 1; ?></td>
                                                 <td><?php echo $row['nama_perusahaan']; ?></td>
-                                                <td><?php echo $row['tanggal_input']; ?></td>
                                                 <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                     <td>
                                                         <div class="btn-group">
