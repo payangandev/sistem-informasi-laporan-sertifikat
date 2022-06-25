@@ -156,7 +156,7 @@ class SkaController extends BaseController
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
 			'kode'        			=> $this->request->getPost('kode'),
-			'tanggal_input'       	=> $this->request->getPost('tanggal_terbit'),
+			'tanggal_terbit'       	=> $this->request->getPost('tanggal_terbit'),
 		);
 
 		if ($validation->run($data, 'ska') == FALSE) {
@@ -201,7 +201,7 @@ class SkaController extends BaseController
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
 			'kode'        			=> $this->request->getPost('kode'),
-			'tanggal_input'       	=> $this->request->getPost('tanggal_terbit'),
+			'tanggal_terbit'       	=> $this->request->getPost('tanggal_terbit'),
 		);
 		if ($validation->run($data, 'ska') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());

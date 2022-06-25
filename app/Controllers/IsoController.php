@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\PerusahaanModel;
 use App\Models\IsoModel;
 use TCPDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -14,7 +13,6 @@ class IsoController extends BaseController
 	public function __construct()
 	{
 		helper(['form']);
-		$this->perusahaan_model = new PerusahaanModel();
 		$this->iso_model = new IsoModel();
 	}
 
@@ -30,13 +28,14 @@ class IsoController extends BaseController
 
 		// paginate
 		$paginate = 1000000;
-		$data['iso']   = $this->iso_model->join('perusahaan', 'perusahaan.perusahaan_id = iso.perusahaan_id')->paginate($paginate, 'iso');
+		$data['iso']   = $this->iso_model->paginate($paginate, 'iso');
 		$data['pager']        = $this->iso_model->pager;
 		$data['currentPage']  = $currentPage;
 		echo view('iso/index', $data);
 	}
 
-	public function excel(){
+	public function excel()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
@@ -44,69 +43,53 @@ class IsoController extends BaseController
 		}
 
 
-	 $iso = new IsoModel();
-     $dataiso = $iso->getData();
-	
+		$iso = new IsoModel();
+		$dataiso = $iso->getData();
+
 		$spreadsheet = new Spreadsheet();
 
 
- // tulis header/nama kolom 
-    $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Perusahaan')
-                ->setCellValue('C1', 'Kode Iso')
-                ->setCellValue('D1', 'Tanggal Terbit')
-                ->setCellValue('E1', 'Survailance 1')
-				->setCellValue('F1', 'Survailance 2')
-                ->setCellValue('G1', 'Tanggal Berakhir')
-                ->setCellValue('H1', 'Tanggal Proses')
-				->setCellValue('I1', 'Tanggal Selesai')
-                ->setCellValue('J1', 'No Resi')
-                ->setCellValue('K1', 'Marketing')
-                ->setCellValue('L1', 'Harga Jual');
+		// tulis header/nama kolom 
+		$spreadsheet->setActiveSheetIndex(0)
+			->setCellValue('B1', 'Nama')
+			->setCellValue('C1', 'Kode Iso')
+			->setCellValue('D1', 'Tanggal Terbit');
 
-    
-    $column = 2;
-    // tulis data mobil ke cell
-    foreach($dataiso as $data) {
-        $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['nama_perusahaan'])
-                    ->setCellValue('C' . $column, $data['kode_iso'])
-                    ->setCellValue('D' . $column, $data['tanggal_terbit'])
-                    ->setCellValue('E' . $column, $data['survailance_one'])
-                    ->setCellValue('F' . $column, $data['survailance_two'])
-					->setCellValue('G' . $column, $data['tanggal_berakhir'])
-					->setCellValue('H' . $column, $data['tanggal_proses'])
-					->setCellValue('I' . $column, $data['tanggal_selesai'])
-					->setCellValue('J' . $column, $data['no_resi'])
-					->setCellValue('K' . $column, $data['marketing'])
-                    ->setCellValue('L' . $column, $data['harga_jual']);
+		$column = 2;
+		// tulis data mobil ke cell
+		foreach ($dataiso as $data) {
+			$spreadsheet->setActiveSheetIndex(0)
+				->setCellValue('B' . $column, $data['nama'])
+				->setCellValue('C' . $column, $data['kode_iso'])
+				->setCellValue('D' . $column, $data['tanggal_terbit']);
 
-        $column++;
-    }
+			$column++;
+		}
 
 
-	// tulis dalam format .xlsx
-    $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data Iso';
+		// tulis dalam format .xlsx
+		$writer = new Xlsx($spreadsheet);
+		$fileName = 'Data Iso';
 
-    // Redirect hasil generate xlsx ke web client
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename='.$fileName.'.xlsx');
-    header('Cache-Control: max-age=0');
-	$this->response->setContentType('application/excel');
+		// Redirect hasil generate xlsx ke web client
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+		header('Cache-Control: max-age=0');
+		$this->response->setContentType('application/excel');
 
-    $writer->save('php://output');
+		$writer->save('php://output');
 	}
 
-	public function pdf(){
+	public function pdf()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		
+
 		$data = array(
-			'iso'	=> $this->iso_model->getData(),	
+			'iso'	=> $this->iso_model->getData(),
 		);
 		$html =  view('iso/pdf', $data);
 
@@ -121,11 +104,11 @@ class IsoController extends BaseController
 		$pdf->SetSubject('DATA ISO');
 
 		// set default header data
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA SERITIFIKASI ISO','');
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA SERITIFIKASI ISO', '');
 
 		// set header and footer fonts
-		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+		$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 		// set default monospaced font
 		$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -144,11 +127,7 @@ class IsoController extends BaseController
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
 		$pdf->Output('data_sertifikasi_iso.pdf', 'I');
-
-
 	}
-
-
 
 
 	public function create()
@@ -158,9 +137,7 @@ class IsoController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$perusahaan = $this->perusahaan_model->findAll();
-		$data['perusahaan'] = ['' => 'perusahaan'] + array_column($perusahaan, 'nama_perusahaan', 'perusahaan_id');
-		return view('iso/create', $data);
+		return view('iso/create');
 	}
 
 	public function store()
@@ -172,17 +149,9 @@ class IsoController extends BaseController
 		}
 		$validation =  \Config\Services::validation();
 		$data = array(
+			'nama'        		=> $this->request->getPost('nama'),
 			'kode_iso'        		=> $this->request->getPost('kode_iso'),
 			'tanggal_terbit'    	=> $this->request->getPost('tanggal_terbit'),
-			'survailance_one'       => $this->request->getPost('survailance_one'),
-			'survailance_two'       => $this->request->getPost('survailance_two'),
-			'tanggal_berakhir'      => $this->request->getPost('tanggal_berakhir'),
-			'tanggal_proses'       	=> $this->request->getPost('tanggal_proses'),
-			'tanggal_selesai'       => $this->request->getPost('tanggal_selesai'),
-			'no_resi'        		=> $this->request->getPost('no_resi'),
-			'marketing'        		=> $this->request->getPost('marketing'),
-			'harga_jual'        	=> $this->request->getPost('harga_jual'),
-			'perusahaan_id'        	=> $this->request->getPost('perusahaan_id'),
 
 		);
 
@@ -208,8 +177,6 @@ class IsoController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$perusahaan = $this->perusahaan_model->findAll();
-		$data['perusahaan'] = ['' => 'Pilih perusahaan'] + array_column($perusahaan, 'nama_perusahaan', 'perusahaan_id');
 		$data['iso'] = $this->iso_model->getData($id);
 		echo view('iso/edit', $data);
 	}
@@ -226,18 +193,9 @@ class IsoController extends BaseController
 		$validation =  \Config\Services::validation();
 
 		$data = array(
-			
+			'nama'        		=> $this->request->getPost('nama'),
 			'kode_iso'        		=> $this->request->getPost('kode_iso'),
 			'tanggal_terbit'    	=> $this->request->getPost('tanggal_terbit'),
-			'survailance_one'       => $this->request->getPost('survailance_one'),
-			'survailance_two'       => $this->request->getPost('survailance_two'),
-			'tanggal_berakhir'      => $this->request->getPost('tanggal_berakhir'),
-			'tanggal_proses'       	=> $this->request->getPost('tanggal_proses'),
-			'tanggal_selesai'       => $this->request->getPost('tanggal_selesai'),
-			'no_resi'        		=> $this->request->getPost('no_resi'),
-			'marketing'        		=> $this->request->getPost('marketing'),
-			'harga_jual'        	=> $this->request->getPost('harga_jual'),
-			'perusahaan_id'        	=> $this->request->getPost('perusahaan_id'),
 
 
 		);

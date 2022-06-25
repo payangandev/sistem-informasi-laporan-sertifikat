@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Controllers\BaseController;
-use App\Models\perusahaanModel;
 use App\Models\KtigaModel;
 use TCPDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -10,10 +10,9 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class ktigaController extends BaseController
 {
-public function __construct()
+	public function __construct()
 	{
 		helper(['form']);
-		$this->perusahaan_model = new PerusahaanModel(); //
 		$this->ktiga_model = new KtigaModel();
 	}
 
@@ -29,13 +28,14 @@ public function __construct()
 
 		// paginate
 		$paginate = 1000000;
-		$data['ktiga']   = $this->ktiga_model->join('perusahaan', 'perusahaan.perusahaan_id = ktiga.perusahaan_id')->paginate($paginate, 'ktiga');
+		$data['ktiga']   = $this->ktiga_model->paginate($paginate, 'ktiga');
 		$data['pager']        = $this->ktiga_model->pager;
 		$data['currentPage']  = $currentPage;
 		echo view('ktiga/index', $data);
 	}
 
-	public function excel(){
+	public function excel()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
@@ -43,68 +43,54 @@ public function __construct()
 		}
 
 
-	 $ktiga = new KtigaModel();
-     $dataktiga = $ktiga->getData();
-	
+		$ktiga = new KtigaModel();
+		$dataktiga = $ktiga->getData();
+
 		$spreadsheet = new Spreadsheet();
 
 
- // tulis header/nama kolom 
-    $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('B1', 'Nama Personil')
-                ->setCellValue('C1', 'Sub Bidang')
-                ->setCellValue('D1', 'Nama Perusahaan')
-                ->setCellValue('E1', 'Harga Setor')
-				->setCellValue('F1', 'Order Lencana')
-                ->setCellValue('G1', 'Harga Jual')
-                ->setCellValue('H1', 'Tanggal Proses')
-                ->setCellValue('I1', 'Marketing')
-				->setCellValue('J1', 'Tanggal Selesai')
-                ->setCellValue('K1', 'No Resi');
+		// tulis header/nama kolom 
+		$spreadsheet->setActiveSheetIndex(0)
+			->setCellValue('B1', 'Sub Bidang')
+			->setCellValue('C1', 'Kode')
+			->setCellValue('D1', 'Tanggal Terbit');
 
 
-    
-    $column = 2;
-    // tulis data mobil ke cell
-    foreach($dataktiga as $data) {
-        $spreadsheet->setActiveSheetIndex(0)
-                    ->setCellValue('B' . $column, $data['nama_personil'])
-                    ->setCellValue('C' . $column, $data['sub_bidang'])
-                    ->setCellValue('D' . $column, $data['nama_perusahaan'])
-                    ->setCellValue('E' . $column, $data['harga_setor'])
-                    ->setCellValue('F' . $column, $data['order_lencana'])
-					->setCellValue('G' . $column, $data['harga_jual'])
-					->setCellValue('H' . $column, $data['tanggal_proses'])
-                    ->setCellValue('I' . $column, $data['marketing'])
-					->setCellValue('J' . $column, $data['tanggal_selesai'])
-                    ->setCellValue('K' . $column, $data['no_resi']);
 
-        $column++;
-    }
+		$column = 2;
+		// tulis data mobil ke cell
+		foreach ($dataktiga as $data) {
+			$spreadsheet->setActiveSheetIndex(0)
+				->setCellValue('B' . $column, $data['sub_bidang'])
+				->setCellValue('C' . $column, $data['kode'])
+				->setCellValue('D' . $column, $data['tanggal_terbit']);
+			$column++;
+		}
 
 
-	// tulis dalam format .xlsx
-    $writer = new Xlsx($spreadsheet);
-    $fileName = 'Data ktiga';
+		// tulis dalam format .xlsx
+		$writer = new Xlsx($spreadsheet);
+		$fileName = 'Data ktiga';
 
-    // Redirect hasil generate xlsx ke web client
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename='.$fileName.'.xlsx');
-    header('Cache-Control: max-age=0');
-	$this->response->setContentType('application/excel');
+		// Redirect hasil generate xlsx ke web client
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+		header('Cache-Control: max-age=0');
+		$this->response->setContentType('application/excel');
 
-    $writer->save('php://output');
+		$writer->save('php://output');
 	}
 
-	public function pdf(){
+	public function pdf()
+	{
 		// proteksi halaman
 		if (session()->get('username') == '') {
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		
+
 		$data = array(
-			'ktiga'	=> $this->ktiga_model->getData(),	
+			'ktiga'	=> $this->ktiga_model->getData(),
 		);
 		$html =  view('ktiga/pdf', $data);
 
@@ -119,11 +105,11 @@ public function __construct()
 		$pdf->SetSubject('DATA ISO');
 
 		// set default header data
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,'DATA SERTIFIKASI K3','');
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA SERTIFIKASI K3', '');
 
 		// set header and footer fonts
-		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+		$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 		// set default monospaced font
 		$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -142,8 +128,6 @@ public function __construct()
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
 		$pdf->Output('data_sertifikasi_k3.pdf', 'I');
-
-
 	}
 
 	public function create()
@@ -153,9 +137,7 @@ public function __construct()
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$perusahaan = $this->perusahaan_model->findAll();
-		$data['perusahaan'] = ['' => 'perusahaan'] + array_column($perusahaan, 'nama_perusahaan', 'perusahaan_id');
-		return view('ktiga/create', $data);
+		return view('ktiga/create');
 	}
 
 	public function store()
@@ -167,16 +149,9 @@ public function __construct()
 		}
 		$validation =  \Config\Services::validation();
 		$data = array(
-			'nama_personil'        		=> $this->request->getPost('nama_personil'),
-			'sub_bidang'    			=> $this->request->getPost('sub_bidang'),
-			'perusahaan_id'         	=> $this->request->getPost('perusahaan_id'),
-			'harga_setor'         		=> $this->request->getPost('harga_setor'),
-			'order_lencana'       		=> $this->request->getPost('order_lencana'),
-			'harga_jual'        		=> $this->request->getPost('harga_jual'),
-			'tanggal_proses'        	=> $this->request->getPost('tanggal_proses'),
-			'marketing'        			=> $this->request->getPost('marketing'),
-			'tanggal_selesai'        	=> $this->request->getPost('tanggal_selesai'),
-			'no_resi'        			=> $this->request->getPost('no_resi'),
+			'sub_bidang'        		=> $this->request->getPost('sub_bidang'),
+			'kode'    			=> $this->request->getPost('kode'),
+			'tanggal_terbit'         	=> $this->request->getPost('tanggal_terbit'),
 		);
 
 		if ($validation->run($data, 'ktiga') == FALSE) {
@@ -201,8 +176,6 @@ public function __construct()
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$perusahaan = $this->perusahaan_model->findAll();
-		$data['perusahaan'] = ['' => 'Pilih perusahaan'] + array_column($perusahaan, 'nama_perusahaan', 'perusahaan_id');
 		$data['ktiga'] = $this->ktiga_model->getData($id);
 		echo view('ktiga/edit', $data);
 	}
@@ -219,16 +192,9 @@ public function __construct()
 		$validation =  \Config\Services::validation();
 
 		$data = array(
-			'nama_personil'        		=> $this->request->getPost('nama_personil'),
-			'sub_bidang'    			=> $this->request->getPost('sub_bidang'),
-			'perusahaan_id'         	=> $this->request->getPost('perusahaan_id'),
-			'harga_setor'         		=> $this->request->getPost('harga_setor'),
-			'order_lencana'       		=> $this->request->getPost('order_lencana'),
-			'harga_jual'        		=> $this->request->getPost('harga_jual'),
-			'tanggal_proses'        	=> $this->request->getPost('tanggal_proses'),
-			'marketing'        			=> $this->request->getPost('marketing'),
-			'tanggal_selesai'        	=> $this->request->getPost('tanggal_selesai'),
-			'no_resi'        			=> $this->request->getPost('no_resi'),
+			'sub_bidang'        		=> $this->request->getPost('sub_bidang'),
+			'kode'    					=> $this->request->getPost('kode'),
+			'tanggal_terbit'         	=> $this->request->getPost('tanggal_terbit'),
 
 		);
 		if ($validation->run($data, 'ktiga') == FALSE) {
