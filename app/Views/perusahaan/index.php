@@ -65,7 +65,6 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Perusahaan</th>
-                                            <th>Tanggal Terdaftar</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>
                                             <?php } ?>

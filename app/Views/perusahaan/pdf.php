@@ -7,7 +7,6 @@
                 <tr>
                     <th>No</th>
                     <th>Nama Perusahaan</th>
-                    <th>Tanggal Terdaftar</th>
                 </tr>
             </thead>
             <tbody>
