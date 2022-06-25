@@ -84,23 +84,18 @@
                               </div>
                               <div class="form-group">
                                 <?php
-                                echo form_label('Tanggal Input');
-                                $tanggalinput = [
+                                echo form_label('Tanggal Terbit');
+                                $tanggal_terbit = [
                                   'type'  => 'date',
-                                  'name'  => 'tanggal_input',
-                                  'id'    => 'tanggal_input',
-                                  'value' => $inputs['tanggal_input'],
+                                  'name'  => 'tanggal_terbit',
+                                  'id'    => 'tanggal_terbit',
+                                  'value' => $inputs['tanggal_terbit'],
                                   'class' => 'form-control',
                                 ];
-                                echo form_input($tanggalinput);
+                                echo form_input($tanggal_terbit);
                                 ?>
                               </div>
-                              <div class="form-group">
-                                <?php
-                                echo form_label('Staff', 'staff');
-                                echo form_dropdown('karyawan_id', $karyawan, $inputs['karyawan_id'], ['class' => 'form-control']);
-                                ?>
-                              </div>
+
                             </div>
                           </div>
                         </div>

@@ -18,7 +18,7 @@ class Ktiga extends Migration
 
 			'sub_bidang'			=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'Ahli Teknik Bangunan Gedung','Ahli Teknik Jalan','Ahli Teknik Jembatan'",
+				'constraint'		=> "'Ahli Teknik Bangunan Gedung','Ahli Teknik Jalan','Ahli Sumber Daya Air','Ahli K3 Konstruksi'",
 				'default'			=> 'Ahli Teknik Bangunan Gedung'
 			],
 			'kode'           => [

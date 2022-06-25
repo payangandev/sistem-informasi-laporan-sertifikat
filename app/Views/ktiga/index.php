@@ -65,16 +65,9 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Personil</th>
                                             <th>Sub Bidang</th>
-                                            <th>Perusahaan</th>
-                                            <th>Harga Setor</th>
-                                            <th>Order Lencana</th>
-                                            <th>Harga Jual</th>
-                                            <th>Tanggal Proses</th>
-                                            <th>Marketing</th>
-                                            <th>Tanggal Selesai</th>
-                                            <th>No Resi</th>
+                                            <th>Kode</th>
+                                            <th>Tanggal Terbit</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>
                                             <?php } ?>
@@ -84,16 +77,9 @@
                                         <?php foreach ($ktiga as $key => $row) { ?>
                                             <tr>
                                                 <td><?php echo $key + 1; ?></td>
-                                                <td><?php echo $row['nama_personil']; ?></td>
                                                 <td><?php echo $row['sub_bidang']; ?></td>
-                                                <td><?php echo $row['nama_perusahaan']; ?></td>
-                                                <td>Rp.<?php echo number_format($row['harga_setor'], 2,  ",", "."); ?> </td>
-                                                <td><?php echo $row['order_lencana']; ?></td>
-                                                <td>Rp.<?php echo number_format($row['harga_jual'], 2,  ",", "."); ?> </td>
-                                                <td><?php echo $row['tanggal_proses']; ?></td>
-                                                <td><?php echo $row['marketing']; ?></td>
-                                                <td><?php echo $row['tanggal_selesai']; ?></td>
-                                                <td><?php echo $row['no_resi']; ?></td>
+                                                <td><?php echo $row['kode']; ?></td>
+                                                <td><?php echo $row['tanggal_terbit']; ?></td>
                                                 <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                     <td>
                                                         <div class="btn-group">

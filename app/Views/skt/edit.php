@@ -77,17 +77,13 @@
                                 ); ?>
                               </div>
                               <div class="form-group">
-                                <?php echo form_label('Tanggal Input', 'tanggal_input'); ?>
+                                <?php echo form_label('Tanggal Terbit', 'tanggal_terbit'); ?>
                                 <?php echo form_input(
-                                  'tanggal_input',
-                                  $skt['tanggal_input'],
+                                  'tanggal_terbit',
+                                  $skt['tanggal_terbit'],
                                   ['class' => 'form-control']
                                 );
                                 ?>
-                              </div>
-                              <div class="form-group">
-                                <?php echo form_label('Staff', 'karyawan'); ?>
-                                <?php echo form_dropdown('karyawan_id', $karyawan, $skt['karyawan_id'], ['class' => 'form-control']); ?>
                               </div>
                             </div>
                           </div>

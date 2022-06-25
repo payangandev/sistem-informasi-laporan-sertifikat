@@ -67,8 +67,7 @@
                                             <th>No</th>
                                             <th>Nama</th>
                                             <th>Kode</th>
-                                            <th>Tanggal Input</th>
-                                            <th>Staff</th>
+                                            <th>Tanggal Terbit</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>
                                             <?php } ?>
@@ -80,8 +79,7 @@
                                                 <td><?php echo $key + 1; ?></td>
                                                 <td><?php echo $row['nama']; ?></td>
                                                 <td><?php echo $row['kode']; ?></td>
-                                                <td><?php echo $row['tanggal_input']; ?></td>
-                                                <td><?php echo $row['nama_karyawan']; ?></td>
+                                                <td><?php echo $row['tanggal_terbit']; ?></td>
                                                 <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                     <td>
                                                         <div class="btn-group">

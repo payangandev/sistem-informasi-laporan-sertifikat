@@ -51,38 +51,24 @@
                         <div class="card-body">
                           <?php echo form_hidden('ktiga_id', $ktiga['ktiga_id']); ?>
                           <div class="row">
-                            <div class="col-md-6">
-
-                              <div class="form-group">
-                                <?php echo form_label('Nama Personil', 'nama_personil'); ?>
-                                <?php echo form_input(
-                                  'nama_personil',
-                                  $ktiga['nama_personil'],
-                                  ['class' => 'form-control']
-                                ); ?>
-                              </div>
+                            <div class="col-md-12">
                               <div class="form-group">
                                 <?php
                                 echo form_label('Bidang', 'sub_bidang');
                                 echo form_dropdown('sub_bidang', [
                                   '' => 'Pilih Bidang',
-                                  'AHLI K3 UMUM'                            => 'AHLI K3 UMUM',
-                                  'AHLI MADYA K3 KONTRUKSI'                 => 'AHLI MADYA K3 KONTRUKSI',
-                                  'AHLI K3 BIDANG LISTRIK'                  => 'AHLI K3 BIDANG LISTRIK',
-                                  'SKP AHLI K3 LIFT & EKSKALATOR'           => 'SKP AHLI K3 LIFT & EKSKALATOR',
-                                  'TENAGA KERJA PADA KETINGGIAN TINGKAT 1 ' => 'TENAGA KERJA PADA KETINGGIAN TINGKAT 1'
+                                  'Ahli Teknik Bangunan Gedung'       => 'Ahli Teknik Bangunan Gedung',
+                                  'Ahli Teknik Jalan'                 => 'Ahli Teknik Jalan',
+                                  'Ahli Sumber Daya Air'              => 'Ahli Sumber Daya Air',
+                                  'Ahli K3 Konstruksi'                => 'Ahli K3 Konstruksi',
                                 ], $inputs['sub_bidang'], ['class' => 'form-control']);
                                 ?>
                               </div>
                               <div class="form-group">
-                                <?php echo form_label('Nama Perusahaan', 'perusahaan'); ?>
-                                <?php echo form_dropdown('perusahaan_id', $perusahaan, $ktiga['perusahaan_id'], ['class' => 'form-control']); ?>
-                              </div>
-                              <div class="form-group">
-                                <?php echo form_label('Harga Setor', 'harga_setor'); ?>
+                                <?php echo form_label('Kode', 'kode'); ?>
                                 <?php echo form_input(
-                                  'harga_setor',
-                                  $ktiga['harga_setor'],
+                                  'kode',
+                                  $kode['kode'],
 
                                   ['class' => 'form-control']
                                 );
@@ -90,69 +76,10 @@
                                 ?>
                               </div>
                               <div class="form-group">
-                                <?php echo form_label('Order Lencana', 'order_lencana'); ?>
+                                <?php echo form_label('Tanggal Terbit', 'tanggal_terbit'); ?>
                                 <?php echo form_input(
-                                  'order_lencana',
-                                  $ktiga['order_lencana'],
-
-                                  ['class' => 'form-control']
-                                );
-
-                                ?>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-
-                              <div class="form-group">
-                                <?php echo form_label('Harga Jual', 'harga_jual'); ?>
-                                <?php echo form_input(
-                                  'harga_jual',
-                                  $ktiga['harga_jual'],
-
-                                  ['class' => 'form-control']
-                                );
-
-                                ?>
-                              </div>
-
-                              <div class="form-group">
-                                <?php echo form_label('Tanggal Proses', 'tanggal_proses'); ?>
-                                <?php echo form_input(
-                                  'tanggal_proses',
-                                  $ktiga['tanggal_proses'],
-
-                                  ['class' => 'form-control']
-                                );
-
-                                ?>
-                              </div>
-                              <div class="form-group">
-                                <?php echo form_label('Marketing', 'marketing'); ?>
-                                <?php echo form_input(
-                                  'marketing',
-                                  $ktiga['marketing'],
-
-                                  ['class' => 'form-control']
-                                );
-
-                                ?>
-                              </div>
-                              <div class="form-group">
-                                <?php echo form_label('Tanggal Selesai', 'tanggal_selesai'); ?>
-                                <?php echo form_input(
-                                  'tanggal_selesai',
-                                  $ktiga['tanggal_selesai'],
-
-                                  ['class' => 'form-control']
-                                );
-
-                                ?>
-                              </div>
-                              <div class="form-group">
-                                <?php echo form_label('No Resi', 'no_resi'); ?>
-                                <?php echo form_input(
-                                  'no_resi',
-                                  $ktiga['no_resi'],
+                                  'tanggal_terbit',
+                                  $ktiga['tanggal_terbit'],
 
                                   ['class' => 'form-control']
                                 );
