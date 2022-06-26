@@ -25,7 +25,7 @@ class Skt extends Seeder
                 'tanggal_terbit'         => '2022-03-12'
             ],
             [
-                'skt_id'                 => 3,
+                'skt_id'                 => 4,
                 'nama'                   => 'Pelaksana Bangunan Gedung / Pekerjaan Gedung',
                 'tanggal_terbit'         => '2022-03-08'
             ],

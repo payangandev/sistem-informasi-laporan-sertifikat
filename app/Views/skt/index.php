@@ -55,7 +55,6 @@
                                     <?php echo session()->getFlashdata('info'); ?>
                                 </div>
                             <?php } ?>
-
                             <?php if (!empty(session()->getFlashdata('warning'))) { ?>
                                 <div class="alert alert-warning">
                                     <?php echo session()->getFlashdata('warning'); ?>
@@ -67,11 +66,10 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Kode</th>
                                             <th>Tanggal Terbit</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>
-                                            <?php  } ?>
+                                            <?php } ?>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -80,7 +78,7 @@
                                                 <td><?php echo $key + 1; ?></td>
                                                 <td><?php echo $row['nama']; ?></td>
                                                 <td><?php echo $row['tanggal_terbit']; ?></td>
-                                                = <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
+                                                <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                     <td>
                                                         <div class="btn-group">
                                                             <a href="<?php echo base_url('skt/edit/' . $row['skt_id']); ?>" class="btn btn-sm btn-success">

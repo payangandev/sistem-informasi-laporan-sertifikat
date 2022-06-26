@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\SktModel;
-use App\Models\KaryawanModel;
 use TCPDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -14,7 +13,6 @@ class SktController extends BaseController
 	public function __construct()
 	{
 		helper(['form']);
-		$this->karyawan_model 		 = new KaryawanModel();
 		$this->skt_model 			 = new SktModel();
 	}
 
@@ -29,7 +27,7 @@ class SktController extends BaseController
 		$currentPage = $this->request->getVar('page_skt') ? $this->request->getVar('page_skt') : 1;
 		$paginate = 1000000;
 		$data = [
-			'skt'  => $this->skt_model->join('karyawan', 'karyawan.karyawan_id = skt.karyawan_id')->paginate($paginate, 'skt'),
+			'skt'  => $this->skt_model->paginate($paginate, 'skt'),
 			'pager'			 => $this->skt_model->pager,
 			'currentPage'	 => $currentPage
 		];
@@ -54,8 +52,7 @@ class SktController extends BaseController
 		// tulis header/nama kolom 
 		$spreadsheet->setActiveSheetIndex(0)
 			->setCellValue('B1', 'Nama')
-			->setCellValue('C1', 'Kode')
-			->setCellValue('D1', 'Tanggal Terbit');
+			->setCellValue('C1', 'Tanggal Terbit');
 
 
 		$column = 2;
@@ -63,8 +60,7 @@ class SktController extends BaseController
 		foreach ($dataskt as $data) {
 			$spreadsheet->setActiveSheetIndex(0)
 				->setCellValue('B' . $column, $data['nama'])
-				->setCellValue('C' . $column, $data['kode'])
-				->setCellValue('D' . $column, $data['tanggal_terbit']);
+				->setCellValue('C' . $column, $data['tanggal_terbit']);
 			$column++;
 		}
 
@@ -138,9 +134,8 @@ class SktController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$karyawan = $this->karyawan_model->findAll();
-		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		return view('skt/create', $data);
+
+		return view('skt/create');
 	}
 
 	public function store()
@@ -153,7 +148,6 @@ class SktController extends BaseController
 		$validation =  \Config\Services::validation();
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
-			'kode'        			=> $this->request->getPost('kode'),
 			'tanggal_terbit'       	=> $this->request->getPost('tanggal_terbit'),
 		);
 
@@ -179,9 +173,7 @@ class SktController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$karyawan = $this->karyawan_model->findAll();
 		$data = [
-			'karyawan'  => ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id'),
 			'skt'	=>   $this->skt_model->getData($id)
 		];
 		echo view('skt/edit', $data);
@@ -200,7 +192,6 @@ class SktController extends BaseController
 
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
-			'kode'        			=> $this->request->getPost('kode'),
 			'tanggal_terbit'       	=> $this->request->getPost('tanggal_terbit'),
 
 		);
