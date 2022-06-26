@@ -13,7 +13,7 @@ class SktController extends BaseController
 	public function __construct()
 	{
 		helper(['form']);
-		$this->skt_model 			 = new SktModel();
+		$this->skt_model = new SktModel();
 	}
 
 	public function index()
@@ -102,7 +102,7 @@ class SktController extends BaseController
 		$pdf->SetSubject('DATA SKT');
 
 		// set default header data
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA SERITIFIKASI SKT', '');
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA SERTIFIKASI SKT', '');
 
 		// set header and footer fonts
 		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));

@@ -14,7 +14,6 @@ class SkaController extends BaseController
 	public function __construct()
 	{
 		helper(['form']);
-		$this->karyawan_model = new KaryawanModel();
 		$this->ska_model = new SkaModel();
 	}
 
@@ -30,7 +29,7 @@ class SkaController extends BaseController
 
 		// paginate
 		$paginate = 1000000;
-		$data['ska']   		= $this->ska_model->join('karyawan', 'karyawan.karyawan_id = ska.karyawan_id')->paginate($paginate, 'ska');
+		$data['ska']   		= $this->ska_model->paginate($paginate, 'ska');
 		$data['pager']        	= $this->ska_model->pager;
 		$data['currentPage']  	= $currentPage;
 		echo view('ska/index', $data);
@@ -55,8 +54,7 @@ class SkaController extends BaseController
 		// tulis header/nama kolom 
 		$spreadsheet->setActiveSheetIndex(0)
 			->setCellValue('B1', 'Nama')
-			->setCellValue('C1', 'Kode')
-			->setCellValue('D1', 'Tanggal Terbit');
+			->setCellValue('C1', 'Tanggal Terbit');
 
 
 		$column = 2;
@@ -64,8 +62,7 @@ class SkaController extends BaseController
 		foreach ($dataska as $data) {
 			$spreadsheet->setActiveSheetIndex(0)
 				->setCellValue('B' . $column, $data['nama'])
-				->setCellValue('C' . $column, $data['kode'])
-				->setCellValue('D' . $column, $data['tanggal_terbit']);
+				->setCellValue('c' . $column, $data['tanggal_terbit']);
 			$column++;
 		}
 
@@ -140,9 +137,7 @@ class SkaController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$karyawan = $this->karyawan_model->findAll();
-		$data['karyawan'] = ['' => 'karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
-		return view('ska/create', $data);
+		return view('ska/create');
 	}
 
 	public function store()
@@ -155,7 +150,6 @@ class SkaController extends BaseController
 		$validation =  \Config\Services::validation();
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
-			'kode'        			=> $this->request->getPost('kode'),
 			'tanggal_terbit'       	=> $this->request->getPost('tanggal_terbit'),
 		);
 
@@ -181,8 +175,6 @@ class SkaController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$karyawan = $this->karyawan_model->findAll();
-		$data['karyawan'] = ['' => 'Pilih karyawan'] + array_column($karyawan, 'nama_karyawan', 'karyawan_id');
 		$data['ska'] = $this->ska_model->getData($id);
 		echo view('ska/edit', $data);
 	}
@@ -200,7 +192,6 @@ class SkaController extends BaseController
 
 		$data = array(
 			'nama'        			=> $this->request->getPost('nama'),
-			'kode'        			=> $this->request->getPost('kode'),
 			'tanggal_terbit'       	=> $this->request->getPost('tanggal_terbit'),
 		);
 		if ($validation->run($data, 'ska') == FALSE) {

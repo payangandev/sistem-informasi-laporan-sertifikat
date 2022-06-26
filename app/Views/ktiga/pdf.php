@@ -7,7 +7,6 @@
                 <tr>
                     <th>No</th>
                     <th>Sub Bidang</th>
-                    <th>Kode</th>
                     <th>Tanggal Terbit</th>
                 </tr>
             </thead>

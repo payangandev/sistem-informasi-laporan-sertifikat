@@ -54,7 +54,7 @@
                                 <?php
                                 echo form_label('Nama Sertifikat');
                                 $nama = [
-                                  'type'  => 'date',
+                                  'type'  => 'text',
                                   'name'  => 'nama',
                                   'id'    => 'nama',
                                   'value' => $inputs['nama'],

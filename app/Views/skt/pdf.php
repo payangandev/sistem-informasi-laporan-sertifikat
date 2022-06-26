@@ -7,7 +7,6 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Kode</th>
                     <th>Tanggal Terbit</th>
                 </tr>
             </thead>

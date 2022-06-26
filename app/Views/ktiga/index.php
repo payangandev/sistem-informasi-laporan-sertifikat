@@ -66,7 +66,6 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Sub Bidang</th>
-                                            <th>Kode</th>
                                             <th>Tanggal Terbit</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>

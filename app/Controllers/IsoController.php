@@ -95,7 +95,7 @@ class IsoController extends BaseController
 
 		// test pdf
 
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A2', true, 'UTF-8', false);
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A3', true, 'UTF-8', false);
 		// set font tulisan
 		// set document information
 		$pdf->SetCreator(PDF_CREATOR);

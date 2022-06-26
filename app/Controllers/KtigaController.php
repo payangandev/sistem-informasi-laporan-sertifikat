@@ -51,9 +51,8 @@ class ktigaController extends BaseController
 
 		// tulis header/nama kolom 
 		$spreadsheet->setActiveSheetIndex(0)
-			->setCellValue('B1', 'Sub Bidang')
-			->setCellValue('C1', 'Kode')
-			->setCellValue('D1', 'Tanggal Terbit');
+			->setCellValue('B1', 'Nama')
+			->setCellValue('C1', 'Tanggal Terbit');
 
 
 
@@ -61,9 +60,8 @@ class ktigaController extends BaseController
 		// tulis data mobil ke cell
 		foreach ($dataktiga as $data) {
 			$spreadsheet->setActiveSheetIndex(0)
-				->setCellValue('B' . $column, $data['sub_bidang'])
-				->setCellValue('C' . $column, $data['kode'])
-				->setCellValue('D' . $column, $data['tanggal_terbit']);
+				->setCellValue('B' . $column, $data['nama'])
+				->setCellValue('C' . $column, $data['tanggal_terbit']);
 			$column++;
 		}
 
@@ -96,7 +94,7 @@ class ktigaController extends BaseController
 
 		// test pdf
 
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A2', true, 'UTF-8', false);
+		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 		// set font tulisan
 		// set document information
 		$pdf->SetCreator(PDF_CREATOR);
@@ -149,8 +147,7 @@ class ktigaController extends BaseController
 		}
 		$validation =  \Config\Services::validation();
 		$data = array(
-			'sub_bidang'        		=> $this->request->getPost('sub_bidang'),
-			'kode'    			=> $this->request->getPost('kode'),
+			'nama'        				=> $this->request->getPost('nama'),
 			'tanggal_terbit'         	=> $this->request->getPost('tanggal_terbit'),
 		);
 
@@ -192,8 +189,7 @@ class ktigaController extends BaseController
 		$validation =  \Config\Services::validation();
 
 		$data = array(
-			'sub_bidang'        		=> $this->request->getPost('sub_bidang'),
-			'kode'    					=> $this->request->getPost('kode'),
+			'nama'        				=> $this->request->getPost('nama'),
 			'tanggal_terbit'         	=> $this->request->getPost('tanggal_terbit'),
 
 		);

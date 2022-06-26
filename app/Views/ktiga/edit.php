@@ -56,7 +56,7 @@
                                 <?php echo form_label('Nama', 'nama'); ?>
                                 <?php echo form_input(
                                   'nama',
-                                  $nama['nama'],
+                                  $ktiga['nama'],
 
                                   ['class' => 'form-control']
                                 );
