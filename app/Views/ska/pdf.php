@@ -16,7 +16,6 @@
                     <tr>
                         <td><?php echo $key + 1; ?></td>
                         <td><?php echo $row['nama']; ?></td>
-                        <td><?php echo $row['kode']; ?></td>
                         <td><?php echo $row['tanggal_terbit']; ?></td>
                     </tr>
                 <?php } ?>

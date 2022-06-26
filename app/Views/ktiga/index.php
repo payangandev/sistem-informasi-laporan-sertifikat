@@ -77,8 +77,7 @@
                                         <?php foreach ($ktiga as $key => $row) { ?>
                                             <tr>
                                                 <td><?php echo $key + 1; ?></td>
-                                                <td><?php echo $row['sub_bidang']; ?></td>
-                                                <td><?php echo $row['kode']; ?></td>
+                                                <td><?php echo $row['nama']; ?></td>
                                                 <td><?php echo $row['tanggal_terbit']; ?></td>
                                                 <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                     <td>

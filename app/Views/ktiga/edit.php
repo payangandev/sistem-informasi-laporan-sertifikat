@@ -53,22 +53,10 @@
                           <div class="row">
                             <div class="col-md-12">
                               <div class="form-group">
-                                <?php
-                                echo form_label('Bidang', 'sub_bidang');
-                                echo form_dropdown('sub_bidang', [
-                                  '' => 'Pilih Bidang',
-                                  'Ahli Teknik Bangunan Gedung'       => 'Ahli Teknik Bangunan Gedung',
-                                  'Ahli Teknik Jalan'                 => 'Ahli Teknik Jalan',
-                                  'Ahli Sumber Daya Air'              => 'Ahli Sumber Daya Air',
-                                  'Ahli K3 Konstruksi'                => 'Ahli K3 Konstruksi',
-                                ], $inputs['sub_bidang'], ['class' => 'form-control']);
-                                ?>
-                              </div>
-                              <div class="form-group">
-                                <?php echo form_label('Kode', 'kode'); ?>
+                                <?php echo form_label('Nama', 'nama'); ?>
                                 <?php echo form_input(
-                                  'kode',
-                                  $kode['kode'],
+                                  'nama',
+                                  $nama['nama'],
 
                                   ['class' => 'form-control']
                                 );

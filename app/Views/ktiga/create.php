@@ -53,32 +53,15 @@
                             <div class="col-md-12">
                               <div class="form-group">
                                 <?php
-                                echo form_label('Bidang', 'sub_bidang');
-                                echo form_dropdown(
-                                  'sub_bidang',
-                                  [
-                                    '' => 'Pilih Bidang',
-                                    'Ahli Teknik Bangunan Gedung'       => 'Ahli Teknik Bangunan Gedung',
-                                    'Ahli Teknik Jalan'                 => 'Ahli Teknik Jalan',
-                                    'Ahli Sumber Daya Air'              => 'Ahli Sumber Daya Air',
-                                    'Ahli K3 Konstruksi'                => 'Ahli K3 Konstruksi',
-                                  ],
-                                  $inputs['sub_bidang'],
-                                  ['class' => 'form-control']
-                                );
-                                ?>
-                              </div>
-                              <div class="form-group">
-                                <?php
-                                echo form_label('Kode');
-                                $kode = [
+                                echo form_label('Nama Sertifikat');
+                                $nama = [
                                   'type'  => 'text',
-                                  'name'  => 'kode',
-                                  'id'    => 'kode',
-                                  'value' => $inputs['kode'],
+                                  'name'  => 'nama',
+                                  'id'    => 'nama',
+                                  'value' => $inputs['nama'],
                                   'class' => 'form-control',
                                 ];
-                                echo form_input($kode);
+                                echo form_input($nama);
                                 ?>
                               </div>
                               <div class="form-group">

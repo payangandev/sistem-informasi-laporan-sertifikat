@@ -68,21 +68,6 @@
                                 echo form_input($nama);
                                 ?>
                               </div>
-
-                              <div class="form-group">
-                                <?php
-                                echo form_label('Kode');
-                                $kode = [
-                                  'type'  => 'text',
-                                  'name'  => 'kode',
-                                  'id'    => 'kode',
-                                  'value' => $inputs['kode'],
-                                  'class' => 'form-control',
-                                  'placeholder' => 'Masukan Kode'
-                                ];
-                                echo form_input($kode);
-                                ?>
-                              </div>
                               <div class="form-group">
                                 <?php
                                 echo form_label('Tanggal Terbit');

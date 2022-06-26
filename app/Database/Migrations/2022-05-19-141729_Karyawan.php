@@ -23,7 +23,7 @@ class Karyawan extends Migration
 			],
 			'jabatan'				=> [
 				'type'				=> 'ENUM',
-				'constraint'		=> "'Manager','Admin','Super Admin'",
+				'constraint'		=> "'Manager','Admin'",
 			],
 			'status'				=> [
 				'type'				=> 'ENUM',

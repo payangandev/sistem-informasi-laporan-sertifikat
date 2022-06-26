@@ -15,15 +15,9 @@ class Ktiga extends Migration
 				'unsigned'			=> TRUE,
 				'auto_increment'	=> TRUE
 			],
-
-			'sub_bidang'			=> [
-				'type'				=> 'ENUM',
-				'constraint'		=> "'Ahli Teknik Bangunan Gedung','Ahli Teknik Jalan','Ahli Sumber Daya Air','Ahli K3 Konstruksi'",
-				'default'			=> 'Ahli Teknik Bangunan Gedung'
-			],
-			'kode'           => [
-				'type'       => 'VARCHAR',
-				'constraint' => 50,
+			'nama'					=> [
+				'type'       		=> 'VARCHAR',
+				'constraint' 		=> 50,
 			],
 			'tanggal_terbit'		=> [
 				'type'				=> 'date',
@@ -33,7 +27,6 @@ class Ktiga extends Migration
 
 
 		$this->forge->addKey('ktiga_id', true);
-		$this->forge->addForeignKey('perusahaan_id', 'perusahaan', 'perusahaan_id', 'cascade', 'cascade');
 		$this->forge->createTable('ktiga', true);
 	}
 

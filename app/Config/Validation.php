@@ -67,21 +67,15 @@ class Validation
 
 	// validasi untuk  setiap field yang ada di base 
 	public $ktiga = [
-		'sub_bidang'     		=> 'required',
-		'kode'     				=> 'required',
+		'nama'     		=> 'required',
 		'tanggal_terbit'   		=> 'required',
 	];
 
 	public $ktiga_errors = [
 
-		'sub_bidang'     => [
-			'required'		=> 'Sub Bidang Required'
+		'nama'     => [
+			'required'		=> 'Nama Required'
 		],
-
-		'kode'    	=> [
-			'required'		=> 'Kode Required'
-		],
-
 		'tanggal_terbit'   	=> [
 			'required'		=> 'Tanggal Terbit Required'
 		]
@@ -104,7 +98,6 @@ class Validation
 	// validasi untuk  setiap field yang ada di base 
 	public $skt = [
 		'nama'     			=> 'required',
-		'kode'     			=> 'required',
 		'tanggal_terbit'   	=> 'required',
 	];
 
@@ -112,9 +105,6 @@ class Validation
 
 		'nama'     			=> [
 			'required'		=> 'Nama Required'
-		],
-		'kode'    			=> [
-			'required'		=> 'Kode Required'
 		],
 		'tanggal_terbit'   	=> [
 			'required'		=> 'Tanggal Terbit Required'
@@ -125,7 +115,6 @@ class Validation
 	// validasi untuk  setiap field yang ada di base 
 	public $ska = [
 		'nama'     			=> 'required',
-		'kode'     			=> 'required',
 		'tanggal_terbit'   	=> 'required',
 	];
 
@@ -133,9 +122,6 @@ class Validation
 
 		'nama'     			=> [
 			'required'		=> 'Nama Required'
-		],
-		'kode'    			=> [
-			'required'		=> 'Kode Required'
 		],
 		'tanggal_terbit'   	=> [
 			'required'		=> 'Tanggal Terbit Required'

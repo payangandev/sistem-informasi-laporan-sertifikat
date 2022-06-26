@@ -15,9 +15,9 @@ class Iso extends Migration
 				'unsigned'			=> TRUE,
 				'auto_increment'	=> TRUE
 			],
-			'nama'       => [
-				'type'       => 'VARCHAR',
-				'constraint' => 50,
+			'nama'       			=> [
+				'type'       		=> 'VARCHAR',
+				'constraint' 		=> 50,
 			],
 			'kode_iso'				=> [
 				'type'				=> 'VARCHAR',

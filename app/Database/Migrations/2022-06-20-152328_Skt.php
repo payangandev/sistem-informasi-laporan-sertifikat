@@ -19,17 +19,12 @@ class Skt extends Migration
 				'type'       		=> 'VARCHAR',
 				'constraint' 		=> 50,
 			],
-			'kode'           		=> [
-				'type'       		=> 'VARCHAR',
-				'constraint' 		=> 50,
-			],
 			'tanggal_terbit'		=> [
 				'type'				=> 'date',
 			]
 		]);
 
 		$this->forge->addKey('skt_id', true);
-		$this->forge->addForeignKey('karyawan_id', 'karyawan', 'karyawan_id', 'cascade', 'cascade');
 		$this->forge->createTable('skt', true);
 	}
 

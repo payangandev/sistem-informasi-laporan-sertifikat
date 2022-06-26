@@ -67,16 +67,6 @@
                                 ?>
                               </div>
                               <div class="form-group">
-                                <?php echo form_label('Kode', 'kode'); ?>
-                                <?php echo form_input(
-                                  'kode',
-                                  $skt['kode'],
-
-                                  ['class' => 'form-control', 'placeholder' => 'Kode ...']
-
-                                ); ?>
-                              </div>
-                              <div class="form-group">
                                 <?php echo form_label('Tanggal Terbit', 'tanggal_terbit'); ?>
                                 <?php echo form_input(
                                   'tanggal_terbit',
