@@ -83,14 +83,14 @@ class Validation
 
 
 	// validasi untuk  setiap field yang ada di base 
-	public $perusahaan = [
-		'nama_perusahaan'		=> 'required',
+	public $client = [
+		'nama'		=> 'required',
 	];
 
-	public $perusahaan_errors = [
+	public $client_errors = [
 
-		'nama_perusahaan'   => [
-			'required'		=> 'Nama Perusahaan Required'
+		'nama'   => [
+			'required'		=> 'Nama Client Required'
 		]
 	];
 

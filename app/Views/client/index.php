@@ -29,15 +29,15 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Perusahaan </h6> <br>
-                            <a href="<?php echo base_url('perusahaan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                            <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Client </h6> <br>
+                            <a href="<?php echo base_url('client/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                                 <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
 
-                                <a href="<?php echo base_url('perusahaan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                                <a href="<?php echo base_url('client/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
                                     <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
                             <?php } ?>
-                            <a href="<?php echo base_url('perusahaan/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i> Tambah Data</a>
+                            <a href="<?php echo base_url('client/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i> Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -64,24 +64,24 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Perusahaan</th>
+                                            <th>Nama client</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>
                                             <?php } ?>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($perusahaan as $key => $row) { ?>
+                                        <?php foreach ($client as $key => $row) { ?>
                                             <tr>
                                                 <td><?php echo $key + 1; ?></td>
-                                                <td><?php echo $row['nama_perusahaan']; ?></td>
+                                                <td><?php echo $row['nama']; ?></td>
                                                 <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                     <td>
                                                         <div class="btn-group">
-                                                            <a href="<?php echo base_url('perusahaan/edit/' . $row['perusahaan_id']); ?>" class="btn btn-sm btn-success">
+                                                            <a href="<?php echo base_url('client/edit/' . $row['client_id']); ?>" class="btn btn-sm btn-success">
                                                                 <i class="fa fa-edit"></i>
                                                             </a>
-                                                            <a href="<?php echo base_url('perusahaan/delete/' . $row['perusahaan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                            <a href="<?php echo base_url('client/delete/' . $row['client_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                                 <i class="fa fa-trash-alt"></i>
                                                             </a>
                                                         </div>

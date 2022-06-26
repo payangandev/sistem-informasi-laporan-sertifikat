@@ -3,19 +3,19 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\PerusahaanModel;
+use App\Models\ClientModel;
 use TCPDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-class PerusahaanController extends BaseController
+class ClientController extends BaseController
 {
 	protected $helpers = [];
 
 	public function __construct()
 	{
 		helper(['form']);
-		$this->perusahaan_model = new PerusahaanModel();
+		$this->client_model = new ClientModel();
 	}
 
 	public function index()
@@ -26,13 +26,13 @@ class PerusahaanController extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 		// membuat halaman otomatis berubah ketika berpindah halaman 
-		$currentPage = $this->request->getVar('page_perusahaan') ? $this->request->getVar('page_perusahaan') : 1;
+		$currentPage = $this->request->getVar('page_client') ? $this->request->getVar('page_client') : 1;
 		// paginate
 		$paginate = 100000;
-		$data['perusahaan']   = $this->perusahaan_model->paginate($paginate, 'perusahaan');
-		$data['pager']        = $this->perusahaan_model->pager;
+		$data['client']   = $this->client_model->paginate($paginate, 'client');
+		$data['pager']        = $this->client_model->pager;
 		$data['currentPage']  = $currentPage;
-		echo view('perusahaan/index', $data);
+		echo view('client/index', $data);
 	}
 
 	public function excel()
@@ -44,27 +44,27 @@ class PerusahaanController extends BaseController
 		}
 
 
-		$perusahaan = new PerusahaanModel();
-		$dataperusahaan = $perusahaan->getData();
+		$client = new ClientModel();
+		$dataclient = $client->getData();
 
 		$spreadsheet = new Spreadsheet();
 
 
 		// tulis header/nama kolom 
 		$spreadsheet->setActiveSheetIndex(0)
-			->setCellValue('B1', 'Nama perusahaan');
+			->setCellValue('B1', 'Nama client');
 		$column = 2;
 		// tulis data mobil ke cell
-		foreach ($dataperusahaan as $data) {
+		foreach ($dataclient as $data) {
 			$spreadsheet->setActiveSheetIndex(0)
-				->setCellValue('B' . $column, $data['nama_perusahaan']);
+				->setCellValue('B' . $column, $data['nama_client']);
 			$column++;
 		}
 
 
 		// tulis dalam format .xlsx
 		$writer = new Xlsx($spreadsheet);
-		$fileName = 'Data perusahaan';
+		$fileName = 'Data client';
 
 		// Redirect hasil generate xlsx ke web client
 		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -84,9 +84,9 @@ class PerusahaanController extends BaseController
 		}
 
 		$data = array(
-			'perusahaan'	=> $this->perusahaan_model->getData(),
+			'client'	=> $this->client_model->getData(),
 		);
-		$html =  view('perusahaan/pdf', $data);
+		$html =  view('client/pdf', $data);
 
 		// test pdf
 
@@ -95,11 +95,11 @@ class PerusahaanController extends BaseController
 		// set document information
 		$pdf->SetCreator(PDF_CREATOR);
 		$pdf->SetAuthor('Dita Apriliyani');
-		$pdf->SetTitle('Report Data PERUSAHAAN');
-		$pdf->SetSubject('DATA PERUSAHAAN');
+		$pdf->SetTitle('Report Data client');
+		$pdf->SetSubject('DATA client');
 
 		// set default header data
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA PERUSAHAAN', '');
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'DATA client', '');
 
 		// set header and footer fonts
 		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -121,13 +121,13 @@ class PerusahaanController extends BaseController
 		$pdf->writeHTML($html, true, false, true, false, '');
 		$this->response->setContentType('application/pdf');
 		// ouput pdf
-		$pdf->Output('data_sertifikasi_perusahaan.pdf', 'I');
+		$pdf->Output('data_sertifikasi_client.pdf', 'I');
 	}
 
 
 	public function create()
 	{
-		return view('perusahaan/create');
+		return view('client/create');
 	}
 
 	public function store()
@@ -141,20 +141,20 @@ class PerusahaanController extends BaseController
 
 
 		$data = array(
-			'nama_perusahaan'             => $this->request->getPost('nama_perusahaan'),
+			'nama'             => $this->request->getPost('nama'),
 
 		);
 
-		if ($validation->run($data, 'perusahaan') == FALSE) {
+		if ($validation->run($data, 'client') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('perusahaan/create'));
+			return redirect()->to(base_url('client/create'));
 		} else {
 
-			$simpan = $this->perusahaan_model->insertData($data);
+			$simpan = $this->client_model->insertData($data);
 			if ($simpan) {
 				session()->setFlashdata('success', 'Tambah Data Berhasil');
-				return redirect()->to(base_url('perusahaan'));
+				return redirect()->to(base_url('client'));
 			}
 		}
 	}
@@ -167,8 +167,8 @@ class PerusahaanController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$data['perusahaan'] = $this->perusahaan_model->getData($id);
-		echo view('perusahaan/edit', $data);
+		$data['client'] = $this->client_model->getData($id);
+		echo view('client/edit', $data);
 	}
 
 	public function update()
@@ -178,26 +178,26 @@ class PerusahaanController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$id = $this->request->getPost('perusahaan_id');
+		$id = $this->request->getPost('client_id');
 
 		$validation =  \Config\Services::validation();
 
 
 		$data = array(
-			'nama_perusahaan'             => $this->request->getPost('nama_perusahaan'),
+			'nama'             => $this->request->getPost('nama'),
 
 		);
 
-		if ($validation->run($data, 'perusahaan') == FALSE) {
+		if ($validation->run($data, 'client') == FALSE) {
 			session()->setFlashdata('inputs', $this->request->getPost());
 			session()->setFlashdata('errors', $validation->getErrors());
-			return redirect()->to(base_url('perusahaan/edit/' . $id));
+			return redirect()->to(base_url('client/edit/' . $id));
 		} else {
 
-			$ubah = $this->perusahaan_model->updateData($data, $id);
+			$ubah = $this->client_model->updateData($data, $id);
 			if ($ubah) {
 				session()->setFlashdata('info', 'Update Data Berhasil');
-				return redirect()->to(base_url('perusahaan'));
+				return redirect()->to(base_url('client'));
 			}
 		}
 	}
@@ -209,10 +209,10 @@ class PerusahaanController extends BaseController
 			session()->setFlashdata('haruslogin', 'Silahkan Login Terlebih Dahulu');
 			return redirect()->to(base_url('login'));
 		}
-		$hapus = $this->perusahaan_model->deleteData($id);
+		$hapus = $this->client_model->deleteData($id);
 		if ($hapus) {
 			session()->setFlashdata('warning', 'Delete Data Berhasil');
-			return redirect()->to(base_url('perusahaan'));
+			return redirect()->to(base_url('client'));
 		}
 	}
 }

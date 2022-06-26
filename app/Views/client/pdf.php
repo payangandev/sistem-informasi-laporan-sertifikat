@@ -6,14 +6,14 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Perusahaan</th>
+                    <th>Nama Client</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($perusahaan as $key => $row) { ?>
+                <?php foreach ($client as $key => $row) { ?>
                     <tr>
                         <td><?php echo $key + 1; ?></td>
-                        <td><?php echo $row['nama_perusahaan']; ?></td>
+                        <td><?php echo $row['nama']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

@@ -32,9 +32,9 @@
            </div>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url('perusahaan'); ?>">
+           <a class="nav-link" href="<?php echo base_url('client'); ?>">
                <i class="fas fa-fw fa-couch"></i>
-               <span>Data Klien</span></a>
+               <span>Data Client</span></a>
        </li>
 
        <li class="nav-item ">

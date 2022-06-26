@@ -84,15 +84,24 @@ $routes->get('skt/edit/(:alphanum)', 'SktController::edit/$1');
 $routes->post('skt/update/(:num)', 'SktController::update/$1');
 $routes->get('skt/delete/(:alphanum)', 'SktController::delete/$1');
 
-// Routing for Perusahaan
-$routes->get('perusahaan/pdf', 'PerusahaanController::pdf');
-$routes->get('perusahaan/excel', 'PerusahaanController::excel');
-$routes->get('perusahaan', 'PerusahaanController::index');
-$routes->get('perusahaan/create', 'PerusahaanController::create');
-$routes->post('perusahaan/store', 'PerusahaanController::store');
-$routes->get('perusahaan/edit/(:alphanum)', 'PerusahaanController::edit/$1');
-$routes->post('perusahaan/update/(:num)', 'PerusahaanController::update/$1');
-$routes->get('perusahaan/delete/(:alphanum)', 'PerusahaanController::delete/$1');
+// // Routing for Perusahaan
+// $routes->get('perusahaan/pdf', 'PerusahaanController::pdf');
+// $routes->get('perusahaan/excel', 'PerusahaanController::excel');
+// $routes->get('perusahaan', 'PerusahaanController::index');
+// $routes->get('perusahaan/create', 'PerusahaanController::create');
+// $routes->post('perusahaan/store', 'PerusahaanController::store');
+// $routes->get('perusahaan/edit/(:alphanum)', 'PerusahaanController::edit/$1');
+// $routes->post('perusahaan/update/(:num)', 'PerusahaanController::update/$1');
+// $routes->get('perusahaan/delete/(:alphanum)', 'PerusahaanController::delete/$1');
+
+$routes->get('client/pdf', 'ClientController::pdf');
+$routes->get('client/excel', 'ClientController::excel');
+$routes->get('client', 'ClientController::index');
+$routes->get('client/create', 'ClientController::create');
+$routes->post('client/store', 'ClientController::store');
+$routes->get('client/edit/(:alphanum)', 'ClientController::edit/$1');
+$routes->post('client/update/(:num)', 'ClientController::update/$1');
+$routes->get('client/delete/(:alphanum)', 'ClientController::delete/$1');
 
 // Routing for Ktiga
 $routes->get('ktiga/pdf', 'KtigaController::pdf');

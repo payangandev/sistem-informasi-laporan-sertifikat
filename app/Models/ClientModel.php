@@ -4,19 +4,19 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PerusahaanModel extends Model
+class ClientModel extends Model
 {
-	protected $table = 'perusahaan';
+	protected $table = 'client';
 
 	public function getData($id = false)
 	{
 		if ($id === false) {
-			return $this->table('perusahaan')
+			return $this->table('client')
 				->get()
 				->getResultArray();
 		} else {
-			return $this->table('perusahaan')
-				->where('perusahaan.perusahaan_id', $id)
+			return $this->table('client')
+				->where('client.client_id', $id)
 				->get()
 				->getRowArray();
 		}
@@ -30,12 +30,12 @@ class PerusahaanModel extends Model
 
 	public function updateData($data, $id)
 	{
-		return $this->db->table($this->table)->update($data, ['perusahaan_id' => $id]);
+		return $this->db->table($this->table)->update($data, ['client_id' => $id]);
 	}
 
 
 	public function deleteData($id)
 	{
-		return $this->db->table($this->table)->delete(['perusahaan_id' => $id]);
+		return $this->db->table($this->table)->delete(['client_id' => $id]);
 	}
 }

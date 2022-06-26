@@ -29,7 +29,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Perusahaan </h6>
+              <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Client </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -49,36 +49,28 @@
                           </ul>
                         </div>
                       <?php } ?>
-                      <?php echo form_open_multipart('perusahaan/store'); ?>
                       <div class="card">
+                        <?php echo form_open_multipart('client/update/' . $client['client_id']); ?>
                         <div class="card-body">
+                          <?php echo form_hidden('client_id', $client['client_id']); ?>
                           <div class="row">
                             <div class="col-md-12">
                               <div class="form-group">
-                                <?php
-                                echo form_label('Nama Perusahaan');
-                                $nama_perusahaan = [
-                                  'type'  => 'text',
-                                  'name'  => 'nama_perusahaan',
-                                  'id'    => 'nama_perusahaan',
-                                  'value' => $inputs['nama_perusahaan'],
-                                  'class' => 'form-control',
-                                  'placeholder' => 'Masukan Nama Perusahaan'
-                                ];
-                                echo form_input($nama_perusahaan);
-                                ?>
+                                <?php echo form_label('Nama Client', 'nama'); ?>
+                                <?php echo form_input('nama', $client['nama'], ['class' => 'form-control']); ?>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="card-footer">
-                        <a href="<?php echo base_url('perusahaan'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
-                        <button type="submit" class="btn btn-primary float-right"><i class="nav-icon fas fa-save"></i> Simpan</button>
+                        <a href="<?php echo base_url('client'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                        <button type="submit" class="btn btn-primary float-right"> <i class="nav-icon fas fa-save"></i> Update Data</button>
                       </div>
+                      <?php echo form_close(); ?>
                     </div>
                   </div>
-                  <?php echo form_close(); ?>
+
                 </table>
               </div>
             </div>

@@ -73,7 +73,7 @@
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                     Data Klien</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $data_perusahaan ?></div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $data_client ?></div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-hand-holding-usd fa-2x text-blue-300"></i>

@@ -38,9 +38,8 @@ class DashboardModel extends Model
 		return $this->db->table("iso")->countAll();
 	}
 
-	public function getCountPerusahaan()
+	public function getCountClient()
 	{
-		return $this->db->table("perusahaan")->countAll();
+		return $this->db->table("client")->countAll();
 	}
-
 }
