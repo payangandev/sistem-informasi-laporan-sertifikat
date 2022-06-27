@@ -37,7 +37,7 @@
                <span>Data Client</span></a>
        </li>
        <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url('arsip'); ?>">
+           <a class="nav-link" href="#">
                <i class="fas fa-fw fa-couch"></i>
                <span>Data Arsip</span></a>
        </li>
