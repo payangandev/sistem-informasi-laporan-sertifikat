@@ -128,33 +128,6 @@ class Validation
 		]
 	];
 
-	// validasi untuk  karyawan
-
-	public $karyawan = [
-		'nama_karyawan'     	=> 'required',
-		'jabatan'   			=> 'required',
-		'status'   				=> 'required',
-		'tanggalmasuk'   		=> 'required',
-	];
-
-	public $karyawan_errors = [
-
-		'nama_karyawan'    	=> [
-			'required'		=> 'Nama Karyawan Required'
-		],
-		'jabatan'   		=>  [
-			'required'		=> 'Jabatan Required'
-		],
-		'status'   			=>  [
-			'required'		=> 'Status  Required'
-		],
-		'tanggalmasuk'   	=>  [
-			'required'		=> 'Tanggal Join Required'
-		]
-	];
-
-
-
 	// validasi untuk  setiap field yang ada di base 
 	public $users = [
 		'nama_user'			=> 'required',

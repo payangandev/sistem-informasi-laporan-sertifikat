@@ -16,17 +16,17 @@ class Users extends Migration
 				'auto_increment' => TRUE
 			],
 			'nama_user'              => [
-				'type'           => 'VARCHAR',
-				'constraint'     => '100',
+				'type'          => 'VARCHAR',
+				'constraint'    => '100',
 			],
 
-			'username'               => [
-				'type'           => 'VARCHAR',
-				'constraint'     => '100',
+			'username'          => [
+				'type'          => 'VARCHAR',
+				'constraint'    => '100',
 			],
 			'password'               => [
-				'type'           => 'VARCHAR',
-				'constraint'     => '100',
+				'type'          => 'VARCHAR',
+				'constraint'    => '100',
 			],
 			'level'             => [
 				'type'          => 'INT',

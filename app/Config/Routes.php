@@ -44,16 +44,6 @@ $routes->get('users/edit/(:alphanum)', 'UsersController::edit/$1');
 $routes->post('users/update/(:num)', 'UsersController::update/$1');
 $routes->get('users/delete/(:alphanum)', 'UsersController::delete/$1');
 
-// Routing for karyawan
-$routes->get('karyawan/pdf', 'KaryawanController::pdf');
-$routes->get('karyawan/excel', 'KaryawanController::excel');
-$routes->get('karyawan', 'KaryawanController::index');
-$routes->get('karyawan/create', 'KaryawanController::create');
-$routes->post('karyawan/store', 'KaryawanController::store');
-$routes->get('karyawan/edit/(:alphanum)', 'KaryawanController::edit/$1');
-$routes->post('karyawan/update/(:num)', 'KaryawanController::update/$1');
-$routes->get('karyawan/delete/(:alphanum)', 'KaryawanController::delete/$1');
-
 // Routing for Iso
 $routes->get('iso/pdf', 'IsoController::pdf');
 $routes->get('iso/excel', 'IsoController::excel');
@@ -84,16 +74,7 @@ $routes->get('skt/edit/(:alphanum)', 'SktController::edit/$1');
 $routes->post('skt/update/(:num)', 'SktController::update/$1');
 $routes->get('skt/delete/(:alphanum)', 'SktController::delete/$1');
 
-// // Routing for Perusahaan
-// $routes->get('perusahaan/pdf', 'PerusahaanController::pdf');
-// $routes->get('perusahaan/excel', 'PerusahaanController::excel');
-// $routes->get('perusahaan', 'PerusahaanController::index');
-// $routes->get('perusahaan/create', 'PerusahaanController::create');
-// $routes->post('perusahaan/store', 'PerusahaanController::store');
-// $routes->get('perusahaan/edit/(:alphanum)', 'PerusahaanController::edit/$1');
-// $routes->post('perusahaan/update/(:num)', 'PerusahaanController::update/$1');
-// $routes->get('perusahaan/delete/(:alphanum)', 'PerusahaanController::delete/$1');
-
+// Routing client
 $routes->get('client/pdf', 'ClientController::pdf');
 $routes->get('client/excel', 'ClientController::excel');
 $routes->get('client', 'ClientController::index');

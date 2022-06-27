@@ -2,13 +2,9 @@
 
 
 <body id="page-top">
-
   <!-- Page Wrapper -->
   <div id="wrapper">
-
     <?php echo view('_partials/sidebar'); ?>
-
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -29,7 +25,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary text-left">Form Edit Data karyawan </h6>
+              <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Iso </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -49,56 +45,49 @@
                           </ul>
                         </div>
                       <?php } ?>
+                      <?php echo form_open_multipart('iso/store'); ?>
                       <div class="card">
-                        <?php echo form_open_multipart('karyawan/update/' . $karyawan['karyawan_id']); ?>
                         <div class="card-body">
-                          <?php echo form_hidden('karyawan_id', $karyawan['karyawan_id']); ?>
                           <div class="row">
                             <div class="col-md-12">
-
                               <div class="form-group">
-                                <?php echo form_label('Nama Karyawan', 'nama_karyawan'); ?>
-                                <?php echo form_input(
-                                  'nama_karyawan',
-                                  $karyawan['nama_karyawan'],
-
-                                  ['class' => 'form-control']
-
-                                ); ?>
-                              </div>
-                              <div class="form-group">
-                                <?php echo form_label('Tanggal Masuk', 'tanggalmasuk'); ?>
-                                <?php echo form_input(
-                                  'tanggalmasuk',
-                                  $karyawan['tanggalmasuk'],
-
-                                  ['class' => 'form-control']
-                                );
-
+                                <?php
+                                echo form_label('Nama Sertifikat');
+                                $nama = [
+                                  'type'  => 'text',
+                                  'name'  => 'nama',
+                                  'id'    => 'nama',
+                                  'value' => $inputs['nama'],
+                                  'class' => 'form-control',
+                                ];
+                                echo form_input($nama);
                                 ?>
                               </div>
                               <div class="form-group">
                                 <?php
-                                echo form_label('Jabatan Karyawan', 'jabatan');
-                                echo form_dropdown('jabatan', [
-
-                                  ''                      => 'Pilih',
-                                  'Manager'               => 'Manager',
-                                  'Admin'                 => 'Admin',
-                                  'Super Admin'           => 'Super Admin',
-
-                                ], $inputs['jabatan'], ['class' => 'form-control']);
+                                echo form_label('Kode ISO');
+                                $kodeiso = [
+                                  'type'        => 'text',
+                                  'name'        => 'kode_iso',
+                                  'id'          => 'kode_iso',
+                                  'value'       => $inputs['kode_iso'],
+                                  'class'       => 'form-control',
+                                  'placeholder' => 'Masukan Kode Iso'
+                                ];
+                                echo form_input($kodeiso);
                                 ?>
                               </div>
                               <div class="form-group">
                                 <?php
-                                echo form_label('Status Karyawan', 'jabatan');
-                                echo form_dropdown('status', [
-
-                                  ''                => 'Pilih',
-                                  'AKTIF'           => 'AKTIF',
-                                  'OFF'             => 'OFF'
-                                ], $inputs['status'], ['class' => 'form-control']);
+                                echo form_label('Tanggal Terbit');
+                                $tanggal_terbit = [
+                                  'type'  => 'date',
+                                  'name'  => 'tanggal_terbit',
+                                  'id'    => 'tanggal_terbit',
+                                  'value' => $inputs['tanggal_terbit'],
+                                  'class' => 'form-control',
+                                ];
+                                echo form_input($tanggal_terbit);
                                 ?>
                               </div>
                             </div>
@@ -106,13 +95,12 @@
                         </div>
                       </div>
                       <div class="card-footer">
-                        <a href="<?php echo base_url('karyawan'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
-                        <button type="submit" class="btn btn-primary float-right"> <i class="nav-icon fas fa-save"></i> Update Data</button>
+                        <a href="<?php echo base_url('iso'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                        <button type="submit" class="btn btn-primary float-right"><i class="nav-icon fas fa-save"></i> Simpan</button>
                       </div>
-                      <?php echo form_close(); ?>
                     </div>
                   </div>
-
+                  <?php echo form_close(); ?>
                 </table>
               </div>
             </div>

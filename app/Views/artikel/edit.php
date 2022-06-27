@@ -23,14 +23,13 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-
           <div class="card shadow mb-4">
             <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA MANAGEMENT CERTIFICATION</h1>
           </div>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data karyawan </h6>
+              <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Iso </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -50,84 +49,56 @@
                           </ul>
                         </div>
                       <?php } ?>
-                      <?php echo form_open_multipart('karyawan/store'); ?>
                       <div class="card">
+                        <?php echo form_open_multipart('iso/update/' . $iso['iso_id']); ?>
                         <div class="card-body">
+                          <?php echo form_hidden('iso_id', $iso['iso_id']); ?>
                           <div class="row">
                             <div class="col-md-12">
-                              <div class="form-group">
-                                <?php
-                                echo form_label('Nama Karyawan');
-                                $nama_karyawan = [
-                                  'type'        => 'text',
-                                  'name'        => 'nama_karyawan',
-                                  'id'          => 'nama_karyawan',
-                                  'value'       => $inputs['nama_karyawan'],
-                                  'class'       => 'form-control',
-                                  'placeholder' => 'Masukan Nama Karyawan'
-                                ];
-                                echo form_input($nama_karyawan);
-                                ?>
-                              </div>
-                              <div class="form-group">
-                                <?php
-                                echo form_label('Jabatan karyawan', 'jabatan');
-                                echo form_dropdown(
-                                  'jabatan',
-                                  [
 
-                                    ''                      => 'Pilih',
-                                    'Manager'               => 'Manager',
-                                    'Admin'                 => 'Admin',
-                                    'Super Admin'           => 'Super Admin',
+                              <div class="form-group">
+                                <?php echo form_label('Kode Iso', 'kode_iso'); ?>
+                                <?php echo form_input(
+                                  'kode_iso',
+                                  $iso['kode_iso'],
 
-                                  ],
-                                  $inputs['status'],
                                   ['class' => 'form-control']
                                 );
+
                                 ?>
                               </div>
                               <div class="form-group">
-                                <?php
-                                echo form_label('Status karyawan', 'status');
-                                echo form_dropdown(
-                                  'status',
-                                  [
+                                <?php echo form_label('Tanggal Terbit', 'tanggal_terbit'); ?>
+                                <?php echo form_input(
+                                  'tanggal_terbit',
+                                  $iso['tanggal_terbit'],
 
-                                    ''           => 'Pilih',
-                                    'AKTIF'      => 'AKTIF',
-                                    'OFF'        => 'OFF',
-
-                                  ],
-                                  $inputs['status'],
                                   ['class' => 'form-control']
-                                );
-                                ?>
+
+                                ); ?>
                               </div>
                               <div class="form-group">
-                                <?php
-                                echo form_label('Tanggal Masuk Karyawan');
-                                $stock_awal = [
-                                  'type'  => 'date',
-                                  'name'  => 'tanggalmasuk',
-                                  'id'    => 'tanggalmasuk',
-                                  'value' => $inputs['tanggalmasuk'],
-                                  'class' => 'form-control'
-                                ];
-                                echo form_input($stock_awal);
-                                ?>
+                                <?php echo form_label('Nama Sertifikat', 'nama'); ?>
+                                <?php echo form_input(
+                                  'nama',
+                                  $iso['nama'],
+
+                                  ['class' => 'form-control']
+
+                                ); ?>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="card-footer">
-                        <a href="<?php echo base_url('karyawan'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
-                        <button type="submit" class="btn btn-primary float-right"><i class="nav-icon fas fa-save"></i> Simpan</button>
+                        <a href="<?php echo base_url('iso'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                        <button type="submit" class="btn btn-primary float-right"> <i class="nav-icon fas fa-save"></i> Update Data</button>
                       </div>
+                      <?php echo form_close(); ?>
                     </div>
                   </div>
-                  <?php echo form_close(); ?>
+
                 </table>
               </div>
             </div>

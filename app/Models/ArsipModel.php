@@ -4,23 +4,22 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KaryawanModel extends Model
+class ArsipModel extends Model
 {
-    protected $table = 'karyawan';
-
     public function getData($id = false)
     {
         if ($id === false) {
-            return $this->table('karyawan')
+            return $this->table('arsip')
                 ->get()
                 ->getResultArray();
         } else {
-            return $this->table('karyawan')
-                ->where('karyawan.karyawan_id', $id)
+            return $this->table('arsip')
+                ->where('arsip.arsip_id', $id)
                 ->get()
                 ->getRowArray();
         }
     }
+
     public function insertData($data)
     {
         return $this->db->table($this->table)->insert($data);
@@ -28,10 +27,12 @@ class KaryawanModel extends Model
 
     public function updateData($data, $id)
     {
-        return $this->db->table($this->table)->update($data, ['karyawan_id' => $id]);
+        return $this->db->table($this->table)->update($data, ['arsip_id' => $id]);
     }
+
+
     public function deleteData($id)
     {
-        return $this->db->table($this->table)->delete(['karyawan_id' => $id]);
+        return $this->db->table($this->table)->delete(['arsip_id' => $id]);
     }
 }
