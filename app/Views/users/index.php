@@ -78,7 +78,7 @@
                                                 <td style="text-align: justify"><?php echo $row['username']; ?></td>
                                                 <td style="text-align: justify"><?php echo $row['password']; ?></td>
                                                 <td style="text-align: center"><?php echo $row['level']; ?></td>
-                                                <td>
+                                                <td style="text-align: center">
                                                     <div class="btn-group">
                                                         <a href="<?php echo base_url('users/edit/' . $row['id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
                                                             <i class="fa fa-edit"></i>

@@ -15,11 +15,11 @@
             <tbody>
                 <?php foreach ($users as $key => $row) { ?>
                     <tr>
-                        <td><?php echo $key + 1; ?></td>
-                        <td><?php echo $row['nama_user']; ?></td>
-                        <td><?php echo $row['username']; ?></td>
-                        <td><?php echo $row['password']; ?></td>
-                        <td><?php echo $row['level']; ?></td>
+                        <td style="text-align: center"><?php echo $key + 1; ?></td>
+                        <td style="text-align: center"><?php echo $row['nama_user']; ?></td>
+                        <td style="text-align: center"><?php echo $row['username']; ?></td>
+                        <td style="text-align: center"><?php echo $row['password']; ?></td>
+                        <td style="text-align: center"><?php echo $row['level']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

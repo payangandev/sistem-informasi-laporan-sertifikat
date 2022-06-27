@@ -75,11 +75,11 @@
                                     <tbody>
                                         <?php foreach ($ska as $key => $row) { ?>
                                             <tr>
-                                                <td><?php echo $key + 1; ?></td>
-                                                <td><?php echo $row['nama']; ?></td>
-                                                <td><?php echo $row['tanggal_terbit']; ?></td>
+                                                <td style="text-align: center"><?php echo $key + 1; ?></td>
+                                                <td style="text-align: center"><?php echo $row['nama']; ?></td>
+                                                <td style="text-align: center"><?php echo $row['tanggal_terbit']; ?></td>
                                                 <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
-                                                    <td>
+                                                    <td style="text-align: center">
                                                         <div class="btn-group">
                                                             <a href="<?php echo base_url('ska/edit/' . $row['ska_id']); ?>" class="btn btn-sm btn-success">
                                                                 <i class="fa fa-edit"></i>

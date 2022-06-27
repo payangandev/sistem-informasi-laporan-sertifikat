@@ -63,8 +63,8 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama client</th>
+                                            <th style="text-align: center">No</th>
+                                            <th style="text-align: center">Nama client</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>
                                             <?php } ?>
@@ -73,10 +73,10 @@
                                     <tbody>
                                         <?php foreach ($client as $key => $row) { ?>
                                             <tr>
-                                                <td><?php echo $key + 1; ?></td>
-                                                <td><?php echo $row['nama']; ?></td>
+                                                <td style="text-align: center"><?php echo $key + 1; ?></td>
+                                                <td style="text-align: center"><?php echo $row['nama']; ?></td>
                                                 <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
-                                                    <td>
+                                                    <td style="text-align: center">
                                                         <div class="btn-group">
                                                             <a href="<?php echo base_url('client/edit/' . $row['client_id']); ?>" class="btn btn-sm btn-success">
                                                                 <i class="fa fa-edit"></i>

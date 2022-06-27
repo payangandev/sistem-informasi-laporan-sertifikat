@@ -13,9 +13,9 @@
             <tbody>
                 <?php foreach ($skt as $key => $row) { ?>
                     <tr>
-                        <td><?php echo $key + 1; ?></td>
-                        <td><?php echo $row['nama']; ?></td>
-                        <td><?php echo $row['tanggal_terbit']; ?></td>
+                        <td style="text-align: center"><?php echo $key + 1; ?></td>
+                        <td style="text-align: center"><?php echo $row['nama']; ?></td>
+                        <td style="text-align: center"><?php echo $row['tanggal_terbit']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

@@ -5,8 +5,8 @@
         <table cellspacing="3" cellpadding="4">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Nama Client</th>
+                    <th style="text-align: center">No</th>
+                    <th style="text-align: center">Nama Client</th>
                 </tr>
             </thead>
             <tbody>
