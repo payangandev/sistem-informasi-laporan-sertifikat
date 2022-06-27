@@ -5,9 +5,9 @@
         <table cellspacing="3" cellpadding="4">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Tanggal Terbit</th>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Tanggal Terbit</th>
                 </tr>
             </thead>
             <tbody>

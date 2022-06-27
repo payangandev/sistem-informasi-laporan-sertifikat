@@ -13,6 +13,11 @@ class DashboardModel extends Model
 		return $this->db->table("users")->countAll();
 	}
 
+	public function getCountKaryawan()
+	{
+		return $this->db->table("karyawan")->countAll();
+	}
+
 	public function getCountKtiga()
 	{
 		return $this->db->table("ktiga")->countAll();

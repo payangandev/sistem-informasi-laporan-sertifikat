@@ -64,9 +64,9 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Sub Bidang</th>
-                                            <th>Tanggal Terbit</th>
+                                            <th style="text-align: center">No</th>
+                                            <th style="text-align: center">Sub Bidang</th>
+                                            <th style="text-align: center">Tanggal Terbit</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>
                                             <?php } ?>
