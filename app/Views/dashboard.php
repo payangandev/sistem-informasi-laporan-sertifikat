@@ -27,7 +27,7 @@
 
                     <!-- Content Row -->
                     <div class="row">
-                        <?php if (session()->get('level') == 1 || session()->get('level') == 3) { ?>
+                        <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
 
                             <!-- Data K3 -->
                             <div class="col-xl-3 col-md-6 mb-4">
