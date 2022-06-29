@@ -10,18 +10,18 @@ class Users extends Seeder
     {
         $users = [
             [
-                'id'        => 1,
-                'nama_user'    => 'Febra Siahaan',
-                'username'    => 'febra001',
-                'password'    => 'febra001',
-                'level'        => 1
+                'id'            => 1,
+                'nama_user'     => 'Febra Siahaan',
+                'username'      => 'febra001',
+                'password'      => 'febra001',
+                'level'         => 1
             ],
             [
-                'id'        => 2,
-                'nama_user'    => 'Dita',
-                'username'    => 'dita001',
-                'password'    => 'dita001',
-                'level'        => 2
+                'id'            => 2,
+                'nama_user'     => 'Dita',
+                'username'      => 'dita001',
+                'password'      => 'dita001',
+                'level'         => 2
             ]
         ];
 
