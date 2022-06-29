@@ -156,7 +156,7 @@ class Validation
 	// validasi untuk  setiap field yang ada di base 
 	public $arsip = [
 		'client_id'					=> 'required',
-		'nama_kayawan'     			=> 'required',
+		'nama_karyawan'     			=> 'required',
 		'type_sertifikat'     		=> 'required',
 		'status'   					=> 'required',
 		'description'   			=> 'required',

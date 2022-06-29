@@ -22,7 +22,7 @@ class ArsipController extends BaseController
         // paginate
         $paginate = 5000;
         $data['arsip']   = $this->arsip_model->join('client', 'client.client_id = arsip.client_id', 'INNER JOIN')->paginate($paginate, 'arsip');
-        echo view('arsip/index', $data);
+        echo view('arsip', $data);
     }
 
 
@@ -103,7 +103,7 @@ class ArsipController extends BaseController
             $simpan = $this->arsip_model->insertData($data);
             if ($simpan) {
                 session()->setFlashdata('success', 'Tambah Data Berhasil');
-                return redirect()->to(base_url('arsip/index'));
+                return redirect()->to(base_url('arsip'));
             }
         }
     }
@@ -137,7 +137,7 @@ class ArsipController extends BaseController
             $ubah = $this->arsip_model->updateData($data, $id);
             if ($ubah) {
                 session()->setFlashdata('info', 'Update Data Berhasil');
-                return redirect()->to(base_url('arsip/index'));
+                return redirect()->to(base_url('arsip'));
             }
         }
     }
@@ -147,7 +147,7 @@ class ArsipController extends BaseController
         $hapus = $this->arsip_model->deleteData($id);
         if ($hapus) {
             session()->setFlashdata('warning', 'Delete Data  Berhasil');
-            return redirect()->to(base_url('arsip/index'));
+            return redirect()->to(base_url('arsip'));
         }
     }
 }
