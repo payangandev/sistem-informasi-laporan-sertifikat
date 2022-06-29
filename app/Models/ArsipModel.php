@@ -10,10 +10,12 @@ class ArsipModel extends Model
     {
         if ($id === false) {
             return $this->table('arsip')
+                ->join('client', 'client.client_id = arsip.client_id')
                 ->get()
                 ->getResultArray();
         } else {
             return $this->table('arsip')
+                ->join('client', 'client.client_id = arsip.client_id')
                 ->where('arsip.arsip_id', $id)
                 ->get()
                 ->getRowArray();
