@@ -22,7 +22,7 @@ class ArsipController extends BaseController
         // paginate
         $paginate = 5000;
         $data['arsip']   = $this->arsip_model->join('client', 'client.client_id = arsip.client_id', 'INNER JOIN')->paginate($paginate, 'arsip');
-        echo view('arsip', $data);
+        echo view('arsip/index', $data);
     }
 
 
