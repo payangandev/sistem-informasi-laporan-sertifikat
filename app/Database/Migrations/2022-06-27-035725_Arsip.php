@@ -21,7 +21,7 @@ class Arsip extends Migration
                 'unsigned'            => TRUE,
                 'null'                => TRUE
             ],
-            'nama_kayawan'           => [
+            'nama_karyawan'           => [
                 'type'                => 'VARCHAR',
                 'constraint'          => 50,
             ],

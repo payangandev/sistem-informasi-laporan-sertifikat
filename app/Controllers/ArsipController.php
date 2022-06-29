@@ -86,7 +86,7 @@ class ArsipController extends BaseController
     {
         $validation =  \Config\Services::validation();
         $data = array(
-            'nama'                  => $this->request->getPost('nama'),
+            'nama_karyawan'          => $this->request->getPost('nama_karyawan'),
             'type_sertifikat'       => $this->request->getPost('type_sertifikat'),
             'status'                => $this->request->getPost('status'),
             'description'           => $this->request->getPost('description'),
@@ -123,7 +123,7 @@ class ArsipController extends BaseController
         $validation =  \Config\Services::validation();
 
         $data = array(
-            'nama'                  => $this->request->getPost('nama'),
+            'nama_karyawan'          => $this->request->getPost('nama_karyawan'),
             'type_sertifikat'       => $this->request->getPost('type_sertifikat'),
             'status'                => $this->request->getPost('status'),
             'description'           => $this->request->getPost('description'),

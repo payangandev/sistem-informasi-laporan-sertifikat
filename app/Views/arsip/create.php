@@ -59,7 +59,7 @@
                                                                 echo form_label('Nama Client', 'client_id');
                                                                 echo form_dropdown('client_id', $client, $inputs['client_id'], ['class' => 'form-control']);
                                                                 ?>
-                                                            </div><br>
+                                                            </div>
                                                             <div class="form-group">
                                                                 <?php
                                                                 echo form_label('Type Sertifikat', 'type_sertifikat');
@@ -77,7 +77,7 @@
                                                                     ['class' => 'form-control']
                                                                 );
                                                                 ?>
-                                                            </div><br>
+                                                            </div>
                                                             <div class="form-group">
                                                                 <?php
                                                                 echo form_label('Status', 'status');
@@ -94,12 +94,12 @@
                                                                     ['class' => 'form-control']
                                                                 );
                                                                 ?>
-                                                            </div><br>
+                                                            </div>
                                                             <div class="form-group">
                                                                 <?php
                                                                 echo form_label('Nama Karyawan');
                                                                 $nama_karyawan = [
-                                                                    'type'  => 'date',
+                                                                    'type'  => 'text',
                                                                     'name'  => 'nama_karyawan',
                                                                     'id'    => 'nama_karyawan',
                                                                     'value' => $inputs['nama_karyawan'],
@@ -112,7 +112,7 @@
                                                                 <?php
                                                                 echo form_label('Description');
                                                                 $description = [
-                                                                    'type'  => 'date',
+                                                                    'type'  => 'text',
                                                                     'name'  => 'description',
                                                                     'id'    => 'description',
                                                                     'value' => $inputs['description'],

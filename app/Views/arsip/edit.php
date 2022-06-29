@@ -57,7 +57,7 @@
                             <div class="col-md-12">
                               <div class="form-group">
                                 <?php echo form_label('Nama Client', 'client'); ?>
-                                <?php echo form_dropdown('client_id', $client, $training['client_id'], ['class' => 'form-control']); ?>
+                                <?php echo form_dropdown('client_id', $client, $arsip['client_id'], ['class' => 'form-control']); ?>
                               </div>
                               <div class="form-group">
                                 <?php
@@ -68,7 +68,7 @@
                                   'SKA'                   => 'SKA',
                                   'SKT'                   => 'SKT',
                                   'K3'                    => 'K3',
-                                ], $training['type_sertifikat'], ['class' => 'form-control']);
+                                ], $arsip['type_sertifikat'], ['class' => 'form-control']);
                                 ?>
                               </div>
                               <div class="form-group">
@@ -80,14 +80,14 @@
                                   'PROSES'                    => 'PROSES',
                                   'PENDING'                   => 'PENDING',
                                   'SELESAI'                   => 'SELESAI',
-                                ], $training['status'], ['class' => 'form-control']);
+                                ], $arsip['status'], ['class' => 'form-control']);
                                 ?>
                               </div>
                               <div class="form-group">
-                                <?php echo form_label('Nama Karyawan', 'nama_kayawan'); ?>
+                                <?php echo form_label('Nama Karyawan', 'nama_karyawan'); ?>
                                 <?php echo form_input(
-                                  'nama_kayawan',
-                                  $arsip['nama_kayawan'],
+                                  'nama_karyawan',
+                                  $arsip['nama_karyawan'],
 
                                   ['class' => 'form-control', 'placeholder' => 'Nama ...']
                                 );

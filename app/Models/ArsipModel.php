@@ -6,6 +6,8 @@ use CodeIgniter\Model;
 
 class ArsipModel extends Model
 {
+    protected $table = 'arsip';
+
     public function getData($id = false)
     {
         if ($id === false) {

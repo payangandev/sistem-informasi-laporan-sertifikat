@@ -76,16 +76,16 @@
                                             <tr>
                                                 <td style="text-align: center"><?php echo $key + 1; ?></td>
                                                 <td style="text-align: justify"><?php echo $row['nama']; ?></td>
-                                                <td style="text-align: justify"><?php echo $row['nama_kayawan']; ?></td>
+                                                <td style="text-align: justify"><?php echo $row['nama_karyawan']; ?></td>
                                                 <td style="text-align: justify"><?php echo $row['type_sertifikat']; ?></td>
                                                 <td style="text-align: center"><?php echo $row['status']; ?></td>
                                                 <td style="text-align: center"><?php echo $row['description']; ?></td>
                                                 <td style="text-align: center">
                                                     <div class="btn-group">
-                                                        <a href="<?php echo base_url('arsip/edit/' . $row['id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
+                                                        <a href="<?php echo base_url('arsip/edit/' . $row['arsip_id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
                                                             <i class="fa fa-edit"></i>
                                                         </a>
-                                                        <a href="<?php echo base_url('arsip/delete/' . $row['id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                        <a href="<?php echo base_url('arsip/delete/' . $row['arsip_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                             <i class="fa fa-trash-alt"></i>
                                                         </a>
                                                     </div>
