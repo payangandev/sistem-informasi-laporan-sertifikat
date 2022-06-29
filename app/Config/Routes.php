@@ -84,6 +84,16 @@ $routes->get('client/edit/(:alphanum)', 'ClientController::edit/$1');
 $routes->post('client/update/(:num)', 'ClientController::update/$1');
 $routes->get('client/delete/(:alphanum)', 'ClientController::delete/$1');
 
+// Routing client
+$routes->get('arsip/pdf', 'ArsipController::pdf');
+$routes->get('arsip/excel', 'ArsipController::excel');
+$routes->get('arsip', 'ArsipController::index');
+$routes->get('arsip/create', 'ArsipController::create');
+$routes->post('arsip/store', 'ArsipController::store');
+$routes->get('arsip/edit/(:alphanum)', 'ArsipController::edit/$1');
+$routes->post('arsip/update/(:num)', 'ArsipController::update/$1');
+$routes->get('arsip/delete/(:alphanum)', 'ArsipController::delete/$1');
+
 // Routing for Ktiga
 $routes->get('ktiga/pdf', 'KtigaController::pdf');
 $routes->get('ktiga/excel', 'KtigaController::excel');

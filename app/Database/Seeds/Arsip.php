@@ -12,7 +12,7 @@ class Arsip extends Seeder
             [
                 'arsip_id'                  => 1,
                 'client_id'                 => 1,
-                'nama'                      => 'Ahmad Syahroni',
+                'nama_kayawan'                      => 'Ahmad Syahroni',
                 'type_sertifikat'           => 'ISO',
                 'status'                    => 'selesai',
                 'description'               => 'done',
@@ -21,7 +21,7 @@ class Arsip extends Seeder
             [
                 'arsip_id'                  => 2,
                 'client_id'                 => 2,
-                'nama'                      => 'Febrana',
+                'nama_kayawan'                      => 'Febrana',
                 'type_sertifikat'           => 'SKT',
                 'status'                    => 'selesai',
                 'description'               => 'done',
@@ -29,7 +29,7 @@ class Arsip extends Seeder
             [
                 'arsip_id'                  => 3,
                 'client_id'                 => 3,
-                'nama'                      => 'Laila sari',
+                'nama_kayawan'                      => 'Laila sari',
                 'type_sertifikat'           => 'ISO',
                 'status'                    => 'selesai',
                 'description'               => 'done',
