@@ -22,10 +22,11 @@ class Home extends BaseController
 		$data['data_user']       	= $this->dashboard_model->getCountUser();
 		$data['data_ktiga']    		= $this->dashboard_model->getCountKtiga();
 		$data['data_iso']   		= $this->dashboard_model->getCountIso();
-		$data['data_client']    = $this->dashboard_model->getCountClient();
+		$data['data_client']    	= $this->dashboard_model->getCountClient();
 		$data['data_ska']       	= $this->dashboard_model->getCountSka();
-		$data['data_karyawan']     = $this->dashboard_model->getCountKaryawan();
+		$data['data_karyawan']    	= $this->dashboard_model->getCountKaryawan();
 		$data['data_skt']			= $this->dashboard_model->getCountSkt();
+		$data['data_arsip']			= $this->dashboard_model->getCountArsip();
 
 		return view('dashboard',  $data);
 	}
