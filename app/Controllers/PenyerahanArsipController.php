@@ -84,13 +84,17 @@ class PenyerahanArsipController extends BaseController
     public function store()
     {
         $validation =  \Config\Services::validation();
+        $dataPenyerahan = $this->request->getFile('bukti_penyerahan');
+        $filePenyerahan = $dataPenyerahan->getRandomName();
+
         $data = array(
-            'bukti_penyerahan'          => $this->request->getPost('bukti_penyerahan'),
+            'bukti_penyerahan'          => $filePenyerahan,
             'proggress'       			=> $this->request->getPost('proggress'),
             'tanggal_penyerahan'       	=> $this->request->getPost('tanggal_penyerahan'),
             'client_id'             	=> $this->request->getPost('client_id'),
 
         );
+            $dataPenyerahan->move('uploads/penyerahan/', $filePenyerahan);
 
         if ($validation->run($data, 'penyerahan') == FALSE) {
             session()->setFlashdata('inputs', $this->request->getPost());

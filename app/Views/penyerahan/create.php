@@ -29,7 +29,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Arsip </h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-left">Form Tambah Data Penyerahan Arsip </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -49,7 +49,7 @@
                                                     </ul>
                                                 </div>
                                             <?php } ?>
-                                            <?php echo form_open_multipart('arsip/store'); ?>
+                                            <?php echo form_open_multipart('penyerahan/store'); ?>
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="row">
@@ -61,64 +61,39 @@
                                                                 ?>
                                                             </div>
                                                             <div class="form-group">
+                                                                <label for="bukti_penyerahan">Bukti Penyerahan Sertifikat</label>
+                                                                <input type="file" name="bukti_penyerahan" id="bukti_penyerahan" class="form-control">
+
+                                                            </div><br>
+
+                                                            <div class="form-group">
                                                                 <?php
-                                                                echo form_label('Type Sertifikat', 'type_sertifikat');
+                                                                echo form_label('Tanggal penyerahan');
+                                                                $tanggal_penyerahan = [
+                                                                    'type'  => 'date',
+                                                                    'name'  => 'tanggal_penyerahan',
+                                                                    'id'    => 'tanggal_penyerahan',
+                                                                    'value' => $inputs['tanggal_penyerahan'],
+                                                                    'class' => 'form-control',
+                                                                ];
+                                                                echo form_input($tanggal_penyerahan);
+                                                                ?>
+                                                            </div>
+                                                            <div class="form-group">
+                                                            <div class="form-group">
+                                                                <?php
+                                                                echo form_label('Proggress', 'proggress');
                                                                 echo form_dropdown(
-                                                                    'type_sertifikat',
+                                                                    'proggress',
                                                                     [
                                                                         ''                      => 'Pilih',
-                                                                        'ISO'                   => 'ISO',
-                                                                        'SKA'                   => 'SKA',
-                                                                        'SKT'                   => 'SKT',
-                                                                        'K3'                    => 'K3',
+                                                                        'Diterima'              => 'Diterima',
+                                                                        'Diserahkan'            => 'Diserahkan'
 
                                                                     ],
-                                                                    $inputs['type_sertifikat'],
+                                                                    $inputs['proggress'],
                                                                     ['class' => 'form-control']
                                                                 );
-                                                                ?>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <?php
-                                                                echo form_label('Status', 'status');
-                                                                echo form_dropdown(
-                                                                    'status',
-                                                                    [
-                                                                        ''                          => 'Pilih',
-                                                                        'PROSES'                    => 'PROSES',
-                                                                        'PENDING'                   => 'PENDING',
-                                                                        'SELESAI'                   => 'SELESAI',
-
-                                                                    ],
-                                                                    $inputs['status'],
-                                                                    ['class' => 'form-control']
-                                                                );
-                                                                ?>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <?php
-                                                                echo form_label('Nama Client');
-                                                                $nama_karyawan = [
-                                                                    'type'  => 'text',
-                                                                    'name'  => 'nama_karyawan',
-                                                                    'id'    => 'nama_karyawan',
-                                                                    'value' => $inputs['nama_karyawan'],
-                                                                    'class' => 'form-control',
-                                                                ];
-                                                                echo form_input($nama_karyawan);
-                                                                ?>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <?php
-                                                                echo form_label('Description');
-                                                                $description = [
-                                                                    'type'  => 'text',
-                                                                    'name'  => 'description',
-                                                                    'id'    => 'description',
-                                                                    'value' => $inputs['description'],
-                                                                    'class' => 'form-control',
-                                                                ];
-                                                                echo form_input($description);
                                                                 ?>
                                                             </div>
                                                         </div>
@@ -126,7 +101,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-footer">
-                                                <a href="<?php echo base_url('arsip'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                                                <a href="<?php echo base_url('penyerahan'); ?>" class="btn btn-outline-info float-left"> <i class="nav-icon fas fa-backward"></i> Back</a>
                                                 <button type="submit" class="btn btn-primary float-right"><i class="nav-icon fas fa-save"></i> Simpan</button>
                                             </div>
                                         </div>

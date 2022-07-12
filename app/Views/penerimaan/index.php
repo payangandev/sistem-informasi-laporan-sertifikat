@@ -30,11 +30,11 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Penerimaan Arsip </h6> <br>
-                            <a href="<?php echo base_url('penerimaan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                            <!-- <a href="<?php echo base_url('penerimaan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                                 <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
 
                             <a href="<?php echo base_url('penerimaan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
-                                <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
+                                <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a> -->
 
                             <a href="<?php echo base_url('penerimaan/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i> Tambah Data</a>
 
@@ -75,14 +75,14 @@
                                             <tr>
                                                 <td style="text-align: center"><?php echo $key + 1; ?></td>
                                                 <td><?php echo $row['nama']; ?></td>
-                                                <td><?php echo $row['bukti_penerimaan']; ?></td>
+                                                <td class="text-center"><img src="<?= base_url('uploads/penerimaan/' . $row['bukti_penerimaan']); ?>" width="150"></td>
                                                 <td><?php echo $row['proggress']; ?></td>
                                                 <td ><?php echo $row['tanggal_penerimaan']; ?></td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="<?php echo base_url('penerimaan/edit/' . $row['penerimaan_id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
+                                                        <!-- <a href="<?php echo base_url('penerimaan/edit/' . $row['penerimaan_id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
                                                             <i class="fa fa-edit"></i>
-                                                        </a>
+                                                        </a> -->
                                                         <a href="<?php echo base_url('penerimaan/delete/' . $row['penerimaan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                             <i class="fa fa-trash-alt"></i>
                                                         </a>

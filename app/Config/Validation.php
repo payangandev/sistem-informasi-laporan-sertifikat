@@ -66,20 +66,20 @@ class Validation
 
 		// validasi penyerahan untuk  setiap field yang ada di base 
 		public $penyerahan = [
-			'tanggal_penerimaan'     				=> 'required',
-			'bukti_penerimaan'     => 'required',
+			'tanggal_penyerahan'     				=> 'required',
+			'bukti_penyerahan'     => 'required',
 			'proggress' 			=> 'required',
 			'client_id'   		=> 'required',
 		];
 	
 		public $penyerahan_errors = [
 	
-			'tanggal_penerimaan'    => [
-				'required'			=> 'Tanggal Penerimaan  Required'
+			'tanggal_penyerahan'    => [
+				'required'			=> 'Tanggal Penyerahan  Required'
 			],
 	
-			'bukti_penerimaan'    	=> [
-				'required'			=> 'Bukti Penerimaan Required'
+			'bukti_penyerahan'    	=> [
+				'required'			=> 'Bukti Penyerahan Required'
 			],
 	
 			'proggress'   			=> [
@@ -93,23 +93,28 @@ class Validation
 		];
 	// validasi penerimaan untuk  setiap field yang ada di base 
 	public $penerimaan = [
-		'nama'     				=> 'required',
-		'kode_iso'     			=> 'required',
-		'tanggal_terbit'   		=> 'required',
+		'bukti_penerimaan'     				=> 'required',
+		'proggress'     			=> 'required',
+		'tanggal_penerimaan'   		=> 'required',
+		'client_id'     			=> 'required',
 	];
 
 	public $penerimaan_errors = [
 
-		'nama'     	=> [
-			'required'			=> 'Nama  Required'
+		'bukti_penerimaan'     	=> [
+			'required'			=> 'Bukti Penerimaan  Required'
 		],
 
-		'kode_iso'    			=> [
-			'required'			=> 'Kode Iso Required'
+		'proggress'    			=> [
+			'required'			=> 'Proggress Required'
 		],
 
-		'tanggal_terbit'   		=> [
-			'required'			=> 'Tanggal Terbit Required'
+		'tanggal_penerimaan'   		=> [
+			'required'			=> 'Tanggal Penerimaan Required'
+		],
+
+		'client_id'   		=> [
+			'required'			=> 'Client Required'
 		]
 	];
 

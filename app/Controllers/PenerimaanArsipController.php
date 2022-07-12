@@ -83,13 +83,19 @@ class PenerimaanArsipController extends BaseController
     public function store()
     {
         $validation =  \Config\Services::validation();
+        $dataPenerimaan = $this->request->getFile('bukti_penerimaan');
+        $filePenerimaan = $dataPenerimaan->getRandomName();
+
+
         $data = array(
-            'bukti_penerimaan'          => $this->request->getPost('bukti_penerimaan'),
+            'bukti_penerimaan'          => $filePenerimaan,
             'proggress'       			=> $this->request->getPost('proggress'),
             'tanggal_penerimaan'        => $this->request->getPost('tanggal_penerimaan'),
             'client_id'             	=> $this->request->getPost('client_id'),
 
         );
+
+        $dataPenerimaan->move('uploads/penerimaan/', $filePenerimaan);
 
         if ($validation->run($data, 'penerimaan') == FALSE) {
             session()->setFlashdata('inputs', $this->request->getPost());

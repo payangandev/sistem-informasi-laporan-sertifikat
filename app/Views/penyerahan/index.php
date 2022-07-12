@@ -30,11 +30,11 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Penyerahan  Arsip</h6> <br>
-                            <a href="<?php echo base_url('penyerahan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                            <!-- <a href="<?php echo base_url('penyerahan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                                 <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
 
                             <a href="<?php echo base_url('penyerahan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
-                                <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
+                                <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a> -->
 
                             <a href="<?php echo base_url('penyerahan/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i> Tambah Data</a>
 
@@ -64,8 +64,8 @@
                                         <tr>
                                             <th style="text-align: center">No</th>
                                             <th style="text-align: center">Nama Perusahaan</th>
-                                            <th style="text-align: center">Bukti penyerahan</th>
-                                            <th style="text-align: center">Tanggal penyerahan</th>
+                                            <th style="text-align: center">Bukti Penyerahan</th>
+                                            <th style="text-align: center">Tanggal Penyerahan</th>
                                             <th style="text-align: center">Proggress</th>
                                             <th style="text-align: center">Actions</th>
                                         </tr>
@@ -75,14 +75,14 @@
                                             <tr>
                                                 <td style="text-align: center"><?php echo $key + 1; ?></td>
                                                 <td><?php echo $row['nama']; ?></td>
-                                                <td><?php echo $row['bukti_penyerahan']; ?></td>
+                                                <td class="text-center"><img src="<?= base_url('uploads/penyerahan/' . $row['bukti_penyerahan']); ?>" width="150"></td>
                                                 <td><?php echo $row['proggress']; ?></td>
                                                 <td ><?php echo $row['tanggal_penyerahan']; ?></td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="<?php echo base_url('penyerahan/edit/' . $row['penyerahan_id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
+                                                        <!-- <a href="<?php echo base_url('penyerahan/edit/' . $row['penyerahan_id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
                                                             <i class="fa fa-edit"></i>
-                                                        </a>
+                                                        </a> -->
                                                         <a href="<?php echo base_url('penyerahan/delete/' . $row['penyerahan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                             <i class="fa fa-trash-alt"></i>
                                                         </a>
