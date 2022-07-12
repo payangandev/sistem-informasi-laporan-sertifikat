@@ -63,8 +63,8 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align: center">No</th>
-                                            <th style="text-align: center">Nama Klien</th>
-                                            <th style="text-align: center">Karyawan</th>
+                                            <th style="text-align: center">Nama Perusahaan</th>
+                                            <th style="text-align: center">Nama Client</th>
                                             <th style="text-align: center">Sertifikat</th>
                                             <th style="text-align: center">Status</th>
                                             <th style="text-align: center">Description</th>

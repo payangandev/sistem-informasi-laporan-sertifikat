@@ -64,6 +64,54 @@ class Validation
 		]
 	];
 
+		// validasi penyerahan untuk  setiap field yang ada di base 
+		public $penyerahan = [
+			'tanggal_penerimaan'     				=> 'required',
+			'bukti_penerimaan'     => 'required',
+			'proggress' 			=> 'required',
+			'client_id'   		=> 'required',
+		];
+	
+		public $penyerahan_errors = [
+	
+			'tanggal_penerimaan'    => [
+				'required'			=> 'Tanggal Penerimaan  Required'
+			],
+	
+			'bukti_penerimaan'    	=> [
+				'required'			=> 'Bukti Penerimaan Required'
+			],
+	
+			'proggress'   			=> [
+				'required'			=> 'Proggress Required'
+			],
+	
+			'client_id'   			=> [
+				'required'			=> 'Nama Perusahaan Required'
+			]
+			
+		];
+	// validasi penerimaan untuk  setiap field yang ada di base 
+	public $penerimaan = [
+		'nama'     				=> 'required',
+		'kode_iso'     			=> 'required',
+		'tanggal_terbit'   		=> 'required',
+	];
+
+	public $penerimaan_errors = [
+
+		'nama'     	=> [
+			'required'			=> 'Nama  Required'
+		],
+
+		'kode_iso'    			=> [
+			'required'			=> 'Kode Iso Required'
+		],
+
+		'tanggal_terbit'   		=> [
+			'required'			=> 'Tanggal Terbit Required'
+		]
+	];
 
 	// validasi untuk  setiap field yang ada di base 
 	public $ktiga = [
@@ -84,13 +132,25 @@ class Validation
 
 	// validasi untuk  setiap field yang ada di base 
 	public $client = [
-		'nama'		=> 'required',
+		'nama'				=> 'required',
+		'email'     		=> 'required',		
+		'alamat'     		=> 'required',
+		'telephone'     	=> 'required',
 	];
 
 	public $client_errors = [
 
 		'nama'   => [
 			'required'		=> 'Nama Client Required'
+		],
+		'email'   => [
+			'required'		=> 'Email RCequired'
+		],
+		'alamat'   => [
+			'required'		=> 'Alamat Required'
+		],
+		'telephone'   => [
+			'required'		=> 'Telephone Required'
 		]
 	];
 
@@ -156,7 +216,7 @@ class Validation
 	// validasi untuk  setiap field yang ada di base 
 	public $arsip = [
 		'client_id'					=> 'required',
-		'nama_karyawan'     			=> 'required',
+		'nama_karyawan'     		=> 'required',
 		'type_sertifikat'     		=> 'required',
 		'status'   					=> 'required',
 		'description'   			=> 'required',

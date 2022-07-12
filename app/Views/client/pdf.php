@@ -14,6 +14,9 @@
                     <tr>
                         <td><?php echo $key + 1; ?></td>
                         <td><?php echo $row['nama']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['alamat']; ?></td>
+                        <td><?php echo $row['telephone']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

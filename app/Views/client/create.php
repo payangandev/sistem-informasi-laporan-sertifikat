@@ -56,7 +56,7 @@
                             <div class="col-md-12">
                               <div class="form-group">
                                 <?php
-                                echo form_label('Nama Client');
+                                echo form_label('Nama Perusahaan');
                                 $nama = [
                                   'type'  => 'text',
                                   'name'  => 'nama',
@@ -66,6 +66,48 @@
                                   'placeholder' => 'Masukan Nama client'
                                 ];
                                 echo form_input($nama);
+                                ?>
+                              </div>
+                              <div class="form-group">
+                                <?php
+                                echo form_label('Email');
+                                $email = [
+                                  'type'  => 'text',
+                                  'name'  => 'email',
+                                  'id'    => 'email',
+                                  'value' => $inputs['email'],
+                                  'class' => 'form-control',
+                                  'placeholder' => 'Masukan Email'
+                                ];
+                                echo form_input($email);
+                                ?>
+                              </div>
+                              <div class="form-group">
+                                <?php
+                                echo form_label('Alamat');
+                                $alamat = [
+                                  'type'  => 'text',
+                                  'name'  => 'alamat',
+                                  'id'    => 'alamat',
+                                  'value' => $inputs['alamat'],
+                                  'class' => 'form-control',
+                                  'placeholder' => 'Masukan Alamat'
+                                ];
+                                echo form_input($alamat);
+                                ?>
+                              </div>
+                              <div class="form-group">
+                                <?php
+                                echo form_label('Telephone');
+                                $telephone = [
+                                  'type'  => 'text',
+                                  'name'  => 'telephone',
+                                  'id'    => 'telephone',
+                                  'value' => $inputs['telephone'],
+                                  'class' => 'form-control',
+                                  'placeholder' => 'Masukan Telephone'
+                                ];
+                                echo form_input($telephone);
                                 ?>
                               </div>
                             </div>

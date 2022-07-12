@@ -12,26 +12,30 @@ class Client extends Seeder
             [
                 'client_id'                 => 1,
                 'nama'                      => 'PT. Global Energi Power Indonesia',
+                'email'                     => '',
+                'alamat'                    => '',
+                'telephone'                 => '02198529922',
             ],
             [
                 'client_id'                 => 2,
                 'nama'                      => 'PT. Kencana Makmur Lestari',
+                'email'                     => '',
+                'alamat'                    => '',
+                'telephone'                 => '02155771592',
             ],
             [
                 'client_id'                 => 3,
                 'nama'                      => 'PT. Baliton Cakra perdana ',
+                'email'                     => '',
+                'alamat'                    => '',
+                'telephone'                 => '02175820525',
             ],
             [
                 'client_id'                 => 4,
                 'nama'                      => 'PT. Alfath Rizkindo Teknik ',
-            ],
-            [
-                'client_id'                 => 5,
-                'nama'                      => 'PT. Tawakal Karya Teknik ',
-            ],
-            [
-                'client_id'                 => 6,
-                'nama'                      => 'PT. Trian Naga Jaya ',
+                'email'                     => '',
+                'alamat'                    => '',
+                'telephone'                 => '02185525152',
             ],
         ];
         $this->db->table('client')->insertBatch($client);

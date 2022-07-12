@@ -29,9 +29,9 @@ class Arsip extends Migration
                 'type'                => 'ENUM',
                 'constraint'          => "'ISO','SKT', 'SKA', 'K3'",
             ],
-            'status'                  => [
+            'status_sertifikat'                  => [
                 'type'                => 'ENUM',
-                'constraint'          => "'proses','pending', 'selesai'",
+                'constraint'          => "'diterima','diserahkan'",
             ],
             'description'             => [
                 'type'                => 'VARCHAR',

@@ -142,6 +142,9 @@ class ClientController extends BaseController
 
 		$data = array(
 			'nama'             => $this->request->getPost('nama'),
+			'email'            => $this->request->getPost('email'),
+			'alamat'           => $this->request->getPost('alamat'),
+			'telephone'        => $this->request->getPost('telephone'),
 
 		);
 
@@ -185,7 +188,9 @@ class ClientController extends BaseController
 
 		$data = array(
 			'nama'             => $this->request->getPost('nama'),
-
+			'email'            => $this->request->getPost('email'),
+			'alamat'           => $this->request->getPost('alamat'),
+			'telephone'        => $this->request->getPost('telephone'),
 		);
 
 		if ($validation->run($data, 'client') == FALSE) {

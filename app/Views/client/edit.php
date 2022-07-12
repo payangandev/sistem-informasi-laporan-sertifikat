@@ -59,6 +59,18 @@
                                 <?php echo form_label('Nama Client', 'nama'); ?>
                                 <?php echo form_input('nama', $client['nama'], ['class' => 'form-control']); ?>
                               </div>
+                              <div class="form-group">
+                                <?php echo form_label('Email', 'email'); ?>
+                                <?php echo form_input('email', $client['email'], ['class' => 'form-control']); ?>
+                              </div>
+                              <div class="form-group">
+                                <?php echo form_label('Alamat', 'alamat'); ?>
+                                <?php echo form_input('alamat', $client['alamat'], ['class' => 'form-control']); ?>
+                              </div>
+                              <div class="form-group">
+                                <?php echo form_label('Telephone', 'telephone'); ?>
+                                <?php echo form_input('telephone', $client['telephone'], ['class' => 'form-control']); ?>
+                              </div>
                             </div>
                           </div>
                         </div>

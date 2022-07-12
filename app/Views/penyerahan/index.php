@@ -24,20 +24,19 @@
 
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
-                        <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA MANAGEMENT CERTIFICATION</h1>
+                        <h1 class="h3 mb-2 text-gray-800 text-center">PT FORTUNA MANAGEMENT CERTIFICATION </h1>
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Client </h6> <br>
-                            <a href="<?php echo base_url('client/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
+                            <h6 class="m-0 font-weight-bold text-primary text-left"> List Data Penyerahan  Arsip</h6> <br>
+                            <a href="<?php echo base_url('penyerahan/pdf'); ?>" target="_blank" class="btn btn-outline-danger float-left">
                                 <i class="nav-icon fas fa-print"></i> &ensp;&ensp; PDF</a>
-                            <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
 
-                                <a href="<?php echo base_url('client/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
-                                    <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
-                            <?php } ?>
-                            <a href="<?php echo base_url('client/create'); ?>" class="btn btn-outline-success float-right"><i class="nav-icon fas fa-plus-square"></i> Tambah Data</a>
+                            <a href="<?php echo base_url('penyerahan/excel'); ?>" method="POST" class="btn btn-outline-success float-left">
+                                <i class="nav-icon fas fa-file-excel"></i> &ensp; EXCEL</a>
+
+                            <a href="<?php echo base_url('penyerahan/create'); ?>" class="btn btn-outline-primary float-right"><i class="nav-icon fas fa-plus-square"></i> Tambah Data</a>
 
                         </div>
                         <div class="card-body">
@@ -65,34 +64,30 @@
                                         <tr>
                                             <th style="text-align: center">No</th>
                                             <th style="text-align: center">Nama Perusahaan</th>
-                                            <th style="text-align: center">Email</th>
-                                            <th style="text-align: center">Alamat</th>
-                                            <th style="text-align: center">Telephone</th>
-                                            <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
-                                                <th>Actions</th>
-                                            <?php } ?>
+                                            <th style="text-align: center">Bukti penyerahan</th>
+                                            <th style="text-align: center">Tanggal penyerahan</th>
+                                            <th style="text-align: center">Proggress</th>
+                                            <th style="text-align: center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($client as $key => $row) { ?>
+                                        <?php foreach ($penyerahan as $key => $row) { ?>
                                             <tr>
                                                 <td style="text-align: center"><?php echo $key + 1; ?></td>
                                                 <td><?php echo $row['nama']; ?></td>
-                                                <td><?php echo $row['email']; ?></td>
-                                                <td><?php echo $row['alamat']; ?></td>
-                                                <td><?php echo $row['telephone']; ?></td>
-                                                <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
-                                                    <td style="text-align: center">
-                                                        <div class="btn-group">
-                                                            <a href="<?php echo base_url('client/edit/' . $row['client_id']); ?>" class="btn btn-sm btn-success">
-                                                                <i class="fa fa-edit"></i>
-                                                            </a>
-                                                            <a href="<?php echo base_url('client/delete/' . $row['client_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
-                                                                <i class="fa fa-trash-alt"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                <?php } ?>
+                                                <td><?php echo $row['bukti_penyerahan']; ?></td>
+                                                <td><?php echo $row['proggress']; ?></td>
+                                                <td ><?php echo $row['tanggal_penyerahan']; ?></td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="<?php echo base_url('penyerahan/edit/' . $row['penyerahan_id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+                                                        <a href="<?php echo base_url('penyerahan/delete/' . $row['penyerahan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                            <i class="fa fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>

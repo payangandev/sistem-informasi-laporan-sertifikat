@@ -19,6 +19,18 @@ class Client extends Migration
             'nama' => [
                 'type'        => 'VARCHAR',
                 'constraint'  => 50,
+            ],
+            'email' => [
+                'type'        => 'VARCHAR',
+                'constraint'  => 50,
+            ],
+            'alamat' => [
+                'type'        => 'VARCHAR',
+                'constraint'  => 50,
+            ],
+            'telephone' => [
+                'type'        => 'VARCHAR',
+                'constraint'  => 50,
             ]
         ]);
         $this->forge->addKey('client_id', true);

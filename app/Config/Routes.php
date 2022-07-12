@@ -105,6 +105,28 @@ $routes->post('ktiga/update/(:num)', 'KtigaController::update/$1');
 $routes->get('ktiga/delete/(:alphanum)', 'KtigaController::delete/$1');
 
 
+// routing penerimaan
+
+$routes->get('penerimaan/pdf', 'PenerimaanArsipController::pdf');
+$routes->get('penerimaan/excel', 'PenerimaanArsipController::excel');
+$routes->get('penerimaan', 'PenerimaanArsipController::index');
+$routes->get('penerimaan/create', 'PenerimaanArsipController::create');
+$routes->post('penerimaan/store', 'PenerimaanArsipController::store');
+$routes->get('penerimaan/edit/(:alphanum)', 'PenerimaanArsipController::edit/$1');
+$routes->post('penerimaan/update/(:num)', 'PenerimaanArsipController::update/$1');
+$routes->get('penerimaan/delete/(:alphanum)', 'PenerimaanArsipController::delete/$1');
+
+// routing penyerahan
+$routes->get('penyerahan/pdf', 'PenyerahanArsipController::pdf');
+$routes->get('penyerahan/excel', 'PenyerahanArsipController::excel');
+$routes->get('penyerahan', 'PenyerahanArsipController::index');
+$routes->get('penyerahan/create', 'PenyerahanArsipController::create');
+$routes->post('penyerahan/store', 'PenyerahanArsipController::store');
+$routes->get('penyerahan/edit/(:alphanum)', 'PenyerahanArsipController::edit/$1');
+$routes->post('penyerahan/update/(:num)', 'PenyerahanArsipController::update/$1');
+$routes->get('penyerahan/delete/(:alphanum)', 'PenyerahanArsipController::delete/$1');
+
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
