@@ -68,6 +68,7 @@
                                             <th style="text-align: center">Email</th>
                                             <th style="text-align: center">Alamat</th>
                                             <th style="text-align: center">Telephone</th>
+                                            <th style="text-align: center">Pic</th>
                                             <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                 <th>Actions</th>
                                             <?php } ?>
@@ -81,6 +82,7 @@
                                                 <td><?php echo $row['email']; ?></td>
                                                 <td><?php echo $row['alamat']; ?></td>
                                                 <td><?php echo $row['telephone']; ?></td>
+                                                <td><?php echo $row['pic']; ?></td>
                                                 <?php if (session()->get('level') == 1 || session()->get('level') == 2) { ?>
                                                     <td style="text-align: center">
                                                         <div class="btn-group">

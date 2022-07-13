@@ -31,6 +31,10 @@ class Client extends Migration
             'telephone' => [
                 'type'        => 'VARCHAR',
                 'constraint'  => 50,
+            ],
+            'pic' => [
+                'type'        => 'VARCHAR',
+                'constraint'  => 50,
             ]
         ]);
         $this->forge->addKey('client_id', true);

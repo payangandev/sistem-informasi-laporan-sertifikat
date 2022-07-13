@@ -145,7 +145,7 @@ class ClientController extends BaseController
 			'email'            => $this->request->getPost('email'),
 			'alamat'           => $this->request->getPost('alamat'),
 			'telephone'        => $this->request->getPost('telephone'),
-
+			'pic'        	   => $this->request->getPost('pic'),
 		);
 
 		if ($validation->run($data, 'client') == FALSE) {
@@ -191,6 +191,7 @@ class ClientController extends BaseController
 			'email'            => $this->request->getPost('email'),
 			'alamat'           => $this->request->getPost('alamat'),
 			'telephone'        => $this->request->getPost('telephone'),
+			'pic'        	   => $this->request->getPost('pic'),
 		);
 
 		if ($validation->run($data, 'client') == FALSE) {

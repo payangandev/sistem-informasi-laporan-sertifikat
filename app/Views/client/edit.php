@@ -71,6 +71,10 @@
                                 <?php echo form_label('Telephone', 'telephone'); ?>
                                 <?php echo form_input('telephone', $client['telephone'], ['class' => 'form-control']); ?>
                               </div>
+                              <div class="form-group">
+                                <?php echo form_label('Pic', 'pic'); ?>
+                                <?php echo form_input('pic', $client['pic'], ['class' => 'form-control']); ?>
+                              </div>
                             </div>
                           </div>
                         </div>

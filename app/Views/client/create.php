@@ -110,6 +110,20 @@
                                 echo form_input($telephone);
                                 ?>
                               </div>
+                              <div class="form-group">
+                                <?php
+                                echo form_label('PIC');
+                                $pic = [
+                                  'type'  => 'text',
+                                  'name'  => 'pic',
+                                  'id'    => 'pic',
+                                  'value' => $inputs['pic'],
+                                  'class' => 'form-control',
+                                  'placeholder' => 'Masukan Pic'
+                                ];
+                                echo form_input($telephone);
+                                ?>
+                              </div>
                             </div>
                           </div>
                         </div>

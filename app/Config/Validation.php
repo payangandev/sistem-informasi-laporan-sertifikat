@@ -141,6 +141,7 @@ class Validation
 		'email'     		=> 'required',		
 		'alamat'     		=> 'required',
 		'telephone'     	=> 'required',
+		'pic'				=> 'required',
 	];
 
 	public $client_errors = [
@@ -156,6 +157,9 @@ class Validation
 		],
 		'telephone'   => [
 			'required'		=> 'Telephone Required'
+		],
+		'pic'   => [
+			'required'		=> 'Pic Required'
 		]
 	];
 
