@@ -29,7 +29,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary text-left">Form Edit Data Arsip </h6>
+              <h6 class="m-0 font-weight-bold text-primary text-left">Form Edit Data Penyerahan </h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -50,55 +50,39 @@
                         </div>
                       <?php } ?>
                       <div class="card">
-                        <?php echo form_open_multipart('arsip/update/' . $arsip['arsip_id']); ?>
+                        <?php echo form_open_multipart('penyerahan/update/' . $penyerahan['penyerahan_id']); ?>
                         <div class="card-body">
-                          <?php echo form_hidden('arsip_id', $arsip['arsip_id']); ?>
+                          <?php echo form_hidden('penyerahan_id', $penyerahan['penyerahan_id']); ?>
                           <div class="row">
                             <div class="col-md-12">
                               <div class="form-group">
                                 <?php echo form_label('Nama Perusahaan', 'client'); ?>
-                                <?php echo form_dropdown('client_id', $client, $arsip['client_id'], ['class' => 'form-control']); ?>
+                                <?php echo form_dropdown('client_id', $client, $penyerahan['client_id'], ['class' => 'form-control']); ?>
                               </div>
                               <div class="form-group">
                                 <?php
-                                echo form_label('Type Sertifikat', 'type_sertifikat');
-                                echo form_dropdown('type_sertifikat', [
+                                echo form_label('Proggress', 'proggress');
+                                echo form_dropdown('proggress', [
                                   ''                      => 'Pilih',
-                                  'ISO'                   => 'ISO',
-                                  'SKA'                   => 'SKA',
-                                  'SKT'                   => 'SKT',
-                                  'K3'                    => 'K3',
-                                ], $arsip['type_sertifikat'], ['class' => 'form-control']);
+                                  'Diterima'                   => 'Diterima',
+                                  'Diserahkan'                   => 'Diserahkan',
+                                ], $penyerahan['proggress'], ['class' => 'form-control']);
                                 ?>
                               </div>
                               <div class="form-group">
-                                <?php
-                                echo form_label('Status', 'status');
-                                echo form_dropdown('status', [
-                                  ''                          => 'Pilih',
-                                  ''                          => 'Pilih',
-                                  'PROSES'                    => 'PROSES',
-                                  'PENDING'                   => 'PENDING',
-                                  'SELESAI'                   => 'SELESAI',
-                                ], $arsip['status'], ['class' => 'form-control']);
-                                ?>
-                              </div>
-                              <div class="form-group">
-                                <?php echo form_label('Nama Client', 'nama_karyawan'); ?>
+                                <?php echo form_label('Bukti penyerahan', 'bukti_penyerahan'); ?>
                                 <?php echo form_input(
-                                  'nama_karyawan',
-                                  $arsip['nama_karyawan'],
-
-                                  ['class' => 'form-control', 'placeholder' => 'Nama ...']
+                                  'bukti_penyerahan',
+                                  $penyerahan['bukti_penyerahan'],
+                                  ['class' => 'form-control', 'readonly' => 'true']
                                 );
-
                                 ?>
                               </div>
                               <div class="form-group">
-                                <?php echo form_label('Description', 'description'); ?>
+                                <?php echo form_label('Tanggal penyerahan', 'tanggal_penyerahan'); ?>
                                 <?php echo form_input(
-                                  'description',
-                                  $arsip['description'],
+                                  'tanggal_penyerahan',
+                                  $penyerahan['tanggal_penyerahan'],
                                   ['class' => 'form-control']
                                 );
                                 ?>
@@ -108,7 +92,7 @@
                         </div>
                       </div>
                       <div class="card-footer">
-                        <a href="<?php echo base_url('arsip'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
+                        <a href="<?php echo base_url('penyerahan'); ?>" class="btn btn-outline-info"> <i class="nav-icon fas fa-backward"></i> Back</a>
                         <button type="submit" class="btn btn-primary float-right"> <i class="nav-icon fas fa-save"></i> Update Data</button>
                       </div>
                       <?php echo form_close(); ?>

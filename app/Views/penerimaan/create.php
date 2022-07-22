@@ -63,7 +63,6 @@
                                                             <div class="form-group">
                                                                 <label for="bukti_penerimaan">Bukti penerimaan Sertifikat</label>
                                                                 <input type="file" name="bukti_penerimaan" id="bukti_penerimaan" class="form-control">
-
                                                             </div><br>
 
                                                             <div class="form-group">
@@ -79,7 +78,6 @@
                                                                 echo form_input($tanggal_penerimaan);
                                                                 ?>
                                                             </div>
-                                                            <div class="form-group">
                                                             <div class="form-group">
                                                                 <?php
                                                                 echo form_label('Proggress', 'proggress');

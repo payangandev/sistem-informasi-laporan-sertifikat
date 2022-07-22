@@ -23,23 +23,26 @@
            </a>
            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                <div class="bg-white py-2 collapse-inner rounded">
-               <h6 class="collapse-header">Data Sertifikat</h6>
                    <a class="collapse-item" href="<?php echo base_url('iso'); ?>">ISO</a>
                    <a class="collapse-item" href="<?php echo base_url('skt'); ?>">SKT</a>
                    <a class="collapse-item" href="<?php echo base_url('ska'); ?>">SKA</a>
                    <a class="collapse-item" href="<?php echo base_url('ktiga'); ?>">K3</a>
-                   <a class="collapse-item" href="<?php  echo base_url('client')?>">CLIENT</a>
-                <h6 class="collapse-header">Data Transaksi</h6>
-                <a class="collapse-item" href="<?php echo base_url('penerimaan'); ?>">Penerimaan Arsip</a>
-                   <a class="collapse-item" href="<?php echo base_url('penyerahan'); ?>">Penyerhaan Arsip</a>
-                </div>
+                   <a class="collapse-item" href="<?php  echo base_url('client')?>">CLIENT</a>            
            </div>
        </li>
-       <!-- <li class="nav-item ">
-           <a class="nav-link" href="<?php echo base_url('arsip'); ?>">
-               <i class="fas fa-fw fa-couch"></i>
-               <span>Data Arsip</span></a>
-       </li> -->
+       <li class="nav-item">
+           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+               <i class="fas fa-fw fa-wrench"></i>
+               <span>Data Transaksi</span>
+           </a>
+           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                   <h6 class="collapse-header">Pengelolaan Data</h6>
+                   <a class="collapse-item" href="<?php echo base_url('penerimaan'); ?>">Penerimaan Arsip</a>
+                   <a class="collapse-item" href="<?php echo base_url('penyerahan'); ?>">Penyerahan Arsip</a>
+               </div>
+           </div>
+       </li>
        <?php if (session()->get('level') == 1) { ?>
            <li class="nav-item">
                <a class="nav-link" href="<?php echo base_url('users'); ?>">

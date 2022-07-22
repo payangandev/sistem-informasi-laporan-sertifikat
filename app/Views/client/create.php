@@ -121,7 +121,7 @@
                                   'class' => 'form-control',
                                   'placeholder' => 'Masukan Pic'
                                 ];
-                                echo form_input($telephone);
+                                echo form_input($pic);
                                 ?>
                               </div>
                             </div>

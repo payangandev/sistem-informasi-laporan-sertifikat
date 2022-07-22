@@ -15,6 +15,7 @@ class Client extends Seeder
                 'email'                     => '',
                 'alamat'                    => '',
                 'telephone'                 => '02198529922',
+                'pic'        	            => 'Dita Apriliyani',
             ],
             [
                 'client_id'                 => 2,
@@ -22,6 +23,7 @@ class Client extends Seeder
                 'email'                     => '',
                 'alamat'                    => '',
                 'telephone'                 => '02155771592',
+                'pic'        	            => 'Dita Apriliyani',
             ],
             [
                 'client_id'                 => 3,
@@ -29,6 +31,7 @@ class Client extends Seeder
                 'email'                     => '',
                 'alamat'                    => '',
                 'telephone'                 => '02175820525',
+                'pic'        	            => 'Dita Apriliyani',
             ],
             [
                 'client_id'                 => 4,
@@ -36,6 +39,7 @@ class Client extends Seeder
                 'email'                     => '',
                 'alamat'                    => '',
                 'telephone'                 => '02185525152',
+                'pic'        	            => 'Dita Apriliyani',
             ],
         ];
         $this->db->table('client')->insertBatch($client);

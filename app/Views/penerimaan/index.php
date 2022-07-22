@@ -75,14 +75,19 @@
                                             <tr>
                                                 <td style="text-align: center"><?php echo $key + 1; ?></td>
                                                 <td><?php echo $row['nama']; ?></td>
-                                                <td class="text-center"><img src="<?= base_url('uploads/penerimaan/' . $row['bukti_penerimaan']); ?>" width="150"></td>
-                                                <td><?php echo $row['proggress']; ?></td>
+                                                <td style="text-align: center">
+                                                <li>
+                                                        <a href="<?= base_url('uploads/penerimaan/'.$row['bukti_penerimaan']) ?>" 
+                                                        id="pseudo-dynamism" target="_blank"><i class="fa fa-search" aria-hidden="true"> <?php echo $row['bukti_penerimaan']; ?></i></a>
+                                                </li>
+                                                </td>
                                                 <td ><?php echo $row['tanggal_penerimaan']; ?></td>
+                                                <td><?php echo $row['proggress']; ?></td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <!-- <a href="<?php echo base_url('penerimaan/edit/' . $row['penerimaan_id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
+                                                        <a href="<?php echo base_url('penerimaan/edit/' . $row['penerimaan_id']); ?>" class="btn btn-sm btn-success" style="text-align: center;">
                                                             <i class="fa fa-edit"></i>
-                                                        </a> -->
+                                                        </a>
                                                         <a href="<?php echo base_url('penerimaan/delete/' . $row['penerimaan_id']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
                                                             <i class="fa fa-trash-alt"></i>
                                                         </a>
