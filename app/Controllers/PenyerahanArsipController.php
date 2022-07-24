@@ -85,7 +85,7 @@ class PenyerahanArsipController extends BaseController
     {
         $validation =  \Config\Services::validation();
         $dataPenyerahan = $this->request->getFile('bukti_penyerahan');
-        $filePenyerahan = $dataPenyerahan->getRandomName();
+        $filePenyerahan = $dataPenyerahan->getName();
 
         $data = array(
             'bukti_penyerahan'          => $filePenyerahan,

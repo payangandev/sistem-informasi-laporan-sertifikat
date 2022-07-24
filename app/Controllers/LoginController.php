@@ -12,8 +12,6 @@ class LoginController extends BaseController
         $this->loginmodel = new UsersModels();
     }
 
-
-
     public function index()
     {
         echo view('login');

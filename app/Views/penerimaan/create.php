@@ -62,7 +62,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="bukti_penerimaan">Bukti penerimaan Sertifikat</label>
-                                                                <input type="file" name="bukti_penerimaan" id="bukti_penerimaan" class="form-control">
+                                                                <input type="file" name="bukti_penerimaan[]" class="form-control" multiple>
                                                             </div><br>
 
                                                             <div class="form-group">

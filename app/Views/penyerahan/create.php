@@ -62,7 +62,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="bukti_penyerahan">Bukti Penyerahan Sertifikat</label>
-                                                                <input type="file" name="bukti_penyerahan" id="bukti_penyerahan" class="form-control">
+                                                                <input type="file" name="bukti_penyerahan" id="bukti_penyerahan" class="form-control" multiple>
 
                                                             </div><br>
 

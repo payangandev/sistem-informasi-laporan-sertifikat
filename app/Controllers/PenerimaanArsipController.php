@@ -80,22 +80,27 @@ class PenerimaanArsipController extends BaseController
         return view('penerimaan/create', $data);
     }
 
+    public function saveData(){
+
+    }
+
     public function store()
     {
         $validation =  \Config\Services::validation();
-        $dataPenerimaan = $this->request->getFile('bukti_penerimaan');
-        $filePenerimaan = $dataPenerimaan->getRandomName();
 
-
-        $data = array(
-            'bukti_penerimaan'          => $filePenerimaan,
+        foreach ($this->request->getFileMultiple('bukti_penerimaan') as $file) {
+            
+            $fileLocation = $file->getName();
+            $data = [
+            'bukti_penerimaan'          => $fileLocation,
             'proggress'       			=> $this->request->getPost('proggress'),
             'tanggal_penerimaan'        => $this->request->getPost('tanggal_penerimaan'),
             'client_id'             	=> $this->request->getPost('client_id'),
 
-        );
+        ];
 
-        $dataPenerimaan->move('uploads/penerimaan/', $filePenerimaan);
+        $file->move('uploads/penerimaan/', $fileLocation);
+
 
         if ($validation->run($data, 'penerimaan') == FALSE) {
             session()->setFlashdata('inputs', $this->request->getPost());
@@ -108,7 +113,7 @@ class PenerimaanArsipController extends BaseController
                 session()->setFlashdata('success', 'Tambah Data Berhasil');
                 return redirect()->to(base_url('penerimaan'));
             }
-        }
+        }        }
     }
 
     public function edit($id)
